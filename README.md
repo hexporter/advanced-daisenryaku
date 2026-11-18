@@ -5,6 +5,12 @@ as a native game for macOS and Windows, in English, German, French and Spanish.
 
 Unofficial fan project. **No game data is included – you need your own ROM.**
 
+![Zoomed-out map across the full 16:9 width](docs/images/zoomed-map.png)
+
+| | |
+|---|---|
+| ![Battle](docs/images/battle.png) | ![Campaign briefing](docs/images/briefing.png) |
+
 ## Features
 
 - Runs natively on Apple silicon Macs and Windows x64, no emulator.

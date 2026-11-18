@@ -1,0 +1,292 @@
+# French: campaign result texts, part 3 (Middle East 1942, Tunisia, Italy, Urals, the West, the end).
+
+[[briefing]]
+block = "results"
+offset = 0x3A48
+text = [
+  "L'Angleterre a envoyé d'autres troupes de l'Inde et renforcé son armée battue du Moyen-Orient. Les Soviétiques aussi ont commencé à descendre vers le sud, et notre front s'étirait dans de nombreuses directions.",
+  "Puis des troupes britanniques du Soudan ont repris l'Égypte, tenue par les Italiens. L'opération a été arrêtée, et nos unités se sont repliées sur la Cyrénaïque.",
+  "<keep>",
+  "Le 1er novembre a commencé la contre-offensive britannique, l'opération Supercharge. Notre armée d'Afrique du Nord a entamé sa retraite.",
+  "\"Avant Alamein, nous n'avons jamais eu de victoire. Après Alamein, nous n'avons jamais eu de défaite.\"",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3BBB
+text = [
+  "Avec le groupe d'armées A venu du nord, nos unités ont pris d'assaut le Caucase et toutes les régions pétrolières. Les forces montées au nord depuis Stalingrad ont pris Moscou et l'Oural.",
+  "L'année suivante, l'Union soviétique a enfin fait la paix.",
+  "<keep>",
+  "L'Amérique et l'Angleterre nous font encore face, mais elles ne peuvent espérer riposter contre notre armée rassemblée à l'ouest.",
+  "La guerre en Europe est finie.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3CDD
+text = [
+  "Nos unités ont pris d'assaut le Caucase et toutes les régions pétrolières.",
+  "Mais les Alliés ont riposté en Afrique du Nord et repris l'Égypte et l'Irak. La Turquie a conclu un armistice, et nous avons dû reculer vers le nord pour assurer nos lignes de ravitaillement.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3D9A
+text = [
+  "Nos unités ont attaqué le Caucase, mais une résistance acharnée a ralenti l'avance.",
+  "Pendant ce temps la contre-offensive alliée a commencé en Afrique du Nord, et l'Égypte et l'Irak ont été repris. La Turquie a conclu un armistice, et nos unités ont dû rompre l'opération et reculer vers le nord pour assurer leurs lignes de ravitaillement.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3E6E
+text = [
+  "Après la prise de la Tunisie, nos unités ont aussitôt contre-attaqué. Les forces de débarquement ennemies ont subi de lourdes pertes et renoncé au débarquement.",
+  "La 8e armée britannique, qui avait pris Tripoli, a été écrasée elle aussi et s'est repliée sur Tobrouk.",
+  "<keep>",
+  "Les troupes américaines du général Patton ont débarqué à Casablanca, mais c'était trop loin de l'Algérie.",
+  "Le Führer a déclaré qu'une invasion alliée de l'Europe n'était plus possible et ordonné à nos unités de partir pour l'Union soviétique.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3FAD
+text = [
+  "Après la prise de la Tunisie, nos unités ont aussitôt contre-attaqué. Nous avons repoussé les forces de débarquement américaines et britanniques et mis en fuite la 8e armée britannique jusqu'à Tobrouk.",
+  "Mais sans la maîtrise de la mer, nous étions désavantagés. Nos unités ont reçu elles aussi l'ordre de se retirer et se sont repliées sur la Sicile.",
+  "<keep>",
+  "Le 11 novembre, les troupes allemandes ont occupé le sud de la France pour désarmer le gouvernement de Vichy.",
+  "Le 14 janvier, la conférence de Casablanca a exigé la capitulation sans condition de l'Allemagne, de l'Italie et du Japon.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x40F2
+text = [
+  "Après la prise de la Tunisie, nos unités ont aussitôt contre-attaqué. Mais avec les forces de débarquement américaines et britanniques à l'ouest et la 8e armée britannique au sud, il a fallu se battre sur deux fronts.",
+  "Au milieu de ce combat inégal est venu l'ordre de quitter la Tunisie. Nos unités se sont repliées sur la Sicile.",
+  "<keep>",
+  "Le 11 novembre, les troupes allemandes ont occupé le sud de la France pour désarmer le gouvernement de Vichy.",
+  "Le 14 janvier, la conférence de Casablanca a exigé la capitulation sans condition de l'Allemagne, de l'Italie et du Japon.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4227
+text = [
+  "Pour soutenir l'armée italienne, mal équipée et sans volonté de se battre, nos unités sont montées au front.",
+  "Sous un feu violent d'obus et de bombes, nous avons pris d'assaut les têtes de pont, rejeté les forces de débarquement à la mer et tenu l'île.",
+  "Le quartier général a jugé la Méditerranée sûre pour l'instant et nous a envoyés dans le nord de la France.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x42FA
+text = [
+  "Sous un feu violent d'obus et de bombes, nos unités ont pris d'assaut les têtes de pont et arrêté le débarquement. Mais ce n'était que la première vague ; des troupes fraîches sont arrivées.",
+  "Sans nouveaux renforts et avec une Italie chancelante, nous avons quitté la Sicile.",
+  "<keep>",
+  "Le 25 juillet, Mussolini a été arrêté, et un nouveau gouvernement a été formé sous Badoglio.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x43FB
+text = [
+  "Nos unités ont commencé à avancer sur les têtes de pont ennemies, mais le feu violent des obus et des bombes nous a forcés à arrêter la contre-attaque.",
+  "Pour éviter les pertes, nous avons mené des combats retardateurs et nous sommes repliés avec la plupart de nos hommes et de nos armes.",
+  "<keep>",
+  "Le 25 juillet, Mussolini a été arrêté, et un nouveau gouvernement a été formé sous Badoglio.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x44E2
+text = [
+  "Quand la 5e armée du général Clark a commencé à débarquer à Salerne, l'Italie a annoncé sa capitulation, et nos unités ont pris le contrôle de Rome.",
+  "Puis nous sommes allés au sud et avons arrêté le débarquement. Nous avons même poussé un temps jusqu'en Sicile, mais nous nous sommes repliés de peur d'être coupés au détroit de Messine.",
+  "<keep>",
+  "Le 23 septembre, Mussolini a proclamé un nouvel État à Salò, sur le lac de Garde.",
+  "Le 28 novembre, à la conférence de Téhéran, Churchill, Roosevelt et Staline ont convenu que l'Union soviétique déclarerait la guerre au Japon.",
+  "Nos unités sont parties dans le nord de la France, où le prochain débarquement était le plus probable.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4656
+text = [
+  "Quand la 5e armée du général Clark a commencé à débarquer à Salerne, l'Italie a annoncé sa capitulation, et nos unités ont pris le contrôle de Rome.",
+  "Puis nous sommes allés au sud et avons arrêté le débarquement. Nous avons même poussé un temps jusqu'en Sicile, mais nous nous sommes repliés de peur d'être coupés au détroit de Messine.",
+  "<keep>",
+  "Le 23 septembre, Mussolini a proclamé un nouvel État à Salò, sur le lac de Garde.",
+  "Le 28 novembre, à la conférence de Téhéran, Churchill, Roosevelt et Staline ont convenu que l'Union soviétique déclarerait la guerre au Japon.",
+  "Après un débarquement ennemi à Tarente, nos unités ont encore reculé, jusqu'à la ligne Gustav.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x47CC
+text = [
+  "Quand la 5e armée du général Clark a commencé à débarquer à Salerne, l'Italie a annoncé sa capitulation. La 8e armée britannique est montée de Sicile, la pression a grandi, et nos unités risquaient d'être coupées.",
+  "La contre-attaque contre le débarquement a été arrêtée, et nous avons reçu l'ordre de regagner la ligne Gustav.",
+  "<keep>",
+  "Le 23 septembre, Mussolini a proclamé un nouvel État à Salò, sur le lac de Garde.",
+  "Le 28 novembre, à la conférence de Téhéran, Churchill, Roosevelt et Staline ont convenu que l'Union soviétique déclarerait la guerre au Japon.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4907
+text = [
+  "La force de débarquement ennemie étant très puissante, nos unités ont attendu les renforts du nord avant de riposter. Après de durs combats à Anzio, nous avons arrêté le débarquement et même repris Naples.",
+  "Alors que nous poussions plus au sud est venu l'ordre de nous retirer. L'ennemi avait débarqué dans le nord de la France.",
+  "<keep>",
+  "Le 18 janvier, Léningrad a été dégagée.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x49E6
+text = [
+  "Nos unités ont attendu les renforts du nord et riposté. Mais l'aviation ennemie nous a coûté de lourdes pertes, et quand la ligne Gustav a été percée en maints endroits, nous avons arrêté l'attaque et reculé sur la ligne suivante.",
+  "Nos unités ont continué jusqu'en France.",
+  "<keep>",
+  "Le 18 janvier, Léningrad a été dégagée.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4AD6
+text = [
+  "À l'est de Moscou, nous nous sommes vite heurtés à de fortes troupes ennemies, qui contre-attaquaient sans cesse tout en reculant.",
+  "Nous avons pris Kouïbychev et franchi l'Oural, mais l'Union soviétique n'a pas capitulé. Le gouvernement s'est installé à Irkoutsk et a refusé de se rendre. Jamais.",
+  "Nos unités ont arrêté l'avance vers l'est et commencé à se regrouper pour détruire les points d'appui ennemis restés dans le sud de l'Union soviétique.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4BF3
+text = [
+  "À l'est de Moscou, nous nous sommes vite heurtés à de fortes contre-attaques. Notre avance a ralenti, et nous avons atteint l'Oural de justesse.",
+  "Puis la contre-offensive ennemie a commencé. Tout le front a été sous pression, et les attaques principales ont foncé sur Moscou par le nord et par le sud.",
+  "Menacée d'encerclement, l'armée a entamé une retraite infernale et perdu tout ce que cette opération avait gagné.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4D25
+text = [
+  "À l'est de Moscou, nous nous sommes vite heurtés à de fortes contre-attaques. Notre avance a ralenti, et l'opération est devenue de plus en plus dure.",
+  "Quand nous n'avons plus pu avancer, l'ennemi a riposté. Nous avons abandonné jusqu'à Moscou et reculé.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4DFD
+text = [
+  "Nos défenses côtières ont été écrasées après un bref combat. Sous la supériorité aérienne ennemie, nos unités ont chargé jusqu'à la côte et, sous une tempête de feu naval, pris Mulberry, le port que l'ennemi construisait.",
+  "Mais cela ne ferait que gagner du temps.",
+  "<keep>",
+  "Le 20 juillet, le colonel Stauffenberg a tenté d'assassiner le Führer. L'attentat a échoué, et les conjurés ont été exécutés l'un après l'autre.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4F30
+text = [
+  "Nos défenses côtières ont été écrasées après un bref combat. Sous la supériorité aérienne ennemie, nos unités ont chargé vers la côte, mais les gros canons de marine et l'aviation les ont arrêtées.",
+  "Nous ne pouvions plus que choisir où arrêter les forces de débarquement. Le plan a été changé, et nous avons reculé.",
+  "<keep>",
+  "Le 20 juillet, le colonel Stauffenberg a tenté d'assassiner le Führer. L'attentat a échoué, et les conjurés ont été exécutés l'un après l'autre.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x507F
+text = [
+  "C'était une opération impossible. Nous avons été pris au piège à Falaise, et le front de France s'est effondré.",
+  "Nos unités envoyées d'Allemagne ont repris la France, et l'ouest a tenu un temps. Nous sommes donc partis pour Varsovie tenir le front de l'Est brisé.",
+  "<keep>",
+  "Le 23 août, la Roumanie a conclu un armistice avec l'Union soviétique et déclaré la guerre à l'Allemagne. Le 25, la Bulgarie a annoncé à son tour un armistice.",
+  "Le 3 septembre, la Finlande a conclu un armistice.",
+  "Le Führer a ordonné la mobilisation totale et appelé tous les hommes de 17 à 60 ans.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x51EC
+text = [
+  "C'était une opération impossible. Nous avons été pris au piège à Falaise, et le front de France s'est effondré.",
+  "Nos unités envoyées d'Allemagne ont tenté de rétablir le front, mais l'ennemi a débarqué aussi dans le sud de la France. Nous avons reculé jusqu'à la frontière.",
+  "<keep>",
+  "Le 23 août, la Roumanie a conclu un armistice avec l'Union soviétique et déclaré la guerre à l'Allemagne. Le 25, la Bulgarie a annoncé à son tour un armistice.",
+  "Le 3 septembre, la Finlande a conclu un armistice.",
+  "Le Führer a ordonné la mobilisation totale et appelé tous les hommes de 17 à 60 ans.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x5355
+text = [
+  "La 1re division aéroportée larguée sur Arnhem était une troupe d'élite, mais des troupes aéroportées ne faisaient pas le poids face à nous.",
+  "Nos unités ont repris le pont vital, arrêté l'avance du XXXe corps britannique et contre-attaqué. La route de l'ennemi est devenue la Route de l'enfer, et les Alliés ont arrêté l'opération.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x541F
+text = [
+  "La 1re division aéroportée à Arnhem et les autres unités aéroportées le long de la route du Rhin ont tout juste rempli leur mission.",
+  "Avec le temps ainsi gagné, les Alliés ont franchi le Rhin. Il ne nous reste plus qu'à défendre la patrie.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x54F5
+text = [
+  "Nous avons écrasé d'un coup les faibles unités ennemies dans les Ardennes. Mais Anvers était hors de portée.",
+  "Prendre Bastogne, tenue par la 101e division aéroportée, et franchir la Meuse : nous ne pouvions aller plus loin.",
+  "Une victoire sans signification.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x55BC
+text = [
+  "Nous avons écrasé les faibles unités ennemies dans les Ardennes dès les premiers combats. Mais, loin d'Anvers, nous n'avons même pas pu prendre les passages de la Meuse.",
+  "Nous n'avons pas pu tenir le saillant conquis, et nous avons reculé.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x5692
+text = [
+  "Avec l'armée hongroise, nos unités sont passées à l'attaque. D'abord nous avons surpris l'ennemi, mais bientôt de fortes contre-attaques nous ont obligés à nous battre pour chaque pas.",
+  "Par une brèche dans l'anneau ennemi, nous avons percé jusqu'à Budapest. Mais le prix de cette attaque a été l'effondrement du front de l'Est.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x576A
+text = [
+  "Avec l'armée hongroise, nos unités sont passées à l'attaque. D'abord nous avons surpris l'ennemi, mais bientôt de fortes contre-attaques ont arrêté l'avance.",
+  "L'opération a été interrompue pour être relancée par le sud, mais il n'y avait plus aucune chance de succès.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x582C
+text = [
+  "Nos unités ont repoussé l'ennemi qui se resserrait de tous côtés, et le front a tenu un temps. Mais l'ennemi a frappé de nouveau, et tout s'est effondré.",
+  "Pour gagner du temps à la population qui fuyait vers l'ouest, nos unités ont tenu le front jusqu'au bout, englouties l'une après l'autre, jusqu'à la fin.",
+  "<keep>",
+  "Toutes les forces de terre, de mer et de l'air sous commandement allemand ont capitulé aujourd'hui sans condition devant le Haut Commandement suprême de l'Armée rouge et devant le Commandant suprême des forces alliées.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x5983
+text = [
+  "Toutes les forces de terre, de mer et de l'air sous commandement allemand ont capitulé aujourd'hui sans condition devant le Haut Commandement suprême de l'Armée rouge et devant le Commandant suprême des forces alliées.",
+]

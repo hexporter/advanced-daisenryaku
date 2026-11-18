@@ -1,0 +1,39 @@
+diff --git a/runner/game_spec.h b/runner/game_spec.h
+index a135a9b..784a75f 100644
+--- a/runner/game_spec.h
++++ b/runner/game_spec.h
+@@ -303,3 +303,11 @@ typedef struct GameSpec {
+  * link time; game-specific implementation belongs in the game repository.
+  */
+ extern const GameSpec g_game_spec;
++
++/*
++ * Fast-forward requested by game code, e.g. from an instruction hook while a
++ * CPU opponent is thinking: guest frames per presented frame, <= 1 = none.
++ * The runner takes the larger of this and the right-trigger speed, capped at
++ * GENESIS_FF_MAX, with the same exclusions (turbo, netplay, measurement).
++ */
++extern volatile double g_game_ff_request;
+diff --git a/runner/main.c b/runner/main.c
+index d8bab6a..ecd81e6 100644
+--- a/runner/main.c
++++ b/runner/main.c
+@@ -2421,6 +2421,8 @@ static void replay_view(GenesisReplayView *v,int apply)
+     }
+ }
+ 
++volatile double g_game_ff_request = 0.0;   /* game_spec.h */
++
+ int main(int argc, char *argv[])
+ {
+     init_exe_dir(argv[0]);
+@@ -3705,6 +3707,9 @@ session_begin:;
+             double x = rt <= 2000 ? 0.0 : (double)(rt - 2000) / 30767.0;
+             if (x > 1.0) x = 1.0;
+             ff_speed = 1.0 + (ff_max - 1.0) * x * x;
++            { double req = g_game_ff_request;
++              if (req > ff_max) req = ff_max;
++              if (req > ff_speed) ff_speed = req; }
+             if (turbo || runtime_measure_frames) ff_speed = 1.0;
+ #if GENESIS_HAS_RECOMP_NET
+             if (genesis_netplay_active()) ff_speed = 1.0;

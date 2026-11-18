@@ -1,0 +1,2026 @@
+# Campaign result texts after each battle (block at $02539A, docs/notes/briefings.md). Per entry:
+# offset in the unpacked block, game table indices, jp rows (checked against the ROM; "" = blank
+# row) and en. en items: "^text" centred row, "" blank row, "<page>" next page, "<keep>" rest on
+# one page, anything else a paragraph (word-wrapped by tools/translate_rom.py).
+
+[[briefing]]
+block = "results"
+offset = 0x0000
+index = [0, 93]
+jp = [
+  "司令部は占領され、全部隊降伏した。",
+]
+en = [
+  "Headquarters has been captured, and all units have surrendered.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0022
+index = [1]
+jp = [
+  "旧式な騎兵を主体としたポーランド",
+  "軍を撃破したわが装甲部隊は、国境",
+  "を突破、一路ワルシャワ南方に向け",
+  "て進撃中にある。",
+  "このわが国の行動に対して、英仏両",
+  "政府は、９月３日に宣戦布告した。",
+]
+en = [
+  "Our panzer units have smashed the Polish army, built around old-fashioned cavalry, broken through the frontier and are driving straight for the area south of Warsaw.",
+  "In answer to our action, the British and French governments declared war on 3 September.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x00C2
+index = [2]
+jp = [
+  "旧式な騎兵を主体としたポーランド",
+  "軍を撃破したわが装甲部隊は、国境",
+  "を突破、行く手をふさぐ川の渡河点",
+  "の確保のため、進撃中にある。",
+  "このわが国の行動に対して、英仏両",
+  "政府は、９月３日に宣戦布告した。",
+]
+en = [
+  "Our panzer units have smashed the Polish army, built around old-fashioned cavalry, broken through the frontier and are advancing to seize the crossings over the river in their path.",
+  "In answer to our action, the British and French governments declared war on 3 September.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0174
+index = [3]
+jp = [
+  "",
+  "",
+  "",
+  "体制を立て直し再度作戦を続行せよ。",
+]
+en = [
+  "",
+  "",
+  "",
+  "Regroup and carry on with the operation.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0198
+index = [4]
+jp = [
+  "国境で撃破された敵は、ピョートル",
+  "クフで新しい防御陣地を作る計画で",
+  "あったようだ。しかし、迅速な渡河",
+  "により、敵はビスワ川へと撤退して",
+  "いった。",
+  "そして、最終目標ワルシャワへの進",
+  "軍が始まった。",
+]
+en = [
+  "The enemy beaten at the frontier seems to have planned a new line of defence at Piotrkow. But our swift river crossing forced him to fall back to the Vistula.",
+  "And so the advance on the final objective, Warsaw, began.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0242
+index = [5]
+jp = [
+  "国境で撃破された敵は、ピョートル",
+  "クフで新しい防御陣地を作る計画で",
+  "あったようだ。しかし、迅速な渡河",
+  "により、敵はビスワ川へと撤退して",
+  "いった。",
+  "わが装甲部隊は、ワルシャワ南方で",
+  "進行中の包囲作戦を支援に向かった。",
+]
+en = [
+  "The enemy beaten at the frontier seems to have planned a new line of defence at Piotrkow. But our swift river crossing forced him back to the Vistula.",
+  "Our panzers moved on to support the encirclement south of Warsaw.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x02FC
+index = [6]
+jp = [
+  "このラドムにおける包囲戦で、ポー",
+  "ランド軍７コ師団を撃破する大戦果",
+  "をあげた。",
+  "そして、強力なビスワ川防御線を突",
+  "破、ついにワルシャワ郊外に到達し",
+  "た。",
+]
+en = [
+  "The encirclement at Radom was a great success: seven Polish divisions were destroyed.",
+  "Then we broke through the strong Vistula line and at last reached the outskirts of Warsaw.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x037B
+index = [7]
+jp = [
+  "このラドムにおける包囲戦で、ポー",
+  "ランド軍７コ師団を撃破する大戦果",
+  "をあげた。",
+  "しかし、わが左翼を進む第８軍は敵",
+  "戦力をあまくみたため、ビスワ川に",
+  "て強力な反撃を受けつつあった。",
+]
+en = [
+  "The encirclement at Radom was a great success: seven Polish divisions were destroyed.",
+  "But the Eighth Army on our left had underestimated the enemy and was now under heavy counterattack on the Vistula.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0416
+index = [8]
+jp = [
+  "一時危機に落ちた情勢も、逆にチャ",
+  "ンスとしてポーランド軍の退路を無",
+  "くし、包囲作戦へと転じた。激戦の",
+  "末、敵はほとんど脱出できなかった。",
+  "９月１７日、独ソ不可侵条約に基づ",
+  "き、ポーランド東部国境よりソ連軍",
+  "が侵入を開始した。",
+]
+en = [
+  "The crisis became our chance: the Polish line of retreat was cut and the counterattack turned into an encirclement. After hard fighting, hardly any of the enemy escaped.",
+  "On 17 September, under the German-Soviet Pact, the Soviet army crossed Poland's eastern border.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x04D7
+index = [9]
+jp = [
+  "猛砲爆撃を受けたワルシャワは、や",
+  "がてラジオからのポーランド国歌の",
+  "放送もとまり、激しい市街戦の後、",
+  "無条件降伏した。",
+  "政府はルーマニアへ脱出し、独ソは",
+  "このポーランドを東西分割占領した。",
+]
+en = [
+  "Under heavy shelling and bombing, the anthem fell silent on Warsaw radio, and after fierce street fighting the city surrendered.",
+  "The government fled to Romania; Germany and the Soviets divided Poland.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0570
+index = [10]
+jp = [
+  "首都コペンハーゲンまでの抵抗らし",
+  "い抵抗も受けず、デンマーク占領に",
+  "成功した。",
+  "作戦は予想以上に早く終了したため",
+  "わが部隊はノルウェーに転戦するこ",
+  "とになった。",
+]
+en = [
+  "We met hardly any resistance on the way to the capital, Copenhagen, and occupied Denmark.",
+  "The operation ended sooner than expected, so our units were sent on to Norway.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x05F5
+index = [11]
+jp = [
+  "首都コペンハーゲンまでの抵抗らし",
+  "い抵抗も受けず、デンマーク占領に",
+  "成功、以後保護国となった。",
+  "部隊は、一時の休養の後、西へ向け",
+  "て移動を開始した。",
+]
+en = [
+  "We met hardly any resistance on the way to the capital, Copenhagen. Denmark was occupied and became a protectorate.",
+  "After a short rest, our units began to move west.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x067A
+index = [12]
+jp = [
+  "英仏軍の来援にも関わらず、ノルウ",
+  "ェー全土は制圧され、同国国王と政",
+  "府は英国へと脱出した。",
+  "英国では、５月１０日チェンバレン",
+  "首相が退陣し、新首相が誕生した。",
+  "",
+  "",
+  "―私は血と苦役と涙と汗の他に、提",
+  "供するものは何ひとつもちあわせて",
+  "おりません。",
+  "われわれの目的がなにか、と諸君は",
+  "おたずねになるでしょう。それはた",
+  "った一語につきます。勝利です。―",
+  "　　　　　　　Ｗ・Ｓ・チャーチル",
+]
+en = [
+  "Despite British and French help, all of Norway was taken. The King and the government fled to Britain.",
+  "In Britain, Prime Minister Chamberlain resigned on 10 May, and a new Prime Minister took office.",
+  "<keep>",
+  "\"I have nothing to offer but blood, toil, tears and sweat.",
+  "You ask, what is our aim? I can answer in one word: Victory.\"",
+  "^W. S. Churchill",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x07CB
+index = [13]
+jp = [
+  "作戦は、けわしい地形や優勢な敵海",
+  "軍に阻まれ、難航を極めた。しかし、",
+  "敵援軍の英仏軍は、西部戦線での作",
+  "戦開始と共に弱体化、海路撤退した。",
+  "英国では、５月１０日チェンバレン",
+  "首相が退陣し、新首相が誕生した。",
+  "",
+  "―私は血と苦役と涙と汗の他に、提",
+  "供するものは何ひとつもちあわせて",
+  "おりません。",
+  "われわれの目的がなにか、と諸君は",
+  "おたずねになるでしょう。それはた",
+  "った一語につきます。勝利です。―",
+  "　　　　　　　Ｗ・Ｓ・チャーチル",
+]
+en = [
+  "Rugged terrain and the superior enemy navy made the operation very hard. But when the campaign in the west began, the British and French relief forces weakened and withdrew by sea.",
+  "In Britain, Prime Minister Chamberlain resigned on 10 May, and a new Prime Minister took office.",
+  "<keep>",
+  "\"I have nothing to offer but blood, toil, tears and sweat.",
+  "You ask, what is our aim? I can answer in one word: Victory.\"",
+  "^W. S. Churchill",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0946
+index = [14]
+jp = [
+  "再び電撃戦が勝敗を決した。オラン",
+  "ダ、ベルギーと次々に破り、英遠征",
+  "軍をダンケルクへと追いつめた。",
+  "フランスは、ソンム川沿いに戦線を",
+  "作りつつあるが、きわめて弱小な兵",
+  "力であった。わが部隊は、まだ敵主",
+  "力の残るマジノ要塞側へと移動した。",
+]
+en = [
+  "Once again the blitzkrieg decided the battle. Holland and Belgium fell one after the other, and the British Expeditionary Force was driven back to Dunkirk.",
+  "France is forming a front along the Somme, but with very weak forces. Our units moved towards the Maginot Line, where the bulk of the enemy remains.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0A10
+index = [15]
+jp = [
+  "再び電撃戦が勝敗を決した。",
+  "オランダは早々と占領され、ベルギ",
+  "ー国王レオポルドは単独休戦した。",
+  "英遠征軍が拠点とするダンケルクも",
+  "包囲攻撃の末、占領されたが、この",
+  "遅れが敵兵力の撤収をたすけた。",
+  "チャーチルは撤退後、演説を行った。",
+  "―われわれはいかなる犠牲を払って",
+  "も、本土を守り抜くでしょう。われ",
+  "われは海岸で戦い、上陸地点で戦い、",
+  "野原や市街で戦い、山中で戦うでし",
+  "ょう。われわれは決して降伏しない",
+  "でしょう。―",
+]
+en = [
+  "Once again the blitzkrieg decided the battle.",
+  "Holland was quickly occupied, and King Leopold of Belgium made a separate armistice.",
+  "Dunkirk, the base of the British Expeditionary Force, fell after a siege, but the delay helped the enemy get his troops away.",
+  "<keep>",
+  "After the evacuation, Churchill made a speech:",
+  "\"We shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets, we shall fight in the hills; we shall never surrender.\"",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0B7D
+index = [16]
+jp = [
+  "フランス代表団が、コンピエーニュ",
+  "にて休戦条約に調印した。以後、ペ",
+  "タン将軍を首相とするビシー政府が",
+  "新たに誕生した。",
+  "わが部隊には当分の間、本国での訓",
+  "練が続く毎日になるだろう。",
+  "６月１８日、ドゴールが演説をした。",
+  "―敗北したのは戦闘だけで、全戦争",
+  "に破れたのではない。―",
+  "この６月に、ソ連がバルト諸国を占",
+  "領した。",
+]
+en = [
+  "The French delegation signed the armistice at Compiègne. A new government was formed at Vichy under Marshal Pétain.",
+  "For some time to come, our units will be training at home.",
+  "<keep>",
+  "On 18 June, de Gaulle made a speech:",
+  "\"France has lost a battle, but France has not lost the war.\"",
+  "In this same June, the Soviet Union occupied the Baltic states.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0C8E
+index = [17]
+jp = [
+  "フランス代表団が、コンピエーニュ",
+  "にて休戦条約に調印した。以後、ペ",
+  "タン将軍を首相とするビシー政府が",
+  "新たに誕生した。",
+  "わが部隊は、フランス北部にこのま",
+  "ま駐留する事となった。",
+  "６月１８日、ドゴールが演説をした。",
+  "―敗北したのは戦闘だけで、全戦争",
+  "に破れたのではない。―",
+  "この６月に、ソ連がバルト諸国を占",
+  "領した。",
+]
+en = [
+  "The French delegation signed the armistice at Compiègne. A new government was formed at Vichy under Marshal Pétain.",
+  "Our units will stay on in northern France.",
+  "<keep>",
+  "On 18 June, de Gaulle made a speech:",
+  "\"France has lost a battle, but France has not lost the war.\"",
+  "In this same June, the Soviet Union occupied the Baltic states.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0D97
+index = [18]
+jp = [
+  "フランス代表団が、コンピエーニュ",
+  "にて休戦条約に調印した。以後、ペ",
+  "タン将軍を首相とするビシー政府が",
+  "新たに誕生した。",
+  "わが航空部隊は、北フランス・ベル",
+  "ギー各地の空港へと移動を始めた。",
+  "６月１８日、ドゴールが演説をした。",
+  "―敗北したのは戦闘だけで、全戦争",
+  "に破れたのではない。―",
+  "この６月に、ソ連がバルト諸国を占",
+  "領した。",
+]
+en = [
+  "The French delegation signed the armistice at Compiègne. A new government was formed at Vichy under Marshal Pétain.",
+  "Our air units began moving to airfields across northern France and Belgium.",
+  "<keep>",
+  "On 18 June, de Gaulle made a speech:",
+  "\"France has lost a battle, but France has not lost the war.\"",
+  "In this same June, the Soviet Union occupied the Baltic states.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0EA2
+index = [19]
+jp = [
+  "フランス代表団が、コンピエーニュ",
+  "にて休戦条約に調印した。以後、ペ",
+  "タン将軍を首相とするビシー政府が",
+  "新たに誕生した。",
+  "この戦いの後、数部隊づつ列車へと",
+  "乗車し、東プロイセンへと向かった。",
+  "６月１８日、ドゴールが演説をした。",
+  "―敗北したのは戦闘だけで、全戦争",
+  "に破れたのではない。―",
+  "この６月に、ソ連がバルト諸国を占",
+  "領した。",
+]
+en = [
+  "The French delegation signed the armistice at Compiègne. A new government was formed at Vichy under Marshal Pétain.",
+  "After this battle our units boarded trains a few at a time, bound for East Prussia.",
+  "<keep>",
+  "On 18 June, de Gaulle made a speech:",
+  "\"France has lost a battle, but France has not lost the war.\"",
+  "In this same June, the Soviet Union occupied the Baltic states.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0FB2
+index = [20]
+jp = [
+  "わが部隊のマジノ要塞突破は、フラ",
+  "ンスの降伏後となった。",
+  "しかし、ソンム戦線のボック将軍率",
+  "いる装甲部隊は、パリまで進撃した。",
+  "仏のレイノー首相は退陣、ペタン元",
+  "帥が首相となり休戦、仏政府はビシ",
+  "ーに首都を移した。",
+]
+en = [
+  "Our units broke through the Maginot Line only after France had surrendered.",
+  "But on the Somme front, General Bock's panzer units pushed on to Paris.",
+  "Prime Minister Reynaud resigned; Marshal Pétain took his place and asked for an armistice, and the government moved to Vichy.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1064
+index = [21]
+jp = [
+  "英国本土に対する航空作戦で、わが",
+  "軍は圧倒的な勝利を収めた。",
+  "敵空軍力は壊滅し、主要な産業都市",
+  "は爆撃のためマヒ状態にある。",
+  "英本土上陸作戦の発令は、９月には",
+  "行われるであろう。",
+]
+en = [
+  "Our air campaign against the British Isles ended in an overwhelming victory.",
+  "The enemy air force is destroyed, and the bombing has paralysed the main industrial cities.",
+  "The order for the landing in England will be given in September.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1102
+index = [22]
+jp = [
+  "英国本土の主要都市は壊滅状態にあ",
+  "った。しかし、すでに上陸に適した",
+  "時期を過ぎつつあり、総統は再び上",
+  "陸決行日を延期した。",
+  "だが、兵隊の間では、上陸作戦は中",
+  "止になるとうわさされていた。",
+]
+en = [
+  "The main cities of Britain lay in ruins. But the season for a landing was passing, and the Führer once again postponed the date.",
+  "Among the soldiers, there was talk that the landing would be called off.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x11AD
+index = [23]
+jp = [
+  "わが航空部隊は、多大な戦果をあげ",
+  "ながらも、ついに制空権を握る事は",
+  "無かった。",
+  "総統は上陸作戦を無期延期し、空爆",
+  "のみで英国を倒すと、発表した。",
+  "チャーチルは、戦場でのパイロット",
+  "の活躍について演説した。",
+  "―人類の闘争の場において、このよ",
+  "うに多数の人間が、このような大き",
+  "な恩恵を、このような小数の人間に",
+  "よって受けた事は、いまだかつて無",
+  "かったのであります。―",
+]
+en = [
+  "Our air units inflicted heavy losses, yet never won command of the air.",
+  "The Führer postponed the landing indefinitely and announced that Britain would be beaten by bombing alone.",
+  "<keep>",
+  "Churchill spoke of the pilots in the battle:",
+  "\"Never in the field of human conflict was so much owed by so many to so few.\"",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x12F7
+index = [24]
+jp = [
+  "英国本土における戦闘は、終りつつ",
+  "あった。すでに、英国国王・政府は",
+  "カナダへと移動し、英連邦諸国への",
+  "引続き抗戦をとなえていたが、わが",
+  "国に直接脅威となる力は無かった。",
+  "残る敵は、英国海軍だけとなった。",
+]
+en = [
+  "The fighting in the British Isles was coming to an end. The King and the government had moved to Canada and called on the Commonwealth to fight on, but they had no strength left to threaten us directly.",
+  "Only the Royal Navy remains.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x13B5
+index = [25]
+jp = [
+  "英国本土における組織的な抵抗は終",
+  "ったが、カナダへ移動した英国政府",
+  "は、アイスランドを拠点として、逆",
+  "上陸の機会をうかがっていた。",
+  "だが、この広い海岸線を守る部隊は、",
+  "この地に無かった。次の作戦に向け",
+  "兵力を引き上げつつあったのだ。",
+]
+en = [
+  "Organised resistance in the British Isles is over, but the British government in Canada is waiting for a chance to land again, with Iceland as its base.",
+  "Yet there were no units here to guard this long coastline. Our forces were being withdrawn for the next operation.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1485
+index = [26]
+jp = [
+  "英国本土に対する上陸作戦は、敵の",
+  "頑強な抵抗の前に失敗に終った。",
+  "わが軍の損害が増すばかりの中、総",
+  "統の作戦中止命令が前線にとどいた。",
+  "中止理由には、後は政治的な手段に",
+  "より講和できるとあるが、開戦以来",
+  "初の敗北を味わったのであった。",
+]
+en = [
+  "The landing in England failed against stubborn enemy resistance.",
+  "As our losses mounted, the Führer's order to call off the operation reached the front.",
+  "The order said that peace could now be reached by political means, but it was our first defeat since the war began.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x155C
+index = [27]
+jp = [
+  "旧式な装備のユーゴスラビア軍は、",
+  "わが部隊の敵ではなかった。ユーゴ",
+  "スラビアは休戦に調印、シモビッチ",
+  "と国王はアテネへと逃れた。",
+  "以後、この国は独・伊・ハンガリー",
+  "に分割、クロアチアだけは独立した。",
+  "再び、わが部隊は北に戻り始めた。",
+]
+en = [
+  "The poorly equipped Yugoslav army was no match for us. Yugoslavia signed an armistice; Simovic and the King fled to Athens.",
+  "Germany, Italy and Hungary divided the country; Croatia became independent. We headed north again.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x161D
+index = [28]
+jp = [
+  "旧式な装備のユーゴスラビア軍は、",
+  "わが部隊の敵ではなかった。部隊が",
+  "停止するのは補給の時のみで、首都",
+  "ベオグラードまで突き進んだ。",
+  "わが部隊はこのまま南下を続け、ク",
+  "ライスト将軍を支援するため、ギリ",
+  "シアへと向かった。",
+]
+en = [
+  "The poorly equipped Yugoslav army was no match for our units. They stopped only to resupply, and drove on to the capital, Belgrade.",
+  "Our units kept moving south into Greece to support General Kleist.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x16D7
+index = [29]
+jp = [
+  "わが部隊は、南部のユーゴスラビア",
+  "軍を突き抜け、ギリシアへ侵入した。",
+  "敵は後退を続け、クレタ島へと撤収、",
+  "さらに、ここからもエジプトへと撤",
+  "退していったのであった。",
+  "",
+  "",
+  "ギリシアは、独・伊・ブルガリアの",
+  "３国で分割統治される事となった。",
+  "そして、わが部隊はポーランドのル",
+  "ブリンへと移動を開始した。",
+]
+en = [
+  "Our units broke through the Yugoslav forces in the south and entered Greece. The enemy kept falling back, withdrew to Crete, and from there on to Egypt.",
+  "<keep>",
+  "Greece was divided between Germany, Italy and Bulgaria.",
+  "Our units began moving to Lublin in Poland.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x17D3
+index = [30]
+jp = [
+  "わが部隊は、南部のユーゴスラビア",
+  "軍を突き抜け、ギリシアへ侵入した。",
+  "敵は後退を続け、クレタ島へと撤退、",
+  "さらに、そこからもエジプトへと撤",
+  "退していったのであった。",
+  "",
+  "",
+  "ギリシアは、ドイツ・イタリア・ブ",
+  "ルガリアの３国で分割統治されるこ",
+  "ととなった。",
+  "わが部隊はしばらく駐留する事とな",
+  "った。ロンメル支援に北アフリカへ",
+  "向かうのか、イラク支援のためモス",
+  "ルへ向かうのか・・・",
+]
+en = [
+  "Our units broke through the Yugoslav forces in the south and entered Greece. The enemy kept falling back, withdrew to Crete, and from there on to Egypt.",
+  "<keep>",
+  "Greece was divided between Germany, Italy and Bulgaria.",
+  "Our units will stay here for a while. Will we go to North Africa to support Rommel, or to Mosul to support Iraq ...?",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x190C
+index = [31]
+jp = [
+  "国境沿いのソ連軍を破ると、わが部",
+  "隊はバルト諸国へと侵入、住民には",
+  "解放軍として迎えられた。",
+  "しかし、あまりにもロシアの大地は",
+  "広大であり、本国までの補給路は危",
+  "険な状態にあった。",
+  "侵攻直後、チャーチルは演説した。",
+  "―ナチズムと戦ういかなる国も、わ",
+  "れわれの援助を受けるであろう。従",
+  "ってわれわれは、可能な限りの援助",
+  "をロシアに与えるであろう。―",
+  "わが部隊は、中央軍集団への転属が",
+  "命じられた。次の目標はモスクワ。",
+]
+en = [
+  "After defeating the Soviet forces on the border, our units entered the Baltic states, where the people greeted them as liberators.",
+  "But the Russian land is vast, and the supply lines back home were in danger.",
+  "<keep>",
+  "Right after the invasion, Churchill made a speech:",
+  "\"Any state who fights against Nazism will have our aid. It follows that we shall give whatever help we can to Russia.\"",
+  "Our units were transferred to Army Group Centre. The next objective: Moscow.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1A7E
+index = [32]
+jp = [
+  "国境のブレスト要塞を破り、泥ねい",
+  "化する苦しい道沿いに進撃、スモレ",
+  "ンスクを占領したが、キエフへ南下",
+  "し、クライストの装甲集団を助けね",
+  "ばならなかった。そのまま、東へ進",
+  "めばモスクワだったのだが。",
+  "",
+  "侵攻直後、チャーチルは演説した。",
+  "―ナチズムと戦ういかなる国も、わ",
+  "れわれの援助を受けるであろう。従",
+  "ってわれわれは、可能な限りの援助",
+  "をロシアに与えるであろう。―",
+  "わが部隊は、キエフ包囲の後、再び",
+  "北へ向かった。次の目標はモスクワ。",
+]
+en = [
+  "We broke the Brest fortress on the border, pushed along muddy roads and took Smolensk. But then we had to turn south to Kiev to help Kleist's panzer group. Straight on to the east, Moscow would have been ours.",
+  "<keep>",
+  "Right after the invasion, Churchill made a speech:",
+  "\"Any state who fights against Nazism will have our aid. It follows that we shall give whatever help we can to Russia.\"",
+  "After the encirclement of Kiev, our units turned north again. The next objective: Moscow.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1BF2
+index = [33]
+jp = [
+  "国境沿いのソ連軍を破り、スターリ",
+  "ン線に到達したわが部隊は、ハンガ",
+  "リー、ルーマニアの同盟軍と快進撃",
+  "を続けた。この地では解放軍として",
+  "迎えられ、キエフ包囲戦、オデッサ",
+  "占領とウクライナを転戦を続けた。",
+  "侵攻直後、チャーチルは演説した。",
+  "―ナチズムと戦ういかなる国も、わ",
+  "れわれの援助を受けるであろう。従",
+  "ってわれわれは、可能な限りの援助",
+  "をロシアに与えるであろう。―",
+  "わが部隊は、コーカサスへの一歩と",
+  "して、ドニエプル川の渡河を始めた。",
+]
+en = [
+  "Our units beat the Soviet forces on the border, reached the Stalin Line and pressed on with our Hungarian and Romanian allies. Greeted here as liberators, they fought across the Ukraine, encircling Kiev and taking Odessa.",
+  "<keep>",
+  "Right after the invasion, Churchill made a speech:",
+  "\"Any state who fights against Nazism will have our aid. It follows that we shall give whatever help we can to Russia.\"",
+  "As a first step towards the Caucasus, our units began crossing the Dnieper.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1D61
+index = [34]
+jp = [
+  "わが部隊は、ジューコフが率いるウ",
+  "エストＦｔの強力な防衛軍と苦戦を",
+  "続け、市民の築いた要塞線を突破、",
+  "ついにモスクワ市街へと突入した。",
+  "しかし、われわれに休むヒマも無か",
+  "った。ウラルへ進め。",
+  "",
+  "トラ、トラ、トラ",
+  "１２月７日、パールハーバーで日本",
+  "機動部隊による攻撃が行われた。",
+  "米英は、日本に対し宣戦布告した。",
+]
+en = [
+  "Our units fought hard against Zhukov's strong West Front, broke through the fortified lines built by the citizens and at last stormed into Moscow.",
+  "But there was no time to rest. On to the Urals.",
+  "<keep>",
+  "Tora, tora, tora.",
+  "On 7 December, a Japanese carrier force attacked Pearl Harbor. The United States and Britain declared war on Japan.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1E64
+index = [35]
+jp = [
+  "わが部隊は、かろうじてモスクワ市",
+  "街を制圧した。しかし、そこは全て",
+  "破壊された街があるだけであった。",
+  "すでにソ連軍の冬期反攻が始まり、",
+  "全戦線は危険な状態にあった。",
+  "総統の死守命令が出たが、われわれ",
+  "は撤退を開始した。",
+  "トラ、トラ、トラ",
+  "１２月７日、パールハーバーで日本",
+  "機動部隊による攻撃が行われた。",
+  "米英は、日本に対し宣戦布告した。",
+]
+en = [
+  "Our units barely managed to take Moscow, but all they found was a city in ruins.",
+  "The Soviet winter counteroffensive had begun, and the whole front was in danger. The Führer ordered us to stand fast, but we retreated.",
+  "<keep>",
+  "Tora, tora, tora.",
+  "On 7 December, a Japanese carrier force attacked Pearl Harbor. The United States and Britain declared war on Japan.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1F8F
+index = [36]
+jp = [
+  "総統はモスクワ攻勢の中止を命じた。",
+  "ソ連軍冬期反攻の前に、冬期装備を",
+  "持たない独軍は、―４０度の平原を",
+  "撤退し始めた。将兵の１０人に１人",
+  "は凍死する状況の中、総統は死守命",
+  "令を出した。これに反抗した将軍は",
+  "次々と解任されていった。",
+  "トラ、トラ、トラ",
+  "１２月７日、パールハーバーで日本",
+  "機動部隊による攻撃が行われた。",
+  "米英は、日本に対し宣戦布告した。",
+]
+en = [
+  "The Führer called off the offensive against Moscow.",
+  "Facing the Soviet winter counteroffensive without winter equipment, our army began to retreat across the plains at -40 degrees. One soldier in ten froze to death.",
+  "The Führer ordered us to stand fast, and the generals who opposed him were dismissed one after another.",
+  "<keep>",
+  "Tora, tora, tora.",
+  "On 7 December, a Japanese carrier force attacked Pearl Harbor. The United States and Britain declared war on Japan.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x20BB
+index = [37]
+jp = [
+  "キエフでの包囲戦を終えたわが部隊",
+  "は、ドニェプロペトロフスクとサポ",
+  "ロジェで激戦の末、ドニエプル川を",
+  "渡河した。その後は、快進撃を続け、",
+  "ロストフを急襲、占領した。突然総",
+  "統はここで停止命令を出し、中央軍",
+  "集団への転属を命じた。",
+]
+en = [
+  "After Kiev, our units fought their way across the Dnieper at Dnepropetrovsk and Zaporozhye and took Rostov by surprise.",
+  "Then the Führer suddenly ordered a halt and transferred us to Army Group Centre.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2177
+index = [38]
+jp = [
+  "わが部隊はドニェプロペトロフスク",
+  "とサポロジェで激戦の末、ドニエプ",
+  "ル川を渡河し、ドニェツ盆地を占領",
+  "した。しかしロストフを占領したも",
+  "のの、敵の冬期反撃が始まり、３日",
+  "後にはここを放棄、苦しい撤退が始",
+  "まった。",
+  "トラ、トラ、トラ",
+  "１２月７日、パールハーバーで日本",
+  "機動部隊による攻撃が行われた。",
+  "米英は、日本に対し宣戦布告した。",
+]
+en = [
+  "After hard fighting at Dnepropetrovsk and Zaporozhye, our units crossed the Dnieper and took the Donets basin.",
+  "Rostov fell, but the enemy struck back, and three days later we had to give it up. A bitter retreat began.",
+  "<keep>",
+  "Tora, tora, tora.",
+  "On 7 December, a Japanese carrier force attacked Pearl Harbor. The United States and Britain declared war on Japan.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2281
+index = [39]
+jp = [
+  "強力な要塞と何重にもとりまいた防",
+  "衛網は、わが部隊をなやませ、海に",
+  "は黒海艦隊が現れ支援砲火を続けた。",
+  "前進は１歩１歩となり、進むたびに",
+  "損害の増える攻撃が続いたが、ソ連",
+  "最強の要塞はついに降伏した。",
+  "",
+  "６月４日、ミッドウェー海戦が行わ",
+  "れた。この戦いで米に敗戦した日本",
+  "は、以後、戦いにおける主導権を失",
+  "った。",
+]
+en = [
+  "Strong forts and ring after ring of defences held up our units, and the Black Sea Fleet appeared off the coast to support them with its guns.",
+  "Every step cost more losses, but at last the strongest Soviet fortress surrendered.",
+  "<keep>",
+  "On 4 June, the Battle of Midway was fought. Defeated by the Americans, Japan lost the initiative for the rest of the war.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2398
+index = [40]
+jp = [
+  "ソ連地上部隊と黒海艦隊の頑強な抗",
+  "戦は、われわれの戦略をくるわせた。",
+  "戦線は一進一退となり、わずかな前",
+  "進のために損害を出した。ついには",
+  "この要塞も陥落したが、ヴォルガ川、",
+  "コーカサスへの攻撃には、わが部隊",
+  "は間に合わなかった。",
+  "６月４日、ミッドウェー海戦が行わ",
+  "れた。この戦いで米に敗戦した日本",
+  "は、以後、戦いにおける主導権を失",
+  "った。",
+]
+en = [
+  "The stubborn Soviet troops and the Black Sea Fleet upset our plans. The front swayed back and forth, and every gain cost us dearly.",
+  "The fortress fell, but too late for us to join the drive to the Volga and the Caucasus.",
+  "<keep>",
+  "On 4 June, the Battle of Midway was fought. Defeated by the Americans, Japan lost the initiative for the rest of the war.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x24C2
+index = [41]
+jp = [
+  "前年にやむなく撤退したロストフを",
+  "再び占領し、われわれはドン川を渡",
+  "り進軍した。南方では対ソ援助イラ",
+  "ンルートを遮断し、バクーを初めと",
+  "する産油地帯を確保、今後のわが軍",
+  "の作戦行動に寄与するであろう。",
+  "",
+  "東ではアストラハンまで進み、カス",
+  "ピ海・ヴォルガ川の敵航路を遮断し",
+  "た。これらにより、ソ連軍の作戦能",
+  "力は、もはやわが軍の脅威にはなり",
+  "えないであろう。",
+  "わが部隊は、この作戦後、休養と再",
+  "編成のため、北仏へと移動した。",
+]
+en = [
+  "We retook Rostov, given up the year before, and crossed the Don. In the south we cut the Iranian supply route to the Soviets and seized the oil region around Baku, which will serve our future operations.",
+  "<keep>",
+  "In the east we reached Astrakhan and cut the enemy's shipping on the Caspian Sea and the Volga. The Soviet army is no longer a threat to us.",
+  "Our units then moved to northern France to refit.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2632
+index = [42]
+jp = [
+  "当初の予定通り、南はバクー、東は",
+  "アストラハンまでわが部隊は進出し",
+  "た。しかし、その時点には、再び早",
+  "い冬を迎えようとしていた。また、",
+  "北方では進撃の遅滞が、ソ連軍の再",
+  "集結を可能にし、ヴォルガ川沿いの",
+  "同盟軍戦線は、危険な状態にあった。",
+]
+en = [
+  "As planned, our units reached Baku in the south and Astrakhan in the east. But by then an early winter was setting in again.",
+  "In the north, our slow advance let the Soviets regroup, and the allied front along the Volga was in danger.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x270A
+index = [43]
+jp = [
+  "われわれはドン川を渡り進軍すると、",
+  "南と北へ侵攻方向は２つに分かれ、",
+  "戦力は分散をせざるをえなかった。",
+  "その結果、重要な目標を占領するに",
+  "は戦力不足となり、作戦は停止した。",
+  "また、北方では、ヴォルガ川での同",
+  "盟軍戦線が、危険な状態にあった。",
+]
+en = [
+  "After we crossed the Don, the advance split in two directions, south and north, and our strength had to be divided.",
+  "In the end we lacked the forces to take the key objectives, and the operation came to a halt.",
+  "In the north, the allied front on the Volga was in danger.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x27E5
+index = [44]
+jp = [
+  "カラチ陥落のため、列車上のわが部",
+  "隊は大周りして、スターリングラー",
+  "ドへ向かった。優勢な敵親衛部隊と",
+  "会敵し、激戦を繰り返しながら道を",
+  "急いだ。そして、ついに包囲を破り",
+  "第６軍を救出に成功した。だが、彼",
+  "らの撤退を総統は許さなかったのだ。",
+]
+en = [
+  "With Kalach fallen, our units had to make a long detour by train to reach Stalingrad.",
+  "We met superior Guards units and fought our way forward battle after battle. At last we broke the ring and relieved the Sixth Army. But the Führer would not allow it to withdraw.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x28BB
+index = [45]
+jp = [
+  "カラチ陥落のため、列車上のわが部",
+  "隊は大周りして、スターリングラー",
+  "ドへ向かった。激戦の続く中、救出",
+  "作戦を続行したが、包囲された第６",
+  "軍は、突破に協力しなかったのだ。",
+  "そのうち、西の戦線が再び突破され",
+  "た。この作戦は、中止となった。",
+]
+en = [
+  "With Kalach fallen, our units had to make a long detour by train to reach Stalingrad.",
+  "We pressed on with the relief through heavy fighting, but the encircled Sixth Army did not break out to meet us.",
+  "Then the front to the west was broken again, and the operation was called off.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2987
+index = [46]
+jp = [
+  "敵は、一瞬の内にハンガリー軍をの",
+  "みこみ、戦線を突破してきた。しか",
+  "し、わが部隊の決死の防衛戦の前に、",
+  "大損害を出して後退を開始した。こ",
+  "の間に、第１装甲軍は無事撤退し、",
+  "戦線は安定を取り戻した。クルスク",
+  "の突出部を除いて。",
+  "１２月３１日、日本大本営はガダル",
+  "カナル島撤退を決定した。",
+]
+en = [
+  "In an instant the enemy swallowed up the Hungarian army and broke through the front. But against our desperate defence he suffered heavy losses and began to fall back.",
+  "Meanwhile the First Panzer Army got away safely, and the front became stable again - except for the salient at Kursk.",
+  "<keep>",
+  "On 31 December, Japanese Imperial Headquarters decided to withdraw from Guadalcanal.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2A81
+index = [47]
+jp = [
+  "敵は、ハンガリー軍をのみこみ、戦",
+  "線を突破してきた。続いてコーカサ",
+  "スでも敵の攻勢が始まり、戦線保持",
+  "は不可能だった。結局、第１装甲軍",
+  "は包囲壊滅した。戦線も大きく後退、",
+  "わが部隊は再編成のため、北仏へと",
+  "移動した。",
+  "１２月３１日、日本大本営はガダル",
+  "カナル島撤退を決定した。",
+]
+en = [
+  "The enemy swallowed up the Hungarian army and broke through the front. Then the enemy offensive began in the Caucasus as well, and the front could not be held.",
+  "In the end the First Panzer Army was encircled and destroyed. The front fell far back, and our units moved to northern France to refit.",
+  "<keep>",
+  "On 31 December, Japanese Imperial Headquarters decided to withdraw from Guadalcanal.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2B70
+index = [48]
+jp = [
+  "わが部隊は前進後、何重にもなった",
+  "防衛ラインとぶつかった。これを突",
+  "破後、苦戦の末クルスクを占領、敵",
+  "の突出部は粉砕された。だが、敵の",
+  "反攻がオリョルとミウス川で始まり、",
+  "この勝利は単なる時間かせぎだった。",
+]
+en = [
+  "Our units ran into line after line of defences. We broke through and, after hard fighting, took Kursk and crushed the salient.",
+  "But the enemy struck back at Orel and on the Mius; we had only bought time.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2C29
+index = [49]
+jp = [
+  "わが部隊は何重にもなった防衛ライ",
+  "ンに前進を阻まれ、これを突破後、",
+  "プロホロフカ周辺で激戦の末、クル",
+  "スクを占領、一応の勝利を得た。し",
+  "かし、連合軍がシシリー島に上陸し",
+  "たため、これ以上の攻勢は中止し、",
+  "わが部隊は、その迎撃に転進した。",
+]
+en = [
+  "Line after line of defences held up our advance. We broke through and, after hard fighting around Prokhorovka, took Kursk and won a victory of sorts.",
+  "But the Allies landed on Sicily, and we were sent to meet them.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2CF6
+index = [50]
+jp = [
+  "わが部隊は何重にもなった防衛ライ",
+  "ンに前進を阻まれ、これを突破後、",
+  "プロホロフカ周辺で激戦にまきこま",
+  "れた。あと少しで勝利もみえたのだ",
+  "が、作戦は突然中止された。連合軍",
+  "がシシリー島に上陸したのであった。",
+  "わが部隊は、その迎撃に転進した。",
+]
+en = [
+  "Line after line of defences held us up. We broke through, only to be caught in heavy fighting at Prokhorovka.",
+  "Victory was in sight when the Allies landed on Sicily. The attack was stopped, and we went to meet them.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2DC9
+index = [51]
+jp = [
+  "わがアフリカ軍団は、敗退中の伊軍",
+  "支援のため、シシリー島を出航した。",
+  "英軍はエルアゲイラまで迫っていた",
+  "が、これを次々に撃破、またたく間",
+  "にエジプト国境まで押し返した。こ",
+  "の大勝利のため、総統は強力な支援",
+  "を確約、エジプト進軍を命じた。",
+]
+en = [
+  "Our Afrika Korps sailed from Sicily to support the retreating Italians. The British had reached El Agheila, but we beat them again and again and in no time pushed them back to the Egyptian frontier.",
+  "After this great victory, the Führer promised strong support and ordered the advance into Egypt.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2E97
+index = [52]
+jp = [
+  "わがアフリカ軍団は、敗退中の伊軍",
+  "支援のため、シシリー島を出航した。",
+  "英軍はエルアゲイラまで迫っていた",
+  "が、これを撃破し、敗退する英軍を",
+  "追ってエジプト国境まで前進した。",
+  "しかし、補給事情はこれ以上の前進",
+  "を許さず、ここで防勢に入った。",
+  "５月１９日、東アフリカのイタリア",
+  "軍が降伏した。",
+  "５月３０日、英軍がイラクを制圧し、",
+  "ラシッド・アリは亡命した。",
+  "７月１１日、仏領シリアが連合軍に",
+  "降伏した。",
+]
+en = [
+  "Our Afrika Korps sailed from Sicily to help the retreating Italians. The British had reached El Agheila; we beat them and pursued them to Egypt.",
+  "With supplies short, we went over to the defensive.",
+  "<keep>",
+  "On 19 May, the Italian army in East Africa surrendered.",
+  "On 30 May, the British took Iraq, and Rashid Ali fled.",
+  "On 11 July, French Syria surrendered to the Allies.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2FE1
+index = [53]
+jp = [
+  "反攻を開始したわが部隊を、英軍は",
+  "トブルク前面のガザラに陣地を築き",
+  "待ち受けていた。しかし、われわれ",
+  "は機動戦を展開し、増援の敵新鋭戦",
+  "車を撃破、トブルクを占領した。",
+  "以後そこを拠点とし、エジプトへ進",
+  "撃を開始した。",
+  "７月２日、英国ではこの敗戦のため、",
+  "チャーチルの不信任動議が出された",
+  "が、４７６対２５の差で退けられた。",
+]
+en = [
+  "When our units went over to the attack, the British were waiting for us in positions at Gazala, in front of Tobruk. But we fought a war of movement, destroyed their new tanks sent as reinforcements and took Tobruk.",
+  "From there we began the advance into Egypt.",
+  "<keep>",
+  "On 2 July, after this defeat, a motion of no confidence was brought against Churchill in Britain, but it was defeated by 476 votes to 25.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x30F4
+index = [54]
+jp = [
+  "国境の拠点を撃破すると、地中海艦",
+  "隊の拠点アレキサンドリアまで、目",
+  "立った抵抗もなく進撃が続いた。し",
+  "かもシリアのビシーフランス軍が南",
+  "下を開始、英軍は挟撃される形とな",
+  "った。形勢不利となった英軍は、ヨ",
+  "ルダンへ撤退、スエズは占領された。",
+  "５月１９日、東アフリカのイタリア",
+  "軍が降伏した。",
+]
+en = [
+  "Once the border strongholds were taken, we advanced with little resistance to Alexandria, the base of the Mediterranean Fleet. The Vichy French forces in Syria also began to push south, catching the British between two fires.",
+  "Outmatched, the British withdrew to Jordan, and Suez was taken.",
+  "<keep>",
+  "On 19 May, the Italian army in East Africa surrendered.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x31E0
+index = [55]
+jp = [
+  "国境の拠点を突破すると、スエズま",
+  "での進撃は難航を極めた。とくに、",
+  "海岸沿いには地中海艦隊が現れ、海",
+  "岸道路での被害が続いた。ムッソリ",
+  "ーニは作戦中止を宣言、わが部隊も",
+  "やむなくエジプト国境まで撤退した。",
+  "",
+  "５月１９日、東アフリカのイタリア",
+  "軍が降伏した。",
+  "５月３０日、英軍がイラクを制圧し、",
+  "ラシッド・アリは亡命した。",
+  "７月１１日、仏領シリアが連合軍に",
+  "降伏した。",
+]
+en = [
+  "Once we broke through the border strongholds, the advance on Suez became very hard. The Mediterranean Fleet appeared off the coast, and its guns kept hitting us on the coast road.",
+  "Mussolini called off the operation, and our units had to fall back to the Egyptian frontier.",
+  "<keep>",
+  "On 19 May, the Italian army in East Africa surrendered.",
+  "On 30 May, the British took Iraq, and Rashid Ali fled.",
+  "On 11 July, French Syria surrendered to the Allies.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x330C
+index = [56]
+jp = [
+  "英軍は、残存の中東軍に加え、イン",
+  "ド派遣軍をペルシア湾より送りこん",
+  "だ。しかし、旧式な装備なため、わ",
+  "が部隊の敵ではなかった。また、南",
+  "下してきたソ連軍を捕捉追撃し、つ",
+  "いに先遣隊は南よりソ連領内へと侵",
+  "入した。",
+]
+en = [
+  "Besides what was left of their Middle East forces, the British brought in troops from India by way of the Persian Gulf. But with their old equipment they were no match for us.",
+  "We also caught and pursued the Soviet forces coming south, and at last our advance guard crossed into Soviet territory from the south.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x33CD
+index = [57]
+jp = [
+  "わが部隊は、イラク新政権を制圧し",
+  "ようとする英軍を撃破、ペルシア湾",
+  "岸を制圧後、ソ連領内へと侵入した。",
+  "だが、その後カスピ海の東をう回し",
+  "たソ連軍に補給路を遮断され、スー",
+  "ダンから進出した英軍にエジプトを",
+  "奪回されるに及んで、全軍キレナイ",
+  "カへと撤退を開始したのであった。",
+]
+en = [
+  "Our units beat the British forces trying to crush the new Iraqi government, took the Persian Gulf coast and crossed into Soviet territory.",
+  "But Soviet forces swung round east of the Caspian Sea and cut our supply lines, and British troops from the Sudan retook Egypt. The whole army began to fall back to Cyrenaica.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x34BA
+index = [58]
+jp = [
+  "英国は、インド派遣軍を増派、また",
+  "ソ連軍もイラン領内南下を開始、わ",
+  "が部隊の戦線は多方面に広がった。",
+  "のびきった補給路は全軍の動きを制",
+  "限した。総統は作戦縮小を命令、攻",
+  "勢を中止した。",
+  "だが、戦線崩壊は避けられなかった。",
+  "スーダンから進出した英軍は、エジ",
+  "プトを奪回、わが部隊はかろうじて",
+  "キレナイカまで撤退したのであった。",
+  "その後イラクは休戦し、シリアも降",
+  "伏した。また、イランも対ソ援助ル",
+  "ート確立のため、英ソに占領された。",
+]
+en = [
+  "Britain sent more troops from India, and the Soviets moved south into Iran. Our front was spread in many directions, and the overstretched supply lines held back the whole army.",
+  "The Führer ordered the operation scaled down and the offensive stopped. But the collapse of the front could not be avoided.",
+  "<keep>",
+  "British troops from the Sudan retook Egypt, and our units barely made it back to Cyrenaica.",
+  "Iraq then made an armistice, and Syria surrendered. Britain and the Soviets occupied Iran to open a supply route.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x362B
+index = [59]
+jp = [
+  "英軍はエルアラメインに総力を投入",
+  "し防衛したが、間もなく突破に成功、",
+  "アレキサンドリア、カイロと占領、",
+  "スエズ運河に達した。敵はこのまま",
+  "パレスチナに向け撤退したが、わが",
+  "部隊はこれを追撃、産油地帯を目指",
+  "し新たな作戦を開始した。",
+]
+en = [
+  "The British threw everything into the defence of El Alamein, but we soon broke through, took Alexandria and Cairo and reached the Suez Canal.",
+  "The enemy fell back towards Palestine. Our units followed, and a new operation began, aimed at the oil region.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x36EC
+index = [60]
+jp = [
+  "英軍はエルアラメインに総力を投入",
+  "し防衛したが、激戦の後突破に成功、",
+  "スエズ運河を占領した。その後、敵",
+  "は反攻を開始した。このため全軍包",
+  "囲の危機に落ち、エジプトを放棄、",
+  "またや撤退せざるを得なくなった。",
+  "",
+  "１１月１日、英軍の反攻作戦スーパ",
+  "ーチャージ作戦が始まった。北アフ",
+  "リカのわが軍は、撤退を始めた。",
+  "―アラメイン以前に、われわれには",
+  "勝利は無かった。アラメイン以後に、",
+  "われわれには敗北は無かった。―",
+]
+en = [
+  "The British threw everything into the defence of El Alamein. After heavy fighting we broke through and took the Suez Canal.",
+  "Then the enemy counterattacked. Facing encirclement, we had to give up Egypt and retreat once more.",
+  "<keep>",
+  "On 1 November, the British counteroffensive, Operation Supercharge, began. Our army in North Africa started to retreat.",
+  "\"Before Alamein we never had a victory. After Alamein we never had a defeat.\"",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3847
+index = [61]
+jp = [
+  "英軍はエルアラメインに総力を投入",
+  "し防衛、わが部隊の第１次攻勢は失",
+  "敗に終った。その後、独伊軍による",
+  "再攻勢が行われたがこれも失敗、と",
+  "うとう敵が反攻―スーパーチャージ",
+  "作戦を開始し、大戦の流れは連合軍",
+  "優勢へと傾いていった。",
+  "―アラメイン以前に、われわれには",
+  "勝利は無かった。アラメイン以後に、",
+  "われわれには敗北は無かった。―",
+  "１１月５日、仏領マダカスカル島が",
+  "連合軍に降伏した。",
+]
+en = [
+  "The British threw everything into the defence of El Alamein, and our first offensive failed. A second German-Italian attack failed as well.",
+  "Then the enemy struck back with Operation Supercharge, and the tide turned in favour of the Allies.",
+  "<keep>",
+  "\"Before Alamein we never had a victory. After Alamein we never had a defeat.\"",
+  "On 5 November, French Madagascar surrendered to the Allies.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x398D
+index = [62]
+jp = [
+  "わが部隊は、敗走中の英軍を追撃し",
+  "ながら、次々に油田地帯を制圧して",
+  "いった。また、旧式な装備のインド",
+  "派遣軍の守るペルシア湾岸を占領後、",
+  "ほどなくイランルートを遮断、つい",
+  "に先遣隊は南よりソ連領内へと侵入",
+  "した。",
+]
+en = [
+  "Our units pursued the fleeing British and took one oil region after another. We took the Persian Gulf coast, held by poorly equipped troops from India, and soon cut the Iranian route.",
+  "At last our advance guard crossed into Soviet territory from the south.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3A48
+index = [63]
+jp = [
+  "英国は、インド派遣軍を増派、敗走",
+  "中の中東軍を強化した。またソ連軍",
+  "も南下を開始し、わが部隊の戦線は",
+  "多方面に広がった。その後、スーダ",
+  "ンの英軍が伊軍の守るエジプトを奪",
+  "回したため作戦は中止、わが部隊は",
+  "キレナイカまで撤退したのであった。",
+  "１１月１日、英軍の反攻作戦スーパ",
+  "ーチャージ作戦が始まった。北アフ",
+  "リカのわが軍は、撤退を始めた。",
+  "―アラメイン以前に、われわれには",
+  "勝利は無かった。アラメイン以後に、",
+  "われわれには敗北は無かった。―",
+]
+en = [
+  "Britain sent more troops from India and strengthened its beaten Middle East army. The Soviets too began to move south, and our front was spread in many directions.",
+  "Then British troops from the Sudan retook Egypt, held by the Italians. The operation was called off, and our units fell back to Cyrenaica.",
+  "<keep>",
+  "On 1 November, the British counteroffensive, Operation Supercharge, began. Our army in North Africa started to retreat.",
+  "\"Before Alamein we never had a victory. After Alamein we never had a defeat.\"",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3BBB
+index = [64]
+jp = [
+  "北方からのＡ軍集団と協力し、わが",
+  "部隊はコーカサスを強襲、全ての産",
+  "油地帯を占領した。スターリングラ",
+  "ードより北上した部隊は、モスクワ",
+  "を占領しウラルも制圧された。次の",
+  "年、とうとうソ連は講和した。",
+  "",
+  "いまだに、アメリカ、イギリスの敵",
+  "対勢力は残るが、西方に集まったわ",
+  "が軍を前に反攻できるわけがなく、",
+  "ヨーロッパでの戦争は、終わりをつ",
+  "げた。",
+]
+en = [
+  "Together with Army Group A from the north, our units stormed the Caucasus and took all the oil regions. Forces moving north from Stalingrad took Moscow and the Urals.",
+  "The next year, the Soviet Union at last made peace.",
+  "<keep>",
+  "America and Britain still stand against us, but they cannot hope to strike back against our army gathered in the west.",
+  "The war in Europe is over.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3CDD
+index = [65]
+jp = [
+  "わが部隊はコーカサスを強襲、全て",
+  "の産油地帯を占領した。だが、北ア",
+  "フリカでの連合軍の反攻が始まり、",
+  "エジプト・イラクと奪回されると、",
+  "トルコは休戦し、わが部隊は補給線",
+  "を確保するため、北へ撤退しなけれ",
+  "ばならなかった。",
+]
+en = [
+  "Our units stormed the Caucasus and took all the oil regions.",
+  "But the Allies struck back in North Africa and retook Egypt and Iraq. Turkey made an armistice, and we had to retreat north to secure our supply lines.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3D9A
+index = [66]
+jp = [
+  "わが部隊はコーカサスを強襲したが、",
+  "敵の抵抗が激しく進撃は遅れた。そ",
+  "のうち、北アフリカでの連合軍の反",
+  "攻が始まり、エジプト・イラクと奪",
+  "回されると、トルコは休戦し、わが",
+  "部隊は補給線を確保するため作戦を",
+  "中止、北へ撤退しなければならなか",
+  "った。",
+]
+en = [
+  "Our units stormed the Caucasus, but fierce resistance slowed the advance.",
+  "Meanwhile the Allied counteroffensive in North Africa began, and Egypt and Iraq were retaken. Turkey made an armistice, and our units had to break off the operation and retreat north to secure their supply lines.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3E6E
+index = [67]
+jp = [
+  "わが部隊は、チュニジアを制圧後、",
+  "すぐさま反撃に移った。敵上陸軍は",
+  "大きな損害を出し、上陸を中止した。",
+  "また、トリポリを占領した英第８軍",
+  "も壊滅、トブルクへと後退した。",
+  "",
+  "",
+  "カサブランカにはパットン将軍率い",
+  "る米軍が上陸成功したが、ここから",
+  "アルジェリアまでは離れすぎていた。",
+  "総統は、連合軍のヨーロッパ侵攻の",
+  "可能性は無くなったと宣言し、わが",
+  "部隊にソ連領への移動を命じた。",
+]
+en = [
+  "After taking Tunisia, our units struck back at once. The enemy landing forces suffered heavy losses and gave up the landing.",
+  "The British Eighth Army, which had taken Tripoli, was also smashed and fell back to Tobruk.",
+  "<keep>",
+  "American troops under General Patton landed at Casablanca, but it was too far from Algeria.",
+  "The Führer declared that there was no longer any chance of an Allied invasion of Europe, and ordered our units to move to the Soviet Union.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3FAD
+index = [68]
+jp = [
+  "わが部隊は、チュニジアを制圧後、",
+  "すぐさま反撃に移った。一度は米英",
+  "の上陸軍を撃退し、英第８軍をトブ",
+  "ルクへと敗走させたものの、制海権",
+  "の無いわが国は不利な形勢となり、",
+  "わが部隊にも撤退命令が下され、シ",
+  "シリーへ撤退した。",
+  "１１月１１日、ビシー政府の軍事力",
+  "解体のため、独軍が仏南部占領。",
+  "１月１４日、カサブランカ会談。",
+  "独伊日の無条件降伏を目指し、戦い",
+  "続けると発表した。",
+]
+en = [
+  "After taking Tunisia, our units struck back at once. We drove off the American and British landing forces and sent the British Eighth Army fleeing to Tobruk.",
+  "But without command of the sea we were at a disadvantage. Our units too were ordered to withdraw, and fell back to Sicily.",
+  "<keep>",
+  "On 11 November, German troops occupied southern France to disarm the Vichy government.",
+  "On 14 January, the Casablanca Conference called for the unconditional surrender of Germany, Italy and Japan.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x40F2
+index = [69]
+jp = [
+  "わが部隊は、チュニジアを制圧後、",
+  "すぐさま反撃に移った。しかし、西",
+  "に米英の上陸軍、南に英第８軍と二",
+  "正面作戦を強いられ、不利な戦闘の",
+  "続く中、チュニジア撤退命令が下さ",
+  "れた。",
+  "わが部隊はシシリーへと撤退した。",
+  "１１月１１日、ビシー政府の軍事力",
+  "解体のため、独軍が仏南部占領。",
+  "１月１４日、カサブランカ会談。",
+  "独伊日の無条件降伏を目指し、戦い",
+  "続けると発表した。",
+]
+en = [
+  "After taking Tunisia, our units struck back at once. But with the American and British landing forces to the west and the British Eighth Army to the south, we had to fight on two fronts.",
+  "In the middle of the unequal battle, the order came to leave Tunisia. Our units fell back to Sicily.",
+  "<keep>",
+  "On 11 November, German troops occupied southern France to disarm the Vichy government.",
+  "On 14 January, the Casablanca Conference called for the unconditional surrender of Germany, Italy and Japan.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4227
+index = [70]
+jp = [
+  "戦意もなく装備も悪いイタリア軍を",
+  "支援して、わが部隊は戦線に向かっ",
+  "た。敵の猛烈な砲爆撃の中、敵上陸",
+  "拠点に突入、上陸部隊を海にたたき",
+  "出し、防衛戦は成功した。これで地",
+  "中海域は当面危険無しと判断した司",
+  "令部は、北仏への移動を命じた。",
+]
+en = [
+  "Supporting the poorly equipped Italian army, which had no will to fight, our units went to the front.",
+  "Under fierce shelling and bombing we stormed the beachheads, threw the landing forces back into the sea and held the island.",
+  "Headquarters judged the Mediterranean safe for now and ordered us to northern France.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x42FA
+index = [71]
+jp = [
+  "わが部隊は、敵の猛烈な砲爆撃の中、",
+  "敵上陸拠点に突入、上陸阻止に成功",
+  "した。しかし、これは第１次上陸に",
+  "過ぎず、再び援軍が現れた。",
+  "ところが、総統はシシリーへの増援",
+  "を許さず、イタリアの戦意も怪しく",
+  "なり、われわれはここを撤退した。",
+  "７月２５日、ムッソリーニが逮捕さ",
+  "れ、パドリオ新政権が成立した。",
+]
+en = [
+  "Under fierce shelling and bombing, our units stormed the beachheads and stopped the landing. But it was only the first wave; fresh troops arrived.",
+  "With no more troops coming and Italy wavering, we left Sicily.",
+  "<keep>",
+  "On 25 July, Mussolini was arrested, and a new government under Badoglio was formed.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x43FB
+index = [72]
+jp = [
+  "わが部隊は、敵上陸拠点への前進を",
+  "開始したが、敵の猛烈な砲爆撃のた",
+  "め、上陸阻止の攻勢を中止した。",
+  "われわれは、部隊の損失を避け、各",
+  "地で遅滞戦術を展開、多くの兵員装",
+  "備をもって撤退作戦を成功させた。",
+  "",
+  "７月２５日、ムッソリーニが逮捕さ",
+  "れ、パドリオ新政権が成立した。",
+]
+en = [
+  "Our units began to advance on the enemy beachheads, but the fierce shelling and bombing forced us to call off the counterattack.",
+  "To avoid losses, we fought delaying actions and got away with most of our men and arms.",
+  "<keep>",
+  "On 25 July, Mussolini was arrested, and a new government under Badoglio was formed.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x44E2
+index = [73]
+jp = [
+  "クラーク将軍の第５軍がサレルノへ",
+  "と上陸を始めると、イタリアは降伏",
+  "を発表、このためわが部隊はローマ",
+  "を制圧した。この後、わが部隊は南",
+  "進し、上陸阻止に成功した。そして、",
+  "一時シシリーに侵攻するもメッシナ",
+  "海峡遮断を恐れ、ここを後退した。",
+  "９月２３日、ムッソリーニがガルダ",
+  "湖畔サロに新国家設立を宣言。",
+  "１１月２８日、テヘラン会談。チャ",
+  "ーチル、ルーズベルト、スターリン",
+  "が会合し、ソ連の対日宣戦が決定。",
+  "わが部隊は、次の上陸の危険性の高",
+  "い北仏へと移動した。",
+]
+en = [
+  "When General Clark's Fifth Army began landing at Salerno, Italy announced its surrender, and our units took control of Rome.",
+  "Then we moved south and stopped the landing. We even pushed into Sicily for a while, but fell back for fear of being cut off at the Strait of Messina.",
+  "<keep>",
+  "On 23 September, Mussolini proclaimed a new state at Salò on Lake Garda.",
+  "On 28 November, at the Tehran Conference, Churchill, Roosevelt and Stalin agreed that the Soviet Union would declare war on Japan.",
+  "Our units moved to northern France, where the next landing was most likely.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4656
+index = [74]
+jp = [
+  "クラーク将軍の第５軍がサレルノへ",
+  "と上陸を始めると、イタリアは降伏",
+  "を発表、このためわが部隊はローマ",
+  "を制圧した。この後、わが部隊は南",
+  "進し、上陸阻止に成功した。そして、",
+  "一時シシリーに侵攻するもメッシナ",
+  "海峡遮断を恐れ、そこを後退した。",
+  "９月２３日、ムッソリーニがガルダ",
+  "湖畔サロに新国家設立を宣言。",
+  "１１月２８日、テヘラン会談。チャ",
+  "ーチル、ルーズベルト、スターリン",
+  "が会合、ソ連の対日宣戦が決定。",
+  "わが部隊は、敵タラント上陸により、",
+  "グスタフラインへと更に後退した。",
+]
+en = [
+  "When General Clark's Fifth Army began landing at Salerno, Italy announced its surrender, and our units took control of Rome.",
+  "Then we moved south and stopped the landing. We even pushed into Sicily for a while, but fell back for fear of being cut off at the Strait of Messina.",
+  "<keep>",
+  "On 23 September, Mussolini proclaimed a new state at Salò on Lake Garda.",
+  "On 28 November, at the Tehran Conference, Churchill, Roosevelt and Stalin agreed that the Soviet Union would declare war on Japan.",
+  "After an enemy landing at Taranto, our units fell back further, to the Gustav Line.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x47CC
+index = [75]
+jp = [
+  "クラーク将軍の第５軍がサレルノへ",
+  "と上陸を始めると、イタリアは降伏",
+  "を発表した。また英第８軍がシシリ",
+  "ーより北上、敵の圧力は増大し、わ",
+  "が部隊は後退路を失う危険性が出た。",
+  "このため、上陸阻止攻撃は中止、グ",
+  "スタフラインへの後退を命じられた。",
+  "９月２３日、ムッソリーニがガルダ",
+  "湖畔サロに新国家設立を宣言。",
+  "１１月２８日、テヘラン会談。チャ",
+  "ーチル、ルーズベルト、スターリン",
+  "が会合、ソ連の対日宣戦が決定。",
+]
+en = [
+  "When General Clark's Fifth Army began landing at Salerno, Italy announced its surrender. The British Eighth Army moved north from Sicily, the pressure grew, and our units were in danger of being cut off.",
+  "The counterattack on the landing was called off, and we were ordered back to the Gustav Line.",
+  "<keep>",
+  "On 23 September, Mussolini proclaimed a new state at Salò on Lake Garda.",
+  "On 28 November, at the Tehran Conference, Churchill, Roosevelt and Stalin agreed that the Soviet Union would declare war on Japan.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4907
+index = [76]
+jp = [
+  "敵上陸部隊の勢力は強大で、わが部",
+  "隊は北方よりの増援を待って、反撃",
+  "に移った。アンツィオで激戦を重ね、",
+  "上陸阻止に成功、またナポリをも奪",
+  "回した。",
+  "更に南下を始めたわが軍に、撤収命",
+  "令がきた。北仏に敵が上陸したのだ。",
+  "１月１８日、レニングラードが解放",
+  "された。",
+]
+en = [
+  "The enemy landing force was very strong, so our units waited for reinforcements from the north before striking back. After heavy fighting at Anzio we stopped the landing and even retook Naples.",
+  "As we pushed further south, the order came to pull out. The enemy had landed in northern France.",
+  "<keep>",
+  "On 18 January, Leningrad was relieved.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x49E6
+index = [77]
+jp = [
+  "わが部隊は北方よりの増援を待ち、",
+  "反撃に移った。しかし、敵の空軍力",
+  "の前に損害が続出し、グスタフライ",
+  "ンも各地で突破されるに及んで反撃",
+  "を中止、更に後方の戦線へと後退し",
+  "た。だが、わが部隊はそのままフラ",
+  "ンスへと通過したのであった。",
+  "１月１８日、レニングラードが解放",
+  "された。",
+]
+en = [
+  "Our units waited for reinforcements from the north and struck back. But enemy air power cost us heavy losses, and when the Gustav Line was broken in many places, we called off the attack and fell back to the next line.",
+  "Our units went on through to France.",
+  "<keep>",
+  "On 18 January, Leningrad was relieved.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4AD6
+index = [78]
+jp = [
+  "モスクワ東進後、われわれはすぐ強",
+  "力な敵にぶつかった。敵は後退しな",
+  "がらも、反撃を続けた。",
+  "そして、クイビシェフを占領し、ウ",
+  "ラル山脈も越えたが、ソ連は降伏し",
+  "なかった。政府はイルクーツクへ移",
+  "り、絶対に降伏しなかった。絶対に。",
+  "わが部隊は、これ以上の東進を中止、",
+  "ソ連南部に残る敵拠点を壊滅させる",
+  "ため、再編成に入った。",
+]
+en = [
+  "East of Moscow we soon ran into strong enemy forces, which kept counterattacking even as they fell back.",
+  "We took Kuibyshev and crossed the Urals, but the Soviet Union did not surrender. The government moved to Irkutsk and refused to surrender. Never.",
+  "Our units stopped the advance east and began to regroup to destroy the enemy strongholds left in the south of the Soviet Union.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4BF3
+index = [79]
+jp = [
+  "モスクワ東進後、われわれはすぐ強",
+  "力な反撃にぶつかった。このため、",
+  "わが部隊の前進は遅れ、ウラルに何",
+  "とかたどりつく状態であった。",
+  "そして敵の反攻が始まった。全戦線",
+  "に圧力がかかり、南北からモスクワ",
+  "目指して主攻勢が始まった。全軍包",
+  "囲の危機の迫る中、地獄の撤退が始",
+  "まった。こうしてわが軍は、この作",
+  "戦で得た全てを失ったのであった。",
+]
+en = [
+  "East of Moscow we soon ran into strong counterattacks. Our advance slowed, and we barely reached the Urals.",
+  "Then the enemy counteroffensive began. The whole front came under pressure, and the main attacks drove on Moscow from north and south.",
+  "Facing encirclement, the army began a hellish retreat, and lost everything this operation had won.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4D25
+index = [80]
+jp = [
+  "モスクワ東進後、われわれはすぐ強",
+  "力な反撃にぶつかった。このため、",
+  "わが部隊の前進は遅れ、作戦の遂行",
+  "は難しい戦況に変化しつつあった。",
+  "とうとう前進不可能になった時、敵",
+  "の反攻が始まった。モスクワさえ放",
+  "棄し、われわれは撤退を開始した。",
+]
+en = [
+  "East of Moscow we soon ran into strong counterattacks. Our advance slowed, and the operation became harder and harder.",
+  "When we could go no further, the enemy struck back. We gave up even Moscow and retreated.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4DFD
+index = [81]
+jp = [
+  "わが軍の海岸防御線は、短い抵抗の",
+  "後、粉砕された。敵制空権の下、わ",
+  "が部隊は海岸線へと突進し、敵艦砲",
+  "の嵐の中、建設中の敵補給拠点マル",
+  "ベリーを制圧した。だが、これが時",
+  "間かせぎにしかならない事は確かで",
+  "あった。",
+  "７月２０日、シュタウフェンベルク",
+  "大佐により総統暗殺計画が実行され",
+  "た。しかし、失敗に終り、計画に関",
+  "わった人は次々に処刑された。",
+]
+en = [
+  "Our coastal defences were crushed after a short fight. Under enemy air superiority our units charged to the coast and, amid a storm of naval gunfire, took Mulberry, the enemy's harbour under construction.",
+  "But this would only buy time.",
+  "<keep>",
+  "On 20 July, Colonel Stauffenberg tried to assassinate the Führer. The attempt failed, and those involved were executed one after another.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4F30
+index = [82]
+jp = [
+  "わが軍の海岸防御線は、短い抵抗の",
+  "後、粉砕された。敵制空権の下、わ",
+  "が部隊は海岸線へと突進した。しか",
+  "し強力な敵艦砲、空軍力の前に前進",
+  "は阻まれた。できる事は上陸部隊を",
+  "どこで止められるかであった。作戦",
+  "が変更され、われわれは後退した。",
+  "７月２０日、シュタウフェンベルク",
+  "大佐により総統暗殺計画が実行され",
+  "た。しかし、失敗に終り、計画に関",
+  "わった人は次々に処刑された。",
+]
+en = [
+  "Our coastal defences were crushed after a short fight. Under enemy air superiority, our units charged towards the coast, but the heavy naval guns and air power stopped them.",
+  "All we could do was decide where to stop the landing forces. The plan was changed, and we fell back.",
+  "<keep>",
+  "On 20 July, Colonel Stauffenberg tried to assassinate the Führer. The attempt failed, and those involved were executed one after another.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x507F
+index = [83]
+jp = [
+  "全く無理な作戦であった。ファレー",
+  "ズで包囲された状態となり、フラン",
+  "ス戦線は崩壊した。その後、本国よ",
+  "り出撃したわが部隊は、フランス全",
+  "土を奪回し、一時西部戦線は安定し",
+  "た。このため、ワルシャワへ移動し、",
+  "崩壊した東部戦線の守りについた。",
+  "８月２３日、ルーマニアがソ連と休",
+  "戦、ドイツに宣戦布告した。２５日",
+  "にはブルガリアも休戦を発表した。",
+  "９月３日、フィンランドが休戦した。",
+  "総統は国民総動員令を布告、１７歳",
+  "から６０歳まで召集した。",
+]
+en = [
+  "It was an impossible operation. We were trapped at Falaise, and the front in France collapsed.",
+  "Our units sent from Germany retook France, and the west held for a time. So we moved to Warsaw to hold the shattered eastern front.",
+  "<keep>",
+  "On 23 August, Romania made an armistice with the Soviet Union and declared war on Germany. On the 25th, Bulgaria announced an armistice too.",
+  "On 3 September, Finland made an armistice.",
+  "The Führer ordered total mobilisation, calling up all men aged 17 to 60.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x51EC
+index = [84]
+jp = [
+  "全く無理な作戦であった。ファレー",
+  "ズで包囲された状態となり、フラン",
+  "ス戦線は崩壊した。その後、本国よ",
+  "り出撃したわが部隊は、戦線を立て",
+  "直すため全力をつくしたが、南仏に",
+  "も上陸が始まり、フランス全土を放",
+  "棄、仏国境沿いに撤退した。",
+  "８月２３日、ルーマニアがソ連と休",
+  "戦、ドイツに宣戦布告した。２５日",
+  "にはブルガリアも休戦を発表した。",
+  "９月３日、フィンランドが休戦した。",
+  "総統は国民総動員令を布告、１７歳",
+  "から６０歳まで召集した。",
+]
+en = [
+  "It was an impossible operation. We were trapped at Falaise, and the front in France collapsed.",
+  "Our units sent from Germany tried to rebuild the front, but the enemy landed in southern France too. We fell back to the border.",
+  "<keep>",
+  "On 23 August, Romania made an armistice with the Soviet Union and declared war on Germany. On the 25th, Bulgaria announced an armistice too.",
+  "On 3 September, Finland made an armistice.",
+  "The Führer ordered total mobilisation, calling up all men aged 17 to 60.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x5355
+index = [85]
+jp = [
+  "アルンヘムに降下した第１空挺師団",
+  "は、精鋭部隊ではあったが、やはり",
+  "空挺部隊は敵ではなかった。わが部",
+  "隊は、重要な橋を奪回後、英第３０",
+  "軍団の前進を阻止、反撃を開始した。",
+  "敵侵攻路は地獄のハイウェイと化し、",
+  "連合軍は本作戦を中止した。",
+]
+en = [
+  "The 1st Airborne Division that dropped on Arnhem was an elite force, but airborne troops were no match for us.",
+  "Our units retook the vital bridge, stopped the advance of the British XXX Corps and counterattacked. The enemy's road became Hell's Highway, and the Allies called off the operation.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x541F
+index = [86]
+jp = [
+  "アルンヘムに降下した第１空挺師団",
+  "を初めとする、ライン川への道路沿",
+  "いの空挺部隊は、かろうじてその役",
+  "目を果たした。連合軍は、そのかせ",
+  "ぎ出しだ時間でライン川の渡河に成",
+  "功したのであった。われわれには、",
+  "本土死守防衛の道が残るだけだった。",
+]
+en = [
+  "The 1st Airborne Division at Arnhem and the other airborne units along the road to the Rhine just managed to do their job.",
+  "With the time they bought, the Allies crossed the Rhine. All we can do now is defend the homeland.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x54F5
+index = [87]
+jp = [
+  "アルデンヌの弱体化した敵部隊は、",
+  "初戦で撃破できた。しかし、アント",
+  "ワープなどという目標は、たどりつ",
+  "けるはずもなく、第１０１空挺師団",
+  "の守るバストーニュを占領し、ミュ",
+  "ーズ川の渡河までが限界であった。",
+  "何の意味もない勝利であった。",
+]
+en = [
+  "We smashed the weak enemy units in the Ardennes at once. But Antwerp was out of reach.",
+  "Taking Bastogne, held by the 101st Airborne Division, and crossing the Meuse was as far as we could go.",
+  "A victory without meaning.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x55BC
+index = [88]
+jp = [
+  "アルデンヌの弱体化した敵部隊は、",
+  "初戦で撃破できた。しかし、アント",
+  "ワープなどはおろか、ミューズ川の",
+  "渡河点確保さえ無理な状態であった。",
+  "この戦いで得た占領地は、突出した",
+  "戦線で守りきれるものではなく、わ",
+  "れわれは撤退を開始したのであった。",
+]
+en = [
+  "We smashed the weak enemy units in the Ardennes in the first battles. But far from Antwerp, we could not even take the crossings over the Meuse.",
+  "We could not hold the salient we had won, and we retreated.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x5692
+index = [89]
+jp = [
+  "わが部隊はハンガリー軍と協力し、",
+  "攻勢を開始した。初めは奇襲に成功",
+  "したが、すぐに強力な反攻に出会い",
+  "苦しい進撃が続いた。そして敵包囲",
+  "線のすき間から、ブダペストへと突",
+  "撃した。だが、この反攻と引きかえ",
+  "に、東部戦線は崩壊したのであった。",
+]
+en = [
+  "Together with the Hungarian army, our units went over to the attack. At first we took the enemy by surprise, but soon met strong counterattacks and had to fight for every step.",
+  "Through a gap in the enemy ring, we broke through to Budapest. But the price of this attack was the collapse of the eastern front.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x576A
+index = [90]
+jp = [
+  "わが部隊はハンガリー軍と協力し、",
+  "攻勢を開始した。初めは奇襲に成功",
+  "したが、すぐに強力な反攻に出会い",
+  "進撃は止まってしまった。作戦は中",
+  "止となり、南方から再開される事と",
+  "なったが、もはや成功の可能性は無",
+  "かった。",
+]
+en = [
+  "Together with the Hungarian army, our units went over to the attack. At first we took the enemy by surprise, but soon met strong counterattacks, and the advance came to a halt.",
+  "The operation was called off, to be started again from the south, but there was no longer any chance of success.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x582C
+index = [91]
+jp = [
+  "わが部隊は、周囲からせまる敵を次",
+  "々に撃退、一時的に戦線は安定した。",
+  "だが、再び敵の反攻が始まり、すぺ",
+  "て崩壊した。西へ避難する国民の時",
+  "間かせぎとして、わが部隊は前線を",
+  "死守し、一部隊一部隊と敵にのみこ",
+  "まれる中、最後の時を迎えた。",
+  "ドイツ陸海空軍の全部隊、その他ド",
+  "イツ軍指揮下の全戦闘部隊は、赤軍",
+  "最高司令部と連合軍最高司令部とに",
+  "対し、本日無条件降伏を申し入れた。",
+]
+en = [
+  "Our units drove off the enemy closing in from all sides, and for a time the front held. But the enemy struck again, and everything collapsed.",
+  "To buy time for the people fleeing west, our units held the front to the last, swallowed up one by one, until the end came.",
+  "<keep>",
+  "All forces on land, at sea and in the air under German command have today surrendered unconditionally to the Supreme High Command of the Red Army and to the Supreme Commander of the Allied forces.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x5983
+index = [92]
+jp = [
+  "ドイツ陸海空軍の全部隊、その他ド",
+  "イツ軍指揮下の全戦闘部隊は、赤軍",
+  "最高司令部と連合軍最高司令部とに",
+  "対し、本日無条件降伏を申し入れた。",
+]
+en = [
+  "All forces on land, at sea and in the air under German command have today surrendered unconditionally to the Supreme High Command of the Red Army and to the Supreme Commander of the Allied forces.",
+]

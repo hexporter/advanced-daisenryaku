@@ -1,0 +1,271 @@
+# game.toml – Advanced Daisenryaku: Deutsch Dengeki Sakusen (Sega, 1991), Japan Rev A.
+# Also applies unchanged to the EN patch (changes only data, see docs/notes/text.md).
+# 1 MiB, flat $000000–$0FFFFF, no banks. SRAM according to the header ("RA", $200001–$20FFFF).
+# ROM identity and vectors: docs/notes/roms.md
+#   SHA-256 47360b90ee077c2df7bb8f8bb6f46bbea25d7e5b1fd975cdf507c1048d80b062, CRC32 E0D5E18A
+#   SSP $FFFFFF00, Entry $000224, V-int $00518C, H-int $FFFF06 (RAM), error $000200
+#
+# No disassembly: purely heuristic discovery (vector table + BSR/JSR/RTS walk),
+# gaps are caught by the tier-3 interpreter at runtime (ad_spec.c: tier3_floor_default).
+# Template: segagenesisrecomp/rka/game.toml. New seeds only with evidence (miss log + disasm).
+
+[game]
+output_prefix = "ad"
+# Detect PC-relative jump tables automatically (RKA: on). Secured by the validator.
+# Risk according to rka/DEVELOPMENT.md: over-discovery → graphics glitches. On problems, switch this off first.
+jump_table_autodiscovery = true
+# Validated interpreter evidence as late_extra (tools/fold.sh, docs/notes/recompiler-runs.md).
+# ad_floor.deny.toml: deny list (recompiler blacklist) for functions that must stay in the interpreter.
+discovery_files = ["ad_floor.discovery.toml", "ad_floor.deny.toml"]
+
+# Sonic-specific fields are unknown (0 = cosmetic). The stack fields matter.
+[ram_layout]
+game_mode      = 0x000000
+vint_runcount  = 0x000000
+vint_routine   = 0x000000
+plc_pending    = 0x000000
+initial_ssp    = 0xFFFFFF00   # reset SSP from vector 0
+vbla_stack     = 0xFFFFFF00
+intr_stack     = 0xFFFFFF00
+player_object  = 0x000000
+level_modes    = []
+
+[functions]
+extra = [
+  0x000224, 0x00518C,               # entry, V-int (vector table)
+  # soft reset entry; preceded by jmp $54A, no fall-through (docs/notes/vint.md).
+  0x000382,
+  # V-int mode table $00523E: 7 × jmp abs.l, preceded by rtr, followed by rts at $005268.
+  # Evidence: disassembly; $005244/$005262 seen as interior-label misses in a run.
+  0x00523E, 0x005244, 0x00524A, 0x005250, 0x005256, 0x00525C, 0x005262,
+  # Main menu handlers from the menu tables $005F58/$005F92 (record: ID.w, Text.l, H1.l, H2.l),
+  # reached via jmp (a0) at $005F56. Each entry follows rts/bra/jmp/padding bytes.
+  # $006088 seen as an interior-label miss in a run (docs/notes/menu.md).
+  0x005FDA, 0x006004, 0x006026, 0x00603C, 0x006088, 0x0060EA, 0x0FA000,
+]
+# Targets of computed jumps/calls found statically (tools/dispatch_scan.py, docs/notes/recompiler-runs.md,
+# "Static seeding"). late_extra: registered after discovery, no table detectors. Each one was
+# checked: body does not jump back above its entry and leaves the stack alone.
+late_extra = [
+  # Menu handlers (tables of ID.w, Text.l, Handler.l, loaded with lea …,a0; jmp (a0) / jsr (a0)).
+  0x0088BE,                       # table $0088F8 (map: Start menu); moveq #1,d0 / rts
+  0x00971E,                       # table $009708
+  0x00AAE0,                       # table $00C36E; one instruction into $00AADA
+  0x00C062, 0x00E7E8,             # table $00A7FE (unit command menu)
+  0x00E7FE,                       # table $00E806
+  0x00EF0C,                       # table $00EF14
+  0x00F766,                       # table $00F76C
+  # Object handlers stored with move.l #ADDR,0(a0) (called through the object loop).
+  0x001CCC, 0x001CEE, 0x001D10,   # set at $001C84/$001C92/$001CE4
+  0x0027B8, 0x0035D4,             # set at $0027AE, $0035BA
+  0x016300, 0x016356, 0x016382, 0x0163CA, 0x0163D0, 0x0163EA, 0x016410, 0x01642A,
+  0x016480, 0x016552, 0x0165B2,   # set at $015F98 … $016436
+  0x016CE6, 0x016DE4,             # set at $0171AC, $016DD4
+  0x01739E, 0x0173C0,             # set at $017302, $01724A/$01736E; $0173C0 seen in 41 sessions
+  # Save/load menus $0117AA–$011E2C (denied until 10.11.2026). The handlers that begin with
+  # movea.l (a7)+,a0 restore the a0 their function pushed on entry ($011DC6, $010564); they
+  # only looked unsafe to the interpreter, which was entered at the handler.
+  0x0117AA, 0x011AAE, 0x011BCE, 0x011C06, 0x011DC6,   # were fold functions
+  0x0118F2,                       # Load (table $0118D2); denied until 13.11.2026, hook $011940
+  0x0118E8,                       # Give up (table $0118D2): movea.l $FFCDA6,a7 / jmp $005EAA, hook $0118EC
+  0x011D22,                       # row callback of table $011D16
+  0x011E0A, 0x011E10,             # table $011E16 (yes/no)
+  0x011860, 0x011882,             # table $011836, $011888
+  0x01189E, 0x0118B6, 0x0118CC,   # tables $011888, $011836, $0118D2
+  0x01057C, 0x01059A,             # table $010584
+  # Direction table $007F00–$007F28 of the grid cursor: 11 × bra.w, reached by
+  # lsl.w #2,d7 / lea $7F00(pc),a6 / jsr (a6,d7.w) at $007E6A. The other eight entries came from
+  # discovery and folds; these three are the indexes 0, 3 and 7 (targets: rts, rts, "up").
+  # Checked 14.11.2026 (docs/notes/recompiler-runs.md).
+  0x007F00, 0x007F0C, 0x007F1C,
+  # Pointer table $015F0C–$015F8F (33 longwords), called by movea.l 0(a1),a6 / jsr (a6) at
+  # $015EF8; each target sets up an object (handler, sound number). The other targets came from
+  # discovery and folds. Checked 14.11.2026: forward jumps only, stack untouched; $01609E ends
+  # in bra $016130 and $016180 calls $0161BE, both inside existing functions (split there).
+  0x015F90, 0x015FEE, 0x01609E, 0x0160B2, 0x0160C0, 0x016180,
+  # State handlers of the program at $0FA000 (move.l #ADDR,$FFC54A / $FF0042).
+  0x0FA782, 0x0FB47C, 0x0FB68A, 0x0FBF74,
+]
+
+# ---------------------------------------------------------------------------
+# Soft reset out of the V-int (docs/notes/vint.md). Hooks in ad_spec.c.
+# $002CC2: bne.w $382 in the V-int mode 6 handler (START in the demo) → mark the reset, end the handler.
+# $005AC6: WaitForVBlank in the main program → run the pending reset outside the V-int.
+[[widescreen_site]]
+addr = 0x002CC2
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x005AC6
+kind = "game_hook"
+
+# Load in the Record menu (docs/notes/saving.md): $011940 jmp $00863E right after
+# movea.l $FFCDA6,a7 – the game drops its stack and re-enters the map loop. The hook drops the
+# native call chain the same way and restarts the game fiber at $00863E.
+[[widescreen_site]]
+addr = 0x011940
+kind = "game_hook"
+
+# RAM recording with phase marking (only with AD_RAMLOG) and automatic fast-forward during
+# enemy turns (AD_AUTO_FF), docs/notes/phases.md.
+# $0051A2: addq.b #1,$FF0122 in the V-int (frame counter), runs every frame.
+[[widescreen_site]]
+addr = 0x0051A2
+kind = "game_hook"
+
+# Sound commands (ad_spec.c, docs/notes/sound.md "Lost commands"): $00857E move.b d0,$A01C0A,
+# $008584 bus released.
+[[widescreen_site]]
+addr = 0x00857E
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x008584
+kind = "game_hook"
+
+# Zoomed map: the game's view scroll without its frame waits (ad_spec.c, docs/notes/map.md).
+[[widescreen_site]]
+addr = 0x008856
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x008866
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x0090BE
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x0090CE
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x01405A
+kind = "game_hook"
+
+# System menu during the computer's turn: no fast-forward while it is open (ad_spec.c).
+# $0100CA: entry of the system menu (Record, Sound, ...), $00C6FA: back from it.
+[[widescreen_site]]
+addr = 0x0100CA
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x00C6FA
+kind = "game_hook"
+
+# "Language" row of the System settings screen: the screen sits three tile rows higher
+# (ad_spec.c, docs/notes/menu.md). $0124A4 / $0124C4: a1 = place of the boxes / of the title.
+[[widescreen_site]]
+addr = 0x0124A4
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x0124C4
+kind = "game_hook"
+
+# "HD map ON/OFF" row of the System settings screen (ad_spec.c, docs/notes/menu.md).
+[[widescreen_site]]
+addr = 0x0124DC
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x0124FC
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x01259E
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x0125AA
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x0125B6
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x0125E4
+kind = "game_hook"
+
+# Campaign start date (AD_CAMPAIGN_START, experiment; ad_spec.c, docs/notes/campaign.md).
+[[widescreen_site]]
+addr = 0x0064B8
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x00650E
+kind = "game_hook"
+
+# Stack reset into the main menu (ad_spec.c): "Give up" in the Record menu, and the map loader
+# when no army is left. Same mechanism as Load ($011940).
+[[widescreen_site]]
+addr = 0x0118EC
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x006850
+kind = "game_hook"
+
+# "Restart" in the Record menu and the map-start snapshot (ad_restart.c, docs/notes/campaign.md).
+# $0085D4: a map starts. $0117AA: Record menu (row text). $011860 / $01186C / $011876 / $01189E:
+# the "Give up" handler, its dialog and Exec. $011AE6 / $011BB0: Save (slot, done).
+# $0119AA / $011A92: Load (slot, sums right).
+[[widescreen_site]]
+addr = 0x0085D4
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x0117AA
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x011860
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x01186C
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x011876
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x01189E
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x011AE6
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x011BB0
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x0119AA
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x011A92
+kind = "game_hook"
+
+# Start-year row of the title menu (ad_spec.c, docs/notes/campaign.md).
+[[widescreen_site]]
+addr = 0x005F4C
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x005FDA
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x005FF2
+kind = "game_hook"
+
+[[widescreen_site]]
+addr = 0x006000
+kind = "game_hook"
+

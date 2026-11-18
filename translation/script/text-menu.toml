@@ -1,0 +1,1046 @@
+# 16x16 strings of the block $0EF000 (docs/notes/text-map.md): menus, commands, settings, labels.
+
+# addr = original string, jp = original text (checked on every build), en = English. The English
+# keeps the glyph count of the original (box width = count × 16 px), big font if it fits, else the
+# small font. Options: align = "left"|"center"|"right" (default left; center when the JP starts
+# with 2+ blanks), font = "big"|"small", group = name (one member in the small font → all of the group),
+# fixed = monospaced game-font prefix (year), indent = blank cells, parts = [[cell, text], …].
+
+
+[[string]]
+addr = 0x0EF109
+jp = "晴　"
+en = "Fair"
+group = "weather"
+
+[[string]]
+addr = 0x0EF10C
+jp = "曇　"
+en = "Cloud"
+group = "weather"
+
+[[string]]
+addr = 0x0EF10F
+jp = "雨　"
+en = "Rain"
+group = "weather"
+
+[[string]]
+addr = 0x0EF112
+jp = "嵐　"
+en = "Storm"
+group = "weather"
+
+[[string]]
+addr = 0x0EF115
+jp = "雪　"
+en = "Snow"
+group = "weather"
+
+[[string]]
+addr = 0x0EF118
+jp = "吹雪"
+en = "Blizz."
+group = "weather"
+
+[[string]]
+addr = 0x0EF11B
+jp = "温帯１"
+en = "Temp. 1"
+group = "climate"
+
+[[string]]
+addr = 0x0EF11F
+jp = "温帯２"
+en = "Temp. 2"
+group = "climate"
+
+[[string]]
+addr = 0x0EF123
+jp = "乾燥帯"
+en = "Arid"
+group = "climate"
+
+[[string]]
+addr = 0x0EF127
+jp = "冷帯　"
+en = "Cold"
+group = "climate"
+
+[[string]]
+addr = 0x0EF12B
+jp = "亜寒帯"
+en = "Subarctic"
+group = "climate"
+
+[[string]]
+addr = 0x0EF242
+jp = "シナリオ"
+en = "Scenario"
+
+[[string]]
+addr = 0x0EF247
+jp = "終了"
+en = "End"
+group = "command"
+
+[[string]]
+addr = 0x0EF24A
+jp = "送信"
+en = "Send"
+group = "command"
+
+[[string]]
+addr = 0x0EF24D
+jp = "生産"
+en = "Build"
+group = "command"
+
+[[string]]
+addr = 0x0EF250
+jp = "中止"
+en = "Cancel"
+group = "command"
+
+[[string]]
+addr = 0x0EF253
+jp = "中止　"
+en = "Quit"
+group = "command"
+
+[[string]]
+addr = 0x0EF257
+jp = "生産画面"
+en = "Production"
+group = "command"
+
+[[string]]
+addr = 0x0EF25E
+jp = "軍事費＄"
+en = "Funds $"
+align = "right"
+group = "command"
+
+[[string]]
+addr = 0x0EF266
+jp = "配置"
+en = "Deploy"
+group = "command"
+
+[[string]]
+addr = 0x0EF26B
+jp = "残り"
+en = "Left"
+group = "command"
+
+[[string]]
+addr = 0x0EF270
+jp = "航空機"
+en = "Aircraft"
+group = "command"
+
+[[string]]
+addr = 0x0EF274
+jp = "地上"
+en = "Ground"
+group = "command"
+
+[[string]]
+addr = 0x0EF277
+jp = "歩兵"
+en = "Inf."
+group = "command"
+
+[[string]]
+addr = 0x0EF27A
+jp = "艦船"
+en = "Ships"
+group = "command"
+
+[[string]]
+addr = 0x0EF27E
+jp = "移動"
+en = "Move"
+group = "command"
+
+[[string]]
+addr = 0x0EF283
+jp = "攻撃"
+en = "Attack"
+group = "command"
+
+[[string]]
+addr = 0x0EF286
+jp = "占領"
+en = "Occupy"
+group = "command"
+
+[[string]]
+addr = 0x0EF28B
+jp = "補給"
+en = "Supply"
+group = "command"
+
+[[string]]
+addr = 0x0EF28E
+jp = "合流"
+en = "Merge"
+group = "command"
+
+[[string]]
+addr = 0x0EF293
+jp = "武装"
+en = "Rearm"
+group = "command"
+
+[[string]]
+addr = 0x0EF297
+jp = "処分"
+en = "Disband"
+group = "command"
+
+[[string]]
+addr = 0x0EF29C
+jp = "行軍"
+en = "March"
+group = "command"
+
+[[string]]
+addr = 0x0EF2A1
+jp = "性能"
+en = "Specs"
+group = "command"
+
+[[string]]
+addr = 0x0EF2A6
+jp = "爆撃"
+en = "Bomb"
+group = "command"
+
+[[string]]
+addr = 0x0EF2A9
+jp = "工事"
+en = "Works"
+group = "command"
+
+[[string]]
+addr = 0x0EF2AD
+jp = "降車"
+en = "Unload"
+group = "command"
+
+[[string]]
+addr = 0x0EF2B0
+jp = "発進"
+en = "Launch"
+group = "command"
+
+[[string]]
+addr = 0x0EF2B5
+jp = "搭載"
+en = "Load"
+group = "command"
+
+[[string]]
+addr = 0x0EF2BA
+jp = "決定"
+en = "Defend"
+group = "command"
+
+[[string]]
+addr = 0x0EF2BE
+jp = "進化"
+en = "Evolve"
+group = "command"
+
+[[string]]
+addr = 0x0EF2C3
+jp = "改良"
+en = "Refit"
+group = "command"
+
+[[string]]
+addr = 0x0EF2C8
+jp = "戦闘"
+en = "Combat"
+group = "command"
+
+[[string]]
+addr = 0x0EF2CB
+jp = "帰還"
+en = "Return"
+group = "command"
+
+[[string]]
+addr = 0x0EF2D0
+jp = "迎え"
+en = "PickUp"
+group = "command"
+
+[[string]]
+addr = 0x0EF2D5
+jp = "乗車"
+en = "Board"
+group = "command"
+
+[[string]]
+addr = 0x0EF2D9
+jp = "揚陸"
+en = "Land"
+group = "command"
+
+[[string]]
+addr = 0x0EF2DC
+jp = "鉄道"
+en = "Rail"
+group = "command"
+
+[[string]]
+addr = 0x0EF2DF
+jp = "輸送"
+en = "Ferry"
+group = "command"
+
+[[string]]
+addr = 0x0EF2E2
+jp = "補充"
+en = "Refill"
+group = "command"
+
+[[string]]
+addr = 0x0EF2E6
+jp = "戦場"
+en = "Field"
+group = "command"
+
+[[string]]
+addr = 0x0EF2EA
+jp = "侵攻"
+en = "Invade"
+group = "command"
+
+[[string]]
+addr = 0x0EF2EE
+jp = "索敵"
+en = "Scout"
+group = "command"
+
+[[string]]
+addr = 0x0EF2F3
+jp = "陣地"
+en = "Dig in"
+group = "command"
+
+[[string]]
+addr = 0x0EF2F7
+jp = "射撃"
+en = "Fire"
+group = "command"
+
+[[string]]
+addr = 0x0EF2FA
+jp = "防衛"
+en = "Defend"
+group = "command"
+
+[[string]]
+addr = 0x0EF301
+jp = "改良費用"
+en = "Refit cost"
+group = "stats"
+
+[[string]]
+addr = 0x0EF30A
+jp = "速度"
+en = "Speed"
+group = "stats"
+
+[[string]]
+addr = 0x0EF30F
+jp = "空防御"
+en = "Air def."
+group = "stats"
+
+[[string]]
+addr = 0x0EF315
+jp = "移動"
+en = "Move"
+group = "stats"
+
+[[string]]
+addr = 0x0EF31A
+jp = "燃料"
+en = "Fuel"
+group = "stats"
+
+[[string]]
+addr = 0x0EF31F
+jp = "地防御"
+en = "Gnd def."
+group = "stats"
+
+[[string]]
+addr = 0x0EF325
+jp = "索敵"
+en = "Scout"
+group = "stats"
+
+[[string]]
+addr = 0x0EF32A
+jp = "対"
+en = "vs"
+group = "header"
+
+[[string]]
+addr = 0x0EF32C
+jp = "対"
+en = "vs"
+group = "header"
+
+[[string]]
+addr = 0x0EF32E
+jp = "対"
+en = "vs"
+group = "header"
+
+[[string]]
+addr = 0x0EF330
+jp = "対"
+en = "vs"
+group = "header"
+
+[[string]]
+addr = 0x0EF332
+jp = "対"
+en = "vs"
+group = "header"
+
+[[string]]
+addr = 0x0EF334
+jp = "射"
+en = "Rng"
+group = "header"
+
+[[string]]
+addr = 0x0EF336
+jp = "命"
+en = "Hit"
+group = "header"
+
+[[string]]
+addr = 0x0EF339
+jp = "弾"
+en = "Rds"
+group = "header"
+
+[[string]]
+addr = 0x0EF33C
+jp = "空"
+en = "Air"
+group = "header"
+
+[[string]]
+addr = 0x0EF33E
+jp = "甲"
+en = "Arm"
+group = "header"
+
+[[string]]
+addr = 0x0EF340
+jp = "人"
+en = "Inf"
+group = "header"
+
+[[string]]
+addr = 0x0EF343
+jp = "艦"
+en = "Shp"
+group = "header"
+
+[[string]]
+addr = 0x0EF345
+jp = "潜"
+en = "Sub"
+group = "header"
+
+[[string]]
+addr = 0x0EF347
+jp = "程"
+en = ""
+group = "header"
+
+[[string]]
+addr = 0x0EF34A
+jp = "中"
+en = "%"
+group = "header"
+
+[[string]]
+addr = 0x0EF34C
+jp = "数"
+en = ""
+group = "header"
+
+[[string]]
+addr = 0x0EF34F
+jp = "実行"
+en = "Exec."
+group = "action"
+
+[[string]]
+addr = 0x0EF354
+jp = "取消"
+en = "Cancel"
+group = "action"
+
+[[string]]
+addr = 0x0EF359
+jp = "設定"
+en = "Set"
+group = "action"
+
+[[string]]
+addr = 0x0EF35D
+jp = "消去"
+en = "Erase"
+group = "action"
+
+[[string]]
+addr = 0x0EF362
+jp = "確認"
+en = "Confirm"
+group = "action"
+
+[[string]]
+addr = 0x0EF367
+jp = "工事内容"
+en = "Works"
+group = "works"
+
+[[string]]
+addr = 0x0EF36F
+jp = "建物増築"
+en = "Build up"
+group = "works"
+
+[[string]]
+addr = 0x0EF378
+jp = "要塞設置"
+en = "Build fort"
+group = "works"
+
+[[string]]
+addr = 0x0EF381
+jp = "要塞撤去"
+en = "Remove fort"
+group = "works"
+
+[[string]]
+addr = 0x0EF38A
+jp = "鉄道設置"
+en = "Lay rail"
+group = "works"
+
+[[string]]
+addr = 0x0EF391
+jp = "鉄道撤去"
+en = "Remove rail"
+group = "works"
+
+[[string]]
+addr = 0x0EF398
+jp = "橋　修復"
+en = "Fix bridge"
+group = "works"
+
+[[string]]
+addr = 0x0EF3A0
+jp = "道路修復"
+en = "Fix road"
+group = "works"
+
+[[string]]
+addr = 0x0EF3A7
+jp = "建物修復"
+en = "Fix building"
+group = "works"
+
+[[string]]
+addr = 0x0EF3B0
+jp = "架橋工事"
+en = "Build bridge"
+group = "works"
+
+[[string]]
+addr = 0x0EF3B8
+jp = "道路工事"
+en = "Build road"
+group = "works"
+
+[[string]]
+addr = 0x0EF3C6
+jp = "　設定"
+en = "Setup"
+group = "tables"
+
+[[string]]
+addr = 0x0EF3CB
+jp = "全自動"
+en = "Automation"
+group = "tables"
+
+[[string]]
+addr = 0x0EF3D1
+jp = "全体図"
+en = "Map"
+group = "tables"
+
+[[string]]
+addr = 0x0EF3D8
+jp = "部隊表"
+en = "Units"
+group = "tables"
+
+[[string]]
+addr = 0x0EF3DF
+jp = "状況表"
+en = "Status"
+group = "tables"
+
+[[string]]
+addr = 0x0EF3E6
+jp = "状況表　"
+en = "Status"
+group = "setup"
+
+[[string]]
+addr = 0x0EF3EE
+jp = "収入表"
+en = "Income"
+group = "tables"
+
+[[string]]
+addr = 0x0EF3F5
+jp = "開発表"
+en = "Develop."
+group = "tables"
+
+[[string]]
+addr = 0x0EF3FC
+jp = "部隊順序"
+en = "Unit order"
+group = "order"
+
+[[string]]
+addr = 0x0EF405
+jp = "　番号順"
+en = "By number"
+group = "order"
+
+[[string]]
+addr = 0x0EF40D
+jp = "タイプ順"
+en = "By type"
+group = "order"
+
+[[string]]
+addr = 0x0EF413
+jp = "未行動順"
+en = "Unmoved"
+group = "order"
+
+[[string]]
+addr = 0x0EF41C
+jp = "　記録　"
+en = "Record"
+
+[[string]]
+addr = 0x0EF423
+jp = "記録"
+en = "Record"
+
+[[string]]
+addr = 0x0EF428
+jp = "サウンド"
+en = "Sound"
+group = "setup"
+
+[[string]]
+addr = 0x0EF42D
+jp = "　操作　"
+en = "Control"
+group = "setup"
+
+[[string]]
+addr = 0x0EF433
+jp = "　索敵　"
+en = "Fog"
+group = "setup"
+
+[[string]]
+addr = 0x0EF43A
+jp = "　天候　"
+en = "Weather"
+group = "setup"
+
+[[string]]
+addr = 0x0EF441
+jp = "システム"
+en = "System"
+group = "setup"
+
+[[string]]
+addr = 0x0EF446
+jp = "アラーム"
+en = "Alarm"
+
+[[string]]
+addr = 0x0EF452
+jp = "ロード"
+en = "Load"
+
+[[string]]
+addr = 0x0EF456
+jp = "ロード　"
+en = "Load"
+group = "setup"
+
+[[string]]
+addr = 0x0EF45B
+jp = "セーブ"
+en = "Save"
+
+[[string]]
+addr = 0x0EF45F
+jp = "降伏"
+en = "Give up"
+
+[[string]]
+addr = 0x0EF463
+jp = "降伏　"
+en = "Give up"
+
+[[string]]
+addr = 0x0EF468
+jp = "セーブＮｏ．選択"
+en = "Select save No."
+
+[[string]]
+addr = 0x0EF473
+jp = "ロードＮｏ．選択"
+en = "Select load No."
+
+[[string]]
+addr = 0x0EF47E
+jp = "　開始　"
+en = "Start"
+group = "setup"
+
+[[string]]
+addr = 0x0EF485
+jp = "エディト"
+en = "Edit"
+
+[[string]]
+addr = 0x0EF48A
+jp = "開始ターン"
+en = "Start turn"
+
+[[string]]
+addr = 0x0EF492
+jp = "ゲームターン"
+en = "Game turns"
+
+[[string]]
+addr = 0x0EF499
+jp = "気候"
+en = "Climate"
+
+[[string]]
+addr = 0x0EF49E
+jp = "操作設定"
+en = "Controls"
+
+[[string]]
+addr = 0x0EF4BD
+jp = "戦闘画面速度　　　"
+en = "Battle speed"
+group = "settings"
+
+[[string]]
+addr = 0x0EF4CB
+jp = "ヘックスライン　　"
+en = "Hex lines"
+group = "settings"
+
+[[string]]
+addr = 0x0EF4D5
+jp = "敵ユニット性能表　"
+en = "Enemy unit specs"
+group = "settings"
+
+[[string]]
+addr = 0x0EF4E3
+jp = "反撃武器を選択　　"
+en = "Pick counter weapon"
+group = "settings"
+
+[[string]]
+addr = 0x0EF502
+jp = "索敵設定"
+en = "Fog of war"
+
+[[string]]
+addr = 0x0EF50A
+jp = "索敵レベル　　"
+en = "Fog for"
+
+[[string]]
+addr = 0x0EF514
+jp = "初級"
+en = "None"
+group = "level"
+
+[[string]]
+addr = 0x0EF519
+jp = "中級"
+en = "All"
+group = "level"
+
+[[string]]
+addr = 0x0EF51D
+jp = "上級"
+en = "You"
+group = "level"
+
+[[string]]
+addr = 0x0EF521
+jp = "下級"
+en = "Low"
+group = "level"
+
+[[string]]
+addr = 0x0EF525
+jp = "天候設定"
+en = "Weather"
+
+[[string]]
+addr = 0x0EF52D
+jp = "天候ルール　"
+en = "Weather"
+
+[[string]]
+addr = 0x0EF536
+jp = "軍事費収入　＄"
+en = "Income $"
+align = "right"
+
+[[string]]
+addr = 0x0EF550
+jp = "全補給ＯＮ　"
+en = "Auto supply ON"
+group = "allauto"
+
+[[string]]
+addr = 0x0EF558
+jp = "全補給ＯＦＦ"
+en = "Auto supply OFF"
+group = "allauto"
+
+[[string]]
+addr = 0x0EF560
+jp = "全占領ＯＮ　"
+en = "Auto occupy ON"
+group = "allauto"
+
+[[string]]
+addr = 0x0EF56A
+jp = "全占領ＯＦＦ"
+en = "Auto occupy OFF"
+group = "allauto"
+
+[[string]]
+addr = 0x0EF574
+jp = "全工事ＯＮ　"
+en = "Auto works ON"
+group = "allauto"
+
+[[string]]
+addr = 0x0EF57D
+jp = "全工事ＯＦＦ"
+en = "Auto works OFF"
+group = "allauto"
+
+[[string]]
+addr = 0x0EF586
+jp = "全移動ＯＮ　"
+en = "Auto move ON"
+group = "allauto"
+
+[[string]]
+addr = 0x0EF590
+jp = "全移動ＯＦＦ"
+en = "Auto move OFF"
+group = "allauto"
+
+[[string]]
+addr = 0x0EF59A
+jp = "全自動　開始"
+en = "Start automation"
+group = "allauto"
+
+[[string]]
+addr = 0x0EF5A5
+jp = "設"
+en = "Set"
+
+[[string]]
+addr = 0x0EF5A8
+jp = "定"
+en = ""
+
+[[string]]
+addr = 0x0EF5B2
+jp = "累積度"
+en = "Soil"
+
+[[string]]
+addr = 0x0EF5B9
+jp = "作戦"
+en = "Op."
+
+[[string]]
+addr = 0x0EF5BC
+jp = "目標"
+en = "Goal"
+
+[[string]]
+addr = 0x0EF5C1
+jp = "占　領　状　態"
+en = "Occupation"
+
+[[string]]
+addr = 0x0EF5CD
+jp = "通常"
+en = "Normal"
+
+[[string]]
+addr = 0x0EF5D2
+jp = "雨"
+en = "Wet"
+
+[[string]]
+addr = 0x0EF5D4
+jp = "雪"
+en = "Sno"
+
+[[string]]
+addr = 0x0EF5EA
+jp = "タ　イ　プ　別　機　数　表"
+en = "Units by type"
+
+[[string]]
+addr = 0x0EF619
+jp = "開発画面"
+en = "Development"
+
+[[string]]
+addr = 0x0EF622
+jp = "開発画面　ユニットタイプ選択"
+en = "Development: select unit type"
+
+[[string]]
+addr = 0x0EF637
+jp = "生産可"
+en = "Can build"
+
+[[string]]
+addr = 0x0EF63C
+jp = "進化１"
+en = "Evolve 1"
+group = "evolve"
+
+[[string]]
+addr = 0x0EF642
+jp = "進化２"
+en = "Evolve 2"
+group = "evolve"
+
+[[string]]
+addr = 0x0EF648
+jp = "進化３"
+en = "Evolve 3"
+group = "evolve"
+
+[[string]]
+addr = 0x0EF64E
+jp = "開発"
+en = "Devel."
+
+[[string]]
+addr = 0x0EFAA4
+jp = "行軍目標地点設定"
+en = "Set march goal"
+group = "march"
+
+[[string]]
+addr = 0x0EFAB3
+jp = "行軍目標地点まで　燃料"
+en = "Fuel to march goal"
+group = "march"
+
+[[string]]
+addr = 0x0EFAC8
+jp = "行軍目標地点記録"
+en = "Save march goal"
+group = "march"
+
+[[string]]
+addr = 0x0EFAD8
+jp = "行軍目標地点消去"
+en = "Clear march goal"
+group = "march"
+
+[[string]]
+addr = 0x0EFAE8
+jp = "行軍目標地点　Ｘ＝　　　Ｙ＝"
+parts = [[0,"March goal"],[7,"X="],[12,"Y="]]
+
+[[string]]
+addr = 0x0EFAFC
+jp = "Ａボタン　次部隊　　Ｃボタン　首都"
+en = "A: next unit    C: capital"
+group = "buttons"
+
+[[string]]
+addr = 0x0EFB13
+jp = "Ａボタン　首都　　Ｃボタン　次部隊"
+en = "A: capital    C: next unit"
+group = "buttons"
+
+[[string]]
+addr = 0x0EFB2A
+jp = "航空機燃料チェック"
+en = "Aircraft fuel check"
+
+[[string]]
+addr = 0x0EFB36
+jp = "燃料切れで墜落"
+en = "Crashed, no fuel"
+
+[[string]]
+addr = 0x0EFB45
+jp = "ユニットを搭載していた"
+en = "It was carrying units"
+
+[[string]]
+addr = 0x0EFF68
+jp = "セーブデータが破壊されました"
+en = "Save data is corrupted."
+group = "savefail"
+
+[[string]]
+addr = 0x0EFF7F
+jp = "リセットボタンを押してください"
+en = "Please press the reset button."
+group = "savefail"

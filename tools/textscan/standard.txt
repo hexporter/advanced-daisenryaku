@@ -1,0 +1,70 @@
+# Route for tools/textscan.py run --script (runner input-script format).
+# Boot -> STANDARD -> load scenario 0 -> Status screen (A opens, C turns its two pages) -> Start -> map:
+# info line (C), START menu (End / Cancel). Menu cursors do not wrap, so UP x8 returns to Load.
+# Checked on the tr build, 03.11.2026 (docs/notes/textscan.md). Sound/Control/Fog/Weather/System
+# are not in the route: C does not close all of them, and stray presses change settings.
+WAIT 600
+PRESS START 4
+WAIT 120
+# title menu: CONTINUE, CAMPAIGN, STANDARD
+PRESS DOWN 4
+WAIT 20
+PRESS DOWN 4
+WAIT 20
+PRESS A 4
+WAIT 200
+# Load -> scenario list -> scenario 0
+PRESS A 4
+WAIT 200
+PRESS A 4
+WAIT 200
+# Status
+PRESS DOWN 8
+WAIT 30
+PRESS A 8
+WAIT 150
+PRESS C 8
+WAIT 120
+PRESS C 8
+WAIT 120
+PRESS UP 8
+WAIT 30
+PRESS UP 8
+WAIT 30
+PRESS UP 8
+WAIT 30
+PRESS UP 8
+WAIT 30
+PRESS UP 8
+WAIT 30
+PRESS UP 8
+WAIT 30
+PRESS UP 8
+WAIT 30
+PRESS UP 8
+WAIT 30
+# Start -> map
+PRESS DOWN 8
+WAIT 30
+PRESS DOWN 8
+WAIT 30
+PRESS DOWN 8
+WAIT 30
+PRESS DOWN 8
+WAIT 30
+PRESS DOWN 8
+WAIT 30
+PRESS DOWN 8
+WAIT 30
+PRESS DOWN 8
+WAIT 30
+PRESS A 4
+WAIT 1200
+# map: info line, then the START menu, Cancel
+PRESS C 10
+WAIT 90
+PRESS START 10
+WAIT 90
+PRESS B 10
+WAIT 90
+EXIT 0

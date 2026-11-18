@@ -1,0 +1,19 @@
+diff --git a/runner/main.c b/runner/main.c
+--- a/runner/main.c
++++ b/runner/main.c
+@@ -2976,6 +2976,15 @@
+     /* --- SDL init ---
+      * GAMECONTROLLER enables XInput (Xbox pads) and HID gamepads via SDL's
+      * controller database. Init is non-fatal if no controller is attached. */
++#ifdef _WIN32
++    /* Windows display scaling (125 %, 150 %, 200 %): without these the process is
++     * DPI-unaware, renders at 100 % and Windows stretches the window with a soft
++     * filter. With them SDL works as on macOS Retina: window sizes in points,
++     * renderer output in physical pixels (SDL_WINDOW_ALLOW_HIGHDPI).
++     * Normal priority: the environment variables of the same name still override. */
++    SDL_SetHint(SDL_HINT_WINDOWS_DPI_AWARENESS, "permonitorv2");
++    SDL_SetHint(SDL_HINT_WINDOWS_DPI_SCALING, "1");
++#endif
+     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_EVENTS
+                  | SDL_INIT_GAMECONTROLLER) != 0) {
+         fprintf(stderr, "SDL_Init: %s\n", SDL_GetError());

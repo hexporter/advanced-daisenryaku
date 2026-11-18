@@ -1,0 +1,10 @@
+# Line endings: the bash tools and the framework patches must stay LF on Windows too
+# (Git for Windows checks text out as CRLF by default; docs/notes/windows.md).
+* text=auto
+*.sh text eol=lf
+*.patch text eol=lf
+*.py text eol=lf
+*.toml text eol=lf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.ico binary

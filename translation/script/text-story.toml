@@ -1,0 +1,268 @@
+# 16x16 strings: intro epigraph, post-war timeline 1945–49 with Churchill quote, results,
+# victory epilogue. The quote and the epilogue are translated from the Japanese, not quoted.
+
+# addr = original string, jp = original text (checked on every build), en = English. The English
+# keeps the glyph count of the original (box width = count × 16 px), big font if it fits, else the
+# small font. Options: align = "left"|"center"|"right" (default left; center when the JP starts
+# with 2+ blanks), font = "big"|"small", group = name (one member in the small font → all of the group),
+# fixed = monospaced game-font prefix (year), indent = blank cells, parts = [[cell, text], …].
+
+
+[[string]]
+addr = 0x0EFB58
+jp = "この悲劇が繰り返されないことを願って"
+en = "May this tragedy never be repeated."
+
+[[string]]
+addr = 0x0EFC70
+jp = "１９４５年　７月"
+en = "Jul."
+fixed = "1945"
+group = "timeline"
+
+[[string]]
+addr = 0x0EFC7B
+jp = "　　　　　　　ポツダム宣言"
+en = "Potsdam Declaration"
+indent = 1
+group = "timeline"
+
+[[string]]
+addr = 0x0EFC8B
+jp = "１９４５年　８月"
+en = "Aug."
+fixed = "1945"
+group = "timeline"
+
+[[string]]
+addr = 0x0EFC96
+jp = "　　　　　　　日本降伏"
+en = "Japan surrenders"
+indent = 1
+group = "timeline"
+
+[[string]]
+addr = 0x0EFCA5
+jp = "１９４５年１１月"
+en = "Nov."
+fixed = "1945"
+group = "timeline"
+
+[[string]]
+addr = 0x0EFCB0
+jp = "　　　　　　　ニュルンベルク裁判"
+en = "Nuremberg Trials"
+indent = 1
+group = "timeline"
+
+[[string]]
+addr = 0x0EFCC3
+jp = "１９４６年　４月"
+en = "Apr."
+fixed = "1946"
+group = "timeline"
+
+[[string]]
+addr = 0x0EFCCE
+jp = "　　　　　　　中国、内戦激化"
+en = "China's civil war flares"
+indent = 1
+group = "timeline"
+
+[[string]]
+addr = 0x0EFCE2
+jp = "１９４６年　５月"
+en = "May"
+fixed = "1946"
+group = "timeline"
+
+[[string]]
+addr = 0x0EFCED
+jp = "　　　　　　　東京裁判"
+en = "Tokyo Trials"
+indent = 1
+group = "timeline"
+
+[[string]]
+addr = 0x0EFCFD
+jp = "１９４６年１２月"
+en = "Dec."
+fixed = "1946"
+group = "timeline"
+
+[[string]]
+addr = 0x0EFD08
+jp = "　　　　　　　インドシナ戦争"
+en = "Indochina War"
+indent = 1
+group = "timeline"
+
+[[string]]
+addr = 0x0EFD18
+jp = "１９４８年　５月"
+en = "May"
+fixed = "1948"
+group = "timeline"
+
+[[string]]
+addr = 0x0EFD23
+jp = "　　　　　　　パレスチナ戦争"
+en = "Palestine War"
+indent = 1
+group = "timeline"
+
+[[string]]
+addr = 0x0EFD33
+jp = "１９４８年　６月"
+en = "June"
+fixed = "1948"
+group = "timeline"
+
+[[string]]
+addr = 0x0EFD3E
+jp = "　　　　　　　ベルリン封鎖"
+en = "Berlin Blockade"
+indent = 1
+group = "timeline"
+
+[[string]]
+addr = 0x0EFD4E
+jp = "１９４９年　５月"
+en = "May"
+fixed = "1949"
+group = "timeline"
+
+[[string]]
+addr = 0x0EFD59
+jp = "　　　　　　　ドイツ連邦共和国成立"
+en = "West Germany founded"
+indent = 1
+group = "timeline"
+
+[[string]]
+addr = 0x0EFD72
+jp = "１９４９年１０月"
+en = "Oct."
+fixed = "1949"
+group = "timeline"
+
+[[string]]
+addr = 0x0EFD7D
+jp = "　　　　　　　ドイツ民主共和国成立"
+en = "East Germany founded"
+indent = 1
+group = "timeline"
+
+[[string]]
+addr = 0x0EFD96
+jp = "ドイツは事実分割されたが、しかし"
+en = "Germany was divided in fact,"
+group = "quote"
+
+[[string]]
+addr = 0x0EFDB4
+jp = "それは単にいまわしい軍事占領地区"
+en = "but merely into hateful zones"
+group = "quote"
+
+[[string]]
+addr = 0x0EFDD4
+jp = "に分かれたにすぎない。"
+en = "of military occupation."
+group = "quote"
+
+[[string]]
+addr = 0x0EFDEB
+jp = "この悲劇については、それはただ永"
+en = "Of this tragedy one can only"
+group = "quote"
+
+[[string]]
+addr = 0x0EFE0C
+jp = "続するものではないといいえるだけ"
+en = "say that it cannot last"
+group = "quote"
+
+[[string]]
+addr = 0x0EFE2D
+jp = "である。"
+en = "forever."
+group = "quote"
+
+[[string]]
+addr = 0x0EFE36
+jp = "　　　　　　　Ｗ・Ｓ・チャーチル"
+en = "W. S. Churchill"
+align = "right"
+
+[[string]]
+addr = 0x0EFE49
+jp = "の完勝です。"
+en = "triumphs."
+group = "results"
+
+[[string]]
+addr = 0x0EFE56
+jp = "の勝利です。"
+en = "wins."
+group = "results"
+
+[[string]]
+addr = 0x0EFE63
+jp = "引き分けです。"
+en = "It's a draw."
+group = "results"
+
+[[string]]
+addr = 0x0EFE71
+jp = "あなたの負けです。"
+en = "You have lost."
+group = "results"
+
+[[string]]
+addr = 0x0EFE89
+jp = "ヨーロッパにおける戦争は終わり、"
+en = "The war in Europe was over."
+group = "epilogue"
+
+[[string]]
+addr = 0x0EFEA3
+jp = "ドイツはピレネーからウラルに至る"
+en = "Germany ruled a vast realm"
+group = "epilogue"
+
+[[string]]
+addr = 0x0EFEBA
+jp = "広大な領土を支配していた。ヒトラ"
+en = "from the Pyrenees to the Urals."
+group = "epilogue"
+
+[[string]]
+addr = 0x0EFED8
+jp = "ーは国民に千年帝国の建設を約束し"
+en = "Hitler promised his people"
+group = "epilogue"
+
+[[string]]
+addr = 0x0EFEF8
+jp = "た。だが、こんな帝国が千年も続く"
+en = "a Reich for a thousand years."
+group = "epilogue"
+
+[[string]]
+addr = 0x0EFF19
+jp = "わけがなかった。"
+en = "It was not to be."
+group = "epilogue"
+
+[[string]]
+addr = 0x0EFF2A
+jp = "ナチの行った数々の罪こそ、千年後"
+en = "The crimes of the Nazis"
+group = "epilogue"
+
+[[string]]
+addr = 0x0EFF49
+jp = "まで消えることはないのである。"
+en = "will not fade in 1000 years."
+group = "epilogue"

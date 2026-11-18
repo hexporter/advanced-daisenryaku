@@ -1,0 +1,410 @@
+# 16x16 strings: movement types ($02376A, 23 × 4 bytes) and unit classes ($0237C6, 44 × 7 bytes).
+
+# addr = original string, jp = original text (checked on every build), en = English. The English
+# keeps the glyph count of the original (box width = count × 16 px), big font if it fits, else the
+# small font. Options: align = "left"|"center"|"right" (default left; center when the JP starts
+# with 2+ blanks), font = "big"|"small", group = name (one member in the small font → all of the group),
+# fixed = monospaced game-font prefix (year), indent = blank cells, parts = [[cell, text], …].
+
+
+[[string]]
+addr = 0x02376A
+jp = "　航空"
+en = "Air"
+group = "move"
+
+[[string]]
+addr = 0x02376E
+jp = "　航空"
+en = "Air"
+group = "move"
+
+[[string]]
+addr = 0x023772
+jp = "　航空"
+en = "Air"
+group = "move"
+
+[[string]]
+addr = 0x023776
+jp = "　航空"
+en = "Air"
+group = "move"
+
+[[string]]
+addr = 0x02377A
+jp = "　ヘリ"
+en = "Heli"
+group = "move"
+
+[[string]]
+addr = 0x02377E
+jp = "装軌基"
+en = "Trk Std"
+group = "move"
+
+[[string]]
+addr = 0x023782
+jp = "装軌浮"
+en = "Trk Amph"
+group = "move"
+
+[[string]]
+addr = 0x023786
+jp = "装軌潜"
+en = "Trk Sub"
+group = "move"
+
+[[string]]
+addr = 0x02378A
+jp = "装軌弱"
+en = "Trk Weak"
+group = "move"
+
+[[string]]
+addr = 0x02378E
+jp = "半装軌"
+en = "Halftrk"
+group = "move"
+
+[[string]]
+addr = 0x023792
+jp = "半装弱"
+en = "HT Weak"
+group = "move"
+
+[[string]]
+addr = 0x023796
+jp = "装輪路"
+en = "Whl Road"
+group = "move"
+
+[[string]]
+addr = 0x02379A
+jp = "装輪不"
+en = "Whl Rgh"
+group = "move"
+
+[[string]]
+addr = 0x02379E
+jp = "装輪浮"
+en = "Whl Amph"
+group = "move"
+
+[[string]]
+addr = 0x0237A2
+jp = "　牽引"
+en = "Towed"
+group = "move"
+
+[[string]]
+addr = 0x0237A6
+jp = "鉄道Ｅ"
+en = "Rail E"
+group = "move"
+
+[[string]]
+addr = 0x0237AA
+jp = "鉄道Ｒ"
+en = "Rail R"
+group = "move"
+
+[[string]]
+addr = 0x0237AE
+jp = "歩兵基"
+en = "Inf Std"
+group = "move"
+
+[[string]]
+addr = 0x0237B2
+jp = "歩兵雪"
+en = "Inf Snow"
+group = "move"
+
+[[string]]
+addr = 0x0237B6
+jp = "歩兵騎"
+en = "Inf Cav"
+group = "move"
+
+[[string]]
+addr = 0x0237BA
+jp = "歩兵特"
+en = "Inf Spec"
+group = "move"
+
+[[string]]
+addr = 0x0237BE
+jp = "　艦艇"
+en = "Naval"
+group = "move"
+
+[[string]]
+addr = 0x0237C2
+jp = "　固定"
+en = "Fixed"
+group = "move"
+
+[[string]]
+addr = 0x0237C6
+jp = "戦闘機　　　"
+en = "Fighter"
+group = "class"
+
+[[string]]
+addr = 0x0237CD
+jp = "戦闘爆撃機　"
+en = "Fighter-Bomber"
+group = "class"
+
+[[string]]
+addr = 0x0237D4
+jp = "局地戦闘機　"
+en = "Interceptor"
+group = "class"
+
+[[string]]
+addr = 0x0237DB
+jp = "艦上戦闘機　"
+en = "Carrier Fighter"
+group = "class"
+
+[[string]]
+addr = 0x0237E2
+jp = "攻撃機　　　"
+en = "Attack Aircraft"
+group = "class"
+
+[[string]]
+addr = 0x0237E9
+jp = "艦上攻撃機　"
+en = "Carrier Attack"
+group = "class"
+
+[[string]]
+addr = 0x0237F0
+jp = "急降下爆撃機"
+en = "Dive Bomber"
+group = "class"
+
+[[string]]
+addr = 0x0237F7
+jp = "雷撃機　　　"
+en = "Torpedo Bomber"
+group = "class"
+
+[[string]]
+addr = 0x0237FE
+jp = "艦上雷撃機　"
+en = "Carrier Torpedo"
+group = "class"
+
+[[string]]
+addr = 0x023805
+jp = "ヘリコプター"
+en = "Helicopter"
+group = "class"
+
+[[string]]
+addr = 0x02380C
+jp = "輸送機　　　"
+en = "Air Transport"
+group = "class"
+
+[[string]]
+addr = 0x023813
+jp = "爆撃機　　　"
+en = "Bomber"
+group = "class"
+
+[[string]]
+addr = 0x02381A
+jp = "対潜　　機　"
+en = "ASW Aircraft"
+group = "class"
+
+[[string]]
+addr = 0x023821
+jp = "装甲車　　　"
+en = "Armored Car"
+group = "class"
+
+[[string]]
+addr = 0x023828
+jp = "軽戦車　　　"
+en = "Light Tank"
+group = "class"
+
+[[string]]
+addr = 0x02382F
+jp = "戦車　　　　"
+en = "Tank"
+group = "class"
+
+[[string]]
+addr = 0x023836
+jp = "巡航戦車　　"
+en = "Cruiser Tank"
+group = "class"
+
+[[string]]
+addr = 0x02383D
+jp = "歩兵戦車　　"
+en = "Infantry Tank"
+group = "class"
+
+[[string]]
+addr = 0x023844
+jp = "駆逐戦車　　"
+en = "Tank Destroyer"
+group = "class"
+
+[[string]]
+addr = 0x02384B
+jp = "対戦車自走砲"
+en = "SP AT Gun"
+group = "class"
+
+[[string]]
+addr = 0x023852
+jp = "火炎放射戦車"
+en = "Flame Tank"
+group = "class"
+
+[[string]]
+addr = 0x023859
+jp = "自走重歩兵砲"
+en = "SP Hvy Inf Gun"
+group = "class"
+
+[[string]]
+addr = 0x023860
+jp = "自走カノン砲"
+en = "SP Gun"
+group = "class"
+
+[[string]]
+addr = 0x023867
+jp = "自走ロケット"
+en = "SP Rocket"
+group = "class"
+
+[[string]]
+addr = 0x02386E
+jp = "対空戦車　　"
+en = "AA Tank"
+group = "class"
+
+[[string]]
+addr = 0x023875
+jp = "自走高射砲　"
+en = "SP AA Gun"
+group = "class"
+
+[[string]]
+addr = 0x02387C
+jp = "輸送車　　　"
+en = "Transport"
+group = "class"
+
+[[string]]
+addr = 0x023883
+jp = "補給車　　　"
+en = "Supply Truck"
+group = "class"
+
+[[string]]
+addr = 0x02388A
+jp = "工作車　　　"
+en = "Engineer Vehicle"
+group = "class"
+
+[[string]]
+addr = 0x023891
+jp = "牽引対戦車砲"
+en = "Towed AT Gun"
+group = "class"
+
+[[string]]
+addr = 0x023898
+jp = "牽引カノン砲"
+en = "Towed Gun"
+group = "class"
+
+[[string]]
+addr = 0x02389F
+jp = "牽引ロケット"
+en = "Towed Rocket"
+group = "class"
+
+[[string]]
+addr = 0x0238A6
+jp = "牽引高射砲　"
+en = "Towed AA Gun"
+group = "class"
+
+[[string]]
+addr = 0x0238AD
+jp = "トーチカ　　"
+en = "Pillbox"
+group = "class"
+
+[[string]]
+addr = 0x0238B4
+jp = "列車　　　　"
+en = "Train"
+group = "class"
+
+[[string]]
+addr = 0x0238BB
+jp = "装甲列車　　"
+en = "Armored Train"
+group = "class"
+
+[[string]]
+addr = 0x0238C2
+jp = "歩兵　　　　"
+en = "Infantry"
+group = "class"
+
+[[string]]
+addr = 0x0238C9
+jp = "水上艦　　　"
+en = "Surface Ship"
+group = "class"
+
+[[string]]
+addr = 0x0238D0
+jp = "空母　　　　"
+en = "Carrier"
+group = "class"
+
+[[string]]
+addr = 0x0238D7
+jp = "揚陸艦　　　"
+en = "Landing Ship"
+group = "class"
+
+[[string]]
+addr = 0x0238DE
+jp = "補給艦　　　"
+en = "Supply Ship"
+group = "class"
+
+[[string]]
+addr = 0x0238E5
+jp = "潜水艦　　　"
+en = "Submarine"
+group = "class"
+
+[[string]]
+addr = 0x0238EC
+jp = "巡航ミサイル"
+en = "Cruise Missile"
+group = "class"
+
+[[string]]
+addr = 0x0238F3
+jp = "戦略ミサイル"
+en = "Strategic Missile"
+group = "class"

@@ -1,0 +1,258 @@
+# Validated interpreter targets (tools/fold_floor_coverage.py). Do not edit by hand;
+# regenerate with tools/fold.sh. Comment per entry: kind of validation.
+# Evidence: 613 floor_coverage files, 285 instruction lists
+# taken over=250 (of which checked statically=79) rejected=0
+
+[functions]
+late_extra = [
+  0x0024D4,  # static
+  0x0024F0,  # static
+  0x00259E,  # instruction list
+  0x0025DE,  # instruction list
+  0x002632,  # instruction list
+  0x002680,  # instruction list
+  0x0026CE,  # instruction list
+  0x0026D4,  # instruction list
+  0x0026EA,  # instruction list
+  0x002754,  # instruction list
+  0x002770,  # instruction list
+  0x0027BC,  # instruction list
+  0x0027C2,  # instruction list
+  0x0027F8,  # instruction list
+  0x005BE2,  # static
+  0x005BEC,  # static
+  0x005BF8,  # static
+  0x005C02,  # static
+  0x00627A,  # static
+  0x0062B8,  # instruction list
+  0x0062CC,  # static
+  0x0062DA,  # instruction list
+  0x0062E8,  # instruction list
+  0x0062F6,  # instruction list
+  0x0063C0,  # instruction list
+  0x0066F0,  # instruction list
+  0x007F04,  # static
+  0x007F08,  # static
+  0x007F10,  # instruction list
+  0x007F14,  # instruction list
+  0x007F18,  # instruction list
+  0x007F20,  # static
+  0x007F24,  # instruction list
+  0x007F28,  # instruction list
+  0x008162,  # static
+  0x00972C,  # instruction list
+  0x00AADA,  # static
+  0x00BAA0,  # instruction list
+  0x00BB1A,  # instruction list
+  0x00BC52,  # instruction list
+  0x00BD72,  # instruction list
+  0x00C092,  # instruction list
+  0x00C51A,  # instruction list
+  0x00C672,  # instruction list
+  0x00CB20,  # instruction list
+  0x00CB70,  # instruction list
+  0x00CB88,  # instruction list
+  0x00CC70,  # instruction list
+  0x00D326,  # static
+  0x00D3BC,  # static
+  0x00D5D8,  # static
+  0x00E110,  # instruction list
+  0x00E26C,  # instruction list
+  0x00E29A,  # instruction list
+  0x00E32A,  # instruction list
+  0x00E38C,  # instruction list
+  0x00E6DA,  # static
+  0x00E6DE,  # static
+  0x00E6E2,  # instruction list
+  0x00E6E6,  # instruction list
+  0x00E88C,  # instruction list
+  0x00EEB8,  # instruction list
+  0x00EF2A,  # instruction list
+  0x00F092,  # instruction list
+  0x00F296,  # instruction list
+  0x00F8BA,  # static
+  0x00F948,  # static
+  0x00FA80,  # instruction list
+  0x00FB48,  # static
+  0x00FC78,  # static
+  0x00FD76,  # instruction list
+  0x010280,  # instruction list
+  0x010448,  # instruction list
+  0x010502,  # instruction list
+  0x0105FE,  # instruction list
+  0x010674,  # instruction list
+  0x0106CC,  # instruction list
+  0x010778,  # instruction list
+  0x0107FA,  # instruction list
+  0x010834,  # instruction list
+  0x01087E,  # instruction list
+  0x0108F8,  # instruction list
+  0x010B0E,  # instruction list
+  0x010B62,  # instruction list
+  0x010B82,  # instruction list
+  0x010BC0,  # instruction list
+  0x010BEA,  # instruction list
+  0x010ED6,  # instruction list
+  0x010FA8,  # instruction list
+  0x010FE6,  # instruction list
+  0x01103A,  # instruction list
+  0x011096,  # instruction list
+  0x011234,  # instruction list
+  0x0112C0,  # instruction list
+  0x011390,  # instruction list
+  0x0113A8,  # instruction list
+  0x0113C0,  # instruction list
+  0x0113D8,  # instruction list
+  0x0113F0,  # instruction list
+  0x0113FE,  # instruction list
+  0x01140C,  # instruction list
+  0x01141A,  # instruction list
+  0x011428,  # instruction list
+  0x011498,  # instruction list
+  0x011518,  # instruction list
+  0x011652,  # instruction list
+  0x011E2C,  # static
+  0x011FCA,  # static
+  0x011FD8,  # static
+  0x012000,  # static
+  0x01201A,  # static
+  0x01203A,  # static
+  0x012064,  # static
+  0x0121FC,  # static
+  0x012234,  # instruction list
+  0x01226E,  # static
+  0x012328,  # static
+  0x012360,  # static
+  0x012386,  # static
+  0x01242E,  # static
+  0x01244C,  # instruction list
+  0x01245A,  # instruction list
+  0x012476,  # instruction list
+  0x012544,  # instruction list
+  0x012562,  # instruction list
+  0x012580,  # instruction list
+  0x01259E,  # instruction list
+  0x0125BC,  # static
+  0x0125D0,  # instruction list
+  0x0125DA,  # static
+  0x0125E4,  # static
+  0x0133D0,  # instruction list
+  0x013518,  # instruction list
+  0x013A9E,  # static
+  0x013CD2,  # static
+  0x015E18,  # static
+  0x015E26,  # static
+  0x015FBE,  # instruction list
+  0x016042,  # instruction list
+  0x01607E,  # instruction list
+  0x0160CA,  # static
+  0x0160F0,  # instruction list
+  0x016102,  # instruction list
+  0x016110,  # static
+  0x01611E,  # static
+  0x01616A,  # instruction list
+  0x016194,  # instruction list
+  0x016212,  # static
+  0x016228,  # static
+  0x01626E,  # static
+  0x016444,  # instruction list
+  0x01644A,  # instruction list
+  0x0164B4,  # instruction list
+  0x0164DE,  # instruction list
+  0x01653A,  # instruction list
+  0x01656A,  # static
+  0x0165B8,  # static
+  0x016628,  # static
+  0x0166BA,  # static
+  0x0166C0,  # instruction list
+  0x016756,  # instruction list
+  0x016778,  # instruction list
+  0x0167D8,  # instruction list
+  0x0167FC,  # instruction list
+  0x016826,  # instruction list
+  0x01685C,  # static
+  0x0168B6,  # static
+  0x0168CA,  # static
+  0x0168DE,  # static
+  0x0168F2,  # static
+  0x016906,  # static
+  0x01691A,  # static
+  0x01692E,  # static
+  0x016934,  # instruction list
+  0x01699A,  # instruction list
+  0x0169AE,  # instruction list
+  0x0169C2,  # instruction list
+  0x0169D6,  # instruction list
+  0x0169EA,  # instruction list
+  0x0169FE,  # instruction list
+  0x016A04,  # instruction list
+  0x016A54,  # static
+  0x016AC2,  # static
+  0x016AD6,  # static
+  0x016ADC,  # instruction list
+  0x016AF2,  # instruction list
+  0x016AF6,  # instruction list
+  0x016AFA,  # instruction list
+  0x016B1C,  # instruction list
+  0x016B30,  # instruction list
+  0x016B44,  # instruction list
+  0x016B86,  # instruction list
+  0x016B9A,  # instruction list
+  0x016BAE,  # instruction list
+  0x016BC0,  # static
+  0x016C04,  # static
+  0x016C16,  # static
+  0x016C78,  # static
+  0x016D12,  # instruction list
+  0x016D52,  # instruction list
+  0x016D68,  # instruction list
+  0x016D7E,  # instruction list
+  0x016D94,  # instruction list
+  0x016DA4,  # instruction list
+  0x016DBA,  # instruction list
+  0x016E30,  # instruction list
+  0x016F2E,  # instruction list
+  0x016F78,  # static
+  0x016F84,  # static
+  0x016F90,  # static
+  0x016F9C,  # static
+  0x016FF0,  # static
+  0x016FFA,  # static
+  0x017004,  # static
+  0x01700E,  # static
+  0x017018,  # static
+  0x01708E,  # instruction list
+  0x0170BA,  # instruction list
+  0x0170E6,  # instruction list
+  0x0170FA,  # instruction list
+  0x017114,  # instruction list
+  0x01713A,  # static
+  0x0171B6,  # instruction list
+  0x0171E8,  # instruction list
+  0x0171F4,  # instruction list
+  0x017200,  # instruction list
+  0x01720C,  # instruction list
+  0x017218,  # instruction list
+  0x017224,  # instruction list
+  0x017230,  # instruction list
+  0x01723C,  # instruction list
+  0x017254,  # instruction list
+  0x017266,  # instruction list
+  0x017278,  # instruction list
+  0x01728A,  # instruction list
+  0x0172B0,  # instruction list
+  0x0172C2,  # instruction list
+  0x0172D4,  # instruction list
+  0x0172E6,  # instruction list
+  0x01730C,  # instruction list
+  0x017318,  # instruction list
+  0x017324,  # instruction list
+  0x017330,  # instruction list
+  0x01733C,  # instruction list
+  0x017348,  # instruction list
+  0x017354,  # instruction list
+  0x017360,  # instruction list
+  0x017378,  # instruction list
+  0x017564,  # static
+  0x017566,  # static
+]

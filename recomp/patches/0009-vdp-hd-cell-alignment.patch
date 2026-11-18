@@ -1,0 +1,52 @@
+diff --git a/runner/video/genesis_vdp.c b/runner/video/genesis_vdp.c
+index 3606ed5..206b1f4 100644
+--- a/runner/video/genesis_vdp.c
++++ b/runner/video/genesis_vdp.c
+@@ -1412,6 +1412,7 @@ typedef struct HdTileCache {
+     uint8_t pattern[32 * (2 * HD_CTX + 1)];
+     const HdEntry *entry;
+     uint8_t lo, hi, valid;
++    int16_t base;                     /* first tile of the resolved 16x16 cell, -1 */
+     uint32_t stamp;
+ } HdTileCache;
+ static HdTileCache s_hd_cache[2048];
+@@ -1535,13 +1536,28 @@ static const HdTileCache *hd_resolve(const GVDP *v, unsigned ti)
+     if (c->valid && !memcmp(c->pattern, p, bytes)) return c;
+     memcpy(c->pattern, p, bytes);
+     c->valid = 1;
++    c->base = -1;
+     const uint8_t *own = &v->vram[ti * 32u];
+     c->entry = hd_find(0, own);
+     if (c->entry) return c;
+     unsigned seen = hd_colours(own);
+     if (__builtin_popcount(seen) > 2) return c;
+-    /* Glyph cell: four consecutive tiles TL TR BL BR with one colour pair. */
+-    for (unsigned q = 0; q < 4; q++) {
++    /* Glyph cell: four consecutive tiles TL TR BL BR with one colour pair. A nearly blank
++     * tile can also complete a wrong group (e.g. the one-pixel foot of an "l" spilling into
++     * the next quarter matches some other text's cell as quarter 0), so the alignment of an
++     * already resolved neighbour in the same group is tried first. */
++    unsigned order[5] = { 0, 1, 2, 3, 4 }, n_order = 4;
++    for (int k = -3; k <= 3; k++) {
++        if (!k || (int)ti + k < 0 || (int)ti + k > 2047) continue;
++        const HdTileCache *nb = &s_hd_cache[(int)ti + k];
++        if (nb->valid && nb->base >= 0 && (unsigned)nb->base <= ti && (unsigned)nb->base + 3u >= ti) {
++            order[0] = ti - (unsigned)nb->base;
++            for (unsigned q = 0, i = 1; q < 4; q++) if (q != order[0]) order[i++] = q;
++            break;
++        }
++    }
++    for (unsigned oi = 0; oi < n_order; oi++) {
++        unsigned q = order[oi];
+         if (ti < q || ti - q + 3 > 2047u) continue;
+         unsigned base = ti - q, all = 0;
+         for (unsigned k = 0; k < 4; k++) all |= hd_colours(&v->vram[(base + k) * 32u]);
+@@ -1551,7 +1567,7 @@ static const HdTileCache *hd_resolve(const GVDP *v, unsigned ti)
+         for (unsigned k = 0; k < 4; k++) hd_mask(&v->vram[(base + k) * 32u], hi, key + k * 8);
+         key[32] = (uint8_t)q;
+         const HdEntry *e = hd_find(2, key);
+-        if (e) { c->entry = e; c->lo = (uint8_t)lo; c->hi = (uint8_t)hi; return c; }
++        if (e) { c->entry = e; c->lo = (uint8_t)lo; c->hi = (uint8_t)hi; c->base = (int16_t)base; return c; }
+     }
+     /* Two-colour tile → shape lookup. */
+     if (__builtin_popcount(seen) != 2) return c;

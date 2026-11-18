@@ -1,0 +1,513 @@
+# German: campaign mission briefings. Per entry: block and offset of the [[briefing]] in
+# translation/script/brief-missions.toml (JP and English are there), text = items as `en` there
+# ("^" centred row, "" blank row, "<page>", "<keep>", else a paragraph).
+# Führer directives follow the wording of the German originals where the game quotes them.
+
+[[briefing]]
+block = "missions"
+offset = 0x0000
+text = [
+  "^Weisung Nr. 1",
+  "^- Fall Weiß -",
+  "Nachdem alle politischen Möglichkeiten erschöpft sind, um auf friedlichem Wege eine für Deutschland unerträgliche Lage an seiner Ostgrenze zu beseitigen, habe ich mich zur gewaltsamen Lösung entschlossen.",
+  "Der Angriff gegen Polen ist nach den getroffenen Vorbereitungen zu führen.",
+  "Angriffstag: 1. September 1939.",
+  "Angriffszeit: 04:45 Uhr.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0126
+text = [
+  "Feindliche Panzerverbände, die es mit unseren Panzern aufnehmen können, sind im Anmarsch gemeldet.",
+  "Nehmen Sie Piotrkow, den Stützpunkt dieser Verbände, und sichern Sie den Übergang über die Warthe. An den Brücken ist mit schweren Kämpfen zu rechnen.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x01C9
+text = [
+  "Um Warschau einzuschließen, stoßen Sie auf Radom südlich der Stadt vor.",
+  "Das Waldgelände wird den Vormarsch bremsen. Fassen Sie Ihre Kräfte gegen die feindlichen Stützpunkte zusammen und nehmen Sie diese rasch.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x023D
+text = [
+  "Die Reste des polnischen Heeres sind an der Weichsel zum Gegenangriff angetreten. Die 8. Armee wurde zurückgeworfen, ihr droht die Vernichtung.",
+  "Stellen Sie den Angriff auf Warschau vorerst ein und kesseln Sie den Feind gemeinsam mit der 4. Armee ein.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - 4. Armee",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x02D6
+text = [
+  "Die feindliche Hauptstadt Warschau ist eingeschlossen, wird aber noch von starken Kräften gehalten. Der erste Sturm scheiterte an den Pak-Stellungen.",
+  "Stürmen Sie die Stadt mit Unterstützung aus der Luft und nehmen Sie die Hauptstadt des Feindes.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x037D
+text = [
+  "Um die Verbindungswege für die Besetzung Norwegens zu sichern, ist Dänemark unverzüglich zu besetzen.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x03C3
+text = [
+  "^- Weserübung -",
+  "Nach Meldungen der Abwehr planen die Briten eine Landung in Norwegen. Eine britische Besetzung Norwegens wäre eine strategische Umfassung und öffnete den Weg in die Ostsee.",
+  "Der Feind könnte dann auf Berlin vorstoßen. Ich befehle daher die Besetzung Norwegens.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - Gebirgsdivision",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x049B
+text = [
+  "^Weisung Nr. 6",
+  "^- Fall Gelb -",
+  "Sollte England und unter seiner Führung auch Frankreich in nächster Zeit nicht gewillt sein, den Krieg zu beenden, so bin ich entschlossen, ohne Zeitverlust offensiv zu handeln.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0545
+text = [
+  "^- Fall Rot -",
+  "Um Frankreich den Todesstoß zu versetzen, durchbrechen Sie die Somme-Front und nehmen Sie Paris.",
+  "Die aus Dünkirchen entkommenen Briten schicken erneut Verstärkungen, doch Frankreich hat keine Reserven mehr. Mit dem Kriegseintritt Italiens ist zu rechnen.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - Leeb",
+  "Y1 - Italien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x060B
+text = [
+  "^- Fall Rot -",
+  "Um Frankreich den Todesstoß zu versetzen, greifen Sie die Maginot-Linie an. Ist sie durchbrochen, kann der Feind um Paris gemeinsam mit den Kräften General Bocks aus dem Norden eingeschlossen werden.",
+  "Italien wird den Alliierten voraussichtlich den Krieg erklären und nach Südfrankreich vorstoßen.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - Bock",
+  "Y1 - Italien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x06D9
+text = [
+  "Vor der Landung in England müssen wir die Luftherrschaft erringen.",
+  "England kämpft nur noch in der Hoffnung auf sowjetische Hilfe weiter.",
+  "Vernichten Sie unverzüglich die feindliche Luftwaffe.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - Italien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0773
+text = [
+  "^Weisung Nr. 16",
+  "^- Unternehmen Seelöwe -",
+  "Ich habe mich entschlossen, eine Landungsoperation gegen England vorzubereiten und, wenn nötig, durchzuführen. Der Luftkrieg entscheidet über ihren Erfolg.",
+  "Die Landung soll auf breiter Front an der Südküste Englands erfolgen.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - Italien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0834
+text = [
+  "^Weisung Nr. 25",
+  "^- Unternehmen Marita -",
+  "Ein Putsch im verbündeten Jugoslawien hat den achsenfeindlichen Simovic an die Macht gebracht.",
+  "Jugoslawien ist militärisch und als Staat sofort zu zerschlagen.",
+  "Wegen dieser Operation muss Barbarossa verschoben werden.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - Kleist",
+  "R2 - Ungarn",
+  "G1 - Italien",
+  "G2 - Italien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0931
+text = [
+  "^Weisung Nr. 25",
+  "^- Unternehmen Marita -",
+  "Ein Putsch im verbündeten Jugoslawien hat den achsenfeindlichen Simovic an die Macht gebracht.",
+  "Jugoslawien ist militärisch und als Staat sofort zu zerschlagen. Gleichzeitig ist Griechenland anzugreifen.",
+  "Wegen dieser Operation muss Barbarossa verschoben werden.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - Italien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0A31
+text = [
+  "^Weisung Nr. 21",
+  "^- Fall Barbarossa -",
+  "Die deutsche Wehrmacht muss darauf vorbereitet sein, auch vor Beendigung des Krieges gegen England Sowjetrussland in einem schnellen Feldzug niederzuwerfen.",
+  "<page>",
+  "Das Endziel ist, Russland entlang der Linie Wolga - Archangelsk zu teilen.",
+  "Ihre Heeresgruppe Nord stößt aus Ostpreußen vor, vernichtet die feindlichen Kräfte im Baltikum und nimmt Leningrad.",
+  "<keep>",
+  "Verbündete:",
+  "G1 - Finnland",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0B67
+text = [
+  "^Weisung Nr. 21",
+  "^- Fall Barbarossa -",
+  "Die deutsche Wehrmacht muss darauf vorbereitet sein, auch vor Beendigung des Krieges gegen England Sowjetrussland in einem schnellen Feldzug niederzuwerfen.",
+  "<page>",
+  "Das Endziel ist, Russland entlang der Linie Wolga - Archangelsk zu teilen.",
+  "Ihre Heeresgruppe Mitte stößt aus dem Raum Warschau vor und vernichtet die feindlichen Kräfte in Weißrussland.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - Kleist",
+  "G1 - Ungarn",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0C94
+text = [
+  "^Weisung Nr. 21",
+  "^- Fall Barbarossa -",
+  "Die deutsche Wehrmacht muss darauf vorbereitet sein, auch vor Beendigung des Krieges gegen England Sowjetrussland in einem schnellen Feldzug niederzuwerfen.",
+  "<page>",
+  "Das Endziel ist, Russland entlang der Linie Wolga - Archangelsk zu teilen.",
+  "Ihre Heeresgruppe Süd führt den Hauptstoß von Lublin auf Kiew und vernichtet den Feind im Dnjepr-Becken.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - Ungarn",
+  "G1 - Rumänien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0DD0
+text = [
+  "^- Unternehmen Taifun -",
+  "Die letzte große Schlacht dieses Jahres wird den Feind vernichten. Sie bannen eine Gefahr von Europa, so groß wie einst die Einfälle der Hunnen und Mongolen.",
+  "Der Feind ist bereits geschlagen und wird sich nie wieder erheben.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - Guderian",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0EA3
+text = [
+  "^- Unternehmen Taifun -",
+  "Die letzte große Schlacht dieses Jahres wird den Feind vernichten. Sie bannen eine Gefahr von Europa, so groß wie einst die Einfälle der Hunnen und Mongolen.",
+  "Der Feind ist bereits geschlagen und wird sich nie wieder erheben.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - Hoepner",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0F75
+text = [
+  "Die wichtigste Aufgabe vor dem Winter ist nicht die Einnahme Moskaus, sondern die Krim zu nehmen, das Industrie- und Kohlegebiet am Donez zu sichern und die Ölzufuhr aus dem Kaukasus abzuschneiden.",
+  "Das Endziel ist Rostow am Don.",
+  "<keep>",
+  "Verbündete:",
+  "G1 - Rumänien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x102E
+text = [
+  "^Weisung Nr. 41",
+  "^- Fall Blau -",
+  "Die Winterschlacht in Russland geht ihrem Ende zu.",
+  "Nach der Schlammzeit haben Heer und Luftwaffe zuerst die Hauptoperation vorzubereiten: den Feind auf der Halbinsel Kertsch auf der Krim zu vernichten und Sewastopol zu nehmen.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - Rumänien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x10F0
+text = [
+  "^Weisung Nr. 41",
+  "^- Fall Blau -",
+  "Die Winterschlacht in Russland geht ihrem Ende zu.",
+  "Alle verfügbaren Kräfte sind zur Hauptoperation im Süden zu vereinigen: den Feind vorwärts des Don zu vernichten, dann die Ölgebiete des Kaukasus und die Pässe über das Gebirge zu gewinnen.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - HGr. Weichs",
+  "R2 - Rumänien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x11B2
+text = [
+  "^- Unternehmen Wintergewitter -",
+  "Die sowjetische Winteroffensive, Operation Uranus, hat am Don begonnen. Der Feind ist an beiden Flanken der 6. Armee des Generals Paulus bei Stalingrad durchgebrochen; sie wird eingeschlossen.",
+  "Ihre Heeresgruppe Don entsetzt die 6. Armee und hält die Front.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - Armee Paulus",
+  "Y2 - Rumänien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1286
+text = [
+  "Die Sowjets haben die nächste Phase ihrer Winteroffensive begonnen, Operation Saturn. Die italienische 8. Armee am mittleren Don ist zusammengebrochen, der Feind stößt auf Rostow und Charkow vor.",
+  "Der Verlust Rostows bedeutete die Vernichtung der 1. Panzerarmee im Kaukasus. Halten Sie den feindlichen Vormarsch mit allen Kräften auf.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - HGr. Weichs",
+  "Y2 - Ungarn",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x135A
+text = [
+  "^- Unternehmen Zitadelle -",
+  "Ich habe mich entschlossen, als ersten Angriffsschlag dieses Jahres dieses Unternehmen zu führen, sobald die Wetterlage es zulässt.",
+  "Der Angriff auf den Kursker Bogen muss schnell und durchschlagend gelingen.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - HGr. Kluge",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x140D
+text = [
+  "^Weisung Nr. 22",
+  "Militärisch ist die Niederlage Italiens verständlich. Ihre Wirkung auf die Moral des deutschen Soldaten ist jedoch groß.",
+  "Strategisch ist Italiens Lage von Bedeutung, wir müssen es unterstützen.",
+  "<keep>",
+  "Verbündete:",
+  "G1 - Italien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x14C8
+text = [
+  "Die am 18. November begonnene feindliche Offensive, Operation Crusader, hat unsere Verbände bis El Agheila zurückgedrängt.",
+  "Am 5. Januar aber erreichte ein deutscher Geleitzug Tripolis, und General Rommel hat den Gegenangriff befohlen.",
+  "<keep>",
+  "Verbündete:",
+  "G1 - Italien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1578
+text = [
+  "Die Briten haben ihre Kräfte nach Griechenland und Ostafrika verzettelt und sind geschwächt. Unsere Verbände überschreiten jetzt die ägyptische Grenze, wir sind die Stärkeren.",
+  "Brechen Sie nun Englands Macht in Nordafrika und nehmen Sie seine Lebensader, den Suezkanal.",
+  "<keep>",
+  "Verbündete:",
+  "G1 - Italien",
+  "Y1 - Vichy-Frankreich",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1655
+text = [
+  "Ein Putsch im Irak hat den englandfeindlichen Raschid Ali an die Macht gebracht. Seine Regierung zu stützen und unseren Einfluss im Nahen Osten auszudehnen ist entscheidend, um Öl zu sichern und England zu schwächen.",
+  "Greifen Sie zur Unterstützung von Barbarossa auch in Richtung Armenien an.",
+  "<keep>",
+  "Verbündete:",
+  "G1 - Italien",
+  "G2 - Vichy-Frankreich",
+  "Y1 - Irak",
+  "Y2 - Iran",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1740
+text = [
+  "Die Briten sind in den Raum El Alamein zurückgewichen, eine Bahnstation nur 100 km vom Nil.",
+  "Mussolini ist selbst nach Afrika geflogen und hat das Pferd mitgebracht, auf dem er in Kairo einreiten will.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - Italien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x17E7
+text = [
+  "Um das Öl zu sichern, ohne das wir den Krieg nicht führen können, nehmen Sie das Ölgebiet um Kirkuk.",
+  "Brechen Sie Englands Macht im Nahen Osten und kappen Sie den iranischen Nachschubweg zu den Sowjets. So decken Sie die Flanke von Fall Blau.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - Italien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x18A0
+text = [
+  "^Weisung Nr. 41",
+  "^- Fall Blau -",
+  "Die Winterschlacht in Russland geht ihrem Ende zu.",
+  "Alle verfügbaren Kräfte sind zur Hauptoperation im Süden zu vereinigen. Nehmen Sie gemeinsam mit dem Afrikakorps südlich des Kaukasus die Ölfelder, vernichten Sie den Feind und zwingen Sie die Sowjets aus dem Krieg.",
+  "<keep>",
+  "Verbündete:",
+  "R1 - HGr. A/B",
+  "R2 - Türkei",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1965
+text = [
+  "Die alliierte Landung in Französisch-Nordafrika, Operation Torch, hat begonnen: bei Casablanca, Oran und Algier.",
+  "Laval, Chef der Vichy-Regierung, überlässt uns die Flugplätze in Tunesien. Verlegen Sie sofort Verbände dorthin.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - Italien",
+  "Y2 - Vichy-Frankreich",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1A32
+text = [
+  "Die alliierte Landung auf Sizilien, Operation Husky, hat begonnen.",
+  "Der Verlust der Insel würde Italiens Ausscheiden aus dem Krieg beschleunigen und dem Feind ein Sprungbrett nach Süditalien geben.",
+  "Wehren Sie die Landung wenn irgend möglich ab; wenn nicht, erhalten Sie Ihre Verbände.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - Italien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1AFD
+text = [
+  "Unter dem Druck des Feindes wird Italien früher oder später kapitulieren. Sollte das italienische Heer die Seiten wechseln, bringen Sie die Hauptstadt unter Kontrolle.",
+  "Ziehen Sie starke Kräfte an der Küste von Neapel bis Salerno zusammen, wo die Gefahr am größten ist.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - Italien",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1BC5
+text = [
+  "Der Feind ist bei Cassino an der Gustav-Linie zum Angriff übergegangen und hat bei Anzio eine Landung begonnen, Operation Shingle.",
+  "Eine Landung dort bedeutete den Verlust der Gustav-Linie. Wehren Sie die Landung mit allen Kräften ab.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - Rep. von Salo",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1C77
+text = [
+  "Die Schlacht in der Sowjetunion ist bereits gewonnen. Um den Sieg zu vollenden, müssen wir aber Kuibyschew, den Sitz der feindlichen Regierung, nehmen und die Industrie des Urals zerstören.",
+  "Das ganze Heer setzt die Offensive den Winter hindurch fort und vernichtet die Bolschewisten.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1D48
+text = [
+  "Die langen Seufzer der Geigen des Herbstes ...",
+  "Die alliierte Invasion, Operation Overlord, hat endlich begonnen.",
+  "Der Feind landet mit starken Kräften und Luftlandetruppen in der Normandie. Setzen Sie alle Verbände ein und vernichten Sie ihn.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - I. SS-Pz.Korps",
+  "Y2 - LXXXIV. Korps",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1E0F
+text = [
+  "^- Unternehmen Lüttich -",
+  "Pattons 3. Armee ist bei Avranches durchgebrochen und stößt nach Süden vor. Wird sie nicht zerschlagen, bricht die gesamte deutsche Front in Frankreich zusammen.",
+  "Alles hängt von diesem Unternehmen ab.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - Blaskowitz",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1EAD
+text = [
+  "Um die Rheinübergänge zu nehmen, haben die Alliierten eine gewaltige Luftlandeoperation begonnen: Market Garden.",
+  "Der Verlust der Brücke von Arnheim öffnete dem Feind den Weg ins Reich. Verhindern Sie die Einnahme der Übergänge und stoppen Sie den Vormarsch der Hauptmacht, des XXX. Korps.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - Pz.Brig. 107",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1F81
+text = [
+  "^- Wacht am Rhein -",
+  "Frankreich wird zu einer riesigen Falle für das amerikanische Heer.",
+  "Der Angriff überschreitet die Maas und stößt auf Antwerpen vor, um die Briten von ihren Nachschubbasen abzuschneiden und vom Kontinent zu vertreiben.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x201E
+text = [
+  "Der Führer hat den Entsatz von Budapest befohlen und dafür wichtige Reserven der Ostfront aus dem Raum Warschau abgezogen.",
+  "Die Frontbefehlshaber wollten die Besatzung selbst ausbrechen lassen, doch der Führer verlangte, Budapest zurückzuerobern, solange noch eine Aussicht besteht.",
+  "<keep>",
+  "Verbündete:",
+  "Y1 - Wildenbruch",
+  "Y2 - Ungarn",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x20EF
+text = [
+  "^VIEL GLÜCK EUCH ALLEN.",
+  "",
+  "^AUS TOKIO,",
+  "^GROSSJAPANISCHES REICH",
+]

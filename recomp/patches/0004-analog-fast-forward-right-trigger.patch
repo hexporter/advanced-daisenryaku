@@ -1,0 +1,113 @@
+diff --git a/runner/gamepad.c b/runner/gamepad.c
+index 24e04ef..b4b5590 100644
+--- a/runner/gamepad.c
++++ b/runner/gamepad.c
+@@ -183,6 +183,13 @@ int gamepad_turbo_held(void)
+     return SDL_GameControllerGetButton(s_pad[0], SDL_CONTROLLER_BUTTON_BACK);
+ }
+ 
++int gamepad_right_trigger(void)
++{
++    if (!s_pad[0]) return 0;
++    int v = SDL_GameControllerGetAxis(s_pad[0], SDL_CONTROLLER_AXIS_TRIGGERRIGHT);
++    return v < 0 ? 0 : v;
++}
++
+ uint32_t gamepad_overlay_mask(void)
+ {
+     SDL_GameController *c = s_pad[0];
+diff --git a/runner/gamepad.h b/runner/gamepad.h
+index 9913dee..f9c23e8 100644
+--- a/runner/gamepad.h
++++ b/runner/gamepad.h
+@@ -47,6 +47,9 @@ uint16_t gamepad_player_mask(int player);
+ int gamepad_player_connected(int player);
+ 
+ int     gamepad_turbo_held(void);
++/* Player 1's right trigger, 0 (released) .. 32767 (fully pressed); 0 without a pad.
++ * Drives the analog fast-forward in main.c. */
++int     gamepad_right_trigger(void);
+ int     gamepad_consume_quicksave(void);
+ int     gamepad_consume_quickload(void);
+ 
+diff --git a/runner/main.c b/runner/main.c
+index 60a0cce..d8bab6a 100644
+--- a/runner/main.c
++++ b/runner/main.c
+@@ -3460,6 +3460,12 @@ session_begin:;
+     int running = 1;
+     int window_close_requested = 0;
+     int turbo   = start_turbo;   /* F5 toggles turbo (uncapped frame rate, no audio) */
++    /* Analog fast-forward (right trigger): guest frames per presented frame. */
++    double ff_speed = 1.0, ff_acc = 0.0;
++    int    ff_active = 0;
++    double ff_max = 128.0;
++    { const char *e = getenv("GENESIS_FF_MAX");
++      if (e && atof(e) >= 1.0) ff_max = atof(e); }
+     uint32_t prev_overlay_pad = 0;
+     genesis_local_states_configure(*s_data_dir?s_data_dir:s_exe_dir, g_app_config.rewind_enabled &&
+                                    (!g_game_spec.state_unavailable_reason ||
+@@ -3690,7 +3696,21 @@ session_begin:;
+ #if GENESIS_HAS_RECOMP_NET
+           if (genesis_netplay_active()) turbo = 0;
+ #endif
+-          audio_set_playback_enabled(!turbo); }
++          /* Analog fast-forward: player-1 right trigger maps 0..100 % to
++           * 1x..GENESIS_FF_MAX (default 128x), quadratic for fine control at
++           * low speeds. Every guest frame still runs; only every n-th frame
++           * is presented, so the pacer keeps the display rate and the guest
++           * runs n times as fast. Audio mutes like turbo while active. */
++          { int rt = gamepad_right_trigger();
++            double x = rt <= 2000 ? 0.0 : (double)(rt - 2000) / 30767.0;
++            if (x > 1.0) x = 1.0;
++            ff_speed = 1.0 + (ff_max - 1.0) * x * x;
++            if (turbo || runtime_measure_frames) ff_speed = 1.0;
++#if GENESIS_HAS_RECOMP_NET
++            if (genesis_netplay_active()) ff_speed = 1.0;
++#endif
++            ff_active = ff_speed > 1.05; }
++          audio_set_playback_enabled(!turbo && !ff_active); }
+ 
+ #if GENESIS_HAS_RECOMP_NET
+         if (genesis_netplay_active()) {
+@@ -3948,8 +3968,8 @@ session_begin:;
+          * is being recorded so --wav works with --turbo for headless
+          * paired captures. */
+         { extern int audio_wav_active(void);
+-          if (!turbo || audio_wav_active())
+-            audio_flush(frame_num, !turbo,
++          if (!(turbo || ff_active) || audio_wav_active())
++            audio_flush(frame_num, !(turbo || ff_active),
+                         (const int16_t *)s_fm_accum, s_fm_count,
+                         (const int16_t *)s_psg_accum, s_psg_count); }
+ 
+@@ -4063,10 +4083,19 @@ session_begin:;
+             runner_sram_autosave_tick(frame_num);
+ 
+         FRAME_PHASE(5);
++        /* Analog fast-forward: present only every ff_speed-th guest frame. */
++        int ff_present = 1;
++        if (ff_active) {
++            ff_acc += 1.0;
++            if (ff_acc >= ff_speed) ff_acc -= ff_speed;
++            else ff_present = 0;
++        } else {
++            ff_acc = 0.0;
++        }
+         /* Upload framebuffer to GPU texture. When a present-time color model
+          * is enabled, transform a COPY into s_present_buf and upload that â€”
+          * s_framebuf (the verified/hashed raw VDP output) is never modified. */
+-        if (!benchmark_frames) {
++        if (!benchmark_frames && ff_present) {
+         const uint32_t *present_src = s_framebuf;
+ #if RECOMP_LAUNCHER
+         if (!g_game_spec.video && s_runtime_ui.view_mode == RECOMP_RUNTIME_UI_VIEW_ADAPTIVE
+@@ -4289,7 +4318,7 @@ session_begin:;
+             (void)genesis_netplay_poll_admit();
+ #endif
+ 
+-        if (!turbo && !benchmark_frames) {
++        if (!turbo && !ff_active && !benchmark_frames) {
+             AudioHostTiming audio_timing;
+             audio_get_host_timing(&audio_timing);
+             host_timing_record(&host_timing, frame_num - 1,

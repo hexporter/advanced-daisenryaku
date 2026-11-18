@@ -1,0 +1,512 @@
+# Spanish: campaign mission briefings. Per entry: block and offset of the [[briefing]] in
+# translation/script/brief-missions.toml (JP and English are there), text = items as `en` there
+# ("^" centred row, "" blank row, "<page>", "<keep>", else a paragraph).
+
+[[briefing]]
+block = "missions"
+offset = 0x0000
+text = [
+  "^Directiva n.º 1",
+  "^- Caso Blanco -",
+  "Agotadas todas las posibilidades políticas de resolver por medios pacíficos la situación en la frontera oriental, que se ha vuelto intolerable para Alemania, he decidido una solución por la fuerza.",
+  "El ataque contra Polonia se llevará a cabo conforme a los preparativos ya hechos.",
+  "Día del ataque: 1 de septiembre de 1939.",
+  "Hora del ataque: 04:45.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0126
+text = [
+  "Se ha informado del avance de unidades acorazadas enemigas capaces de hacer frente a nuestros carros.",
+  "Tome Piotrkow, la base de esas unidades, y asegure el paso del Varta. Se esperan duros combates en torno a los puentes.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x01C9
+text = [
+  "Para cercar Varsovia, avance sobre Radom, al sur de la ciudad.",
+  "El terreno boscoso frenará el avance. Concentre sus fuerzas contra los puntos fuertes enemigos y tómelos pronto.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x023D
+text = [
+  "Los restos del ejército polaco han lanzado un contraataque en el Vístula. El 8.º Ejército ha sido rechazado y corre peligro de aniquilación.",
+  "Detenga por ahora el ataque a Varsovia y, junto con el 4.º Ejército, cerque y destruya al enemigo.",
+  "<keep>",
+  "Aliados:",
+  "R1 - 4.º Ejército",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x02D6
+text = [
+  "Varsovia, la capital enemiga, está cercada, pero aún la defienden fuerzas poderosas. El primer asalto fracasó ante las posiciones de cañones contracarro.",
+  "Con apoyo aéreo, asalte la ciudad y tome la capital enemiga.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x037D
+text = [
+  "Para asegurar las líneas de comunicación de la invasión de Noruega, ocupe Dinamarca sin demora.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x03C3
+text = [
+  "^- Weserübung -",
+  "Según nuestros informes, los británicos preparan un desembarco en Noruega. Una Noruega ocupada por los británicos sería un envolvimiento estratégico que abriría el camino a los países bálticos.",
+  "El enemigo podría entonces avanzar sobre Berlín. Por ello ordeno la invasión de Noruega.",
+  "<keep>",
+  "Aliados:",
+  "R1 - División de montaña",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x049B
+text = [
+  "^Directiva n.º 6",
+  "^- Caso Amarillo -",
+  "Si Inglaterra, y Francia bajo su influencia, se niegan en breve a poner fin a la guerra, estoy resuelto a pasar a la ofensiva sin demora.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0545
+text = [
+  "^- Caso Rojo -",
+  "Para dar el golpe final a Francia, rompa el frente del Somme y tome París.",
+  "Los británicos que escaparon de Dunkerque vuelven a enviar refuerzos, pero a Francia no le quedan reservas. Se espera que Italia entre en la guerra.",
+  "<keep>",
+  "Aliados:",
+  "R1 - Leeb",
+  "Y1 - Italia",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x060B
+text = [
+  "^- Caso Rojo -",
+  "Para dar el golpe final a Francia, ataque la Línea Maginot. Una vez rota, el enemigo en torno a París podrá ser cercado junto con las fuerzas del general Bock desde el norte.",
+  "Se espera que Italia declare la guerra a los Aliados y avance por el sur de Francia.",
+  "<keep>",
+  "Aliados:",
+  "R1 - Bock",
+  "Y1 - Italia",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x06D9
+text = [
+  "Antes del desembarco en Inglaterra debemos ganar el dominio del aire.",
+  "Inglaterra sigue luchando solo con la esperanza de la ayuda soviética.",
+  "Destruya sin demora la aviación enemiga.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - Italia",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0773
+text = [
+  "^Directiva n.º 16",
+  "^- Operación León Marino -",
+  "He decidido preparar una operación de desembarco contra Inglaterra y, si es necesario, ejecutarla. La guerra aérea es decisiva para su éxito.",
+  "El desembarco se hará en un frente amplio a lo largo de la costa sur de Inglaterra.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - Italia",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0834
+text = [
+  "^Directiva n.º 25",
+  "^- Operación Marita -",
+  "Un golpe de Estado en nuestra aliada Yugoslavia ha llevado al poder a Simovic, contrario al Eje.",
+  "Yugoslavia debe ser aplastada de inmediato, militarmente y como Estado.",
+  "A causa de esta operación, Barbarroja tendrá que aplazarse.",
+  "<keep>",
+  "Aliados:",
+  "R1 - Kleist",
+  "R2 - Hungría",
+  "G1 - Italia",
+  "G2 - Italia",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0931
+text = [
+  "^Directiva n.º 25",
+  "^- Operación Marita -",
+  "Un golpe de Estado en nuestra aliada Yugoslavia ha llevado al poder a Simovic, contrario al Eje.",
+  "Yugoslavia debe ser aplastada de inmediato, militarmente y como Estado. Grecia será invadida al mismo tiempo.",
+  "A causa de esta operación, Barbarroja tendrá que aplazarse.",
+  "<keep>",
+  "Aliados:",
+  "R1 - Italia",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0A31
+text = [
+  "^Directiva n.º 21",
+  "^- Operación Barbarroja -",
+  "La Wehrmacht debe estar preparada para aplastar a la Rusia soviética en una campaña rápida, incluso antes de terminar la guerra contra Inglaterra.",
+  "<page>",
+  "El objetivo final es partir Rusia en dos a lo largo de la línea Volga - Arcángel.",
+  "Su Grupo de Ejércitos Norte avanzará desde Prusia Oriental, destruirá las fuerzas enemigas en la región báltica y tomará Leningrado.",
+  "<keep>",
+  "Aliados:",
+  "G1 - Finlandia",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0B67
+text = [
+  "^Directiva n.º 21",
+  "^- Operación Barbarroja -",
+  "La Wehrmacht debe estar preparada para aplastar a la Rusia soviética en una campaña rápida, incluso antes de terminar la guerra contra Inglaterra.",
+  "<page>",
+  "El objetivo final es partir Rusia en dos a lo largo de la línea Volga - Arcángel.",
+  "Su Grupo de Ejércitos Centro avanzará desde la zona de Varsovia y destruirá las fuerzas enemigas en Bielorrusia.",
+  "<keep>",
+  "Aliados:",
+  "R1 - Kleist",
+  "G1 - Hungría",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0C94
+text = [
+  "^Directiva n.º 21",
+  "^- Operación Barbarroja -",
+  "La Wehrmacht debe estar preparada para aplastar a la Rusia soviética en una campaña rápida, incluso antes de terminar la guerra contra Inglaterra.",
+  "<page>",
+  "El objetivo final es partir Rusia en dos a lo largo de la línea Volga - Arcángel.",
+  "Su Grupo de Ejércitos Sur dirigirá su esfuerzo principal desde Lublin hacia Kiev y destruirá al enemigo en la cuenca del Dniéper.",
+  "<keep>",
+  "Aliados:",
+  "R1 - Hungría",
+  "G1 - Rumanía",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0DD0
+text = [
+  "^- Operación Tifón -",
+  "La última gran batalla de este año aniquilará al enemigo. Usted alejará de Europa un peligro tan grande como las invasiones de los hunos y los mongoles de antaño.",
+  "El enemigo ya está vencido y no volverá a levantarse.",
+  "<keep>",
+  "Aliados:",
+  "R1 - Guderian",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0EA3
+text = [
+  "^- Operación Tifón -",
+  "La última gran batalla de este año aniquilará al enemigo. Usted alejará de Europa un peligro tan grande como las invasiones de los hunos y los mongoles de antaño.",
+  "El enemigo ya está vencido y no volverá a levantarse.",
+  "<keep>",
+  "Aliados:",
+  "R1 - Hoepner",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0F75
+text = [
+  "La tarea más importante antes del invierno no es la toma de Moscú, sino tomar Crimea, asegurar la región industrial y carbonífera de la cuenca del Donets y cortar el petróleo del Cáucaso.",
+  "El objetivo final es Rostov del Don.",
+  "<keep>",
+  "Aliados:",
+  "G1 - Rumanía",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x102E
+text = [
+  "^Directiva n.º 41",
+  "^- Caso Azul -",
+  "La batalla de invierno en Rusia se acerca a su fin.",
+  "Pasada la estación del barro, la primera tarea del ejército y la aviación es preparar la operación principal: destruir al enemigo en la península de Kerch, en Crimea, y tomar Sebastopol.",
+  "<keep>",
+  "Aliados:",
+  "R1 - Rumanía",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x10F0
+text = [
+  "^Directiva n.º 41",
+  "^- Caso Azul -",
+  "La batalla de invierno en Rusia se acerca a su fin.",
+  "Todas las fuerzas disponibles se concentrarán en la operación principal en el sur: destruir al enemigo ante el Don y después tomar los campos petrolíferos del Cáucaso y los pasos de sus montañas.",
+  "<keep>",
+  "Aliados:",
+  "R1 - GE Weichs",
+  "R2 - Rumanía",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x11B2
+text = [
+  "^- Operación Tormenta de Invierno -",
+  "La ofensiva soviética de invierno, la Operación Urano, ha comenzado a lo largo del Don. El enemigo ha roto ambos flancos del 6.º Ejército del general Paulus en Stalingrado, que está siendo cercado.",
+  "Su Grupo de Ejércitos Don liberará al 6.º Ejército y sostendrá el frente.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - Ejército Paulus",
+  "Y2 - Rumanía",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1286
+text = [
+  "Los soviéticos han iniciado la siguiente fase de su ofensiva de invierno, la Operación Saturno. El 8.º Ejército italiano en el Don medio se ha hundido, y el enemigo avanza sobre Rostov y Járkov.",
+  "La pérdida de Rostov supondría la destrucción del 1.er Ejército Panzer en el Cáucaso. Detenga el avance enemigo con todas sus fuerzas.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - GE Weichs",
+  "Y2 - Hungría",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x135A
+text = [
+  "^- Operación Ciudadela -",
+  "He decidido realizar esta operación, la primera ofensiva del año, en cuanto el tiempo lo permita.",
+  "El ataque al saliente de Kursk debe triunfar de forma rápida y decisiva.",
+  "<keep>",
+  "Aliados:",
+  "R1 - GE Kluge",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x140D
+text = [
+  "^Directiva n.º 22",
+  "Militarmente, la derrota de Italia es comprensible. Pero su efecto en la moral del soldado alemán es grande.",
+  "Estratégicamente, la posición de Italia importa, y debemos apoyarla.",
+  "<keep>",
+  "Aliados:",
+  "G1 - Italia",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x14C8
+text = [
+  "La ofensiva enemiga, la Operación Crusader, iniciada el 18 de noviembre, ha hecho retroceder a nuestras unidades hasta El Agheila.",
+  "Pero el 5 de enero un convoy alemán llegó a Trípoli, y el general Rommel ha ordenado el contraataque.",
+  "<keep>",
+  "Aliados:",
+  "G1 - Italia",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1578
+text = [
+  "Los británicos han dispersado sus fuerzas hacia Grecia y África Oriental y están debilitados. Nuestras unidades cruzan ya la frontera egipcia, y somos los más fuertes.",
+  "Rompa ahora el dominio británico sobre el norte de África y tome Suez, su arteria vital.",
+  "<keep>",
+  "Aliados:",
+  "G1 - Italia",
+  "Y1 - Francia de Vichy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1655
+text = [
+  "Un golpe de Estado en Irak ha llevado al poder a Rashid Ali, contrario a los británicos. Apoyar a su gobierno y extender nuestra influencia en Oriente Medio es vital para asegurar el petróleo y debilitar a Inglaterra.",
+  "Para apoyar Barbarroja, ataque también hacia Armenia.",
+  "<keep>",
+  "Aliados:",
+  "G1 - Italia",
+  "G2 - Francia de Vichy",
+  "Y1 - Irak",
+  "Y2 - Irán",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1740
+text = [
+  "Los británicos se han replegado a la zona de El Alamein, una estación de tren a solo 100 km del Nilo.",
+  "Mussolini ha volado en persona a África, con el caballo que montará al entrar en El Cairo.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - Italia",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x17E7
+text = [
+  "Para asegurar el petróleo del que nuestro esfuerzo de guerra no puede prescindir, tome la región petrolífera de Kirkuk.",
+  "Rompa el dominio británico sobre Oriente Medio y corte la ruta iraní de suministros a los soviéticos, cubriendo el flanco del Caso Azul.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - Italia",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x18A0
+text = [
+  "^Directiva n.º 41",
+  "^- Caso Azul -",
+  "La batalla de invierno en Rusia se acerca a su fin.",
+  "Todas las fuerzas disponibles se concentrarán en la operación principal en el sur. Junto con el Afrika Korps al sur del Cáucaso, tome los campos petrolíferos, destruya al enemigo y obligue a los soviéticos a salir de la guerra.",
+  "<keep>",
+  "Aliados:",
+  "R1 - GE A/B",
+  "R2 - Turquía",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1965
+text = [
+  "El desembarco aliado en el norte de África francés, la Operación Torch, ha comenzado en Casablanca, Orán y Argel.",
+  "Laval, jefe del gobierno de Vichy, nos ha cedido el uso de los aeródromos de Túnez. Despliegue unidades allí de inmediato.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - Italia",
+  "Y2 - Francia de Vichy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1A32
+text = [
+  "El desembarco aliado en Sicilia, la Operación Husky, ha comenzado.",
+  "La pérdida de la isla aceleraría la salida de Italia de la guerra y daría al enemigo una base para invadir el sur de Italia.",
+  "Detenga el desembarco si es posible; si no, conserve sus unidades.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - Italia",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1AFD
+text = [
+  "Bajo la presión enemiga, se espera que Italia se rinda tarde o temprano. Si el ejército italiano cambia de bando, tome el control de la capital.",
+  "Reúna fuerzas poderosas en la costa de Nápoles a Salerno, donde el peligro es mayor.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - Italia",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1BC5
+text = [
+  "El enemigo ha pasado a la ofensiva en Cassino, en la Línea Gustav, y ha iniciado un desembarco en Anzio, la Operación Shingle.",
+  "Un desembarco allí supondría la pérdida de la Línea Gustav. Deténgalo con todas sus fuerzas.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - Rep. de Saló",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1C77
+text = [
+  "La batalla en la Unión Soviética ya es nuestra. Pero para que la victoria sea completa debemos tomar Kúibyshev, sede del gobierno enemigo, y destruir la industria de los Urales.",
+  "Todo el ejército mantendrá la ofensiva durante el invierno y aniquilará a los bolcheviques.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1D48
+text = [
+  "Los largos sollozos de los violines del otoño ...",
+  "Por fin ha comenzado la invasión aliada, la Operación Overlord.",
+  "El enemigo desembarca en Normandía con grandes fuerzas y tropas aerotransportadas. Envíe todas las unidades y destrúyalo.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - I Cuerpo Panzer SS",
+  "Y2 - 84.º Cuerpo",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1E0F
+text = [
+  "^- Operación Lüttich -",
+  "El 3.er Ejército de Patton ha roto el frente en Avranches y avanza hacia el sur. Si no es aplastado, todo el frente alemán en Francia se hundirá.",
+  "Todo depende de esta operación.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - Blaskowitz",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1EAD
+text = [
+  "Para tomar los pasos del Rin, los Aliados han lanzado una enorme operación aerotransportada, Market Garden.",
+  "Perder el puente de Arnhem abriría la propia Alemania a la invasión. Impida que el enemigo tome los pasos y detenga el avance del grueso, el XXX Cuerpo.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - 107.ª Pz",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1F81
+text = [
+  "^- Guardia en el Rin -",
+  "Francia se convertirá en una enorme trampa para el ejército estadounidense.",
+  "El ataque cruzará el Mosa y avanzará sobre Amberes, para cortar a los británicos de sus bases de suministro y echarlos del continente.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x201E
+text = [
+  "El Führer ha ordenado liberar Budapest y ha añadido importantes reservas del frente oriental, fuerzas retiradas del sector de Varsovia.",
+  "Los mandos del frente querían que la guarnición rompiera el cerco por sí sola, pero el Führer exigió recuperar Budapest mientras quedara una posibilidad.",
+  "<keep>",
+  "Aliados:",
+  "Y1 - Wildenbruch",
+  "Y2 - Hungría",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x20EF
+text = [
+  "^BUENA SUERTE A TODOS.",
+  "",
+  "^DESDE TOKIO,",
+  "^GRAN IMPERIO JAPONÉS",
+]

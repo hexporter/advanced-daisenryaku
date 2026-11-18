@@ -1,0 +1,27 @@
+diff --git a/runner/m68k_interp.c b/runner/m68k_interp.c
+index 1290d52..9fb67a2 100644
+--- a/runner/m68k_interp.c
++++ b/runner/m68k_interp.c
+@@ -1403,6 +1403,11 @@ M68kiStatus m68k_interp_run_framed(uint32_t entry_pc, uint32_t *out_exit_pc) {
+     g_m68ki_insn_count = 0;
+     g_m68ki_discover_count = 0;
+     if (out_exit_pc) *out_exit_pc = 0;
++    /* The guard catches runaways, not waiting: a capsule that runs a whole
++     * menu (wait for V-int, read the pad, repeat) keeps frames advancing and
++     * may legitimately run for minutes. Count instructions per frame. */
++    extern uint64_t g_frame_count;
++    uint64_t guard_frame = g_frame_count;
+ 
+     int depth = 0;
+     for (;;) {
+@@ -1453,6 +1458,10 @@ M68kiStatus m68k_interp_run_framed(uint32_t entry_pc, uint32_t *out_exit_pc) {
+         else if (ins.mnemonic == MN_RTS || ins.mnemonic == MN_RTR)
+             depth--;
+ 
++        if (g_frame_count != guard_frame) {
++            guard_frame = g_frame_count;
++            g_m68ki_insn_count = 0;
++        }
+         if (++g_m68ki_insn_count > M68KI_INSN_GUARD) {
+             g_m68ki_bad_pc = g_cpu.PC; return M68KI_HALT_GUARD;
+         }

@@ -1,0 +1,15 @@
+--- a/runner/main.c
++++ b/runner/main.c
+@@ -3769,7 +3769,11 @@
+ #if GENESIS_HAS_RECOMP_NET
+             if (genesis_netplay_active()) ff_speed = 1.0;
+ #endif
+-            ff_active = ff_speed > 1.05; }
++            ff_active = ff_speed > 1.05;
++            /* The speed fell (e.g. 128x -> 2x): the frames counted towards the old
++             * speed are no backlog for the new one, or every frame would be presented
++             * – normal speed – until ff_acc had run down. */
++            if (ff_active && ff_acc >= ff_speed) ff_acc = ff_speed - 1.0; }
+           /* HD frame only for frames that will be presented. */
+           g_hd_frame_request = s_hd_on && !benchmark_frames &&
+                                (!ff_active || ff_acc + 1.0 >= ff_speed);

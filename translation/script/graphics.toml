@@ -1,0 +1,34 @@
+# Lettering inside Nemesis-packed intro graphics (docs/notes/graphics.md, "Intro graphics").
+# Per graphic: the "lea <data>,a0" before jsr $005B1E (site = address of the lea operand), the
+# packed data, and the text area inside the unpacked tiles: first tile (index in the block),
+# cols x rows tiles, order "rows" (row by row) or "columns" (2-tile columns, top then bottom).
+# The area is cleared and en is set centred in the game's Latin font (16 px), glyph rows from
+# `top`, colour index `ink`, optional 1 px shadow (right and below) in index `shadow`.
+# Layout evidence: test ROM with every tile labelled with its number, screenshots (02.11.2026).
+
+[[graphic]]
+name = "credits"          # 資料提供 / 戦車マガジン / 航空情報 screen; the magazine logos stay
+site = 0x000642
+addr = 0x0D49C8
+jp = "資料提供"
+en = "Courtesy of"
+first = 75                # 12 x 3 tiles at x = 112, y = 40
+cols = 12
+rows = 3
+order = "rows"
+top = 4
+ink = 1
+
+[[graphic]]
+name = "subtitle"         # title screen, between the two dashes (tiles $4D1-$4D3, kept)
+site = 0x000B70
+addr = 0x0DFC84
+jp = "ドイツ電撃作戦"
+en = "Blitzkrieg"         # "German Blitzkrieg" needs 138 px, the area is 120 px
+first = 285               # VRAM tile $4D4 (block loaded to tile 951): 15 columns of 2 tiles
+cols = 15
+rows = 2
+order = "columns"
+top = 0
+ink = 13
+shadow = 12

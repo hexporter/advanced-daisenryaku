@@ -1,0 +1,301 @@
+# German: campaign result texts, part 2 (Soviet Union 1941-43, North Africa, Middle East).
+
+[[briefing]]
+block = "results"
+offset = 0x1A7E
+text = [
+  "Wir brachen die Grenzfestung Brest, kämpften uns über verschlammte Straßen vor und nahmen Smolensk. Dann aber mussten wir nach Süden auf Kiew eindrehen, um Kleists Panzergruppe zu helfen. Geradeaus nach Osten wäre Moskau unser gewesen.",
+  "<keep>",
+  "Gleich nach dem Einmarsch hielt Churchill eine Rede:",
+  "\"Jeder Staat, der gegen den Nazismus kämpft, wird unsere Hilfe haben. Daraus folgt, dass wir Russland jede Hilfe geben, die wir geben können.\"",
+  "Nach dem Kessel von Kiew drehten unsere Verbände wieder nach Norden. Das nächste Ziel: Moskau.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1BF2
+text = [
+  "Unsere Verbände schlugen die sowjetischen Kräfte an der Grenze, erreichten die Stalin-Linie und stießen mit den ungarischen und rumänischen Verbündeten weiter vor. Hier als Befreier begrüßt, kämpften sie sich durch die Ukraine, schlossen Kiew ein und nahmen Odessa.",
+  "<keep>",
+  "Gleich nach dem Einmarsch hielt Churchill eine Rede:",
+  "\"Jeder Staat, der gegen den Nazismus kämpft, wird unsere Hilfe haben. Daraus folgt, dass wir Russland jede Hilfe geben, die wir geben können.\"",
+  "Als ersten Schritt zum Kaukasus begannen unsere Verbände, den Dnjepr zu überschreiten.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1D61
+text = [
+  "Unsere Verbände kämpften hart gegen Schukows starke Westfront, durchbrachen die von den Bürgern gebauten Stellungen und stürmten endlich Moskau.",
+  "Zeit zum Ausruhen blieb aber nicht. Weiter zum Ural.",
+  "<keep>",
+  "Tora, tora, tora.",
+  "Am 7. Dezember griff ein japanischer Trägerverband Pearl Harbor an. Die Vereinigten Staaten und England erklärten Japan den Krieg.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1E64
+text = [
+  "Unsere Verbände nahmen Moskau mit knapper Not, fanden aber nur eine Stadt in Trümmern.",
+  "Die sowjetische Wintergegenoffensive hatte begonnen, die ganze Front war in Gefahr. Der Führer befahl uns auszuhalten, doch wir wichen zurück.",
+  "<keep>",
+  "Tora, tora, tora.",
+  "Am 7. Dezember griff ein japanischer Trägerverband Pearl Harbor an. Die Vereinigten Staaten und England erklärten Japan den Krieg.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1F8F
+text = [
+  "Der Führer brach die Offensive gegen Moskau ab.",
+  "Ohne Winterausrüstung der sowjetischen Gegenoffensive ausgesetzt, begann unser Heer bei -40 Grad den Rückzug über die Ebenen. Jeder zehnte Soldat erfror.",
+  "Der Führer befahl auszuhalten; die Generale, die widersprachen, wurden einer nach dem anderen entlassen.",
+  "<keep>",
+  "Tora, tora, tora.",
+  "Am 7. Dezember griff ein japanischer Trägerverband Pearl Harbor an. Die Vereinigten Staaten und England erklärten Japan den Krieg.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x20BB
+text = [
+  "Nach Kiew erkämpften unsere Verbände bei Dnjepropetrowsk und Saporoschje den Übergang über den Dnjepr und nahmen Rostow im Handstreich.",
+  "Dann befahl der Führer plötzlich Halt und unterstellte uns der Heeresgruppe Mitte.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2177
+text = [
+  "Nach harten Kämpfen bei Dnjepropetrowsk und Saporoschje überschritten unsere Verbände den Dnjepr und nahmen das Donezbecken.",
+  "Rostow fiel, doch der Feind schlug zurück, und drei Tage später mussten wir es aufgeben. Ein bitterer Rückzug begann.",
+  "<keep>",
+  "Tora, tora, tora.",
+  "Am 7. Dezember griff ein japanischer Trägerverband Pearl Harbor an. Die Vereinigten Staaten und England erklärten Japan den Krieg.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2281
+text = [
+  "Starke Forts und Ring um Ring von Stellungen hielten unsere Verbände auf, und vor der Küste erschien die Schwarzmeerflotte, um sie mit ihren Geschützen zu stützen.",
+  "Jeder Schritt kostete weitere Verluste, doch am Ende kapitulierte die stärkste Festung der Sowjets.",
+  "<keep>",
+  "Am 4. Juni kam es zur Schlacht um Midway. Von den Amerikanern geschlagen, verlor Japan für den Rest des Krieges die Initiative.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2398
+text = [
+  "Die zähen sowjetischen Truppen und die Schwarzmeerflotte warfen unsere Pläne um. Die Front wogte hin und her, jeder Gewinn kam uns teuer zu stehen.",
+  "Die Festung fiel, aber zu spät, als dass wir am Vorstoß zur Wolga und in den Kaukasus hätten teilnehmen können.",
+  "<keep>",
+  "Am 4. Juni kam es zur Schlacht um Midway. Von den Amerikanern geschlagen, verlor Japan für den Rest des Krieges die Initiative.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x24C2
+text = [
+  "Wir nahmen das im Vorjahr aufgegebene Rostow zurück und überschritten den Don. Im Süden kappten wir den iranischen Nachschubweg zu den Sowjets und nahmen das Ölgebiet um Baku, das unseren künftigen Operationen dienen wird.",
+  "<keep>",
+  "Im Osten erreichten wir Astrachan und unterbanden die feindliche Schifffahrt auf dem Kaspischen Meer und der Wolga. Das sowjetische Heer ist keine Bedrohung mehr für uns.",
+  "Unsere Verbände verlegten dann zur Auffrischung nach Nordfrankreich.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2632
+text = [
+  "Wie geplant erreichten unsere Verbände Baku im Süden und Astrachan im Osten. Da aber brach schon wieder ein früher Winter herein.",
+  "Im Norden ließ unser langsamer Vormarsch die Sowjets sich neu ordnen, und die Front der Verbündeten an der Wolga war in Gefahr.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x270A
+text = [
+  "Nach dem Übergang über den Don teilte sich der Vormarsch in zwei Richtungen, Süd und Nord, und unsere Kräfte mussten geteilt werden.",
+  "Am Ende fehlten die Kräfte, um die entscheidenden Ziele zu nehmen, und die Operation kam zum Stehen.",
+  "Im Norden war die Front der Verbündeten an der Wolga in Gefahr.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x27E5
+text = [
+  "Da Kalatsch gefallen war, mussten unsere Verbände einen weiten Umweg mit der Bahn nehmen, um Stalingrad zu erreichen.",
+  "Wir trafen auf überlegene Gardeverbände und kämpften uns Gefecht um Gefecht voran. Endlich brachen wir den Ring auf und entsetzten die 6. Armee. Der Führer aber erlaubte ihr den Rückzug nicht.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x28BB
+text = [
+  "Da Kalatsch gefallen war, mussten unsere Verbände einen weiten Umweg mit der Bahn nehmen, um Stalingrad zu erreichen.",
+  "Wir trieben den Entsatz unter schweren Kämpfen voran, doch die eingeschlossene 6. Armee brach nicht aus, um uns entgegenzukommen.",
+  "Dann wurde die Front im Westen erneut durchbrochen, und das Unternehmen wurde abgebrochen.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2987
+text = [
+  "Im Nu überrannte der Feind die ungarische Armee und durchbrach die Front. An unserer verzweifelten Abwehr aber erlitt er schwere Verluste und begann zu weichen.",
+  "Inzwischen entkam die 1. Panzerarmee unversehrt, und die Front festigte sich wieder - bis auf den Frontbogen bei Kursk.",
+  "<keep>",
+  "Am 31. Dezember beschloss das japanische Kaiserliche Hauptquartier den Rückzug von Guadalcanal.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2A81
+text = [
+  "Der Feind überrannte die ungarische Armee und durchbrach die Front. Dann begann die feindliche Offensive auch im Kaukasus, und die Front war nicht zu halten.",
+  "Am Ende wurde die 1. Panzerarmee eingeschlossen und vernichtet. Die Front wich weit zurück, unsere Verbände verlegten zur Auffrischung nach Nordfrankreich.",
+  "<keep>",
+  "Am 31. Dezember beschloss das japanische Kaiserliche Hauptquartier den Rückzug von Guadalcanal.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2B70
+text = [
+  "Unsere Verbände stießen auf Stellung um Stellung. Wir brachen durch, nahmen nach harten Kämpfen Kursk und zerschlugen den Frontbogen.",
+  "Doch der Feind schlug bei Orel und am Mius zurück; wir hatten nur Zeit gewonnen.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2C29
+text = [
+  "Stellung um Stellung hielt unseren Vormarsch auf. Wir brachen durch, nahmen nach harten Kämpfen um Prochorowka Kursk und errangen eine Art Sieg.",
+  "Doch die Alliierten landeten auf Sizilien, und wir wurden ihnen entgegengeschickt.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2CF6
+text = [
+  "Stellung um Stellung hielt uns auf. Wir brachen durch, gerieten aber bei Prochorowka in schwere Kämpfe.",
+  "Der Sieg war in Sicht, als die Alliierten auf Sizilien landeten. Der Angriff wurde eingestellt, und wir zogen ihnen entgegen.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2DC9
+text = [
+  "Unser Afrikakorps setzte von Sizilien über, um die zurückweichenden Italiener zu stützen. Die Briten hatten El Agheila erreicht, doch wir schlugen sie wieder und wieder und warfen sie im Nu bis an die ägyptische Grenze zurück.",
+  "Nach diesem großen Sieg versprach der Führer starke Unterstützung und befahl den Vormarsch nach Ägypten.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2E97
+text = [
+  "Unser Afrikakorps setzte von Sizilien über, um den zurückweichenden Italienern zu helfen. Die Briten hatten El Agheila erreicht; wir schlugen sie und verfolgten sie bis Ägypten.",
+  "Da der Nachschub knapp war, gingen wir zur Verteidigung über.",
+  "<keep>",
+  "Am 19. Mai kapitulierte das italienische Heer in Ostafrika.",
+  "Am 30. Mai nahmen die Briten den Irak, Raschid Ali floh.",
+  "Am 11. Juli ergab sich Französisch-Syrien den Alliierten.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x2FE1
+text = [
+  "Als unsere Verbände zum Angriff übergingen, erwarteten uns die Briten in Stellungen bei Gazala vor Tobruk. Wir aber führten einen Bewegungskrieg, vernichteten ihre als Verstärkung geschickten neuen Panzer und nahmen Tobruk.",
+  "Von dort begannen wir den Vormarsch nach Ägypten.",
+  "<keep>",
+  "Am 2. Juli wurde nach dieser Niederlage in England ein Misstrauensantrag gegen Churchill gestellt, aber mit 476 zu 25 Stimmen abgelehnt.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x30F4
+text = [
+  "Nach der Einnahme der Grenzstützpunkte stießen wir gegen geringen Widerstand bis Alexandria vor, den Stützpunkt der Mittelmeerflotte. Auch die Vichy-französischen Kräfte in Syrien drängten nach Süden und nahmen die Briten in die Zange.",
+  "Unterlegen wichen die Briten nach Jordanien aus, und Suez wurde genommen.",
+  "<keep>",
+  "Am 19. Mai kapitulierte das italienische Heer in Ostafrika.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x31E0
+text = [
+  "Nach dem Durchbruch durch die Grenzstützpunkte wurde der Vormarsch auf Suez sehr schwer. Vor der Küste erschien die Mittelmeerflotte, und ihre Geschütze trafen uns immer wieder auf der Küstenstraße.",
+  "Mussolini brach die Operation ab, und unsere Verbände mussten an die ägyptische Grenze zurückgehen.",
+  "<keep>",
+  "Am 19. Mai kapitulierte das italienische Heer in Ostafrika.",
+  "Am 30. Mai nahmen die Briten den Irak, Raschid Ali floh.",
+  "Am 11. Juli ergab sich Französisch-Syrien den Alliierten.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x330C
+text = [
+  "Neben den Resten ihrer Nahostkräfte führten die Briten über den Persischen Golf Truppen aus Indien heran. Mit ihrem alten Gerät waren sie uns aber nicht gewachsen.",
+  "Wir stellten und verfolgten auch die nach Süden kommenden sowjetischen Kräfte, und endlich überschritt unsere Vorhut von Süden her die sowjetische Grenze.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x33CD
+text = [
+  "Unsere Verbände schlugen die britischen Kräfte, die die neue irakische Regierung stürzen wollten, nahmen die Küste des Persischen Golfs und überschritten die sowjetische Grenze.",
+  "Sowjetische Kräfte aber holten östlich des Kaspischen Meeres aus und kappten unseren Nachschub, und britische Truppen aus dem Sudan nahmen Ägypten zurück. Das ganze Heer begann, auf die Cyrenaika zurückzugehen.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x34BA
+text = [
+  "England schickte weitere Truppen aus Indien, und die Sowjets rückten nach Süden in den Iran ein. Unsere Front zog sich in viele Richtungen, und die überdehnten Nachschubwege lähmten das ganze Heer.",
+  "Der Führer befahl, die Operation zu verkleinern und die Offensive einzustellen. Der Zusammenbruch der Front war aber nicht zu verhindern.",
+  "<keep>",
+  "Britische Truppen aus dem Sudan nahmen Ägypten zurück, und unsere Verbände retteten sich knapp in die Cyrenaika.",
+  "Der Irak schloss darauf Waffenstillstand, Syrien kapitulierte. England und die Sowjets besetzten den Iran, um einen Nachschubweg zu öffnen.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x362B
+text = [
+  "Die Briten warfen alles in die Verteidigung von El Alamein, doch wir brachen bald durch, nahmen Alexandria und Kairo und erreichten den Suezkanal.",
+  "Der Feind wich nach Palästina aus. Unsere Verbände folgten, und eine neue Operation begann, mit dem Ölgebiet als Ziel.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x36EC
+text = [
+  "Die Briten warfen alles in die Verteidigung von El Alamein. Nach schweren Kämpfen brachen wir durch und nahmen den Suezkanal.",
+  "Dann griff der Feind an. Von Einschließung bedroht, mussten wir Ägypten aufgeben und erneut zurückgehen.",
+  "<keep>",
+  "Am 1. November begann die britische Gegenoffensive, Operation Supercharge. Unser Heer in Nordafrika trat den Rückzug an.",
+  "\"Vor Alamein hatten wir nie einen Sieg. Nach Alamein hatten wir nie eine Niederlage.\"",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3847
+text = [
+  "Die Briten warfen alles in die Verteidigung von El Alamein, und unsere erste Offensive scheiterte. Auch ein zweiter deutsch-italienischer Angriff schlug fehl.",
+  "Dann schlug der Feind mit Operation Supercharge zurück, und das Blatt wendete sich zugunsten der Alliierten.",
+  "<keep>",
+  "\"Vor Alamein hatten wir nie einen Sieg. Nach Alamein hatten wir nie eine Niederlage.\"",
+  "Am 5. November ergab sich Französisch-Madagaskar den Alliierten.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x398D
+text = [
+  "Unsere Verbände verfolgten die fliehenden Briten und nahmen ein Ölgebiet nach dem anderen. Wir nahmen die Küste des Persischen Golfs, gehalten von schlecht ausgerüsteten Truppen aus Indien, und kappten bald die iranische Route.",
+  "Endlich überschritt unsere Vorhut von Süden her die sowjetische Grenze.",
+]

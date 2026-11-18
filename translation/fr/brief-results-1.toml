@@ -1,0 +1,301 @@
+# French: campaign result texts, part 1 (Poland to the Baltic states). Per entry: block and
+# offset of the [[briefing]] in translation/script/brief-results.toml; text as `en` there.
+
+[[briefing]]
+block = "results"
+offset = 0x0000
+text = [
+  "Le quartier général a été pris, et toutes les unités ont capitulé.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0022
+text = [
+  "Nos unités blindées ont écrasé l'armée polonaise, bâtie autour d'une cavalerie d'un autre âge, percé la frontière et foncent droit vers la région au sud de Varsovie.",
+  "En réponse à notre action, les gouvernements britannique et français ont déclaré la guerre le 3 septembre.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x00C2
+text = [
+  "Nos unités blindées ont écrasé l'armée polonaise, bâtie autour d'une cavalerie d'un autre âge, percé la frontière et avancent pour s'emparer des passages de la rivière devant elles.",
+  "En réponse à notre action, les gouvernements britannique et français ont déclaré la guerre le 3 septembre.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0174
+text = [
+  "",
+  "",
+  "",
+  "Regroupez-vous et poursuivez l'opération.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0198
+text = [
+  "L'ennemi battu à la frontière semble avoir prévu une nouvelle ligne de défense à Piotrkow. Mais notre passage rapide de la rivière l'a forcé à se replier sur la Vistule.",
+  "Ainsi a commencé l'avance vers l'objectif final, Varsovie.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0242
+text = [
+  "L'ennemi battu à la frontière semble avoir prévu une nouvelle ligne de défense à Piotrkow. Mais notre passage rapide de la rivière l'a rejeté sur la Vistule.",
+  "Nos blindés sont partis appuyer l'encerclement au sud de Varsovie.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x02FC
+text = [
+  "L'encerclement de Radom a été un grand succès : sept divisions polonaises ont été détruites.",
+  "Puis nous avons percé la forte ligne de la Vistule et enfin atteint les faubourgs de Varsovie.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x037B
+text = [
+  "L'encerclement de Radom a été un grand succès : sept divisions polonaises ont été détruites.",
+  "Mais la 8e armée, à notre gauche, avait sous-estimé l'ennemi et subissait une violente contre-attaque sur la Vistule.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0416
+text = [
+  "La crise est devenue notre chance : la retraite polonaise a été coupée, et la contre-attaque s'est changée en encerclement. Après de durs combats, presque aucun ennemi n'a échappé.",
+  "Le 17 septembre, en vertu du pacte germano-soviétique, l'armée soviétique a franchi la frontière orientale de la Pologne.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x04D7
+text = [
+  "Sous les obus et les bombes, l'hymne s'est tu à la radio de Varsovie, et après de violents combats de rue la ville a capitulé.",
+  "Le gouvernement a fui en Roumanie ; l'Allemagne et les Soviétiques se sont partagé la Pologne.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0570
+text = [
+  "Nous n'avons presque pas rencontré de résistance sur la route de la capitale, Copenhague, et avons occupé le Danemark.",
+  "L'opération s'étant terminée plus tôt que prévu, nos unités ont été envoyées en Norvège.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x05F5
+text = [
+  "Nous n'avons presque pas rencontré de résistance sur la route de la capitale, Copenhague. Le Danemark a été occupé et est devenu un protectorat.",
+  "Après un court repos, nos unités ont pris la route de l'ouest.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x067A
+text = [
+  "Malgré l'aide britannique et française, toute la Norvège a été prise. Le roi et le gouvernement ont fui en Angleterre.",
+  "En Angleterre, le Premier ministre Chamberlain a démissionné le 10 mai, et un nouveau Premier ministre a pris ses fonctions.",
+  "<keep>",
+  "\"Je n'ai rien à offrir que du sang, du labeur, des larmes et de la sueur.",
+  "Vous demandez quel est notre but ? Je réponds d'un mot : la victoire.\"",
+  "^W. S. Churchill",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x07CB
+text = [
+  "Le terrain accidenté et la supériorité de la marine ennemie ont rendu l'opération très dure. Mais quand la campagne à l'ouest a commencé, les secours britanniques et français ont faibli et se sont retirés par mer.",
+  "En Angleterre, le Premier ministre Chamberlain a démissionné le 10 mai, et un nouveau Premier ministre a pris ses fonctions.",
+  "<keep>",
+  "\"Je n'ai rien à offrir que du sang, du labeur, des larmes et de la sueur.",
+  "Vous demandez quel est notre but ? Je réponds d'un mot : la victoire.\"",
+  "^W. S. Churchill",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0946
+text = [
+  "Une fois de plus, la guerre éclair a décidé de la bataille. La Hollande et la Belgique sont tombées l'une après l'autre, et le corps expéditionnaire britannique a été rejeté sur Dunkerque.",
+  "La France forme un front le long de la Somme, mais avec des forces très faibles. Nos unités sont parties vers la ligne Maginot, où reste le gros de l'ennemi.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0A10
+text = [
+  "Une fois de plus, la guerre éclair a décidé de la bataille.",
+  "La Hollande a été vite occupée, et le roi Léopold de Belgique a conclu un armistice séparé.",
+  "Dunkerque, base du corps expéditionnaire britannique, est tombée après un siège, mais ce retard a aidé l'ennemi à évacuer ses troupes.",
+  "<keep>",
+  "Après l'évacuation, Churchill a prononcé un discours :",
+  "\"Nous nous battrons sur les plages, nous nous battrons sur les terrains de débarquement, nous nous battrons dans les champs et dans les rues, nous nous battrons dans les collines ; nous ne nous rendrons jamais.\"",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0B7D
+text = [
+  "La délégation française a signé l'armistice à Compiègne. Un nouveau gouvernement a été formé à Vichy sous le maréchal Pétain.",
+  "Pendant quelque temps, nos unités s'entraîneront au pays.",
+  "<keep>",
+  "Le 18 juin, de Gaulle a prononcé un discours :",
+  "\"La France a perdu une bataille, mais la France n'a pas perdu la guerre.\"",
+  "En ce même mois de juin, l'Union soviétique a occupé les pays baltes.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0C8E
+text = [
+  "La délégation française a signé l'armistice à Compiègne. Un nouveau gouvernement a été formé à Vichy sous le maréchal Pétain.",
+  "Nos unités resteront dans le nord de la France.",
+  "<keep>",
+  "Le 18 juin, de Gaulle a prononcé un discours :",
+  "\"La France a perdu une bataille, mais la France n'a pas perdu la guerre.\"",
+  "En ce même mois de juin, l'Union soviétique a occupé les pays baltes.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0D97
+text = [
+  "La délégation française a signé l'armistice à Compiègne. Un nouveau gouvernement a été formé à Vichy sous le maréchal Pétain.",
+  "Nos unités aériennes ont commencé à gagner les aérodromes du nord de la France et de la Belgique.",
+  "<keep>",
+  "Le 18 juin, de Gaulle a prononcé un discours :",
+  "\"La France a perdu une bataille, mais la France n'a pas perdu la guerre.\"",
+  "En ce même mois de juin, l'Union soviétique a occupé les pays baltes.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0EA2
+text = [
+  "La délégation française a signé l'armistice à Compiègne. Un nouveau gouvernement a été formé à Vichy sous le maréchal Pétain.",
+  "Après cette bataille, nos unités ont embarqué peu à peu dans des trains pour la Prusse-Orientale.",
+  "<keep>",
+  "Le 18 juin, de Gaulle a prononcé un discours :",
+  "\"La France a perdu une bataille, mais la France n'a pas perdu la guerre.\"",
+  "En ce même mois de juin, l'Union soviétique a occupé les pays baltes.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0FB2
+text = [
+  "Nos unités n'ont percé la ligne Maginot qu'après la capitulation de la France.",
+  "Mais sur le front de la Somme, les unités blindées du général Bock ont poussé jusqu'à Paris.",
+  "Le président du Conseil Reynaud a démissionné ; le maréchal Pétain l'a remplacé et a demandé l'armistice, et le gouvernement s'est installé à Vichy.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1064
+text = [
+  "Notre campagne aérienne contre les îles Britanniques s'est achevée par une victoire écrasante.",
+  "L'aviation ennemie est détruite, et les bombardements ont paralysé les grandes villes industrielles.",
+  "L'ordre de débarquer en Angleterre sera donné en septembre.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1102
+text = [
+  "Les grandes villes d'Angleterre étaient en ruines. Mais la saison propice au débarquement passait, et le Führer a de nouveau reporté la date.",
+  "Parmi les soldats, on disait que le débarquement serait annulé.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x11AD
+text = [
+  "Nos unités aériennes ont infligé de lourdes pertes, sans jamais conquérir la maîtrise du ciel.",
+  "Le Führer a reporté le débarquement sine die et annoncé que l'Angleterre serait vaincue par les seuls bombardements.",
+  "<keep>",
+  "Churchill a dit des pilotes de la bataille :",
+  "\"Jamais, dans l'histoire des conflits humains, tant d'hommes n'ont dû autant à si peu.\"",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x12F7
+text = [
+  "Les combats dans les îles Britanniques touchaient à leur fin. Le roi et le gouvernement étaient partis au Canada et appelaient le Commonwealth à continuer la lutte, mais ils n'avaient plus la force de nous menacer directement.",
+  "Il ne reste que la Royal Navy.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x13B5
+text = [
+  "La résistance organisée dans les îles Britanniques a cessé, mais le gouvernement britannique au Canada guette l'occasion de débarquer à nouveau, avec l'Islande pour base.",
+  "Or il n'y avait pas d'unités ici pour garder cette longue côte. Nos forces étaient retirées pour l'opération suivante.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1485
+text = [
+  "Le débarquement en Angleterre a échoué devant la résistance acharnée de l'ennemi.",
+  "Alors que nos pertes augmentaient, l'ordre du Führer d'arrêter l'opération est parvenu au front.",
+  "L'ordre disait que la paix pouvait désormais être obtenue par des moyens politiques, mais c'était notre première défaite depuis le début de la guerre.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x155C
+text = [
+  "L'armée yougoslave, mal équipée, ne faisait pas le poids. La Yougoslavie a signé un armistice ; Simovic et le roi ont fui à Athènes.",
+  "L'Allemagne, l'Italie et la Hongrie se sont partagé le pays ; la Croatie est devenue indépendante. Nous sommes repartis vers le nord.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x161D
+text = [
+  "L'armée yougoslave, mal équipée, ne faisait pas le poids face à nos unités. Elles ne se sont arrêtées que pour se ravitailler et ont foncé jusqu'à la capitale, Belgrade.",
+  "Nos unités ont continué vers le sud, en Grèce, pour appuyer le général Kleist.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x16D7
+text = [
+  "Nos unités ont percé les forces yougoslaves au sud et sont entrées en Grèce. L'ennemi n'a cessé de reculer, s'est retiré en Crète, puis de là en Égypte.",
+  "<keep>",
+  "La Grèce a été partagée entre l'Allemagne, l'Italie et la Bulgarie.",
+  "Nos unités ont commencé à gagner Lublin, en Pologne.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x17D3
+text = [
+  "Nos unités ont percé les forces yougoslaves au sud et sont entrées en Grèce. L'ennemi n'a cessé de reculer, s'est retiré en Crète, puis de là en Égypte.",
+  "<keep>",
+  "La Grèce a été partagée entre l'Allemagne, l'Italie et la Bulgarie.",
+  "Nos unités resteront ici quelque temps. Irons-nous en Afrique du Nord appuyer Rommel, ou à Mossoul soutenir l'Irak ... ?",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x190C
+text = [
+  "Après avoir battu les forces soviétiques à la frontière, nos unités sont entrées dans les pays baltes, où la population les a accueillies en libératrices.",
+  "Mais la terre russe est immense, et les lignes de ravitaillement vers l'arrière étaient en danger.",
+  "<keep>",
+  "Juste après l'invasion, Churchill a prononcé un discours :",
+  "\"Tout État qui combat le nazisme aura notre aide. Il s'ensuit que nous donnerons à la Russie toute l'aide que nous pourrons.\"",
+  "Nos unités ont été transférées au groupe d'armées Centre. Prochain objectif : Moscou.",
+]

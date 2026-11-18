@@ -1,0 +1,18 @@
+# ROMs and dumps
+*.md.bin
+*.bin
+*.gen
+*.smd
+*.md.rom
+*.srm
+# local config
+config.env
+# build / generated code
+build/
+recomp/generated/
+# extracted assets
+assets/
+# macOS
+.DS_Store
+# Python
+__pycache__/

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>                  <string>Advanced Daisenryaku</string>
+    <key>CFBundleDisplayName</key>           <string>Advanced Daisenryaku</string>
+    <key>CFBundleExecutable</key>            <string>Advanced Daisenryaku</string>
+    <key>CFBundleIdentifier</key>            <string>@BUNDLE_ID@</string>
+    <key>CFBundlePackageType</key>           <string>APPL</string>
+    <key>CFBundleInfoDictionaryVersion</key> <string>6.0</string>
+    <key>CFBundleShortVersionString</key>    <string>@VERSION@</string>
+    <key>CFBundleVersion</key>               <string>@BUILD@</string>
+    <key>LSMinimumSystemVersion</key>        <string>@MIN_MACOS@</string>
+    <key>LSApplicationCategoryType</key>     <string>public.app-category.strategy-games</string>
+    <key>NSHighResolutionCapable</key>       <true/>
+    <key>NSSupportsAutomaticGraphicsSwitching</key> <true/>
+</dict>
+</plist>

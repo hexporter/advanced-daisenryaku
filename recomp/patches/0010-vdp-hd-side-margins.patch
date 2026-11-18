@@ -1,0 +1,231 @@
+diff --git a/runner/main.c b/runner/main.c
+--- a/runner/main.c
++++ b/runner/main.c
+@@ -532,6 +532,12 @@
+      * Keep screenshots/hashes at 256 pixels; presentation fills the same
+      * logical screen as H40. Expanded game-owned canvases retain their width. */
+     return s_screen_width == 256 ? 320 : s_screen_width;
++}
++
++/* Screen pixels (1x) the presented canvas has on each side of the picture. */
++static int hd_canvas_margin(void)
++{
++    return s_hd_on && !ws_armed() ? gvdp_hd_margin() : 0;
+ }
+ 
+ static void update_render_logical_size(SDL_Renderer *renderer)
+@@ -553,7 +559,9 @@
+         /* Integer scale keeps the 224 lines unstretched (square pixels). */
+         h = g_app_config.integer_scale ? display_logical_height() : ws_canvas_h();
+     } else {
+-        w = display_logical_width();
++        /* HD side margins (GENESIS_HD_MARGIN): the canvas is wider by the margin on
++         * each side; a 1x frame is presented in its middle. */
++        w = display_logical_width() + 2 * hd_canvas_margin();
+         h = display_logical_height();
+     }
+ 
+@@ -3037,6 +3045,17 @@
+         }
+         s_hd_available = s_hd_on = gvdp_hd_scale() != 0;
+         if (s_hd_on) win_flags |= SDL_WINDOW_ALLOW_HIGHDPI;
++        /* GENESIS_HD_MARGIN=<px>: side margins of the HD frame in screen pixels
++         * (39 = 16:9 for a 320x224 picture); the game may draw into them. */
++        const char *margin = getenv("GENESIS_HD_MARGIN");
++        if (s_hd_on && margin && *margin) {
++            gvdp_hd_set_margin(atoi(margin));
++            if (hd_canvas_margin()) {
++                win_w += 2 * hd_canvas_margin() * win_scale;
++                fprintf(stderr, "[HD] side margins %d px (canvas %dx224)\n",
++                        gvdp_hd_margin(), 320 + 2 * gvdp_hd_margin());
++            }
++        }
+     }
+     /* Launcher tri-state: 1 = borderless (desktop resolution, letterboxed by
+      * SDL_RenderSetLogicalSize), 2 = exclusive (real mode change). */
+@@ -4274,6 +4293,11 @@
+             SDL_Rect hd = { 0, 0, g_hd_frame_w, g_hd_frame_h };
+             SDL_UpdateTexture(s_hd_texture, &hd, g_hd_frame, GENESIS_HD_STRIDE * (int)sizeof(uint32_t));
+             SDL_RenderCopy(renderer, s_hd_texture, &hd, NULL);
++        } else if (hd_canvas_margin()) {
++            int lw = 0, lh = 0, m = hd_canvas_margin();
++            SDL_RenderGetLogicalSize(renderer, &lw, &lh);
++            SDL_Rect mid = { m, 0, lw - 2 * m, lh };    /* 1x frame in the middle */
++            SDL_RenderCopy(renderer, frame_texture, &src, lw > 2 * m ? &mid : NULL);
+         } else
+         SDL_RenderCopy(renderer, frame_texture, &src, NULL);
+ #if GENESIS_HAS_RECOMP_NET
+diff --git a/runner/video/genesis_machine.c b/runner/video/genesis_machine.c
+--- a/runner/video/genesis_machine.c
++++ b/runner/video/genesis_machine.c
+@@ -527,17 +527,22 @@
+     static uint8_t hidx[4 * GENESIS_HD_STRIDE];
+     int S = gvdp_hd_scale();
+     if (S < 2 || line < 0 || (line + 1) * S > GENESIS_HD_ROWS) return;
++    int moff = gvdp_hd_margin() * S;                    /* side margins, black unless drawn */
+     int w = gvdp_render_scanline_hd(vdp, line, hidx, GENESIS_HD_STRIDE);
++    int margins_drawn = w && gvdp_hd_margin_drawn();
+     if (!w) {   /* unsupported mode: repeat the 1x row */
+         w = width1x * S;
+-        if (w > GENESIS_HD_STRIDE) w = GENESIS_HD_STRIDE;
++        if (w + 2 * moff > GENESIS_HD_STRIDE) { moff = 0; if (w > GENESIS_HD_STRIDE) w = GENESIS_HD_STRIDE; }
+         for (int r = 0; r < S; r++)
+-            for (int x = 0; x < w; x++) hidx[r * GENESIS_HD_STRIDE + x] = idx1x[x / S];
++            for (int x = 0; x < w; x++) hidx[r * GENESIS_HD_STRIDE + moff + x] = idx1x[x / S];
++        w += 2 * moff;
+     }
+     for (int r = 0; r < S; r++) {
+         uint32_t *dst = g_hd_frame + (size_t)(line * S + r) * GENESIS_HD_STRIDE;
+         const uint8_t *src = hidx + r * GENESIS_HD_STRIDE;
+         for (int x = 0; x < w; x++) dst[x] = s_cram_argb[src[x]];
++        if (moff && !margins_drawn)
++            for (int x = 0; x < moff; x++) dst[x] = dst[w - 1 - x] = 0xFF000000u;
+     }
+     g_hd_frame_w = w;
+     g_hd_frame_h = (line + 1) * S;
+diff --git a/runner/video/genesis_machine.h b/runner/video/genesis_machine.h
+--- a/runner/video/genesis_machine.h
++++ b/runner/video/genesis_machine.h
+@@ -88,8 +88,10 @@
+ /* High-resolution frame (end of genesis_vdp.c): filled during machine_run_frame*
+  * while g_hd_frame_request is set and an HD scale is active. ARGB8888,
+  * g_hd_frame_w x g_hd_frame_h valid pixels, stride GENESIS_HD_STRIDE. Rows the
+- * HD renderer does not support are the 1x row pixel-repeated. Presentation only. */
+-#define GENESIS_HD_STRIDE 1280
++ * HD renderer does not support are the 1x row pixel-repeated. With side margins
++ * (gvdp_hd_set_margin) the frame is wider by the margin on each side; margins
++ * no hook drew are black. Presentation only. */
++#define GENESIS_HD_STRIDE 1664     /* (320 + 2 * GVDP_HD_MAX_MARGIN) * 4 */
+ #define GENESIS_HD_ROWS   960
+ extern uint32_t g_hd_frame[GENESIS_HD_STRIDE * GENESIS_HD_ROWS];
+ extern int g_hd_frame_w, g_hd_frame_h, g_hd_frame_request;
+diff --git a/runner/video/genesis_vdp.c b/runner/video/genesis_vdp.c
+--- a/runner/video/genesis_vdp.c
++++ b/runner/video/genesis_vdp.c
+@@ -1724,7 +1724,27 @@
+ void gvdp_hd_set_hooks(GvdpHdLayerHook layers, GvdpHdSpriteHook sprite, void *user)
+ {
+     s_hd_layer_hook = layers; s_hd_sprite_hook = sprite; s_hd_hook_user = user;
++}
++
++/* Side margins (genesis_vdp.h): planes A/B of the left and right margin. */
++#define GVDP_HD_MARGW (GVDP_HD_MAX_MARGIN * GVDP_HD_MAX_SCALE)
++static int               s_hd_margin, s_hd_margin_was_drawn;
++static GvdpHdMarginHook  s_hd_margin_hook;
++static void             *s_hd_margin_user;
++static uint8_t s_hd_ml[2][GVDP_HD_MAX_SCALE][GVDP_HD_MARGW];
++static uint8_t s_hd_mr[2][GVDP_HD_MAX_SCALE][GVDP_HD_MARGW];
++static const uint8_t s_hd_mzero[GVDP_HD_MARGW] = {0};
++
++void gvdp_hd_set_margin(int px)
++{
++    s_hd_margin = px < 0 ? 0 : px > GVDP_HD_MAX_MARGIN ? GVDP_HD_MAX_MARGIN : px;
++}
++int gvdp_hd_margin(void) { return s_hd_scale ? s_hd_margin : 0; }
++void gvdp_hd_set_margin_hook(GvdpHdMarginHook hook, void *user)
++{
++    s_hd_margin_hook = hook; s_hd_margin_user = user;
+ }
++int gvdp_hd_margin_drawn(void) { return s_hd_margin_was_drawn; }
+ 
+ static uint8_t s_hd_a[GVDP_HD_MAX_SCALE][GVDP_HD_MAXW];
+ static uint8_t s_hd_b[GVDP_HD_MAX_SCALE][GVDP_HD_MAXW];
+@@ -1830,10 +1850,14 @@
+     if (clamp_ws_extra(w) || s_ws_canvas_w > w || line < 0 || line >= GVDP_MAX_HEIGHT)
+         return 0;
+     int total = w * (int)S;
++    int moff = s_hd_margin * (int)S;                    /* margin columns on each side */
+     uint8_t backdrop = (uint8_t)(REG_BACKDROP(v) & 0x3F);
++    s_hd_margin_was_drawn = 0;
+     if (!gvdp_display_enabled(v)) {
+-        for (unsigned r = 0; r < S; r++) memset(out + r * (unsigned)stride, backdrop, (size_t)total);
+-        return total;
++        for (unsigned r = 0; r < S; r++) {
++            memset(out + r * (unsigned)stride, backdrop, (size_t)(total + 2 * moff));
++        }
++        return total + 2 * moff;
+     }
+     s_hd_stamp++;
+ 
+@@ -1878,7 +1902,30 @@
+     hd_sprites(v, line, S, w);
+     int sh_mode = MODE4_SHI(v) != 0;
+     for (unsigned r = 0; r < S; r++)
+-        gvdp_compose_span(out + r * (unsigned)stride, s_hd_a[r], s_hd_b[r], s_hd_si[r], s_hd_so[r],
+-                          s_hd_sh[r], s_hd_ss[r], s_hd_sl[r], total, backdrop, sh_mode);
+-    return total;
++        gvdp_compose_span(out + r * (unsigned)stride + moff, s_hd_a[r], s_hd_b[r], s_hd_si[r],
++                          s_hd_so[r], s_hd_sh[r], s_hd_ss[r], s_hd_sl[r], total, backdrop, sh_mode);
++    if (moff) {
++        int drawn = 0;
++        if (s_hd_margin_hook) {
++            memset(s_hd_ml, 0, sizeof s_hd_ml);
++            memset(s_hd_mr, 0, sizeof s_hd_mr);
++            drawn = s_hd_margin_hook(s_hd_margin_user, v, line, S, s_hd_margin,
++                                     &s_hd_ml[0][0][0], &s_hd_ml[1][0][0],
++                                     &s_hd_mr[0][0][0], &s_hd_mr[1][0][0], GVDP_HD_MARGW);
++        }
++        for (unsigned r = 0; r < S; r++) {
++            uint8_t *row = out + r * (unsigned)stride;
++            if (!drawn) {                               /* caller paints these black */
++                memset(row, backdrop, (size_t)moff);
++                memset(row + moff + total, backdrop, (size_t)moff);
++                continue;
++            }
++            gvdp_compose_span(row, s_hd_ml[0][r], s_hd_ml[1][r], s_hd_mzero, s_hd_mzero,
++                              s_hd_mzero, s_hd_mzero, s_hd_mzero, moff, backdrop, sh_mode);
++            gvdp_compose_span(row + moff + total, s_hd_mr[0][r], s_hd_mr[1][r], s_hd_mzero,
++                              s_hd_mzero, s_hd_mzero, s_hd_mzero, s_hd_mzero, moff, backdrop, sh_mode);
++        }
++        s_hd_margin_was_drawn = drawn != 0;
++    }
++    return total + 2 * moff;
+ }
+diff --git a/runner/video/genesis_vdp.h b/runner/video/genesis_vdp.h
+--- a/runner/video/genesis_vdp.h
++++ b/runner/video/genesis_vdp.h
+@@ -332,6 +332,24 @@
+ typedef void (*GvdpHdLayerHook)(void *user, const GVDP *v, int line, unsigned scale, int width,
+                                 uint8_t *a, uint8_t *b, int row_stride);
+ void     gvdp_hd_set_hooks(GvdpHdLayerHook layers, GvdpHdSpriteHook sprite, void *user);
++
++/* Side margins of the HD frame: `px` extra screen pixels (1x) left and right of
++ * the picture, 0 = none (default), at most GVDP_HD_MAX_MARGIN. With a margin,
++ * gvdp_render_scanline_hd returns rows of (width + 2*px) * scale indices with the
++ * picture in the middle. The margin hook is called per HD line after the layer
++ * hook: left_a/left_b/right_a/right_b each hold scale rows of px*scale bytes
++ * (row r at +r*row_stride, cleared, encoding as in the layer hook). Non-zero
++ * return = the margins of this line are composed like planes (backdrop,
++ * shadow/highlight, no sprites) and gvdp_hd_margin_drawn() is 1; otherwise the
++ * caller paints them black. */
++#define GVDP_HD_MAX_MARGIN 48
++typedef int (*GvdpHdMarginHook)(void *user, const GVDP *v, int line, unsigned scale, int margin,
++                                uint8_t *left_a, uint8_t *left_b,
++                                uint8_t *right_a, uint8_t *right_b, int row_stride);
++void     gvdp_hd_set_margin(int px);
++int      gvdp_hd_margin(void);
++void     gvdp_hd_set_margin_hook(GvdpHdMarginHook hook, void *user);
++int      gvdp_hd_margin_drawn(void);            /* for the line rendered last */
+ 
+ /* ---- Per-frame raster timing ---------------------------------------------- */
+ /* Called by the scheduler at the start of each scanline; advances the H-int
+diff --git a/tests/runtime/genesis_machine_sram_state_test.c b/tests/runtime/genesis_machine_sram_state_test.c
+--- a/tests/runtime/genesis_machine_sram_state_test.c
++++ b/tests/runtime/genesis_machine_sram_state_test.c
+@@ -159,6 +159,16 @@
+ }
+ 
+ int gvdp_hd_scale(void)
++{
++    return 0;
++}
++
++int gvdp_hd_margin(void)
++{
++    return 0;
++}
++
++int gvdp_hd_margin_drawn(void)
+ {
+     return 0;
+ }

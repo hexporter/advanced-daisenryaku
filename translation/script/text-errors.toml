@@ -1,0 +1,302 @@
+# 16x16 strings: the 49 error messages ($0EF653–$0EFA8D).
+
+# addr = original string, jp = original text (checked on every build), en = English. The English
+# keeps the glyph count of the original (box width = count × 16 px), big font if it fits, else the
+# small font. Options: align = "left"|"center"|"right" (default left; center when the JP starts
+# with 2+ blanks), font = "big"|"small", group = name (one member in the small font → all of the group),
+# fixed = monospaced game-font prefix (year), indent = blank cells, parts = [[cell, text], …].
+
+
+[[string]]
+addr = 0x0EF653
+jp = "エラー１　射程内に目標無し"
+en = "Error 1: No target in range"
+group = "errors"
+
+[[string]]
+addr = 0x0EF668
+jp = "エラー２　選択武器は弾無し"
+en = "Error 2: Weapon has no ammo"
+group = "errors"
+
+[[string]]
+addr = 0x0EF67E
+jp = "エラー３　選択武器は攻撃不可能"
+en = "Error 3: Weapon cannot attack"
+group = "errors"
+
+[[string]]
+addr = 0x0EF695
+jp = "エラー４　選択武器無し"
+en = "Error 4: No weapon selected"
+group = "errors"
+
+[[string]]
+addr = 0x0EF6A7
+jp = "エラー５　選択武器は爆撃で使用"
+en = "Error 5: Weapon is for bombing"
+group = "errors"
+
+[[string]]
+addr = 0x0EF6BF
+jp = "エラー６　移動後使用不可能"
+en = "Error 6: Not after moving"
+group = "errors"
+
+[[string]]
+addr = 0x0EF6D4
+jp = "エラー７　選択武器は反撃のみ可"
+en = "Error 7: Weapon only for counter"
+group = "errors"
+
+[[string]]
+addr = 0x0EF6ED
+jp = "エラー８　占領は不可能な地形"
+en = "Error 8: Cannot occupy this terrain"
+group = "errors"
+
+[[string]]
+addr = 0x0EF703
+jp = "エラー９　ここでは補給不可能"
+en = "Error 9: No supply here"
+group = "errors"
+
+[[string]]
+addr = 0x0EF718
+jp = "エラー１０　すでに補給済"
+en = "Error 10: Already supplied"
+group = "errors"
+
+[[string]]
+addr = 0x0EF729
+jp = "エラー１１　違う兵器とは合流不可能"
+en = "Error 11: Cannot merge different types"
+group = "errors"
+
+[[string]]
+addr = 0x0EF744
+jp = "エラー１２　搭載中のため合流不可能"
+en = "Error 12: Cannot merge while loaded"
+group = "errors"
+
+[[string]]
+addr = 0x0EF75F
+jp = "エラー１３　ここでは武装変更不可能"
+en = "Error 13: Cannot rearm here"
+group = "errors"
+
+[[string]]
+addr = 0x0EF77A
+jp = "エラー１４　搭載中のため変更不可能"
+en = "Error 14: Cannot change while loaded"
+group = "errors"
+
+[[string]]
+addr = 0x0EF795
+jp = "エラー１５　総統命令　核爆弾使用禁止"
+en = "Error 15: Führer's order: no nukes"
+group = "errors"
+
+[[string]]
+addr = 0x0EF7B1
+jp = "エラー１６　総統命令　核爆弾投下待機"
+en = "Error 16: Führer's order: hold nukes"
+group = "errors"
+
+[[string]]
+addr = 0x0EF7CC
+jp = "エラー１７　弾無し　爆撃不可能"
+en = "Error 17: No ammo, cannot bomb"
+group = "errors"
+
+[[string]]
+addr = 0x0EF7E1
+jp = "エラー１８　爆撃不可能な地形"
+en = "Error 18: Cannot bomb this terrain"
+group = "errors"
+
+[[string]]
+addr = 0x0EF7F4
+jp = "エラー１９　移動後は間接爆撃不可能"
+en = "Error 19: No indirect bombing after move"
+group = "errors"
+
+[[string]]
+addr = 0x0EF80E
+jp = "エラー２０　工事に必要な資材無し"
+en = "Error 20: No materials for works"
+group = "errors"
+
+[[string]]
+addr = 0x0EF828
+jp = "エラー２１　現在の地形は工事不可能"
+en = "Error 21: No works on this terrain"
+group = "errors"
+
+[[string]]
+addr = 0x0EF842
+jp = "エラー２２　耐久度最大"
+en = "Error 22: Durability at maximum"
+group = "errors"
+
+[[string]]
+addr = 0x0EF853
+jp = "エラー２３　選択地形は工事不可能"
+en = "Error 23: No works on chosen terrain"
+group = "errors"
+
+[[string]]
+addr = 0x0EF86B
+jp = "エラー２４　軍事費不足"
+en = "Error 24: Not enough funds"
+group = "errors"
+
+[[string]]
+addr = 0x0EF87B
+jp = "エラー２５　現在の地形は降車不可能"
+en = "Error 25: Cannot unload on this terrain"
+group = "errors"
+
+[[string]]
+addr = 0x0EF894
+jp = "エラー２６　他のユニットがいる"
+en = "Error 26: Another unit is there"
+group = "errors"
+
+[[string]]
+addr = 0x0EF8A9
+jp = "エラー２７　選択地形は進入不可能"
+en = "Error 27: Cannot enter that terrain"
+group = "errors"
+
+[[string]]
+addr = 0x0EF8C2
+jp = "エラー２８　グライダーから発進不可能"
+en = "Error 28: Cannot launch from glider"
+group = "errors"
+
+[[string]]
+addr = 0x0EF8DB
+jp = "エラー２９　敵ユニットを選択"
+en = "Error 29: Select an enemy unit"
+group = "errors"
+
+[[string]]
+addr = 0x0EF8EE
+jp = "エラー３０　経験値不足"
+en = "Error 30: Not enough experience"
+group = "errors"
+
+[[string]]
+addr = 0x0EF8FE
+jp = "エラー３１　ここでは進化不可能"
+en = "Error 31: Cannot evolve here"
+group = "errors"
+
+[[string]]
+addr = 0x0EF916
+jp = "エラー３２　ここでは改良不可能"
+en = "Error 32: Cannot refit here"
+group = "errors"
+
+[[string]]
+addr = 0x0EF92E
+jp = "エラー３３　ユニット数最大"
+en = "Error 33: Unit limit reached"
+group = "errors"
+
+[[string]]
+addr = 0x0EF93F
+jp = "エラー３４　セーブデータなし"
+en = "Error 34: No save data"
+group = "errors"
+
+[[string]]
+addr = 0x0EF950
+jp = "エラー３５　選択地形に他ユニットあり"
+en = "Error 35: Another unit on that terrain"
+group = "errors"
+
+[[string]]
+addr = 0x0EF96A
+jp = "エラー３６　海凍結中は使用不可"
+en = "Error 36: Not while the sea is frozen"
+group = "errors"
+
+[[string]]
+addr = 0x0EF981
+jp = "エラー３７　晴のみ対地攻撃可能"
+en = "Error 37: Ground attack only if fair"
+group = "errors"
+
+[[string]]
+addr = 0x0EF995
+jp = "エラー３８　晴のみ対空攻撃可能"
+en = "Error 38: Air attack only if fair"
+group = "errors"
+
+[[string]]
+addr = 0x0EF9A9
+jp = "エラー３９　晴・曇のみ爆撃可能"
+en = "Error 39: Bombing only if fair/cloudy"
+group = "errors"
+
+[[string]]
+addr = 0x0EF9BE
+jp = "エラー４０　晴・曇のみ降車可能"
+en = "Error 40: Unload only if fair/cloudy"
+group = "errors"
+
+[[string]]
+addr = 0x0EF9D3
+jp = "エラー４１　嵐・吹雪では攻撃不可能"
+en = "Error 41: No attack in storm/blizzard"
+group = "errors"
+
+[[string]]
+addr = 0x0EF9EA
+jp = "エラー４２　嵐・吹雪では降車不可能"
+en = "Error 42: No unload in storm/blizzard"
+group = "errors"
+
+[[string]]
+addr = 0x0EFA01
+jp = "エラー４３　嵐・吹雪では発進不可能"
+en = "Error 43: No launch in storm/blizzard"
+group = "errors"
+
+[[string]]
+addr = 0x0EFA1A
+jp = "エラー４４　嵐・吹雪では補給不可能"
+en = "Error 44: No supply in storm/blizzard"
+group = "errors"
+
+[[string]]
+addr = 0x0EFA31
+jp = "エラー４５　これ以上進化不可能"
+en = "Error 45: Cannot evolve further"
+group = "errors"
+
+[[string]]
+addr = 0x0EFA48
+jp = "エラー４６　開発中のため不可能"
+en = "Error 46: Not while in development"
+group = "errors"
+
+[[string]]
+addr = 0x0EFA5F
+jp = "エラー４７　移動途中に障害あり"
+en = "Error 47: Obstacle on the way"
+group = "errors"
+
+[[string]]
+addr = 0x0EFA77
+jp = "エラー４８　キャンペーン時変更不可"
+en = "Error 48: Not in campaign"
+group = "errors"
+
+[[string]]
+addr = 0x0EFA8D
+jp = "エラー４９　これ以上改良不可能"
+en = "Error 49: Cannot refit further"
+group = "errors"

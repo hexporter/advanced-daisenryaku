@@ -1,0 +1,65 @@
+# Intro captions (attract sequence 1919–1939), docs/notes/text.md.
+# Per caption: the "lea <string>,a0" call site and the original string; the lines are read one
+# after the other. Per line: jp = original (tools/adtext.py intro), fixed = monospaced part in the
+# game font (year, indent), text = English, set proportionally by tools/translate_rom.py.
+# Room for text: 14 glyph cells after a 4-cell prefix, the first 8 px are the gap to the year.
+
+[[caption]]
+site = 0x000EF2
+addr = 0x0EFB7D
+lines = [
+  { jp = "１９１９年　ベルサイユ条約調印", fixed = "1919", text = "Treaty of Versailles signed" },
+]
+
+[[caption]]
+site = 0x000FBE
+addr = 0x0EFB92
+lines = [
+  { jp = "１９２３年　ミュンヘン一揆", fixed = "1923", text = "Munich Putsch" },
+]
+
+[[caption]]
+site = 0x000FE0
+addr = 0x0EFBA3
+lines = [
+  { jp = "１９３３年　ヒトラー内閣成立", fixed = "1933", text = "Hitler becomes Chancellor" },
+]
+
+[[caption]]
+site = 0x00109A
+addr = 0x0EFBB7
+lines = [
+  { jp = "１９３４年　ヒンデンブルグ死去", fixed = "1934", text = "Hindenburg dies" },
+  { jp = "　　　　　　ヒトラー総統就任", fixed = "    ", text = "Hitler becomes Führer" },
+]
+
+[[caption]]
+site = 0x001170
+addr = 0x0EFBDD
+lines = [
+  { jp = "１９３６年　独、ラインラント進駐", fixed = "1936", text = "Germany occupies Rhineland" },
+  { jp = "　　　　　　日独防共協定調印", fixed = "    ", text = "Anti-Comintern Pact signed" },
+]
+
+[[caption]]
+site = 0x00128C
+addr = 0x0EFC09
+lines = [
+  { jp = "１９３８年　独、オーストリア併合", fixed = "1938", text = "Germany annexes Austria" },
+  { jp = "　　　　　　ミュンヘン会談", fixed = "    ", text = "Munich Conference" },
+]
+
+[[caption]]
+site = 0x0013AC
+addr = 0x0EFC2F
+lines = [
+  { jp = "１９３８年　ズデーテン、独へ割譲", fixed = "1938", text = "Sudetenland to Germany" },
+]
+
+[[caption]]
+site = 0x0014B8
+addr = 0x0EFC46
+lines = [
+  { jp = "１９３９年　独、チェコ解体", fixed = "1939", text = "Czechoslovakia broken up" },
+  { jp = "　　　　　　独ソ不可侵条約締結", fixed = "    ", text = "German-Soviet Pact signed" },
+]

@@ -1,0 +1,725 @@
+diff --git a/runner/main.c b/runner/main.c
+index ecd81e6..6ee48d5 100644
+--- a/runner/main.c
++++ b/runner/main.c
+@@ -231,6 +231,10 @@ static uint32_t *s_framebuf = s_native_storage; /* ARGB8888 */
+ static GameVideoFrame s_video_frame;
+ static SDL_Renderer *s_video_renderer;
+ static SDL_Texture **s_video_texture;
++/* HD tile-pack presentation (video/genesis_vdp.c): GENESIS_HD_PACK=<pack>,
++ * GENESIS_HD_SCALE=2|4 (default 4). F10 toggles between HD and the original. */
++static int s_hd_on, s_hd_available;
++static SDL_Texture *s_hd_texture;
+ 
+ /* â”€â”€ Present-time screen-color LUT (verified-enhancement video) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  * Opt-in via GENESIS_SCREEN={raw,crt,trinitron,composite,linear}; default
+@@ -1658,6 +1662,16 @@ int runner_write_screenshot_file(const char *path)
+                             MAX_SCREEN_WIDTH) == 0;
+     if (ok)
+         fprintf(stderr, "[SCREENSHOT] wrote %s\n", resolved);
++    /* With an HD pack, also <name>.hd.png at the HD resolution. */
++    if (ok && s_hd_on && g_hd_frame_w > 0 && g_hd_frame_h > 0) {
++        char hd_path[600];
++        size_t n = strlen(resolved);
++        if (n > 4 && !strcmp(resolved + n - 4, ".png")) n -= 4;
++        snprintf(hd_path, sizeof hd_path, "%.*s.hd.png", (int)n, resolved);
++        if (png_write_argb(hd_path, g_hd_frame, g_hd_frame_w, g_hd_frame_h,
++                           GENESIS_HD_STRIDE) == 0)
++            fprintf(stderr, "[SCREENSHOT] wrote %s\n", hd_path);
++    }
+     else
+         fprintf(stderr, "[SCREENSHOT] failed to write %s\n", resolved);
+     return ok;
+@@ -3007,6 +3021,23 @@ int main(int argc, char *argv[])
+     int test_hidden = getenv("LNG_SCRIPT") && getenv("LNG_TEST_HIDDEN");
+     Uint32 win_flags = ((benchmark_frames || test_hidden) ? SDL_WINDOW_HIDDEN : SDL_WINDOW_SHOWN)
+                      | SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI;
++    {   /* HD tile pack (presentation only). */
++        const char *pack = getenv("GENESIS_HD_PACK");
++        const char *scale = getenv("GENESIS_HD_SCALE");
++        int sc = scale && *scale ? atoi(scale) : 4;
++        if (pack && *pack) {
++            int n = gvdp_hd_load_pack(pack);
++            if (n < 0) fprintf(stderr, "[HD] cannot load pack %s\n", pack);
++            else {
++                gvdp_hd_set_scale(sc);
++                fprintf(stderr, "[HD] pack %s: %d tiles, scale %d\n", pack, n, gvdp_hd_scale());
++            }
++        } else if (scale && *scale) {
++            gvdp_hd_set_scale(sc);   /* no pack: pixel-doubled, for tests */
++        }
++        s_hd_available = s_hd_on = gvdp_hd_scale() != 0;
++        if (s_hd_on) win_flags |= SDL_WINDOW_ALLOW_HIGHDPI;
++    }
+     /* Launcher tri-state: 1 = borderless (desktop resolution, letterboxed by
+      * SDL_RenderSetLogicalSize), 2 = exclusive (real mode change). */
+     if (!benchmark_frames) {
+@@ -3627,6 +3658,11 @@ session_begin:;
+                 /* [SND-TRACE] F12 = dump the sound-command lifecycle ring AND
+                  * the [CHIP-TRACE] FM/PSG register-write stream, coincidentally
+                  * so the two snapshots line up for native-vs-oracle A/B. */
++                if (ev.key.keysym.sym == SDLK_F10 && !ev.key.repeat && s_hd_available) {
++                    s_hd_on = !s_hd_on;
++                    fprintf(stderr, "[HD] %s\n", s_hd_on ? "on" : "off (original graphics)");
++                    continue;
++                }
+                 if (ev.key.keysym.sym == SDLK_F12) {
+                     /* chip_ring = shared stream (both builds); snd_ring = own only. */
+                     { extern void chip_trace_dump(const char *path); chip_trace_dump("chip_ring.txt"); }
+@@ -3715,6 +3751,9 @@ session_begin:;
+             if (genesis_netplay_active()) ff_speed = 1.0;
+ #endif
+             ff_active = ff_speed > 1.05; }
++          /* HD frame only for frames that will be presented. */
++          g_hd_frame_request = s_hd_on && !benchmark_frames &&
++                               (!ff_active || ff_acc + 1.0 >= ff_speed);
+           audio_set_playback_enabled(!turbo && !ff_active); }
+ 
+ #if GENESIS_HAS_RECOMP_NET
+@@ -4222,6 +4261,20 @@ session_begin:;
+             }
+             peer_view_was_active = peer_view_is_active;
+         }
++        if (s_hd_on && g_hd_frame_w > 0 && g_hd_frame_h > 0 &&
++            present_src == s_framebuf && frame_texture == texture) {
++            if (!s_hd_texture) {
++                s_hd_texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ARGB8888,
++                    SDL_TEXTUREACCESS_STREAMING, GENESIS_HD_STRIDE, GENESIS_HD_ROWS);
++                if (s_hd_texture) SDL_SetTextureScaleMode(s_hd_texture, SDL_ScaleModeLinear);
++            }
++        }
++        if (s_hd_texture && s_hd_on && g_hd_frame_w > 0 && g_hd_frame_h > 0 &&
++            present_src == s_framebuf && frame_texture == texture) {
++            SDL_Rect hd = { 0, 0, g_hd_frame_w, g_hd_frame_h };
++            SDL_UpdateTexture(s_hd_texture, &hd, g_hd_frame, GENESIS_HD_STRIDE * (int)sizeof(uint32_t));
++            SDL_RenderCopy(renderer, s_hd_texture, &hd, NULL);
++        } else
+         SDL_RenderCopy(renderer, frame_texture, &src, NULL);
+ #if GENESIS_HAS_RECOMP_NET
+         /* Process the peer INPUT and emit our CONFIRM before the blocking
+diff --git a/runner/video/genesis_machine.c b/runner/video/genesis_machine.c
+index bfbe22d..1a06abe 100644
+--- a/runner/video/genesis_machine.c
++++ b/runner/video/genesis_machine.c
+@@ -518,6 +518,31 @@ void genesis_indexed_sink_adapter(void *ctx,int line,const uint32_t *argb,int wi
+     if(pixels && pixels->argb)pixels->argb(pixels->user,line,argb,width);
+ }
+ 
++uint32_t g_hd_frame[GENESIS_HD_STRIDE * GENESIS_HD_ROWS];
++int g_hd_frame_w, g_hd_frame_h, g_hd_frame_request;
++
++/* One raster row of the HD frame (scale S rows) after the 1x row is ready. */
++static void hd_frame_row(GVDP *vdp, int line, const uint8_t *idx1x, int width1x)
++{
++    static uint8_t hidx[4 * GENESIS_HD_STRIDE];
++    int S = gvdp_hd_scale();
++    if (S < 2 || line < 0 || (line + 1) * S > GENESIS_HD_ROWS) return;
++    int w = gvdp_render_scanline_hd(vdp, line, hidx, GENESIS_HD_STRIDE);
++    if (!w) {   /* unsupported mode: repeat the 1x row */
++        w = width1x * S;
++        if (w > GENESIS_HD_STRIDE) w = GENESIS_HD_STRIDE;
++        for (int r = 0; r < S; r++)
++            for (int x = 0; x < w; x++) hidx[r * GENESIS_HD_STRIDE + x] = idx1x[x / S];
++    }
++    for (int r = 0; r < S; r++) {
++        uint32_t *dst = g_hd_frame + (size_t)(line * S + r) * GENESIS_HD_STRIDE;
++        const uint8_t *src = hidx + r * GENESIS_HD_STRIDE;
++        for (int x = 0; x < w; x++) dst[x] = s_cram_argb[src[x]];
++    }
++    g_hd_frame_w = w;
++    g_hd_frame_h = (line + 1) * S;
++}
++
+ void machine_run_frame_ex(GenesisScanlineSink sink, void *user,
+                           const GenesisScanlineProducer *producer)
+ {
+@@ -614,6 +639,10 @@ void machine_run_frame_ex(GenesisScanlineSink sink, void *user,
+                     producer->render(producer_user, &m->vdp, row, gvdp_active_width(&m->vdp),
+                                      native_row_fetch, &native, native.raster);
+                 } else {
++                    if (g_hd_frame_request && !dbl) {
++                        native_row_prepare(&native);
++                        hd_frame_row(&m->vdp, row, native.indices, native.width);
++                    }
+ #if GENESIS_FINAL_PIXEL_PIPELINE
+                     if(pixels && pixels->indexed) {
+                         native_row_prepare(&native);
+diff --git a/runner/video/genesis_machine.h b/runner/video/genesis_machine.h
+index 117cb28..172e368 100644
+--- a/runner/video/genesis_machine.h
++++ b/runner/video/genesis_machine.h
+@@ -85,4 +85,13 @@ void machine_run_frame(GenesisScanlineSink sink, void *user);
+ void machine_run_frame_ex(GenesisScanlineSink sink, void *user,
+                           const GenesisScanlineProducer *producer);
+ 
++/* High-resolution frame (end of genesis_vdp.c): filled during machine_run_frame*
++ * while g_hd_frame_request is set and an HD scale is active. ARGB8888,
++ * g_hd_frame_w x g_hd_frame_h valid pixels, stride GENESIS_HD_STRIDE. Rows the
++ * HD renderer does not support are the 1x row pixel-repeated. Presentation only. */
++#define GENESIS_HD_STRIDE 1280
++#define GENESIS_HD_ROWS   960
++extern uint32_t g_hd_frame[GENESIS_HD_STRIDE * GENESIS_HD_ROWS];
++extern int g_hd_frame_w, g_hd_frame_h, g_hd_frame_request;
++
+ #endif /* GENESIS_MACHINE_H */
+diff --git a/runner/video/genesis_vdp.c b/runner/video/genesis_vdp.c
+index fcb7b0e..8396399 100644
+--- a/runner/video/genesis_vdp.c
++++ b/runner/video/genesis_vdp.c
+@@ -31,6 +31,8 @@ static inline void gvdp_hd_emit(unsigned layer,unsigned x,unsigned count,uint32_
+ #define gvdp_hd_ineligible() ((void)0)
+ #define gvdp_hd_end_row() ((void)0)
+ #endif
++#include <stdio.h>
++#include <stdlib.h>
+ #ifndef GENESIS_BATCHED_PLANES
+ #define GENESIS_BATCHED_PLANES 0
+ #endif
+@@ -1347,3 +1349,501 @@ int gvdp_render_scanline(GVDP *v, int line, uint8_t *out)
+     }
+     gvdp_hd_end_row();return total;
+ }
++
++/*
++ * High-resolution presentation layer (HD tile packs).
++ *
++ * Renders each raster line a second time at an integer scale S (2 or 4) into
++ * S output rows of (screen width x S) palette indices. Every 8x8 tile is looked
++ * up in an HD tile pack; a hit supplies a redrawn tile of (8*t)^2 texels
++ * (t = 1, 2, 4 or 8), a miss samples the original VRAM pattern (pixel-doubled).
++ *
++ * HD texels are 4-bit palette indices, exactly like VRAM patterns, so palette
++ * line, CRAM fades, priority, transparency and shadow/highlight keep working:
++ * the composition is the same as the 1x renderer, done per sub-pixel.
++ *
++ * Pack entries come in two kinds:
++ *   full  — key = the 32 pattern bytes; texel = palette index 0..15.
++ *   shape — key = 8 bytes of 1bpp mask of a TWO-COLOUR tile (bit set where the
++ *           pixel has the higher of the two nibbles); texel 0/1 selects the
++ *           lower/higher nibble. Used for font glyphs, which games draw in
++ *           varying ink/background colours.
++ *   cell  — like shape, but the key is the 16x16 glyph cell the tile belongs
++ *           to: the masks of four consecutive VRAM tiles (TL, TR, BL, BR, with
++ *           one colour pair) plus the tile's quarter 0..3 (33 bytes). Proportional
++ *           text cuts letters at tile edges, so an 8x8 piece alone does not say
++ *           which letters it came from; the cell does. Tried before shape.
++ *
++ * Presentation only: no guest-visible state is read back or changed (sprite
++ * overflow/collision flags stay with the 1x evaluation). Unsupported modes
++ * (interlace 2, widescreen canvases, host sprite/tile extensions) return 0 so
++ * the caller can pixel-double the 1x row instead.
++ *
++ * Pack file (little endian):
++ *   "GHDPACK1", u32 count, then per entry:
++ *   u8 kind (0 full, 1 shape, 2 cell), u8 scale t, u16 0, key (32, 8 or 33 bytes),
++ *   texels row-major: full = (8t)^2 bytes (index 0..15), shape/cell = (8t)^2 bits
++ *   (MSB first).
++ */
++
++#define GVDP_HD_MAX_SCALE 4
++#define GVDP_HD_MAXW      (320 * GVDP_HD_MAX_SCALE)
++
++typedef struct HdEntry {
++    uint8_t kind, scale;
++    uint8_t key[33];
++    const uint8_t *texels;
++} HdEntry;
++
++static HdEntry  *s_hd_entries;
++static unsigned  s_hd_count;
++static uint8_t  *s_hd_blob;
++static int32_t  *s_hd_table;          /* open addressing: entry index or -1 */
++static unsigned  s_hd_mask;
++static int       s_hd_scale;
++
++static unsigned hd_key_len(unsigned kind) { return kind == 0 ? 32u : kind == 1 ? 8u : 33u; }
++
++/* Per-VRAM-tile resolution cache, revalidated once per rendered line. The
++ * pattern copy covers the tile and its three neighbours on each side (the
++ * possible 16x16 cell groups of kind 2). */
++#define HD_CTX 3
++typedef struct HdTileCache {
++    uint8_t pattern[32 * (2 * HD_CTX + 1)];
++    const HdEntry *entry;
++    uint8_t lo, hi, valid;
++    uint32_t stamp;
++} HdTileCache;
++static HdTileCache s_hd_cache[2048];
++static uint32_t    s_hd_stamp = 1;
++
++static uint64_t hd_hash(unsigned kind, const uint8_t *key, unsigned len)
++{
++    uint64_t h = 1469598103934665603ULL ^ kind;
++    for (unsigned i = 0; i < len; i++) { h ^= key[i]; h *= 1099511628211ULL; }
++    return h;
++}
++
++static const HdEntry *hd_find(unsigned kind, const uint8_t *key)
++{
++    if (!s_hd_table) return NULL;
++    unsigned len = hd_key_len(kind);
++    unsigned i = (unsigned)hd_hash(kind, key, len) & s_hd_mask;
++    for (;;) {
++        int32_t k = s_hd_table[i];
++        if (k < 0) return NULL;
++        const HdEntry *e = &s_hd_entries[k];
++        if (e->kind == kind && !memcmp(e->key, key, len)) return e;
++        i = (i + 1) & s_hd_mask;
++    }
++}
++
++void gvdp_hd_unload(void)
++{
++    free(s_hd_entries); free(s_hd_blob); free(s_hd_table);
++    s_hd_entries = NULL; s_hd_blob = NULL; s_hd_table = NULL;
++    s_hd_count = 0; s_hd_mask = 0;
++    memset(s_hd_cache, 0, sizeof s_hd_cache);
++}
++
++int gvdp_hd_load_pack(const char *path)
++{
++    gvdp_hd_unload();
++    FILE *f = fopen(path, "rb");
++    if (!f) return -1;
++    fseek(f, 0, SEEK_END);
++    long size = ftell(f);
++    fseek(f, 0, SEEK_SET);
++    uint8_t *blob = size > 12 ? (uint8_t *)malloc((size_t)size) : NULL;
++    if (!blob || fread(blob, 1, (size_t)size, f) != (size_t)size || memcmp(blob, "GHDPACK1", 8)) {
++        fclose(f); free(blob); return -1;
++    }
++    fclose(f);
++    unsigned count = (unsigned)blob[8] | (unsigned)blob[9] << 8 |
++                     (unsigned)blob[10] << 16 | (unsigned)blob[11] << 24;
++    HdEntry *entries = (HdEntry *)calloc(count ? count : 1, sizeof *entries);
++    unsigned cap = 16;
++    while (cap < count * 2u) cap <<= 1;
++    int32_t *table = (int32_t *)malloc(cap * sizeof *table);
++    if (!entries || !table) { free(blob); free(entries); free(table); return -1; }
++    memset(table, 0xFF, cap * sizeof *table);
++    s_hd_entries = entries; s_hd_blob = blob; s_hd_table = table; s_hd_mask = cap - 1;
++    long pos = 12;
++    unsigned n = 0;
++    for (unsigned k = 0; k < count; k++) {
++        if (pos + 4 > size) break;
++        unsigned kind = blob[pos], t = blob[pos + 1];
++        unsigned klen = hd_key_len(kind), side = 8u * t;
++        long tbytes = kind ? (long)(side * side / 8u) : (long)(side * side);
++        if (kind > 2 || !(t == 1 || t == 2 || t == 4 || t == 8) ||
++            pos + 4 + (long)klen + tbytes > size) break;
++        HdEntry *e = &entries[n];
++        e->kind = (uint8_t)kind; e->scale = (uint8_t)t;
++        memcpy(e->key, blob + pos + 4, klen);
++        e->texels = blob + pos + 4 + klen;
++        pos += 4 + (long)klen + tbytes;
++        if (hd_find(kind, e->key)) continue;           /* first entry wins */
++        unsigned i = (unsigned)hd_hash(kind, e->key, klen) & s_hd_mask;
++        while (table[i] >= 0) i = (i + 1) & s_hd_mask;
++        table[i] = (int32_t)n++;
++    }
++    s_hd_count = n;
++    memset(s_hd_cache, 0, sizeof s_hd_cache);
++    return (int)n;
++}
++
++void gvdp_hd_set_scale(int scale)
++{
++    s_hd_scale = (scale == 2 || scale == 4) ? scale : 0;
++}
++int gvdp_hd_scale(void) { return s_hd_scale; }
++unsigned gvdp_hd_tile_count(void) { return s_hd_count; }
++
++/* Colours of an 8x8 pattern as a 16-bit set. */
++static unsigned hd_colours(const uint8_t *p)
++{
++    unsigned seen = 0;
++    for (unsigned i = 0; i < 32; i++) seen |= (1u << (p[i] >> 4)) | (1u << (p[i] & 15));
++    return seen;
++}
++
++/* 1bpp mask (bit set where the nibble is `hi`). */
++static void hd_mask(const uint8_t *p, unsigned hi, uint8_t *mask)
++{
++    for (unsigned y = 0; y < 8; y++) {
++        unsigned m = 0;
++        for (unsigned x = 0; x < 8; x++) {
++            unsigned b = p[y * 4 + (x >> 1)];
++            unsigned nib = (x & 1) ? (b & 15) : (b >> 4);
++            if (nib == hi) m |= 0x80u >> x;
++        }
++        mask[y] = (uint8_t)m;
++    }
++}
++
++/* Resolve VRAM tile `ti` to its HD entry (or NULL); fills lo/hi for shapes. */
++static const HdTileCache *hd_resolve(const GVDP *v, unsigned ti)
++{
++    ti &= 2047u;
++    HdTileCache *c = &s_hd_cache[ti];
++    if (c->stamp == s_hd_stamp) return c;
++    c->stamp = s_hd_stamp;
++    unsigned first = ti >= HD_CTX ? ti - HD_CTX : 0;
++    unsigned last = ti + HD_CTX <= 2047u ? ti + HD_CTX : 2047u;
++    const uint8_t *p = &v->vram[first * 32u];
++    size_t bytes = (size_t)(last - first + 1) * 32u;
++    if (c->valid && !memcmp(c->pattern, p, bytes)) return c;
++    memcpy(c->pattern, p, bytes);
++    c->valid = 1;
++    const uint8_t *own = &v->vram[ti * 32u];
++    c->entry = hd_find(0, own);
++    if (c->entry) return c;
++    unsigned seen = hd_colours(own);
++    if (__builtin_popcount(seen) > 2) return c;
++    /* Glyph cell: four consecutive tiles TL TR BL BR with one colour pair. */
++    for (unsigned q = 0; q < 4; q++) {
++        if (ti < q || ti - q + 3 > 2047u) continue;
++        unsigned base = ti - q, all = 0;
++        for (unsigned k = 0; k < 4; k++) all |= hd_colours(&v->vram[(base + k) * 32u]);
++        if (__builtin_popcount(all) != 2) continue;
++        unsigned lo = (unsigned)__builtin_ctz(all), hi = 31u - (unsigned)__builtin_clz(all);
++        uint8_t key[33];
++        for (unsigned k = 0; k < 4; k++) hd_mask(&v->vram[(base + k) * 32u], hi, key + k * 8);
++        key[32] = (uint8_t)q;
++        const HdEntry *e = hd_find(2, key);
++        if (e) { c->entry = e; c->lo = (uint8_t)lo; c->hi = (uint8_t)hi; return c; }
++    }
++    /* Two-colour tile → shape lookup. */
++    if (__builtin_popcount(seen) != 2) return c;
++    unsigned lo = (unsigned)__builtin_ctz(seen), hi = 31u - (unsigned)__builtin_clz(seen);
++    uint8_t mask[8];
++    hd_mask(own, hi, mask);
++    c->entry = hd_find(1, mask);
++    c->lo = (uint8_t)lo; c->hi = (uint8_t)hi;
++    return c;
++}
++
++/* Nibble of tile `ti` at HD coordinate (u, w) in 0..8S-1 (already flipped). */
++static inline unsigned hd_texel_e(const GVDP *v, const HdEntry *e, unsigned lo, unsigned hi,
++                                  unsigned ti, unsigned u, unsigned w, unsigned S)
++{
++    if (e) {
++        unsigned t = e->scale, side = 8u * t;
++        unsigned tu = u * t / S, tw = w * t / S;
++        unsigned i = tw * side + tu;
++        if (e->kind) return ((e->texels[i >> 3] >> (7u - (i & 7u))) & 1u) ? hi : lo;
++        return e->texels[i] & 15u;
++    }
++    unsigned x = u / S, y = w / S;
++    uint8_t b = v->vram[(uint16_t)((ti & 2047u) * 32u + y * 4u + (x >> 1))];
++    return (x & 1) ? (b & 15u) : (b >> 4);
++}
++static inline unsigned hd_texel(const GVDP *v, const HdTileCache *c, unsigned ti,
++                                unsigned u, unsigned w, unsigned S)
++{
++    return hd_texel_e(v, c->entry, c->lo, c->hi, ti, u, w, S);
++}
++
++/* Sprite tiles by screen position, rebuilt once per frame. Games that draw
++ * text into sprites (menus) place a 16x16 glyph cell across tiles that are not
++ * consecutive in VRAM, and across sprite edges; the cell is found from the
++ * tiles at the neighbouring screen positions instead. */
++#define HD_SPOS_SLOTS 4096u
++typedef struct HdSpritePos {
++    int16_t x, y;
++    uint16_t ti;
++    uint8_t used, done, lo, hi;
++    const HdEntry *entry;
++} HdSpritePos;
++static HdSpritePos s_hd_spos[HD_SPOS_SLOTS];
++static int s_hd_spos_line = 1 << 30;
++
++static unsigned hd_spos_hash(int x, int y)
++{
++    unsigned k = ((unsigned)(x + 512) & 1023u) | (((unsigned)(y + 512) & 1023u) << 10);
++    return (k * 2654435761u) >> 20 & (HD_SPOS_SLOTS - 1u);
++}
++
++static HdSpritePos *hd_spos_find(int x, int y)
++{
++    for (unsigned i = hd_spos_hash(x, y), n = 0; n < HD_SPOS_SLOTS; i = (i + 1) & (HD_SPOS_SLOTS - 1u), n++) {
++        HdSpritePos *p = &s_hd_spos[i];
++        if (!p->used) return NULL;
++        if (p->x == x && p->y == y) return p;
++    }
++    return NULL;
++}
++
++static void hd_spos_build(const GVDP *v)
++{
++    memset(s_hd_spos, 0, sizeof s_hd_spos);
++    uint16_t sat = (uint16_t)((REG_SPRITE_NT(v) & 0x7F) << 9);
++    int link = 0, max_sprites = MODE4_H40(v) ? 80 : 64;
++    for (int n = 0; n < max_sprites; n++) {
++        uint16_t e = (uint16_t)(sat + link * 8);
++        int y = (vram_read_word(v, e) & 0x3FF) - 128;
++        uint8_t sz = v->vram[(uint16_t)(e + 2)];
++        int hsz = ((sz >> 2) & 3) + 1, vsz = (sz & 3) + 1;
++        uint16_t attr = vram_read_word(v, (uint16_t)(e + 4));
++        int x = (vram_read_word(v, (uint16_t)(e + 6)) & 0x1FF) - 128;
++        if (!(attr & 0x1800)) {                          /* unflipped sprites only */
++            for (int cx = 0; cx < hsz; cx++)
++                for (int cy = 0; cy < vsz; cy++) {
++                    int px = x + 8 * cx, py = y + 8 * cy;
++                    if (hd_spos_find(px, py)) continue;  /* earlier sprite is on top */
++                    unsigned i = hd_spos_hash(px, py);
++                    while (s_hd_spos[i].used) i = (i + 1) & (HD_SPOS_SLOTS - 1u);
++                    HdSpritePos *p = &s_hd_spos[i];
++                    p->x = (int16_t)px; p->y = (int16_t)py; p->used = 1;
++                    p->ti = (uint16_t)((attr + cx * vsz + cy) & 0x7FF);
++                }
++        }
++        int next = v->vram[(uint16_t)(e + 3)] & 0x7F;
++        if (next == 0) break;
++        link = next;
++    }
++}
++
++/* Glyph cell of the sprite tile at screen (x, y): the 2x2 group around it, by
++ * screen position. Returns 1 and sets p->entry/lo/hi on a hit. */
++static int hd_spos_cell(const GVDP *v, HdSpritePos *p)
++{
++    if (__builtin_popcount(hd_colours(&v->vram[p->ti * 32u])) > 2) return 0;
++    for (unsigned q = 0; q < 4; q++) {
++        int tx = p->x - 8 * (int)(q & 1), ty = p->y - 8 * (int)(q >> 1);
++        const uint8_t *pat[4];
++        unsigned all = 0, k;
++        for (k = 0; k < 4; k++) {
++            const HdSpritePos *g = hd_spos_find(tx + 8 * (int)(k & 1), ty + 8 * (int)(k >> 1));
++            if (!g) break;
++            pat[k] = &v->vram[g->ti * 32u];
++            all |= hd_colours(pat[k]);
++        }
++        if (k < 4 || __builtin_popcount(all) != 2) continue;
++        unsigned lo = (unsigned)__builtin_ctz(all), hi = 31u - (unsigned)__builtin_clz(all);
++        uint8_t key[33];
++        for (k = 0; k < 4; k++) hd_mask(pat[k], hi, key + k * 8);
++        key[32] = (uint8_t)q;
++        const HdEntry *e = hd_find(2, key);
++        if (e) { p->entry = e; p->lo = (uint8_t)lo; p->hi = (uint8_t)hi; return 1; }
++    }
++    return 0;
++}
++
++/* One plane (or the window) for source columns [x0, x1) into S HD rows. */
++static void hd_plane(const GVDP *v, uint8_t rows[][GVDP_HD_MAXW], unsigned S,
++                     uint16_t base, int wt, int ht, int x0, int x1, int scroll_x, int py_src)
++{
++    int wpx = wt * 8, hpx = ht * 8;
++    int py = py_src & (hpx - 1);
++    int fy = py & 7;
++    uint16_t row_base = (uint16_t)(base + (py >> 3) * wt * 2);
++    for (int x = x0; x < x1; x++) {
++        int px = (x - scroll_x) & (wpx - 1);
++        uint16_t e = vram_read_word(v, (uint16_t)(row_base + (px >> 3) * 2));
++        unsigned ti = e & 0x7FFu;
++        unsigned fx = (unsigned)px & 7u;
++        int hf = (e & 0x0800) != 0, vf = (e & 0x1000) != 0;
++        uint8_t attr = (uint8_t)(((e >> 9) & 0x30) | ((e >> 8) & 0x80));
++        const HdTileCache *c = hd_resolve(v, ti);
++        unsigned side = 8u * S;
++        for (unsigned sy = 0; sy < S; sy++) {
++            unsigned w = (unsigned)fy * S + sy;
++            if (vf) w = side - 1u - w;
++            uint8_t *out = &rows[sy][(unsigned)x * S];
++            for (unsigned sx = 0; sx < S; sx++) {
++                unsigned u = fx * S + sx;
++                if (hf) u = side - 1u - u;
++                unsigned nib = hd_texel(v, c, ti, u, w, S);
++                out[sx] = (uint8_t)(attr | nib | (nib ? 0x40 : 0));
++            }
++        }
++    }
++}
++
++static uint8_t s_hd_a[GVDP_HD_MAX_SCALE][GVDP_HD_MAXW];
++static uint8_t s_hd_b[GVDP_HD_MAX_SCALE][GVDP_HD_MAXW];
++static uint8_t s_hd_si[GVDP_HD_MAX_SCALE][GVDP_HD_MAXW];
++static uint8_t s_hd_so[GVDP_HD_MAX_SCALE][GVDP_HD_MAXW];
++static uint8_t s_hd_sh[GVDP_HD_MAX_SCALE][GVDP_HD_MAXW];
++static uint8_t s_hd_ss[GVDP_HD_MAX_SCALE][GVDP_HD_MAXW];
++static uint8_t s_hd_sl[GVDP_HD_MAX_SCALE][GVDP_HD_MAXW];
++static uint8_t s_hd_drawn[GVDP_HD_MAX_SCALE][GVDP_HD_MAXW];
++
++/* Sprites of one raster line at scale S: same selection, limits and masking as
++ * sprite_render_line, without touching the status flags. */
++static void hd_sprites(const GVDP *v, int line, unsigned S, int w)
++{
++    int total = w * (int)S;
++    for (unsigned r = 0; r < S; r++) {
++        memset(s_hd_so[r], 0, (size_t)total); memset(s_hd_ss[r], 0, (size_t)total);
++        memset(s_hd_sl[r], 0, (size_t)total); memset(s_hd_drawn[r], 0, (size_t)total);
++    }
++    int h40 = MODE4_H40(v);
++    int max_sprites = h40 ? 80 : 64, max_per_line = h40 ? 20 : 16;
++    int sh_mode = MODE4_SHI(v) != 0;
++    uint16_t sat = (uint16_t)((REG_SPRITE_NT(v) & 0x7F) << 9);
++    int link = 0, on_line = 0, budget = w;
++    if (line <= s_hd_spos_line) hd_spos_build(v);       /* new frame */
++    s_hd_spos_line = line;
++    for (int n = 0; n < max_sprites; n++) {
++        uint16_t e = (uint16_t)(sat + link * 8);
++        int y = (vram_read_word(v, e) & 0x3FF) - 128;
++        uint8_t sz = v->vram[(uint16_t)(e + 2)];
++        int hsz = ((sz >> 2) & 3) + 1, vsz = (sz & 3) + 1;
++        int height = vsz * 8, width = hsz * 8;
++        int next = v->vram[(uint16_t)(e + 3)] & 0x7F;
++        if (line >= y && line < y + height) {
++            if (++on_line > max_per_line && !s_unlimited_sprites) break;
++            uint16_t attr = vram_read_word(v, (uint16_t)(e + 4));
++            int xword = vram_read_word(v, (uint16_t)(e + 6)) & 0x3FF;
++            if (xword == 0 && on_line > 1) break;
++            int screen_x = xword - 128;
++            int tile = attr & 0x07FF, pal = (attr >> 13) & 3, pri = (attr & 0x8000) != 0;
++            int hf = (attr & 0x0800) != 0, vf = (attr & 0x1000) != 0;
++            unsigned cell = 8u * S;
++            for (unsigned sy = 0; sy < S; sy++) {
++                unsigned vs = (unsigned)(line - y) * S + sy;
++                if (vf) vs = (unsigned)height * S - 1u - vs;
++                unsigned celly = vs / cell, wv = vs % cell;
++                for (int lx = 0; lx < width; lx++) {
++                    int sx0 = screen_x + lx;
++                    if (sx0 < 0 || sx0 >= w) continue;
++                    for (unsigned sx = 0; sx < S; sx++) {
++                        unsigned us = (unsigned)lx * S + sx;
++                        if (hf) us = (unsigned)width * S - 1u - us;
++                        unsigned cellx = us / cell, u = us % cell;
++                        unsigned ti = (unsigned)(tile + (int)cellx * vsz + (int)celly) & 0x7FFu;
++                        const HdTileCache *c = hd_resolve(v, ti);
++                        const HdEntry *he = c->entry;
++                        unsigned hlo = c->lo, hhi = c->hi;
++                        if (!hf && !vf && !(he && he->kind == 0)) {
++                            HdSpritePos *sp = hd_spos_find(screen_x + 8 * (int)cellx, y + 8 * (int)celly);
++                            if (sp && sp->ti == ti) {
++                                if (!sp->done) { sp->done = 1; sp->used = hd_spos_cell(v, sp) ? 2 : 1; }
++                                if (sp->used == 2) { he = sp->entry; hlo = sp->lo; hhi = sp->hi; }
++                            }
++                        }
++                        unsigned nib = hd_texel_e(v, he, hlo, hhi, ti, u, wv, S);
++                        if (!nib) continue;
++                        unsigned o = (unsigned)sx0 * S + sx;
++                        if (s_hd_drawn[sy][o]) continue;
++                        if (sh_mode && pal == 3 && nib == 14) s_hd_sl[sy][o] = 1;
++                        else if (sh_mode && pal == 3 && nib == 15) s_hd_ss[sy][o] = 1;
++                        else {
++                            s_hd_si[sy][o] = (uint8_t)(pal * 16 + (int)nib);
++                            s_hd_so[sy][o] = 1;
++                            s_hd_sh[sy][o] = (uint8_t)pri;
++                            s_hd_drawn[sy][o] = 1;
++                        }
++                    }
++                }
++            }
++            budget -= width;
++            if (budget <= 0 && !s_unlimited_sprites) break;
++        }
++        if (next == 0) break;
++        link = next;
++    }
++}
++
++int gvdp_render_scanline_hd(GVDP *v, int line, uint8_t *out, int stride)
++{
++    unsigned S = (unsigned)s_hd_scale;
++    if (!S || MODE4_IM2(v) || s_host_sprites || s_ext_tiles ||
++        s_sprite_patterns[0] || s_sprite_patterns[1] || s_ws_bgdiag)
++        return 0;
++    int w = gvdp_screen_width(v);
++    if (clamp_ws_extra(w) || s_ws_canvas_w > w || line < 0 || line >= GVDP_MAX_HEIGHT)
++        return 0;
++    int total = w * (int)S;
++    uint8_t backdrop = (uint8_t)(REG_BACKDROP(v) & 0x3F);
++    if (!gvdp_display_enabled(v)) {
++        for (unsigned r = 0; r < S; r++) memset(out + r * (unsigned)stride, backdrop, (size_t)total);
++        return total;
++    }
++    s_hd_stamp++;
++
++    int wt = plane_tiles(REG_PLANE_SIZE(v) & 3), ht = plane_tiles((REG_PLANE_SIZE(v) >> 4) & 3);
++    uint16_t base_a = (uint16_t)((REG_PLANEA_NT(v) & 0x38) << 10);
++    uint16_t base_b = (uint16_t)((REG_PLANEB_NT(v) & 7) << 13);
++    int win_wt = MODE4_H40(v) ? 64 : 32;
++    uint16_t base_w = MODE4_H40(v) ? (uint16_t)((REG_WINDOW_NT(v) & 0x3E) << 10)
++                                   : (uint16_t)((REG_WINDOW_NT(v) & 0x3F) << 10);
++    uint16_t hbase = (uint16_t)((REG_HSCROLL_NT(v) & 0x3F) << 10);
++    int hmode = REG_MODE3(v) & 3;
++    int hidx = hmode == 0 ? 0 : hmode == 2 ? (line & ~7) : line;
++    int hs_a = vram_read_word(v, (uint16_t)(hbase + hidx * 4)) & 0x3FF;
++    int hs_b = vram_read_word(v, (uint16_t)(hbase + hidx * 4 + 2)) & 0x3FF;
++    int two_cell = (REG_MODE3(v) & 4) != 0;
++    unsigned wx = REG_WINDOW_X(v), wy = REG_WINDOW_Y(v);
++    int window_x = (int)(wx & 31) * 16, window_y = (int)(wy & 31) * 8;
++    int right = (wx & 0x80) != 0;
++    int vertical = (wy & 0x80) ? line >= window_y : line < window_y;
++
++    /* Spans of 16 columns (2-cell vscroll granularity), split at the window edge. */
++    for (int x = 0; x < w;) {
++        int boundary = ((x >> 4) + 1) * 16;
++        if (boundary > w) boundary = w;
++        if (window_x > x && window_x < boundary) boundary = window_x;
++        int va = v->vsram[0] & 0x3FF, vb = v->vsram[1] & 0x3FF;
++        if (two_cell) {
++            int col = (x >> 4) * 2;
++            va = v->vsram[col % GVDP_VSRAM_ENTRIES] & 0x3FF;
++            vb = v->vsram[(col + 1) % GVDP_VSRAM_ENTRIES] & 0x3FF;
++        }
++        int horizontal = right ? x >= window_x : x < window_x;
++        if (horizontal || vertical)
++            hd_plane(v, s_hd_a, S, base_w, win_wt, 32, x, boundary, 0, line);
++        else
++            hd_plane(v, s_hd_a, S, base_a, wt, ht, x, boundary, hs_a, line + va);
++        hd_plane(v, s_hd_b, S, base_b, wt, ht, x, boundary, hs_b, line + vb);
++        x = boundary;
++    }
++    hd_sprites(v, line, S, w);
++    int sh_mode = MODE4_SHI(v) != 0;
++    for (unsigned r = 0; r < S; r++)
++        gvdp_compose_span(out + r * (unsigned)stride, s_hd_a[r], s_hd_b[r], s_hd_si[r], s_hd_so[r],
++                          s_hd_sh[r], s_hd_ss[r], s_hd_sl[r], total, backdrop, sh_mode);
++    return total;
++}
+diff --git a/runner/video/genesis_vdp.h b/runner/video/genesis_vdp.h
+index 7c7bba1..c969957 100644
+--- a/runner/video/genesis_vdp.h
++++ b/runner/video/genesis_vdp.h
+@@ -304,6 +304,19 @@ int gvdp_compose_captured(const GVDPRasterRow *row, uint8_t *out);
+ void gvdp_evaluate_scanline(GVDP *v, int line);
+ const char *gvdp_plane_implementation(void);
+ 
++/* ---- High-resolution presentation (end of genesis_vdp.c) ---------------------- */
++/* HD tile pack: redrawn 8x8 tiles at 2x/4x/8x, looked up by pattern (or by
++ * 1bpp shape for two-colour font tiles). Presentation only. */
++int      gvdp_hd_load_pack(const char *path);   /* entries loaded, -1 on error */
++void     gvdp_hd_unload(void);
++void     gvdp_hd_set_scale(int scale);          /* 0 = off, 2 or 4             */
++int      gvdp_hd_scale(void);
++unsigned gvdp_hd_tile_count(void);
++/* Render raster line `line` as scale rows of (screen width x scale) palette
++ * indices at out + r*stride. Returns the row width, or 0 when the current
++ * mode is not supported (caller pixel-doubles the 1x row). */
++int      gvdp_render_scanline_hd(GVDP *v, int line, uint8_t *out, int stride);
++
+ /* ---- Per-frame raster timing ---------------------------------------------- */
+ /* Called by the scheduler at the start of each scanline; advances the H-int
+  * counter and sets/clears V-int pending at the vblank boundary. Returns a mask
+diff --git a/tests/runtime/genesis_machine_sram_state_test.c b/tests/runtime/genesis_machine_sram_state_test.c
+index b4b7eec..b421bdf 100644
+--- a/tests/runtime/genesis_machine_sram_state_test.c
++++ b/tests/runtime/genesis_machine_sram_state_test.c
+@@ -158,6 +158,17 @@ int gvdp_unlimited_sprites(void)
+     return 0;
+ }
+ 
++int gvdp_hd_scale(void)
++{
++    return 0;
++}
++
++int gvdp_render_scanline_hd(GVDP *v, int line, uint8_t *out, int stride)
++{
++    (void)v; (void)line; (void)out; (void)stride;
++    return 0;
++}
++
+ void z80_init(z80 *const state)
+ {
+     (void)state;

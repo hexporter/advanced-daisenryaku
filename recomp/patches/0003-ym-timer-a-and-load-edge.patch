@@ -1,0 +1,143 @@
+diff --git a/runner/rb_state.c b/runner/rb_state.c
+index d49cc1d..f14efea 100644
+--- a/runner/rb_state.c
++++ b/runner/rb_state.c
+@@ -40,8 +40,8 @@ _Static_assert(sizeof(g_ram) == 0x10000, "work RAM size changed");
+ #if UINTPTR_MAX == 0xFFFFFFFFFFFFFFFFu
+ /* 64-bit layouts (the host pointers inside are scrubbed by machine_rb_save). */
+ _Static_assert(sizeof(GVDP) == 65824, "GVDP changed: review machine_rb_save (pointers) and rb_state");
+-_Static_assert(sizeof(GenesisBus) == 73816, "GenesisBus changed: review machine_rb_save and rb_state");
+-_Static_assert(sizeof(GenesisMachine) == 139728, "GenesisMachine changed: review machine_rb_save and rb_state");
++_Static_assert(sizeof(GenesisBus) == 73840, "GenesisBus changed: review machine_rb_save and rb_state");
++_Static_assert(sizeof(GenesisMachine) == 139752, "GenesisMachine changed: review machine_rb_save and rb_state");
+ #endif
+ 
+ /* ---- sections ---------------------------------------------------------------- */
+diff --git a/runner/video/genesis_bus.c b/runner/video/genesis_bus.c
+index 6daf1c0..813911c 100644
+--- a/runner/video/genesis_bus.c
++++ b/runner/video/genesis_bus.c
+@@ -61,10 +61,11 @@ extern void glue_charge_68k_stall(uint32_t cycles);
+  *
+  * The audio chips themselves are rendered later from the stamped write queue,
+  * so this small synchronous model exists solely for CPU-visible status reads.
+- * It deliberately models BUSY as always clear; only timer flag B is currently
+- * needed by supported software. */
++ * It deliberately models BUSY as always clear; timer flags A and B are
++ * modelled (A added for Advanced Daisenryaku's SMPS driver). */
+ #define MASTER_CYCLES_PER_FRAME  (262ull * 3420ull)
+ #define YM_TIMER_B_MASTER_TICK   (16ull * 144ull * 7ull)
++#define YM_TIMER_A_MASTER_TICK   (144ull * 7ull)
+ 
+ static uint64_t ym_abs_z80_stamp(void)
+ {
+@@ -80,18 +81,26 @@ static uint64_t ym_abs_68k_stamp(void)
+ 
+ static void ym_timer_update(GenesisBus *b, uint64_t now)
+ {
+-    if (!b->ym_timer_b_running || b->ym_timer_b_period == 0 ||
+-        now < b->ym_timer_b_deadline)
+-        return;
+-
+-    if (b->ym_mode & 0x08u)             /* enable timer-B overflow flag */
+-        b->ym_status |= 0x02u;
+-
+-    /* Timer B is periodic while load/enable bit 1 remains set. Advance the
++    /* Both timers are periodic while their load bit remains set. Advance the
+      * deadline past 'now' without an unbounded catch-up loop. */
+-    uint64_t elapsed = now - b->ym_timer_b_deadline;
+-    uint64_t periods = elapsed / b->ym_timer_b_period + 1u;
+-    b->ym_timer_b_deadline += periods * b->ym_timer_b_period;
++    if (b->ym_timer_b_running && b->ym_timer_b_period != 0 &&
++        now >= b->ym_timer_b_deadline) {
++        if (b->ym_mode & 0x08u)         /* enable timer-B overflow flag */
++            b->ym_status |= 0x02u;
++        uint64_t elapsed = now - b->ym_timer_b_deadline;
++        uint64_t periods = elapsed / b->ym_timer_b_period + 1u;
++        b->ym_timer_b_deadline += periods * b->ym_timer_b_period;
++    }
++    /* Timer A (SMPS-style drivers that pace music on it, e.g. Advanced
++     * Daisenryaku: tempo on A, effects on B). */
++    if (b->ym_timer_a_running && b->ym_timer_a_period != 0 &&
++        now >= b->ym_timer_a_deadline) {
++        if (b->ym_mode & 0x04u)         /* enable timer-A overflow flag */
++            b->ym_status |= 0x01u;
++        uint64_t elapsed = now - b->ym_timer_a_deadline;
++        uint64_t periods = elapsed / b->ym_timer_a_period + 1u;
++        b->ym_timer_a_deadline += periods * b->ym_timer_a_period;
++    }
+ }
+ 
+ static void ym_write_side_effect(GenesisBus *b, uint8_t port, uint8_t val,
+@@ -106,14 +115,24 @@ static void ym_write_side_effect(GenesisBus *b, uint8_t port, uint8_t val,
+     if (bank != 0) return;              /* timers live in register bank 0 */
+ 
+     uint8_t reg = b->ym_addr[0];
+-    if (reg == 0x26u) {
++    if (reg == 0x24u || reg == 0x25u) {
++        if (reg == 0x24u)
++            b->ym_timer_a = (uint16_t)((b->ym_timer_a & 0x003u) | ((unsigned)val << 2));
++        else
++            b->ym_timer_a = (uint16_t)((b->ym_timer_a & 0x3FCu) | (val & 0x03u));
++        b->ym_timer_a_period =
++            (uint64_t)(1024u - (unsigned)b->ym_timer_a) * YM_TIMER_A_MASTER_TICK;
++    } else if (reg == 0x26u) {
+         b->ym_timer_b = val;
+         b->ym_timer_b_period =
+             (uint64_t)(256u - (unsigned)val) * YM_TIMER_B_MASTER_TICK;
+     } else if (reg == 0x27u) {
+-        /* Bits 4/5 clear timer A/B flags; bit 1 loads/runs timer B; bit 3
+-         * enables its overflow flag. RKA writes $3C (clear/stop), updates
+-         * $26, then writes $3A (clear/load/run). */
++        /* Bits 4/5 clear timer A/B flags; bits 0/1 load/run timer A/B; bits
++         * 2/3 enable their overflow flags. A timer (re)starts only when its
++         * load bit goes 0 -> 1 (hardware): drivers that rewrite $27 with the
++         * load bits still set on every tick must not restart the other timer.
++         * RKA writes $3C (clear/stop), updates $26, then $3A (clear/load/run). */
++        uint8_t prev = b->ym_mode;
+         if (val & 0x10u) b->ym_status &= 0xfeu;
+         if (val & 0x20u) b->ym_status &= 0xfdu;
+         b->ym_mode = val;
+@@ -122,11 +141,25 @@ static void ym_write_side_effect(GenesisBus *b, uint8_t port, uint8_t val,
+                 b->ym_timer_b_period =
+                     (uint64_t)(256u - (unsigned)b->ym_timer_b) *
+                     YM_TIMER_B_MASTER_TICK;
+-            b->ym_timer_b_running = 1;
+-            b->ym_timer_b_deadline = now + b->ym_timer_b_period;
++            if (!(prev & 0x02u) || !b->ym_timer_b_running) {
++                b->ym_timer_b_running = 1;
++                b->ym_timer_b_deadline = now + b->ym_timer_b_period;
++            }
+         } else {
+             b->ym_timer_b_running = 0;
+         }
++        if (val & 0x01u) {
++            if (b->ym_timer_a_period == 0)
++                b->ym_timer_a_period =
++                    (uint64_t)(1024u - (unsigned)b->ym_timer_a) *
++                    YM_TIMER_A_MASTER_TICK;
++            if (!(prev & 0x01u) || !b->ym_timer_a_running) {
++                b->ym_timer_a_running = 1;
++                b->ym_timer_a_deadline = now + b->ym_timer_a_period;
++            }
++        } else {
++            b->ym_timer_a_running = 0;
++        }
+     }
+ }
+ 
+diff --git a/runner/video/genesis_bus.h b/runner/video/genesis_bus.h
+index ede6069..ee2716c 100644
+--- a/runner/video/genesis_bus.h
++++ b/runner/video/genesis_bus.h
+@@ -49,6 +49,10 @@ typedef struct GenesisBus {
+     uint8_t  ym_timer_b_running;
+     uint64_t ym_timer_b_deadline;       /* absolute scheduler master cycles    */
+     uint64_t ym_timer_b_period;         /* cached period in master cycles      */
++    uint16_t ym_timer_a;                /* registers $24 (bits 9..2) + $25 (1..0) */
++    uint8_t  ym_timer_a_running;
++    uint64_t ym_timer_a_deadline;       /* absolute scheduler master cycles    */
++    uint64_t ym_timer_a_period;         /* cached period in master cycles      */
+ 
+     /* Controllers / I-O. */
+     uint16_t pad[2];                    /* live button state (GPAD_* bits, 12) */

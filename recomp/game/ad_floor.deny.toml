@@ -1,0 +1,8 @@
+# Deny list (tools/fold.sh): these addresses never become functions – neither via fold nor
+# via heuristics (recompiler blacklist via discovery_files); they run in the interpreter.
+# Extended automatically from floor_unsafe/interior_label_misses; entries may be added
+# by hand (with the reason as a comment).
+
+[functions]
+blacklist = [
+]

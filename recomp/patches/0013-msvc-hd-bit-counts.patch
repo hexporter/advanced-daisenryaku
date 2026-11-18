@@ -1,0 +1,78 @@
+--- a/runner/video/genesis_vdp.c
++++ b/runner/video/genesis_vdp.c
+@@ -1499,6 +1499,24 @@
+ }
+ int gvdp_hd_scale(void) { return s_hd_scale; }
+ unsigned gvdp_hd_tile_count(void) { return s_hd_count; }
++
++/* Bit counts for the HD tile matching; MSVC has no __builtin_popcount/ctz/clz. Arguments are
++ * never 0 where ctz/clz are used (callers checked popcount == 2 first). */
++#if defined(_MSC_VER) && !defined(__clang__)
++#include <intrin.h>
++static int hd_popcount(unsigned v)
++{
++    v = v - ((v >> 1) & 0x55555555u);
++    v = (v & 0x33333333u) + ((v >> 2) & 0x33333333u);
++    return (int)((((v + (v >> 4)) & 0x0F0F0F0Fu) * 0x01010101u) >> 24);
++}
++static int hd_ctz(unsigned v) { unsigned long i; _BitScanForward(&i, v); return (int)i; }
++static int hd_clz(unsigned v) { unsigned long i; _BitScanReverse(&i, v); return 31 - (int)i; }
++#else
++#define hd_popcount(v) __builtin_popcount(v)
++#define hd_ctz(v)      __builtin_ctz(v)
++#define hd_clz(v)      __builtin_clz(v)
++#endif
+ 
+ /* Colours of an 8x8 pattern as a 16-bit set. */
+ static unsigned hd_colours(const uint8_t *p)
+@@ -1541,7 +1559,7 @@
+     c->entry = hd_find(0, own);
+     if (c->entry) return c;
+     unsigned seen = hd_colours(own);
+-    if (__builtin_popcount(seen) > 2) return c;
++    if (hd_popcount(seen) > 2) return c;
+     /* Glyph cell: four consecutive tiles TL TR BL BR with one colour pair. A nearly blank
+      * tile can also complete a wrong group (e.g. the one-pixel foot of an "l" spilling into
+      * the next quarter matches some other text's cell as quarter 0), so the alignment of an
+@@ -1561,8 +1579,8 @@
+         if (ti < q || ti - q + 3 > 2047u) continue;
+         unsigned base = ti - q, all = 0;
+         for (unsigned k = 0; k < 4; k++) all |= hd_colours(&v->vram[(base + k) * 32u]);
+-        if (__builtin_popcount(all) != 2) continue;
+-        unsigned lo = (unsigned)__builtin_ctz(all), hi = 31u - (unsigned)__builtin_clz(all);
++        if (hd_popcount(all) != 2) continue;
++        unsigned lo = (unsigned)hd_ctz(all), hi = 31u - (unsigned)hd_clz(all);
+         uint8_t key[33];
+         for (unsigned k = 0; k < 4; k++) hd_mask(&v->vram[(base + k) * 32u], hi, key + k * 8);
+         key[32] = (uint8_t)q;
+@@ -1570,8 +1588,8 @@
+         if (e) { c->entry = e; c->lo = (uint8_t)lo; c->hi = (uint8_t)hi; c->base = (int16_t)base; return c; }
+     }
+     /* Two-colour tile → shape lookup. */
+-    if (__builtin_popcount(seen) != 2) return c;
+-    unsigned lo = (unsigned)__builtin_ctz(seen), hi = 31u - (unsigned)__builtin_clz(seen);
++    if (hd_popcount(seen) != 2) return c;
++    unsigned lo = (unsigned)hd_ctz(seen), hi = 31u - (unsigned)hd_clz(seen);
+     uint8_t mask[8];
+     hd_mask(own, hi, mask);
+     c->entry = hd_find(1, mask);
+@@ -1664,7 +1682,7 @@
+  * screen position. Returns 1 and sets p->entry/lo/hi on a hit. */
+ static int hd_spos_cell(const GVDP *v, HdSpritePos *p)
+ {
+-    if (__builtin_popcount(hd_colours(&v->vram[p->ti * 32u])) > 2) return 0;
++    if (hd_popcount(hd_colours(&v->vram[p->ti * 32u])) > 2) return 0;
+     for (unsigned q = 0; q < 4; q++) {
+         int tx = p->x - 8 * (int)(q & 1), ty = p->y - 8 * (int)(q >> 1);
+         const uint8_t *pat[4];
+@@ -1675,8 +1693,8 @@
+             pat[k] = &v->vram[g->ti * 32u];
+             all |= hd_colours(pat[k]);
+         }
+-        if (k < 4 || __builtin_popcount(all) != 2) continue;
+-        unsigned lo = (unsigned)__builtin_ctz(all), hi = 31u - (unsigned)__builtin_clz(all);
++        if (k < 4 || hd_popcount(all) != 2) continue;
++        unsigned lo = (unsigned)hd_ctz(all), hi = 31u - (unsigned)hd_clz(all);
+         uint8_t key[33];
+         for (k = 0; k < 4; k++) hd_mask(pat[k], hi, key + k * 8);
+         key[32] = (uint8_t)q;

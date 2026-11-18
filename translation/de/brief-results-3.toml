@@ -1,0 +1,292 @@
+# German: campaign result texts, part 3 (Middle East 1942, Tunisia, Italy, Urals, the West, the end).
+
+[[briefing]]
+block = "results"
+offset = 0x3A48
+text = [
+  "England schickte weitere Truppen aus Indien und verstärkte seine geschlagene Nahostarmee. Auch die Sowjets rückten nach Süden vor, und unsere Front zog sich in viele Richtungen.",
+  "Dann nahmen britische Truppen aus dem Sudan das von den Italienern gehaltene Ägypten zurück. Die Operation wurde abgebrochen, unsere Verbände gingen auf die Cyrenaika zurück.",
+  "<keep>",
+  "Am 1. November begann die britische Gegenoffensive, Operation Supercharge. Unser Heer in Nordafrika trat den Rückzug an.",
+  "\"Vor Alamein hatten wir nie einen Sieg. Nach Alamein hatten wir nie eine Niederlage.\"",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3BBB
+text = [
+  "Gemeinsam mit der Heeresgruppe A aus dem Norden stürmten unsere Verbände den Kaukasus und nahmen alle Ölgebiete. Von Stalingrad nach Norden stoßende Kräfte nahmen Moskau und den Ural.",
+  "Im Jahr darauf schloss die Sowjetunion endlich Frieden.",
+  "<keep>",
+  "Amerika und England stehen noch gegen uns, können aber nicht hoffen, gegen unser im Westen versammeltes Heer zurückzuschlagen.",
+  "Der Krieg in Europa ist vorbei.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3CDD
+text = [
+  "Unsere Verbände stürmten den Kaukasus und nahmen alle Ölgebiete.",
+  "Die Alliierten aber schlugen in Nordafrika zurück und nahmen Ägypten und den Irak wieder. Die Türkei schloss Waffenstillstand, und wir mussten nach Norden zurückgehen, um unseren Nachschub zu sichern.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3D9A
+text = [
+  "Unsere Verbände stürmten den Kaukasus, doch erbitterter Widerstand bremste den Vormarsch.",
+  "Inzwischen begann die alliierte Gegenoffensive in Nordafrika, Ägypten und der Irak gingen verloren. Die Türkei schloss Waffenstillstand, und unsere Verbände mussten die Operation abbrechen und nach Norden zurückgehen, um ihren Nachschub zu sichern.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3E6E
+text = [
+  "Nach der Besetzung Tunesiens schlugen unsere Verbände sofort zurück. Die feindlichen Landungstruppen erlitten schwere Verluste und gaben die Landung auf.",
+  "Auch die britische 8. Armee, die Tripolis genommen hatte, wurde zerschlagen und wich auf Tobruk zurück.",
+  "<keep>",
+  "Amerikanische Truppen unter General Patton landeten bei Casablanca, doch das lag zu weit von Algerien.",
+  "Der Führer erklärte, eine alliierte Invasion Europas sei nun ausgeschlossen, und befahl unseren Verbänden die Verlegung in die Sowjetunion.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x3FAD
+text = [
+  "Nach der Besetzung Tunesiens schlugen unsere Verbände sofort zurück. Wir vertrieben die amerikanischen und britischen Landungstruppen und jagten die britische 8. Armee bis Tobruk.",
+  "Ohne Seeherrschaft aber waren wir im Nachteil. Auch unsere Verbände erhielten den Befehl zum Rückzug und gingen nach Sizilien zurück.",
+  "<keep>",
+  "Am 11. November besetzten deutsche Truppen Südfrankreich, um die Vichy-Regierung zu entwaffnen.",
+  "Am 14. Januar forderte die Konferenz von Casablanca die bedingungslose Kapitulation Deutschlands, Italiens und Japans.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x40F2
+text = [
+  "Nach der Besetzung Tunesiens schlugen unsere Verbände sofort zurück. Mit den amerikanischen und britischen Landungstruppen im Westen und der britischen 8. Armee im Süden mussten wir aber an zwei Fronten kämpfen.",
+  "Mitten im ungleichen Kampf kam der Befehl, Tunesien zu räumen. Unsere Verbände gingen nach Sizilien zurück.",
+  "<keep>",
+  "Am 11. November besetzten deutsche Truppen Südfrankreich, um die Vichy-Regierung zu entwaffnen.",
+  "Am 14. Januar forderte die Konferenz von Casablanca die bedingungslose Kapitulation Deutschlands, Italiens und Japans.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4227
+text = [
+  "Zur Unterstützung des schlecht ausgerüsteten italienischen Heeres, das keinen Kampfwillen hatte, gingen unsere Verbände an die Front.",
+  "Unter heftigem Beschuss und Bombenhagel stürmten wir die Landeköpfe, warfen die Landungstruppen ins Meer zurück und hielten die Insel.",
+  "Das Hauptquartier hielt das Mittelmeer vorerst für sicher und befahl uns nach Nordfrankreich.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x42FA
+text = [
+  "Unter heftigem Beschuss und Bombenhagel stürmten unsere Verbände die Landeköpfe und stoppten die Landung. Es war aber nur die erste Welle; frische Truppen trafen ein.",
+  "Da kein Ersatz mehr kam und Italien wankte, räumten wir Sizilien.",
+  "<keep>",
+  "Am 25. Juli wurde Mussolini verhaftet, eine neue Regierung unter Badoglio wurde gebildet.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x43FB
+text = [
+  "Unsere Verbände traten gegen die feindlichen Landeköpfe an, doch der heftige Beschuss und die Bomben zwangen uns, den Gegenangriff abzubrechen.",
+  "Um Verluste zu vermeiden, kämpften wir hinhaltend und entkamen mit den meisten Männern und Waffen.",
+  "<keep>",
+  "Am 25. Juli wurde Mussolini verhaftet, eine neue Regierung unter Badoglio wurde gebildet.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x44E2
+text = [
+  "Als General Clarks 5. Armee bei Salerno zu landen begann, gab Italien seine Kapitulation bekannt, und unsere Verbände brachten Rom unter Kontrolle.",
+  "Dann rückten wir nach Süden und stoppten die Landung. Wir stießen sogar eine Zeitlang nach Sizilien vor, wichen aber zurück, um nicht an der Straße von Messina abgeschnitten zu werden.",
+  "<keep>",
+  "Am 23. September rief Mussolini in Salò am Gardasee einen neuen Staat aus.",
+  "Am 28. November einigten sich Churchill, Roosevelt und Stalin auf der Konferenz von Teheran darauf, dass die Sowjetunion Japan den Krieg erklärt.",
+  "Unsere Verbände verlegten nach Nordfrankreich, wo die nächste Landung am ehesten zu erwarten war.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4656
+text = [
+  "Als General Clarks 5. Armee bei Salerno zu landen begann, gab Italien seine Kapitulation bekannt, und unsere Verbände brachten Rom unter Kontrolle.",
+  "Dann rückten wir nach Süden und stoppten die Landung. Wir stießen sogar eine Zeitlang nach Sizilien vor, wichen aber zurück, um nicht an der Straße von Messina abgeschnitten zu werden.",
+  "<keep>",
+  "Am 23. September rief Mussolini in Salò am Gardasee einen neuen Staat aus.",
+  "Am 28. November einigten sich Churchill, Roosevelt und Stalin auf der Konferenz von Teheran darauf, dass die Sowjetunion Japan den Krieg erklärt.",
+  "Nach einer feindlichen Landung bei Tarent gingen unsere Verbände weiter zurück, auf die Gustav-Linie.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x47CC
+text = [
+  "Als General Clarks 5. Armee bei Salerno zu landen begann, gab Italien seine Kapitulation bekannt. Die britische 8. Armee rückte von Sizilien nach Norden, der Druck wuchs, und unseren Verbänden drohte, abgeschnitten zu werden.",
+  "Der Gegenangriff auf die Landung wurde abgebrochen, wir wurden auf die Gustav-Linie zurückbefohlen.",
+  "<keep>",
+  "Am 23. September rief Mussolini in Salò am Gardasee einen neuen Staat aus.",
+  "Am 28. November einigten sich Churchill, Roosevelt und Stalin auf der Konferenz von Teheran darauf, dass die Sowjetunion Japan den Krieg erklärt.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4907
+text = [
+  "Die feindliche Landungstruppe war sehr stark, daher warteten unsere Verbände auf Verstärkung aus dem Norden, ehe sie zurückschlugen. Nach schweren Kämpfen bei Anzio stoppten wir die Landung und nahmen sogar Neapel zurück.",
+  "Als wir weiter nach Süden stießen, kam der Befehl zum Abzug. Der Feind war in Nordfrankreich gelandet.",
+  "<keep>",
+  "Am 18. Januar wurde Leningrad entsetzt.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x49E6
+text = [
+  "Unsere Verbände warteten auf Verstärkung aus dem Norden und schlugen zurück. Die feindliche Luftmacht kostete uns aber schwere Verluste, und als die Gustav-Linie an vielen Stellen durchbrochen war, brachen wir den Angriff ab und gingen auf die nächste Linie zurück.",
+  "Unsere Verbände zogen weiter nach Frankreich.",
+  "<keep>",
+  "Am 18. Januar wurde Leningrad entsetzt.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4AD6
+text = [
+  "Östlich von Moskau stießen wir bald auf starke feindliche Kräfte, die noch im Zurückgehen immer wieder angriffen.",
+  "Wir nahmen Kuibyschew und überschritten den Ural, doch die Sowjetunion kapitulierte nicht. Die Regierung ging nach Irkutsk und lehnte die Kapitulation ab. Niemals.",
+  "Unsere Verbände stellten den Vormarsch nach Osten ein und gliederten um, um die im Süden der Sowjetunion verbliebenen Stützpunkte des Feindes zu vernichten.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4BF3
+text = [
+  "Östlich von Moskau stießen wir bald auf starke Gegenangriffe. Unser Vormarsch wurde langsamer, wir erreichten den Ural nur knapp.",
+  "Dann begann die feindliche Gegenoffensive. Die ganze Front geriet unter Druck, die Hauptstöße zielten von Norden und Süden auf Moskau.",
+  "Von Einschließung bedroht, trat das Heer einen höllischen Rückzug an und verlor alles, was diese Operation gewonnen hatte.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4D25
+text = [
+  "Östlich von Moskau stießen wir bald auf starke Gegenangriffe. Unser Vormarsch wurde langsamer, die Operation immer schwerer.",
+  "Als es nicht mehr weiterging, schlug der Feind zurück. Wir gaben selbst Moskau auf und wichen zurück.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4DFD
+text = [
+  "Unsere Küstenverteidigung wurde nach kurzem Kampf zerschlagen. Unter feindlicher Luftüberlegenheit stürmten unsere Verbände zur Küste und nahmen im Feuersturm der Schiffsgeschütze Mulberry, den im Bau befindlichen Hafen des Feindes.",
+  "Doch damit war nur Zeit gewonnen.",
+  "<keep>",
+  "Am 20. Juli verübte Oberst Stauffenberg ein Attentat auf den Führer. Es misslang, die Beteiligten wurden einer nach dem anderen hingerichtet.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x4F30
+text = [
+  "Unsere Küstenverteidigung wurde nach kurzem Kampf zerschlagen. Unter feindlicher Luftüberlegenheit stürmten unsere Verbände zur Küste, doch die schweren Schiffsgeschütze und die Luftmacht hielten sie auf.",
+  "Uns blieb nur zu entscheiden, wo die Landungstruppen aufzuhalten waren. Der Plan wurde geändert, wir wichen zurück.",
+  "<keep>",
+  "Am 20. Juli verübte Oberst Stauffenberg ein Attentat auf den Führer. Es misslang, die Beteiligten wurden einer nach dem anderen hingerichtet.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x507F
+text = [
+  "Es war ein unmögliches Unternehmen. Wir wurden bei Falaise eingeschlossen, die Front in Frankreich brach zusammen.",
+  "Unsere aus Deutschland geschickten Verbände nahmen Frankreich zurück, und der Westen hielt eine Zeitlang. So verlegten wir nach Warschau, um die zerschlagene Ostfront zu halten.",
+  "<keep>",
+  "Am 23. August schloss Rumänien Waffenstillstand mit der Sowjetunion und erklärte Deutschland den Krieg. Am 25. gab auch Bulgarien einen Waffenstillstand bekannt.",
+  "Am 3. September schloss Finnland Waffenstillstand.",
+  "Der Führer befahl die totale Mobilmachung und rief alle Männer von 17 bis 60 Jahren ein.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x51EC
+text = [
+  "Es war ein unmögliches Unternehmen. Wir wurden bei Falaise eingeschlossen, die Front in Frankreich brach zusammen.",
+  "Unsere aus Deutschland geschickten Verbände versuchten, die Front neu aufzubauen, doch der Feind landete auch in Südfrankreich. Wir gingen an die Grenze zurück.",
+  "<keep>",
+  "Am 23. August schloss Rumänien Waffenstillstand mit der Sowjetunion und erklärte Deutschland den Krieg. Am 25. gab auch Bulgarien einen Waffenstillstand bekannt.",
+  "Am 3. September schloss Finnland Waffenstillstand.",
+  "Der Führer befahl die totale Mobilmachung und rief alle Männer von 17 bis 60 Jahren ein.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x5355
+text = [
+  "Die 1. Luftlandedivision, die bei Arnheim absprang, war eine Elitetruppe, doch Luftlandetruppen waren uns nicht gewachsen.",
+  "Unsere Verbände nahmen die entscheidende Brücke zurück, stoppten den Vormarsch des britischen XXX. Korps und griffen an. Die Straße des Feindes wurde zum Hell's Highway, und die Alliierten brachen die Operation ab.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x541F
+text = [
+  "Die 1. Luftlandedivision bei Arnheim und die anderen Luftlandeverbände an der Straße zum Rhein erfüllten ihren Auftrag gerade noch.",
+  "Mit der gewonnenen Zeit überschritten die Alliierten den Rhein. Uns bleibt nur noch, die Heimat zu verteidigen.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x54F5
+text = [
+  "Wir zerschlugen die schwachen feindlichen Verbände in den Ardennen sofort. Antwerpen aber blieb unerreichbar.",
+  "Bastogne zu nehmen, das die 101. Luftlandedivision hielt, und die Maas zu überschreiten, war das Äußerste.",
+  "Ein Sieg ohne Bedeutung.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x55BC
+text = [
+  "Wir zerschlugen die schwachen feindlichen Verbände in den Ardennen in den ersten Gefechten. Fern von Antwerpen konnten wir aber nicht einmal die Maasübergänge nehmen.",
+  "Den gewonnenen Frontbogen konnten wir nicht halten, wir wichen zurück.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x5692
+text = [
+  "Gemeinsam mit der ungarischen Armee gingen unsere Verbände zum Angriff über. Zunächst überraschten wir den Feind, trafen aber bald auf starke Gegenangriffe und mussten um jeden Schritt kämpfen.",
+  "Durch eine Lücke im feindlichen Ring brachen wir nach Budapest durch. Der Preis dieses Angriffs aber war der Zusammenbruch der Ostfront.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x576A
+text = [
+  "Gemeinsam mit der ungarischen Armee gingen unsere Verbände zum Angriff über. Zunächst überraschten wir den Feind, trafen aber bald auf starke Gegenangriffe, und der Vormarsch kam zum Stehen.",
+  "Das Unternehmen wurde abgebrochen, um von Süden neu anzusetzen, doch Aussicht auf Erfolg bestand nicht mehr.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x582C
+text = [
+  "Unsere Verbände wehrten den von allen Seiten andrängenden Feind ab, und eine Zeitlang hielt die Front. Doch der Feind schlug erneut zu, und alles brach zusammen.",
+  "Um den nach Westen fliehenden Menschen Zeit zu verschaffen, hielten unsere Verbände die Front bis zuletzt, einer nach dem anderen überrannt, bis das Ende kam.",
+  "<keep>",
+  "Alle unter deutschem Befehl stehenden Streitkräfte zu Lande, zu Wasser und in der Luft haben heute bedingungslos vor dem Oberkommando der Roten Armee und dem Obersten Befehlshaber der Alliierten Expeditionsstreitkräfte kapituliert.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x5983
+text = [
+  "Alle unter deutschem Befehl stehenden Streitkräfte zu Lande, zu Wasser und in der Luft haben heute bedingungslos vor dem Oberkommando der Roten Armee und dem Obersten Befehlshaber der Alliierten Expeditionsstreitkräfte kapituliert.",
+]

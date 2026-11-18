@@ -1,0 +1,1045 @@
+# Campaign mission briefings (block at $023EB6, docs/notes/briefings.md). Per entry: offset in the
+# unpacked block, game table indices, jp rows (checked against the ROM; "" = blank row) and en.
+# en items: "^text" centred row, "" blank row, "<page>" next page, "<keep>" rest on one page,
+# anything else a paragraph (word-wrapped by tools/translate_rom.py). Terms: translation/glossary.md.
+
+[[briefing]]
+block = "missions"
+offset = 0x0000
+index = [0]
+jp = [
+  "　　　　総統訓令第１号",
+  "　　　―ファル・ヴァイス―",
+  "いまやドイツにとって忍ぶ事のでき",
+  "ない東部国境の事態を、平和的手段",
+  "によって処理できる全ての政治的可",
+  "能性がつき果てた。よって私は実力",
+  "にて解決する事を決意した。",
+  "ポーランドへの攻撃は、すでにとと",
+  "のえられた準備に従い実行される。",
+  "攻撃の日は、１９３９年９月１日。",
+  "攻撃の時間は、０４４５時。",
+]
+en = [
+  "^Führer Directive No. 1",
+  "^- Case White -",
+  "Now that every political possibility of resolving by peaceful means the situation on the eastern frontier, which has become intolerable for Germany, has been exhausted, I have decided on a solution by force.",
+  "The attack on Poland is to be carried out in accordance with the preparations already made.",
+  "Date of attack: 1 September 1939.",
+  "Time of attack: 04:45.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0126
+index = [1]
+jp = [
+  "わが軍の戦車に対抗できる装備を持",
+  "つ敵機甲部隊の進出が確認された。",
+  "この部隊が拠点とするピョートルク",
+  "フを占領し、バルダ川の渡河点を確",
+  "保せよ。なお、橋のあたりでは激戦",
+  "が予想される。",
+]
+en = [
+  "Enemy armoured units equipped to take on our tanks have been reported advancing.",
+  "Capture Piotrkow, the base of these units, and secure the crossing over the Warta. Heavy fighting is expected around the bridges.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x01C9
+index = [2]
+jp = [
+  "ワルシャワ包囲のため、その南方の",
+  "ラドムに進出せよ。森がちな地形の",
+  "ため進撃速度はにぶるが、敵拠点に",
+  "戦力集中し、早期に占領の事。",
+]
+en = [
+  "To encircle Warsaw, advance on Radom to the south of it.",
+  "The wooded terrain will slow the advance, but concentrate your forces on the enemy strongholds and take them quickly.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x023D
+index = [3]
+jp = [
+  "ビスワ川でポーランド軍の残存部隊",
+  "が反攻を開始した。第８軍は敗退、",
+  "全滅の危機にある。ワルシャワヘの",
+  "攻撃は一時中断し、第４軍と協力し",
+  "つつ、これを包囲攻撃せよ。",
+  "同盟",
+  "Ｒ１―４ｔｈ　Ａｒｍｙ",
+]
+en = [
+  "The remnants of the Polish army have launched a counterattack on the Vistula. The Eighth Army has been beaten back and faces annihilation.",
+  "Halt the attack on Warsaw for now and, together with the Fourth Army, encircle and destroy the enemy.",
+  "<keep>",
+  "Allies:",
+  "R1 - 4th Army",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x02D6
+index = [4]
+jp = [
+  "敵首都ワルシャワは包囲されたが、",
+  "まだ強力な部隊が守備している。",
+  "特に第一次攻撃は、陣地にある対戦",
+  "車砲のため、失敗に終っている。",
+  "空からの支援を得つつ、市街に突入",
+  "し敵首都を占領せよ。",
+]
+en = [
+  "The enemy capital Warsaw is surrounded, but strong forces still hold it. The first assault failed against the anti-tank guns in their positions.",
+  "With support from the air, storm the city and take the enemy capital.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x037D
+index = [5]
+jp = [
+  "ノルウェー侵攻作戦の後方連絡線を",
+  "安全にするため、デンマークをすみ",
+  "やかに占領せよ。",
+]
+en = [
+  "To secure the lines of communication of the invasion of Norway, occupy Denmark without delay.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x03C3
+index = [6]
+jp = [
+  "―ファル・ヴェーゼルユーブング―",
+  "情報によれば、英軍がノルウェー上",
+  "陸を計画している。英軍のノルウェ",
+  "ー占領は、戦略的う回行動で、そこ",
+  "からバルト諸国へ侵入するだろう。",
+  "そうなれば敵はベルリンへ進撃が可",
+  "能となる。",
+  "よってノルウェー侵攻を命令する。",
+  "同盟",
+  "Ｒ１―サンガク　シダン",
+]
+en = [
+  "^- Weserübung -",
+  "Intelligence reports that the British are planning a landing in Norway. A British occupation of Norway would be a strategic outflanking move, opening the way into the Baltic states.",
+  "The enemy could then advance on Berlin. I therefore order the invasion of Norway.",
+  "<keep>",
+  "Allies:",
+  "R1 - Mountain Division",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x049B
+index = [7]
+jp = [
+  "　　　　総統訓令第６号",
+  "　　　―ファル・ゲルプ―",
+  "近い将来において、イギリス及びそ",
+  "の影響下にあるフランスもまた、戦",
+  "争を終結させようとしないならば、",
+  "私は、時を失する事なく、攻勢に移",
+  "ることに決定した。",
+]
+en = [
+  "^Führer Directive No. 6",
+  "^- Case Yellow -",
+  "Should Britain, and France under her influence, refuse in the near future to end the war, I am resolved to take the offensive without delay.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0545
+index = [8]
+jp = [
+  "　　　―ファル・ロート―",
+  "フランスに最後の一撃を加えるため",
+  "ソンム戦線を突破、パリを占領せよ。",
+  "ダンケルクより撤退した英軍が再び",
+  "援軍を送りつつあるが、もはやフラ",
+  "ンスに予備軍はない。",
+  "なお、イタリアが参戦するであろう。",
+  "同盟",
+  "Ｒ１―レープ",
+  "Ｙ１―イタリア",
+]
+en = [
+  "^- Case Red -",
+  "To deal France the final blow, break through the Somme front and take Paris.",
+  "The British who escaped from Dunkirk are sending reinforcements again, but France has no reserves left. Italy is expected to enter the war.",
+  "<keep>",
+  "Allies:",
+  "R1 - Leeb",
+  "Y1 - Italy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x060B
+index = [9]
+jp = [
+  "　　　―ファル・ロート―",
+  "フランスに最後の一撃を加えるため",
+  "マジノ要塞を攻撃せよ。ここを抜け",
+  "ば、パリの敵軍は北からのボック将",
+  "軍の部隊と包囲できるであろう。",
+  "また、イタリアが連合国に宣戦し、",
+  "南仏に進出してくるであろう。",
+  "同盟",
+  "Ｒ１―ボック",
+  "Ｙ１―イタリア",
+]
+en = [
+  "^- Case Red -",
+  "To deal France the final blow, attack the Maginot Line. Once it is broken, the enemy around Paris can be encircled together with General Bock's forces from the north.",
+  "Italy is expected to declare war on the Allies and advance into southern France.",
+  "<keep>",
+  "Allies:",
+  "R1 - Bock",
+  "Y1 - Italy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x06D9
+index = [10]
+jp = [
+  "英本土上陸作戦を行うにあたって、",
+  "あらかじめ制空権を握る必要がある。",
+  "イギリスはソ連の援助をあてに戦っ",
+  "ているにすぎない。",
+  "すみやかに敵空軍勢力を粉砕せよ。",
+  "同盟",
+  "Ｙ１―イタリア",
+]
+en = [
+  "Before the landing in England we must first win command of the air.",
+  "Britain fights on only in the hope of Soviet help.",
+  "Destroy the enemy air force without delay.",
+  "<keep>",
+  "Allies:",
+  "Y1 - Italy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0773
+index = [11]
+jp = [
+  "　　　　総統訓令第１６号",
+  "　　―ゼー・レーヴェ作戦―",
+  "私はイギリス侵入を準備し、必要と",
+  "なればこれの実行を決定した。その",
+  "達成には、航空戦が重要である。",
+  "上陸作戦は、イギリス南部海岸のい",
+  "たるところで行われるものとする。",
+  "同盟",
+  "Ｙ１―イタリア",
+]
+en = [
+  "^Führer Directive No. 16",
+  "^- Operation Sea Lion -",
+  "I have decided to prepare a landing operation against England and, if necessary, to carry it out. The air war is vital to its success.",
+  "The landing will take place on a broad front along the south coast of England.",
+  "<keep>",
+  "Allies:",
+  "Y1 - Italy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0834
+index = [12]
+jp = [
+  "　　　　総統訓令第２５号",
+  "　　　　―マリ―タ作戦―",
+  "わが同盟国のユーゴスラビアでクー",
+  "デターが発生し、反同盟派のシモビ",
+  "ッチが政権を握った。",
+  "直ちに軍事的に、そして国家として",
+  "のユーゴスラビアを粉砕する。",
+  "なおこの作戦のため、バルバロッサ",
+  "作戦を延期せざるをえないであろう。",
+  "同盟",
+  "Ｒ１―クライスト",
+  "Ｒ２―ハンガリー",
+  "Ｇ１―イタリア",
+  "Ｇ２―イタリア",
+]
+en = [
+  "^Führer Directive No. 25",
+  "^- Operation Marita -",
+  "A coup in our ally Yugoslavia has brought the anti-Axis Simovic to power.",
+  "Yugoslavia is to be crushed at once, militarily and as a state.",
+  "Because of this operation, Barbarossa will have to be postponed.",
+  "<keep>",
+  "Allies:",
+  "R1 - Kleist",
+  "R2 - Hungary",
+  "G1 - Italy",
+  "G2 - Italy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0931
+index = [13, 43]
+jp = [
+  "　　　　総統訓令第２５号",
+  "　　　　―マリ―タ作戦―",
+  "わが同盟国のユーゴスラビアでクー",
+  "デターが発生し、反同盟派のシモビ",
+  "ッチが政権を握った。",
+  "直ちに軍事的に、そして国家として",
+  "のユーゴスラビアを粉砕する。",
+  "また、ギリシア侵入も同時に行う。",
+  "なおこの作戦のため、バルバロッサ",
+  "作戦を延期せざるをえないであろう。",
+  "同盟",
+  "Ｒ１―イタリア",
+]
+en = [
+  "^Führer Directive No. 25",
+  "^- Operation Marita -",
+  "A coup in our ally Yugoslavia has brought the anti-Axis Simovic to power.",
+  "Yugoslavia is to be crushed at once, militarily and as a state. Greece is to be invaded at the same time.",
+  "Because of this operation, Barbarossa will have to be postponed.",
+  "<keep>",
+  "Allies:",
+  "R1 - Italy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0A31
+index = [14]
+jp = [
+  "　　　　総統訓令第２１号",
+  "　　　―バルバロッサ作戦―",
+  "ドイツ国防軍は、イギリスに対する",
+  "戦争の終結以前においても、ソ連を",
+  "迅速な一戦役によって、破砕するこ",
+  "とを準備しなければならない。",
+  "",
+  "作戦の主要目的はヴォルガ―アルハ",
+  "ンゲリスクの線でロシアを二分する",
+  "事にあり。",
+  "貴下の北方軍集団は、東プロイセン",
+  "より進出、バルト地区の敵兵力を壊",
+  "滅させ、レニングラードを占領すぺ",
+  "し。",
+  "同盟",
+  "Ｇ１―フィンランド",
+]
+en = [
+  "^Führer Directive No. 21",
+  "^- Operation Barbarossa -",
+  "The German Wehrmacht must be prepared to crush Soviet Russia in a rapid campaign, even before the end of the war against England.",
+  "<page>",
+  "The final objective is to cut Russia in two along the line Volga - Archangel.",
+  "Your Army Group North will advance from East Prussia, destroy the enemy forces in the Baltic area and take Leningrad.",
+  "<keep>",
+  "Allies:",
+  "G1 - Finland",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0B67
+index = [15]
+jp = [
+  "　　　　総統訓令第２１号",
+  "　　　―バルバロッサ作戦―",
+  "ドイツ国防軍は、イギリスに対する",
+  "戦争の終結以前においても、ソ連を",
+  "迅速な一戦役によって、破砕するこ",
+  "とを準備しなければならない。",
+  "",
+  "作戦の主要目的はヴォルガ―アルハ",
+  "ンゲリスクの線でロシアを二分する",
+  "事にあり。",
+  "貴下の中央軍集団は、ワルシャワ周",
+  "辺より進出し、ベロロシアの敵兵力",
+  "を粉砕すぺし。",
+  "",
+  "同盟",
+  "Ｒ１―クライスト",
+  "Ｇ１―ハンガリー",
+]
+en = [
+  "^Führer Directive No. 21",
+  "^- Operation Barbarossa -",
+  "The German Wehrmacht must be prepared to crush Soviet Russia in a rapid campaign, even before the end of the war against England.",
+  "<page>",
+  "The final objective is to cut Russia in two along the line Volga - Archangel.",
+  "Your Army Group Centre will advance from the Warsaw area and destroy the enemy forces in Belorussia.",
+  "<keep>",
+  "Allies:",
+  "R1 - Kleist",
+  "G1 - Hungary",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0C94
+index = [16]
+jp = [
+  "　　　　総統訓令第２１号",
+  "　　　―バルバロッサ作戦―",
+  "ドイツ国防軍は、イギリスに対する",
+  "戦争の終結以前においても、ソ連を",
+  "迅速な一戦役によって、破砕するこ",
+  "とを準備しなければならない。",
+  "",
+  "作戦の主要目的はヴォルガ―アルハ",
+  "ンゲリスクの線でロシアを二分する",
+  "事にあり。",
+  "貴下の南方軍集団は、ルブリンより",
+  "キエフにいたる地区に主力を向け、",
+  "ドニエプル流域にて粉砕すぺし。",
+  "",
+  "同盟",
+  "Ｒ１―ハンガリー",
+  "Ｇ１―ルーマニア",
+]
+en = [
+  "^Führer Directive No. 21",
+  "^- Operation Barbarossa -",
+  "The German Wehrmacht must be prepared to crush Soviet Russia in a rapid campaign, even before the end of the war against England.",
+  "<page>",
+  "The final objective is to cut Russia in two along the line Volga - Archangel.",
+  "Your Army Group South will direct its main effort from Lublin towards Kiev and destroy the enemy in the Dnieper basin.",
+  "<keep>",
+  "Allies:",
+  "R1 - Hungary",
+  "G1 - Romania",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0DD0
+index = [17]
+jp = [
+  "　　　―タイフーン作戦―",
+  "本年度最後の決戦は敵を壊滅させる",
+  "であろう。諸君は、かつてのフン族",
+  "モンゴル族の襲来と同じくらいの危",
+  "難を、ヨーロッパのはるか遠くに退",
+  "けるのである。すでに敵は全滅し、",
+  "二度と立ち上がれないであろう。",
+  "同盟",
+  "Ｒ１―グーデリアン",
+]
+en = [
+  "^- Operation Typhoon -",
+  "This year's last great battle will destroy the enemy. You will drive from Europe a danger as great as the invasions of the Huns and Mongols long ago.",
+  "The enemy is already beaten and will never rise again.",
+  "<keep>",
+  "Allies:",
+  "R1 - Guderian",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0EA3
+index = [18]
+jp = [
+  "　　　―タイフーン作戦―",
+  "本年度最後の決戦は敵を壊滅させる",
+  "であろう。諸君は、かつてのフン族",
+  "モンゴル族の襲来と同じくらいの危",
+  "難を、ヨーロッパのはるか遠くに退",
+  "けるのである。すでに敵は全滅し、",
+  "二度と立ち上がれないであろう。",
+  "同盟",
+  "Ｒ１―ヘープナー",
+]
+en = [
+  "^- Operation Typhoon -",
+  "This year's last great battle will destroy the enemy. You will drive from Europe a danger as great as the invasions of the Huns and Mongols long ago.",
+  "The enemy is already beaten and will never rise again.",
+  "<keep>",
+  "Allies:",
+  "R1 - Hoepner",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x0F75
+index = [19]
+jp = [
+  "冬期到来以前の最重要任務は、モス",
+  "クワ攻略にあらずして、クリミヤ半",
+  "島占領、ドニェツ盆地工業地帯及び",
+  "炭田地帯の確保、そしてカフカス油",
+  "田からの石油補給路の遮断なり。",
+  "最終目標は、ドン河畔ロストフの占",
+  "領にある。",
+  "同盟",
+  "Ｇ１―ルーマニア",
+]
+en = [
+  "The most important task before winter is not the capture of Moscow, but to take the Crimea, secure the industrial and coal region of the Donets basin and cut the oil supply from the Caucasus.",
+  "The final objective is Rostov on the Don.",
+  "<keep>",
+  "Allies:",
+  "G1 - Romania",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x102E
+index = [20]
+jp = [
+  "　　　　総統訓令第４１号",
+  "　　　　―ブラウ作戦―",
+  "ロシアにおける冬期戦終わりも近い。",
+  "泥ねい期終了後の陸空軍の第一の任",
+  "務は、主作戦遂行の条件をととのえ",
+  "るため、クリミヤのケルチ半島の敵",
+  "兵力を撃破、セバストポリを落とす",
+  "事なり。",
+  "同盟",
+  "Ｒ１―ルーマニア",
+]
+en = [
+  "^Führer Directive No. 41",
+  "^- Operation Blue -",
+  "The winter battle in Russia is nearing its end.",
+  "Once the muddy season is over, the first task of army and air force is to prepare the main operation: destroy the enemy on the Kerch peninsula in the Crimea and take Sevastopol.",
+  "<keep>",
+  "Allies:",
+  "R1 - Romania",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x10F0
+index = [21]
+jp = [
+  "　　　　総統訓令第４１号",
+  "　　　　―ブラウ作戦―",
+  "ロシアにおける冬期戦終わりも近い。",
+  "全兵力を南部作戦の主要に向け、ド",
+  "ン前面の敵を撃破し、ついでコーカ",
+  "サス地区の油田及びコーカサス山脈",
+  "の道路を奪取するものとす。",
+  "同盟",
+  "Ｒ１―ヴァイクス　ＡＧ",
+  "Ｒ２―ルーマニア",
+]
+en = [
+  "^Führer Directive No. 41",
+  "^- Operation Blue -",
+  "The winter battle in Russia is nearing its end.",
+  "All available forces are to be concentrated on the main operation in the south: destroy the enemy before the Don, then seize the Caucasus oilfields and the passes through the Caucasus mountains.",
+  "<keep>",
+  "Allies:",
+  "R1 - Weichs AG",
+  "R2 - Romania",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x11B2
+index = [22]
+jp = [
+  "　―ヴィンターシュツルム作戦―",
+  "ソ連軍の冬期攻勢―ウラヌス作戦が",
+  "ドン川沿いに開始された。スターリ",
+  "ングラードにあるパウルス将軍率い",
+  "る第６軍の両翼より敵は突破、同軍",
+  "は包囲されつつある。貴下のドン軍",
+  "集団は第６軍を救出、戦線保持せよ。",
+  "同盟",
+  "Ｙ１―パウルスＡｒｍｙ",
+  "Ｙ２―ルーマニア",
+]
+en = [
+  "^- Operation Winter Storm -",
+  "The Soviet winter offensive, Operation Uranus, has begun along the Don. The enemy has broken through on both flanks of General Paulus' Sixth Army at Stalingrad, which is being encircled.",
+  "Your Army Group Don will relieve the Sixth Army and hold the front.",
+  "<keep>",
+  "Allies:",
+  "Y1 - Paulus Army",
+  "Y2 - Romania",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1286
+index = [23]
+jp = [
+  "ソ連軍は冬期攻勢の次の作戦―サタ",
+  "ーン作戦を開始した。ドン川中流の",
+  "伊第８軍は崩壊、敵はロストフ及び",
+  "ハリコフに向け、進撃しつつある。",
+  "ロストフの喪失は、コーカサスの第",
+  "１装甲軍全滅につながる。全力をも",
+  "って、敵の侵攻を阻止せよ。",
+  "同盟",
+  "Ｙ１―ヴァイクスＡＧ",
+  "Ｙ２―ハンガリー",
+]
+en = [
+  "The Soviets have begun the next stage of their winter offensive, Operation Saturn. The Italian Eighth Army on the middle Don has collapsed, and the enemy is advancing on Rostov and Kharkov.",
+  "The loss of Rostov would mean the destruction of the First Panzer Army in the Caucasus. Stop the enemy advance with all your strength.",
+  "<keep>",
+  "Allies:",
+  "Y1 - Weichs AG",
+  "Y2 - Hungary",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x135A
+index = [24]
+jp = [
+  "　　　　―チタデレ作戦―",
+  "私は本年度の攻勢の最初のものとし",
+  "て、本作戦を天候の許す限り早期に",
+  "実行する事に決定した。",
+  "クルスク突出部に対する攻撃は、迅",
+  "速かつ決定的に成功しなければなら",
+  "ない。",
+  "同盟",
+  "Ｒ１―クルーゲ　ＡＧ",
+]
+en = [
+  "^- Operation Citadel -",
+  "I have decided to carry out this operation, the first offensive of the year, as soon as the weather permits.",
+  "The attack on the Kursk salient must succeed quickly and decisively.",
+  "<keep>",
+  "Allies:",
+  "R1 - Kluge AG",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x140D
+index = [25]
+jp = [
+  "　　　　総統訓令第２２号",
+  "軍事的に考えればイタリアの脱落は",
+  "納得できる。だが、ドイツ将兵にお",
+  "よぼす精神的影響は大きい。また戦",
+  "略的にイタリアの位置は重要であり、",
+  "イタリアを支援する事が必要なので",
+  "ある。",
+  "同盟",
+  "Ｇ１―イタリア",
+]
+en = [
+  "^Führer Directive No. 22",
+  "Militarily, the defeat of Italy is understandable. But its effect on the morale of the German soldier is great.",
+  "Strategically, Italy's position matters, and we must support her.",
+  "<keep>",
+  "Allies:",
+  "G1 - Italy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x14C8
+index = [26]
+jp = [
+  "１１月１８日から始まった敵の攻勢",
+  "―クルーセイダー作戦により、わが",
+  "部隊は、再びエルアゲイラまで押し",
+  "戻されていた。しかし、１月５日に",
+  "ドイツ護送船団がトリポリへ到着、",
+  "ロンメル将軍は反抗作戦を下令した。",
+  "",
+  "同盟",
+  "Ｇ１―イタリア",
+]
+en = [
+  "The enemy offensive Operation Crusader, begun on 18 November, has driven our units back to El Agheila.",
+  "But on 5 January a German convoy reached Tripoli, and General Rommel has ordered a counterattack.",
+  "<keep>",
+  "Allies:",
+  "G1 - Italy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1578
+index = [27]
+jp = [
+  "英軍は、その兵力をギリシアや東ア",
+  "フリカ方面へ分散し、弱体化にある。",
+  "現在わが部隊は、エジプト国境を越",
+  "えつつあり、戦力も優勢である。",
+  "今こそ、北アフリカにおける英国の",
+  "地歩を制し、その生命線とも言える",
+  "スエズ運河を占領せよ。",
+  "同盟",
+  "Ｇ１―イタリア",
+  "Ｙ１―ビシー　フランス",
+]
+en = [
+  "The British have dispersed their forces to Greece and East Africa and are weakened. Our units are now crossing the Egyptian frontier, and we are the stronger side.",
+  "Now break Britain's hold on North Africa and take her lifeline, Suez.",
+  "<keep>",
+  "Allies:",
+  "G1 - Italy",
+  "Y1 - Vichy France",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1655
+index = [28]
+jp = [
+  "イラクでクーデターにより反英派の",
+  "ラシッド・アリが権力を握った。こ",
+  "の政権を援助し、中東でのわが国の",
+  "影響力を高める事は、石油資源の確",
+  "保と英国の弱体化に不可欠である。",
+  "また、バルバロッサ作戦の牽制とし",
+  "て、アルメニア地方に攻撃すぺし。",
+  "同盟",
+  "Ｇ１―イタリア",
+  "Ｇ２―ビシー　フランス",
+  "Ｙ１―イラク",
+  "Ｙ２―イラン",
+]
+en = [
+  "A coup in Iraq has brought the anti-British Rashid Ali to power. Supporting his government and extending our influence in the Middle East is vital to secure oil and to weaken Britain.",
+  "To support Barbarossa, also attack towards Armenia.",
+  "<keep>",
+  "Allies:",
+  "G1 - Italy",
+  "G2 - Vichy France",
+  "Y1 - Iraq",
+  "Y2 - Iran",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1740
+index = [29]
+jp = [
+  "英国はエル・アラメインという鉄道",
+  "の駅一帯に撤退していた。ここから",
+  "ナイル川までわずか１００ｋｍ。",
+  "ムッソリーニは、自ら飛行機を飛ば",
+  "し、アフリカに現れた。カイロ入城",
+  "の時に乗る馬をつれて。",
+  "",
+  "同盟",
+  "Ｙ１―イタリア",
+]
+en = [
+  "The British have fallen back to the area around El Alamein, a railway station only 100 km from the Nile.",
+  "Mussolini has flown to Africa himself, bringing the horse he will ride when he enters Cairo.",
+  "<keep>",
+  "Allies:",
+  "Y1 - Italy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x17E7
+index = [30]
+jp = [
+  "わが国の戦争遂行上不可欠な石油資",
+  "源を確保するため、キルクークを初",
+  "めとする産油地帯を制圧せよ。",
+  "また、中東における英軍の地歩を崩",
+  "し、対ソ援助のイランルートを遮断、",
+  "ブラウ作戦の側面的支援を期待する。",
+  "",
+  "同盟",
+  "Ｙ１―イタリア",
+]
+en = [
+  "To secure the oil our war effort cannot do without, seize the oil region around Kirkuk.",
+  "Break the British hold on the Middle East and cut the Iranian supply route to the Soviets, covering the flank of Operation Blue.",
+  "<keep>",
+  "Allies:",
+  "Y1 - Italy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x18A0
+index = [31]
+jp = [
+  "　　　　総統訓令第４１号",
+  "　　　　―ブラウ作戦―",
+  "ロシアにおける冬期戦終わりも近い。",
+  "全兵力を南部作戦の主要に向け、コ",
+  "ーカサス南方のアフリカ軍団と協力、",
+  "油田地帯占領、及び敵戦力を撃破し",
+  "ソ連の戦争離脱を促すものとす。",
+  "同盟",
+  "Ｒ１―Ａ／Ｂ　ＡＧ",
+  "Ｒ２―トルコ",
+]
+en = [
+  "^Führer Directive No. 41",
+  "^- Operation Blue -",
+  "The winter battle in Russia is nearing its end.",
+  "All available forces are to be concentrated on the main operation in the south. Together with the Afrika Korps south of the Caucasus, take the oilfields, destroy the enemy and force the Soviets out of the war.",
+  "<keep>",
+  "Allies:",
+  "R1 - A/B AG",
+  "R2 - Turkey",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1965
+index = [32]
+jp = [
+  "連合軍のフランス領北アフリカへの",
+  "上陸作戦―トーチ作戦が始まった。",
+  "敵は、カサブランカ、オラン、アル",
+  "ジェの３地区に上陸しつつある。",
+  "ビシー政府ラバル首相は、わが国に",
+  "チュニジアの飛行場の使用を許可し",
+  "た。同地に、至急部隊を展開せよ。",
+  "同盟",
+  "Ｙ１―イタリア",
+  "Ｙ２―ビシーフランス",
+]
+en = [
+  "The Allied landing in French North Africa, Operation Torch, has begun, at Casablanca, Oran and Algiers.",
+  "Laval, head of the Vichy government, has let us use the airfields in Tunisia. Deploy units there at once.",
+  "<keep>",
+  "Allies:",
+  "Y1 - Italy",
+  "Y2 - Vichy France",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1A32
+index = [33]
+jp = [
+  "シシリー島に連合軍の上陸作戦―ハ",
+  "スキー作戦が開始された。",
+  "同島の喪失は、イタリアの戦争離脱",
+  "をうながし、イタリア南部への侵攻",
+  "の拠点を敵に与える事になろう。",
+  "可能な限り上陸を阻止し、これが無",
+  "理な場合、部隊の温存に努めよ。",
+  "同盟",
+  "Ｙ１―イタリア",
+]
+en = [
+  "The Allied landing on Sicily, Operation Husky, has begun.",
+  "The loss of the island would hasten Italy's exit from the war and give the enemy a base for the invasion of southern Italy.",
+  "Stop the landing if at all possible; if not, preserve your units.",
+  "<keep>",
+  "Allies:",
+  "Y1 - Italy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1AFD
+index = [34]
+jp = [
+  "敵の圧力により、早晩イタリアの降",
+  "伏が予想される。イタリア軍寝返り",
+  "の場合は、首都を支配下におくぺし。",
+  "最初に最も危険が予想されるナポリ",
+  "からサレルノに至る沿岸地域には有",
+  "力な部隊を集結させておくものとす",
+  "る。",
+  "同盟",
+  "Ｙ１―イタリア",
+]
+en = [
+  "Under enemy pressure, Italy is expected to surrender sooner or later. Should the Italian army change sides, take control of the capital.",
+  "Assemble strong forces on the coast from Naples to Salerno, where the danger is greatest.",
+  "<keep>",
+  "Allies:",
+  "Y1 - Italy",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1BC5
+index = [35]
+jp = [
+  "敵はグスタフラインのカッシノ前面",
+  "において攻勢に移った。また、アン",
+  "ツィオに対し上陸作戦―シングル作",
+  "戦を開始した。",
+  "ここへの上陸は、敵のグスタフライ",
+  "ンの喪失を意味する。全力をあげて",
+  "敵の上陸作戦を阻止せよ。",
+  "同盟",
+  "Ｙ１―サロ　Ｒｅｐ．",
+]
+en = [
+  "The enemy has gone over to the offensive at Cassino on the Gustav Line, and has begun a landing at Anzio, Operation Shingle.",
+  "A landing there would mean the loss of the Gustav Line. Stop the landing with all your strength.",
+  "<keep>",
+  "Allies:",
+  "Y1 - Salo Rep.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1C77
+index = [36]
+jp = [
+  "ソ連における戦闘は、もはやわが国",
+  "の勝利である。だが更にこの勝利を",
+  "完全なものとするため、敵の政府組",
+  "織のあるクイビシェフを占領し、ウ",
+  "ラルの工業地帯を破壊する必要があ",
+  "る。全軍は冬期においても、攻勢を",
+  "続行し、ポルシェビキを全滅せよ。",
+]
+en = [
+  "The battle in the Soviet Union is already ours. But to make the victory complete, we must take Kuibyshev, seat of the enemy government, and destroy the industry of the Urals.",
+  "The whole army will keep up the offensive through the winter and wipe out the Bolsheviks.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1D48
+index = [37]
+jp = [
+  "秋の日の　ヴィオロンの・・・",
+  "とうとう連合軍のヨーロッパ反攻作",
+  "戦―オーバーロード作戦が始まった。",
+  "敵は、ノルマンディー地方に上陸を",
+  "開始、降下部隊をともなう大規模な",
+  "部隊を展開中。至急全隊出撃し、こ",
+  "れを撃滅せよ。",
+  "同盟",
+  "Ｙ１―１ＳＳ　ＰｚＣｐ",
+  "Ｙ２―８４ｔｈ　Ｃｐ",
+]
+en = [
+  "The long sobs of the violins of autumn ...",
+  "At last the Allied invasion, Operation Overlord, has begun.",
+  "The enemy is landing in Normandy in strength, with airborne troops. Send out all units and destroy them.",
+  "<keep>",
+  "Allies:",
+  "Y1 - 1st SS Pz Corps",
+  "Y2 - 84th Corps",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1E0F
+index = [38]
+jp = [
+  "　　　―リュティヒ作戦―",
+  "パットン第３軍がアブランシュを抜",
+  "けて南下中である。そこを潰さなく",
+  "ては、フランスの独軍戦線は総崩れ",
+  "になる。全ての希望は、この作戦に",
+  "かかっている。",
+  "",
+  "同盟",
+  "Ｙ１―ブラスゴヴィッツ",
+]
+en = [
+  "^- Operation Lüttich -",
+  "Patton's Third Army has broken through at Avranches and is driving south. Unless it is crushed, the whole German front in France will collapse.",
+  "Everything depends on this operation.",
+  "<keep>",
+  "Allies:",
+  "Y1 - Blaskowitz",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1EAD
+index = [39]
+jp = [
+  "ライン川の渡河点を確保するため、",
+  "連合軍の大規模な空挺作戦―マーケ",
+  "ット・ガーデン作戦が始まった。",
+  "アルンヘムにかかる橋の喪失は、ド",
+  "イツ本国への敵侵攻をまねく。敵の",
+  "渡河点確保を防ぎ、後続の本体であ",
+  "る第３０軍団の前進を阻止せよ。",
+  "同盟",
+  "Ｙ１―１０７　Ｐｚ",
+]
+en = [
+  "To seize the crossings over the Rhine, the Allies have launched a huge airborne operation, Market Garden.",
+  "Losing the bridge at Arnhem would open Germany itself to invasion. Stop the enemy from taking the crossings and halt the advance of the main body, XXX Corps.",
+  "<keep>",
+  "Allies:",
+  "Y1 - 107th Pz",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x1F81
+index = [40]
+jp = [
+  "　　　―ラインの守り作戦―",
+  "フランスはアメリカ軍にとって、巨",
+  "大なワナとなろう。",
+  "攻撃は、英軍を補給基地から遮断し、",
+  "大陸から撤退させるために、ミュー",
+  "ズ川を渡河後、アントワープを目指",
+  "す予定である。",
+]
+en = [
+  "^- Watch on the Rhine -",
+  "France will become a huge trap for the American army.",
+  "The attack will cross the Meuse and drive on Antwerp, to cut the British off from their supply bases and force them off the continent.",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x201E
+index = [41]
+jp = [
+  "総統は東部戦線の重要な予備兵力―",
+  "ワルシャワ地区から転出した兵力を",
+  "加え、ブダペスト救出を命令した。",
+  "前線部隊は守備隊の自力脱出を求め",
+  "たが、総統は少しでも可能性のある",
+  "うちは、ブダペストの再占領を要求",
+  "した。",
+  "同盟",
+  "Ｙ１―ヴィルテンブルフ",
+  "Ｙ２―ハンガリー",
+]
+en = [
+  "The Führer has ordered the relief of Budapest, adding important reserves of the Eastern Front, forces taken from the Warsaw sector.",
+  "The front-line commanders wanted the garrison to break out on its own, but the Führer demanded that Budapest be retaken while any chance remained.",
+  "<keep>",
+  "Allies:",
+  "Y1 - Wildenbruch",
+  "Y2 - Hungary",
+]
+
+[[briefing]]
+block = "missions"
+offset = 0x20EF
+index = [42]
+jp = [
+  "ミナサン、コウウンヲイノル。",
+  "",
+  "　ＦＲＯＭ　トウキョウ",
+  "　　　　　　ダイニッポンテイコク",
+]
+en = [
+  "^GOOD LUCK TO YOU ALL.",
+  "",
+  "^FROM TOKYO,",
+  "^GREAT JAPANESE EMPIRE",
+]

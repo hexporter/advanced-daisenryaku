@@ -1,0 +1,15 @@
+diff --git a/runner/video/genesis_vdp.c b/runner/video/genesis_vdp.c
+--- a/runner/video/genesis_vdp.c
++++ b/runner/video/genesis_vdp.c
+@@ -387,7 +387,10 @@
+         case CODE_VRAM_WRITE:  vram_write_word(v, v->address, value); break;
+         case CODE_CRAM_WRITE:  cram_write(v, v->address, value);      break;
+         case CODE_VSRAM_WRITE: vsram_write(v, v->address, value);     break;
+-        default:               vram_write_word(v, v->address, value); break;
++        /* Read codes (VRAM/CRAM/VSRAM read) store nothing; only the address
++         * advances (as Genesis Plus GX). Storing them corrupted tiles in a
++         * game that sets a read code after a DMA and then writes a stray word. */
++        default:                                                      break;
+     }
+     v->address = (uint16_t)(v->address + REG_AUTOINC(v));
+ }

@@ -1,0 +1,47 @@
+diff --git a/runner/video/genesis_machine.c b/runner/video/genesis_machine.c
+--- a/runner/video/genesis_machine.c
++++ b/runner/video/genesis_machine.c
+@@ -520,6 +520,13 @@
+ 
+ uint32_t g_hd_frame[GENESIS_HD_STRIDE * GENESIS_HD_ROWS];
+ int g_hd_frame_w, g_hd_frame_h, g_hd_frame_request;
++
++static GenesisHdMarginArgbHook s_hd_margin_argb;
++static void *s_hd_margin_argb_user;
++void genesis_hd_set_margin_argb_hook(GenesisHdMarginArgbHook hook, void *user)
++{
++    s_hd_margin_argb = hook; s_hd_margin_argb_user = user;
++}
+ 
+ /* One raster row of the HD frame (scale S rows) after the 1x row is ready. */
+ static void hd_frame_row(GVDP *vdp, int line, const uint8_t *idx1x, int width1x)
+@@ -541,8 +548,11 @@
+         uint32_t *dst = g_hd_frame + (size_t)(line * S + r) * GENESIS_HD_STRIDE;
+         const uint8_t *src = hidx + r * GENESIS_HD_STRIDE;
+         for (int x = 0; x < w; x++) dst[x] = s_cram_argb[src[x]];
+-        if (moff && !margins_drawn)
++        if (moff && !margins_drawn) {
+             for (int x = 0; x < moff; x++) dst[x] = dst[w - 1 - x] = 0xFF000000u;
++            if (s_hd_margin_argb)
++                s_hd_margin_argb(s_hd_margin_argb_user, vdp, line, r, S, moff, dst, dst + w - moff);
++        }
+     }
+     g_hd_frame_w = w;
+     g_hd_frame_h = (line + 1) * S;
+diff --git a/runner/video/genesis_machine.h b/runner/video/genesis_machine.h
+--- a/runner/video/genesis_machine.h
++++ b/runner/video/genesis_machine.h
+@@ -96,4 +96,13 @@
+ extern uint32_t g_hd_frame[GENESIS_HD_STRIDE * GENESIS_HD_ROWS];
+ extern int g_hd_frame_w, g_hd_frame_h, g_hd_frame_request;
+ 
++/* Side margins of the HD frame in colour: on every HD row whose margins the
++ * VDP margin hook (gvdp_hd_set_margin_hook) did not draw, the hook may write
++ * ARGB8888 pixels straight into the frame: `px` pixels at `left` and at
++ * `right` (black on entry). `line` is the screen line, `sub` the HD row within
++ * it (0..scale-1). For art that is not made of the game's palette. */
++typedef void (*GenesisHdMarginArgbHook)(void *user, const GVDP *v, int line, int sub, int scale,
++                                        int px, uint32_t *left, uint32_t *right);
++void genesis_hd_set_margin_argb_hook(GenesisHdMarginArgbHook hook, void *user);
++
+ #endif /* GENESIS_MACHINE_H */

@@ -1,0 +1,29 @@
+diff --git a/runner/rb_state.c b/runner/rb_state.c
+index 6e4659a..d49cc1d 100644
+--- a/runner/rb_state.c
++++ b/runner/rb_state.c
+@@ -40,8 +40,8 @@ _Static_assert(sizeof(g_ram) == 0x10000, "work RAM size changed");
+ #if UINTPTR_MAX == 0xFFFFFFFFFFFFFFFFu
+ /* 64-bit layouts (the host pointers inside are scrubbed by machine_rb_save). */
+ _Static_assert(sizeof(GVDP) == 65824, "GVDP changed: review machine_rb_save (pointers) and rb_state");
+-_Static_assert(sizeof(GenesisBus) == 24664, "GenesisBus changed: review machine_rb_save and rb_state");
+-_Static_assert(sizeof(GenesisMachine) == 90576, "GenesisMachine changed: review machine_rb_save and rb_state");
++_Static_assert(sizeof(GenesisBus) == 73816, "GenesisBus changed: review machine_rb_save and rb_state");
++_Static_assert(sizeof(GenesisMachine) == 139728, "GenesisMachine changed: review machine_rb_save and rb_state");
+ #endif
+ 
+ /* ---- sections ---------------------------------------------------------------- */
+diff --git a/runner/video/genesis_bus.h b/runner/video/genesis_bus.h
+index 5a57082..ede6069 100644
+--- a/runner/video/genesis_bus.h
++++ b/runner/video/genesis_bus.h
+@@ -65,7 +65,8 @@ typedef struct GenesisBus {
+      * $A130F1 overlay bit is set, or always when the range lies beyond ROM.
+      * Sonic 3 declares $200001-$2003FF odd-byte serial FRAM; raw-byte storage
+      * covers odd/even/both layouts uniformly. */
+-    uint8_t  sram[0x4000];              /* raw bus bytes from sram_base       */
++    uint8_t  sram[0x10000];             /* raw bus bytes from sram_base (64 KiB:
++                                         * Advanced Daisenryaku $200001-$20FFFF) */
+     uint32_t sram_base;                 /* sram_start & ~1                    */
+     uint32_t sram_end;                  /* inclusive end address              */
+     uint32_t sram_size;                 /* bytes spanned (0 = none)           */

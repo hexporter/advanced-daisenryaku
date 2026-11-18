@@ -1,0 +1,301 @@
+# Spanish: campaign result texts, part 1 (Poland to the Baltic states). Per entry: block and
+# offset of the [[briefing]] in translation/script/brief-results.toml; text as `en` there.
+
+[[briefing]]
+block = "results"
+offset = 0x0000
+text = [
+  "El cuartel general ha sido tomado, y todas las unidades se han rendido.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0022
+text = [
+  "Nuestras unidades acorazadas han aplastado al ejército polaco, formado en torno a una caballería anticuada, han roto la frontera y avanzan directas hacia la zona al sur de Varsovia.",
+  "En respuesta a nuestra acción, los gobiernos británico y francés declararon la guerra el 3 de septiembre.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x00C2
+text = [
+  "Nuestras unidades acorazadas han aplastado al ejército polaco, formado en torno a una caballería anticuada, han roto la frontera y avanzan para tomar los pasos del río que tienen delante.",
+  "En respuesta a nuestra acción, los gobiernos británico y francés declararon la guerra el 3 de septiembre.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0174
+text = [
+  "",
+  "",
+  "",
+  "Reagrúpese y continúe la operación.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0198
+text = [
+  "El enemigo batido en la frontera parece haber previsto una nueva línea de defensa en Piotrkow. Pero nuestro rápido cruce del río lo obligó a replegarse al Vístula.",
+  "Así empezó el avance hacia el objetivo final, Varsovia.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0242
+text = [
+  "El enemigo batido en la frontera parece haber previsto una nueva línea de defensa en Piotrkow. Pero nuestro rápido cruce del río lo hizo retroceder al Vístula.",
+  "Nuestros carros pasaron a apoyar el cerco al sur de Varsovia.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x02FC
+text = [
+  "El cerco de Radom fue un gran éxito: siete divisiones polacas fueron destruidas.",
+  "Después rompimos la fuerte línea del Vístula y por fin llegamos a las afueras de Varsovia.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x037B
+text = [
+  "El cerco de Radom fue un gran éxito: siete divisiones polacas fueron destruidas.",
+  "Pero el 8.º Ejército, a nuestra izquierda, había subestimado al enemigo y sufría un fuerte contraataque en el Vístula.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0416
+text = [
+  "La crisis se volvió nuestra oportunidad: se cortó la retirada polaca y el contraataque se convirtió en un cerco. Tras duros combates, casi ningún enemigo escapó.",
+  "El 17 de septiembre, en virtud del pacto germano-soviético, el ejército soviético cruzó la frontera oriental de Polonia.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x04D7
+text = [
+  "Bajo un intenso fuego de artillería y bombas, el himno calló en la radio de Varsovia, y tras feroces combates callejeros la ciudad se rindió.",
+  "El gobierno huyó a Rumanía; Alemania y los soviéticos se repartieron Polonia.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0570
+text = [
+  "Apenas hallamos resistencia en el camino a la capital, Copenhague, y ocupamos Dinamarca.",
+  "La operación terminó antes de lo previsto, así que nuestras unidades fueron enviadas a Noruega.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x05F5
+text = [
+  "Apenas hallamos resistencia en el camino a la capital, Copenhague. Dinamarca fue ocupada y pasó a ser un protectorado.",
+  "Tras un breve descanso, nuestras unidades empezaron a moverse hacia el oeste.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x067A
+text = [
+  "Pese a la ayuda británica y francesa, toda Noruega fue tomada. El rey y el gobierno huyeron a Inglaterra.",
+  "En Inglaterra, el primer ministro Chamberlain dimitió el 10 de mayo, y un nuevo primer ministro asumió el cargo.",
+  "<keep>",
+  "\"No tengo nada que ofrecer salvo sangre, esfuerzo, lágrimas y sudor.",
+  "¿Preguntan cuál es nuestro objetivo? Respondo con una palabra: victoria.\"",
+  "^W. S. Churchill",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x07CB
+text = [
+  "El terreno abrupto y la superioridad de la marina enemiga hicieron muy dura la operación. Pero al empezar la campaña en el oeste, las fuerzas de socorro británicas y francesas flaquearon y se retiraron por mar.",
+  "En Inglaterra, el primer ministro Chamberlain dimitió el 10 de mayo, y un nuevo primer ministro asumió el cargo.",
+  "<keep>",
+  "\"No tengo nada que ofrecer salvo sangre, esfuerzo, lágrimas y sudor.",
+  "¿Preguntan cuál es nuestro objetivo? Respondo con una palabra: victoria.\"",
+  "^W. S. Churchill",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0946
+text = [
+  "Una vez más, la guerra relámpago decidió la batalla. Holanda y Bélgica cayeron una tras otra, y el Cuerpo Expedicionario británico fue empujado hasta Dunkerque.",
+  "Francia forma un frente a lo largo del Somme, pero con fuerzas muy débiles. Nuestras unidades marcharon hacia la Línea Maginot, donde sigue el grueso del enemigo.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0A10
+text = [
+  "Una vez más, la guerra relámpago decidió la batalla.",
+  "Holanda fue ocupada rápidamente, y el rey Leopoldo de Bélgica firmó un armisticio por separado.",
+  "Dunkerque, base del Cuerpo Expedicionario británico, cayó tras un asedio, pero el retraso ayudó al enemigo a evacuar sus tropas.",
+  "<keep>",
+  "Tras la evacuación, Churchill pronunció un discurso:",
+  "\"Lucharemos en las playas, lucharemos en los campos de aterrizaje, lucharemos en los campos y en las calles, lucharemos en las colinas; nunca nos rendiremos.\"",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0B7D
+text = [
+  "La delegación francesa firmó el armisticio en Compiègne. Se formó un nuevo gobierno en Vichy bajo el mariscal Pétain.",
+  "Durante algún tiempo, nuestras unidades se entrenarán en la patria.",
+  "<keep>",
+  "El 18 de junio, De Gaulle pronunció un discurso:",
+  "\"Francia ha perdido una batalla, pero Francia no ha perdido la guerra.\"",
+  "En ese mismo junio, la Unión Soviética ocupó los países bálticos.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0C8E
+text = [
+  "La delegación francesa firmó el armisticio en Compiègne. Se formó un nuevo gobierno en Vichy bajo el mariscal Pétain.",
+  "Nuestras unidades seguirán en el norte de Francia.",
+  "<keep>",
+  "El 18 de junio, De Gaulle pronunció un discurso:",
+  "\"Francia ha perdido una batalla, pero Francia no ha perdido la guerra.\"",
+  "En ese mismo junio, la Unión Soviética ocupó los países bálticos.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0D97
+text = [
+  "La delegación francesa firmó el armisticio en Compiègne. Se formó un nuevo gobierno en Vichy bajo el mariscal Pétain.",
+  "Nuestras unidades aéreas empezaron a trasladarse a los aeródromos del norte de Francia y Bélgica.",
+  "<keep>",
+  "El 18 de junio, De Gaulle pronunció un discurso:",
+  "\"Francia ha perdido una batalla, pero Francia no ha perdido la guerra.\"",
+  "En ese mismo junio, la Unión Soviética ocupó los países bálticos.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0EA2
+text = [
+  "La delegación francesa firmó el armisticio en Compiègne. Se formó un nuevo gobierno en Vichy bajo el mariscal Pétain.",
+  "Tras esta batalla, nuestras unidades subieron poco a poco a los trenes con destino a Prusia Oriental.",
+  "<keep>",
+  "El 18 de junio, De Gaulle pronunció un discurso:",
+  "\"Francia ha perdido una batalla, pero Francia no ha perdido la guerra.\"",
+  "En ese mismo junio, la Unión Soviética ocupó los países bálticos.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0FB2
+text = [
+  "Nuestras unidades no rompieron la Línea Maginot hasta después de la rendición de Francia.",
+  "Pero en el frente del Somme, las unidades acorazadas del general Bock llegaron hasta París.",
+  "El primer ministro Reynaud dimitió; el mariscal Pétain ocupó su lugar y pidió el armisticio, y el gobierno se trasladó a Vichy.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1064
+text = [
+  "Nuestra campaña aérea contra las islas Británicas terminó con una victoria aplastante.",
+  "La aviación enemiga está destruida, y los bombardeos han paralizado las principales ciudades industriales.",
+  "La orden de desembarcar en Inglaterra se dará en septiembre.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1102
+text = [
+  "Las principales ciudades de Inglaterra estaban en ruinas. Pero la estación apta para un desembarco pasaba, y el Führer volvió a aplazar la fecha.",
+  "Entre los soldados se decía que el desembarco sería cancelado.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x11AD
+text = [
+  "Nuestras unidades aéreas causaron graves pérdidas, pero nunca ganaron el dominio del aire.",
+  "El Führer aplazó el desembarco sin fecha y anunció que Inglaterra sería vencida solo con bombardeos.",
+  "<keep>",
+  "Churchill dijo de los pilotos de la batalla:",
+  "\"Nunca en la historia de los conflictos humanos tantos debieron tanto a tan pocos.\"",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x12F7
+text = [
+  "Los combates en las islas Británicas tocaban a su fin. El rey y el gobierno se habían trasladado a Canadá y llamaban a la Commonwealth a seguir luchando, pero ya no tenían fuerza para amenazarnos directamente.",
+  "Solo queda la Royal Navy.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x13B5
+text = [
+  "La resistencia organizada en las islas Británicas ha terminado, pero el gobierno británico en Canadá espera la ocasión de volver a desembarcar, con Islandia como base.",
+  "Sin embargo, aquí no había unidades para vigilar esta larga costa. Nuestras fuerzas eran retiradas para la siguiente operación.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1485
+text = [
+  "El desembarco en Inglaterra fracasó ante la tenaz resistencia enemiga.",
+  "Mientras crecían nuestras pérdidas, llegó al frente la orden del Führer de suspender la operación.",
+  "La orden decía que la paz podía alcanzarse ya por medios políticos, pero era nuestra primera derrota desde el comienzo de la guerra.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x155C
+text = [
+  "El ejército yugoslavo, mal equipado, no era rival para nosotros. Yugoslavia firmó un armisticio; Simovic y el rey huyeron a Atenas.",
+  "Alemania, Italia y Hungría se repartieron el país; Croacia se hizo independiente. Volvimos a marchar hacia el norte.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x161D
+text = [
+  "El ejército yugoslavo, mal equipado, no era rival para nuestras unidades. Solo se detuvieron para reabastecerse y siguieron hasta la capital, Belgrado.",
+  "Nuestras unidades continuaron hacia el sur, a Grecia, para apoyar al general Kleist.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x16D7
+text = [
+  "Nuestras unidades rompieron las fuerzas yugoslavas en el sur y entraron en Grecia. El enemigo siguió retrocediendo, se retiró a Creta y de allí a Egipto.",
+  "<keep>",
+  "Grecia fue repartida entre Alemania, Italia y Bulgaria.",
+  "Nuestras unidades empezaron a trasladarse a Lublin, en Polonia.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x17D3
+text = [
+  "Nuestras unidades rompieron las fuerzas yugoslavas en el sur y entraron en Grecia. El enemigo siguió retrocediendo, se retiró a Creta y de allí a Egipto.",
+  "<keep>",
+  "Grecia fue repartida entre Alemania, Italia y Bulgaria.",
+  "Nuestras unidades seguirán aquí un tiempo. ¿Iremos al norte de África a apoyar a Rommel, o a Mosul a apoyar a Irak ...?",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x190C
+text = [
+  "Tras vencer a las fuerzas soviéticas en la frontera, nuestras unidades entraron en los países bálticos, donde la población las recibió como libertadoras.",
+  "Pero la tierra rusa es inmensa, y las líneas de suministro hacia la patria corrían peligro.",
+  "<keep>",
+  "Justo después de la invasión, Churchill pronunció un discurso:",
+  "\"Todo Estado que luche contra el nazismo tendrá nuestra ayuda. De ello se sigue que daremos a Rusia toda la ayuda que podamos.\"",
+  "Nuestras unidades fueron transferidas al Grupo de Ejércitos Centro. Siguiente objetivo: Moscú.",
+]

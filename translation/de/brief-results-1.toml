@@ -1,0 +1,294 @@
+# German: campaign result texts, part 1 (Poland to the Baltic states). Per entry: block and
+# offset of the [[briefing]] in translation/script/brief-results.toml; text as `en` there.
+
+[[briefing]]
+block = "results"
+offset = 0x0000
+text = ["Das Hauptquartier wurde genommen, alle Verbände haben kapituliert."]
+
+[[briefing]]
+block = "results"
+offset = 0x0022
+text = [
+  "Unsere Panzerverbände haben das polnische Heer mit seiner veralteten Kavallerie zerschlagen, die Grenze durchbrochen und stoßen geradewegs in den Raum südlich von Warschau vor.",
+  "Als Antwort auf unser Vorgehen haben die britische und die französische Regierung am 3. September den Krieg erklärt.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x00C2
+text = [
+  "Unsere Panzerverbände haben das polnische Heer mit seiner veralteten Kavallerie zerschlagen, die Grenze durchbrochen und stoßen vor, um die Flussübergänge auf ihrem Weg zu nehmen.",
+  "Als Antwort auf unser Vorgehen haben die britische und die französische Regierung am 3. September den Krieg erklärt.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0174
+text = ["", "", "", "Gliedern Sie um und setzen Sie die Operation fort."]
+
+[[briefing]]
+block = "results"
+offset = 0x0198
+text = [
+  "Der an der Grenze geschlagene Feind plante offenbar eine neue Verteidigungslinie bei Piotrkow. Unser rascher Flussübergang zwang ihn jedoch, auf die Weichsel zurückzugehen.",
+  "So begann der Vormarsch auf das Endziel Warschau.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0242
+text = [
+  "Der an der Grenze geschlagene Feind plante offenbar eine neue Verteidigungslinie bei Piotrkow. Unser rascher Flussübergang zwang ihn jedoch auf die Weichsel zurück.",
+  "Unsere Panzer rückten weiter, um die Einschließung südlich von Warschau zu unterstützen.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x02FC
+text = [
+  "Der Kessel von Radom war ein großer Erfolg: Sieben polnische Divisionen wurden vernichtet.",
+  "Dann durchbrachen wir die starke Weichsellinie und erreichten endlich den Stadtrand von Warschau.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x037B
+text = [
+  "Der Kessel von Radom war ein großer Erfolg: Sieben polnische Divisionen wurden vernichtet.",
+  "Die 8. Armee zu unserer Linken hatte den Feind jedoch unterschätzt und stand nun an der Weichsel unter schwerem Gegenangriff.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0416
+text = [
+  "Aus der Krise wurde unsere Chance: Der polnische Rückzugsweg wurde abgeschnitten, aus dem Gegenangriff wurde ein Kessel. Nach harten Kämpfen entkam kaum ein Feind.",
+  "Am 17. September überschritt die sowjetische Armee gemäß dem deutsch-sowjetischen Pakt Polens Ostgrenze.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x04D7
+text = [
+  "Unter schwerem Beschuss und Bombenhagel verstummte die Hymne im Warschauer Rundfunk, und nach erbitterten Straßenkämpfen kapitulierte die Stadt.",
+  "Die Regierung floh nach Rumänien; Deutschland und die Sowjets teilten Polen.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0570
+text = [
+  "Auf dem Weg in die Hauptstadt Kopenhagen trafen wir kaum auf Widerstand und besetzten Dänemark.",
+  "Die Operation endete früher als erwartet, daher wurden unsere Verbände nach Norwegen weitergeschickt.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x05F5
+text = [
+  "Auf dem Weg in die Hauptstadt Kopenhagen trafen wir kaum auf Widerstand. Dänemark wurde besetzt und unter Schutz gestellt.",
+  "Nach kurzer Ruhe begannen unsere Verbände, nach Westen zu verlegen.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x067A
+text = [
+  "Trotz britischer und französischer Hilfe wurde ganz Norwegen genommen. König und Regierung flohen nach England.",
+  "In England trat Premierminister Chamberlain am 10. Mai zurück, ein neuer Premier übernahm das Amt.",
+  "<keep>",
+  "\"Ich habe nichts zu bieten als Blut, Mühsal, Tränen und Schweiß.",
+  "Sie fragen, was unser Ziel ist? Ich antworte mit einem Wort: Sieg.\"",
+  "^W. S. Churchill",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x07CB
+text = [
+  "Zerklüftetes Gelände und die überlegene feindliche Flotte machten die Operation sehr schwer. Als aber der Westfeldzug begann, ließen die britischen und französischen Hilfstruppen nach und zogen sich über See zurück.",
+  "In England trat Premierminister Chamberlain am 10. Mai zurück, ein neuer Premier übernahm das Amt.",
+  "<keep>",
+  "\"Ich habe nichts zu bieten als Blut, Mühsal, Tränen und Schweiß.",
+  "Sie fragen, was unser Ziel ist? Ich antworte mit einem Wort: Sieg.\"",
+  "^W. S. Churchill",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0946
+text = [
+  "Wieder entschied der Blitzkrieg die Schlacht. Holland und Belgien fielen nacheinander, das britische Expeditionskorps wurde auf Dünkirchen zurückgeworfen.",
+  "Frankreich bildet eine Front an der Somme, aber mit sehr schwachen Kräften. Unsere Verbände rückten gegen die Maginot-Linie vor, wo die Masse des Feindes steht.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0A10
+text = [
+  "Wieder entschied der Blitzkrieg die Schlacht.",
+  "Holland wurde rasch besetzt, König Leopold von Belgien schloss einen eigenen Waffenstillstand.",
+  "Dünkirchen, der Stützpunkt des britischen Expeditionskorps, fiel nach Belagerung, doch die Verzögerung half dem Feind, seine Truppen fortzuschaffen.",
+  "<keep>",
+  "Nach der Räumung hielt Churchill eine Rede:",
+  "\"Wir werden an den Stränden kämpfen, wir werden auf den Landeplätzen kämpfen, wir werden auf den Feldern und in den Straßen kämpfen, wir werden in den Hügeln kämpfen; wir werden uns nie ergeben.\"",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0B7D
+text = [
+  "Die französische Delegation unterzeichnete in Compiègne den Waffenstillstand. In Vichy wurde unter Marschall Pétain eine neue Regierung gebildet.",
+  "Unsere Verbände werden für einige Zeit in der Heimat ausgebildet.",
+  "<keep>",
+  "Am 18. Juni hielt de Gaulle eine Rede:",
+  "\"Frankreich hat eine Schlacht verloren, aber Frankreich hat nicht den Krieg verloren.\"",
+  "Im selben Juni besetzte die Sowjetunion die baltischen Staaten.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0C8E
+text = [
+  "Die französische Delegation unterzeichnete in Compiègne den Waffenstillstand. In Vichy wurde unter Marschall Pétain eine neue Regierung gebildet.",
+  "Unsere Verbände bleiben in Nordfrankreich.",
+  "<keep>",
+  "Am 18. Juni hielt de Gaulle eine Rede:",
+  "\"Frankreich hat eine Schlacht verloren, aber Frankreich hat nicht den Krieg verloren.\"",
+  "Im selben Juni besetzte die Sowjetunion die baltischen Staaten.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0D97
+text = [
+  "Die französische Delegation unterzeichnete in Compiègne den Waffenstillstand. In Vichy wurde unter Marschall Pétain eine neue Regierung gebildet.",
+  "Unsere Fliegerverbände begannen, auf Flugplätze in ganz Nordfrankreich und Belgien zu verlegen.",
+  "<keep>",
+  "Am 18. Juni hielt de Gaulle eine Rede:",
+  "\"Frankreich hat eine Schlacht verloren, aber Frankreich hat nicht den Krieg verloren.\"",
+  "Im selben Juni besetzte die Sowjetunion die baltischen Staaten.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0EA2
+text = [
+  "Die französische Delegation unterzeichnete in Compiègne den Waffenstillstand. In Vichy wurde unter Marschall Pétain eine neue Regierung gebildet.",
+  "Nach dieser Schlacht wurden unsere Verbände nach und nach auf Züge nach Ostpreußen verladen.",
+  "<keep>",
+  "Am 18. Juni hielt de Gaulle eine Rede:",
+  "\"Frankreich hat eine Schlacht verloren, aber Frankreich hat nicht den Krieg verloren.\"",
+  "Im selben Juni besetzte die Sowjetunion die baltischen Staaten.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x0FB2
+text = [
+  "Unsere Verbände durchbrachen die Maginot-Linie erst, als Frankreich schon kapituliert hatte.",
+  "An der Somme-Front aber stießen General Bocks Panzerverbände bis Paris vor.",
+  "Ministerpräsident Reynaud trat zurück; Marschall Pétain übernahm und bat um Waffenstillstand, die Regierung zog nach Vichy.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1064
+text = [
+  "Unser Luftkrieg gegen die Britischen Inseln endete mit einem überwältigenden Sieg.",
+  "Die feindliche Luftwaffe ist vernichtet, die Bombenangriffe haben die wichtigsten Industriestädte gelähmt.",
+  "Der Befehl zur Landung in England ergeht im September.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1102
+text = [
+  "Die großen Städte Englands lagen in Trümmern. Doch die Jahreszeit für eine Landung verstrich, und der Führer verschob den Termin erneut.",
+  "Unter den Soldaten hieß es, die Landung werde abgesagt.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x11AD
+text = [
+  "Unsere Fliegerverbände fügten dem Feind schwere Verluste zu, errangen aber nie die Luftherrschaft.",
+  "Der Führer verschob die Landung auf unbestimmte Zeit und verkündete, England werde allein durch Bomben bezwungen.",
+  "<keep>",
+  "Churchill sagte über die Piloten der Schlacht:",
+  "\"Niemals zuvor in der Geschichte menschlicher Konflikte hatten so viele so wenigen so viel zu verdanken.\"",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x12F7
+text = [
+  "Die Kämpfe auf den Britischen Inseln gingen zu Ende. König und Regierung waren nach Kanada gegangen und riefen das Commonwealth zum Weiterkämpfen auf, hatten aber keine Kraft mehr, uns unmittelbar zu bedrohen.",
+  "Nur die Royal Navy ist geblieben.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x13B5
+text = [
+  "Der organisierte Widerstand auf den Britischen Inseln ist beendet, doch die britische Regierung in Kanada wartet mit Island als Basis auf die Gelegenheit zu einer neuen Landung.",
+  "Hier aber standen keine Verbände, um die lange Küste zu bewachen. Unsere Kräfte wurden für die nächste Operation abgezogen.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x1485
+text = [
+  "Die Landung in England scheiterte am zähen Widerstand des Feindes.",
+  "Als unsere Verluste stiegen, erreichte der Befehl des Führers zum Abbruch der Operation die Front.",
+  "Im Befehl hieß es, der Frieden lasse sich nun politisch erreichen. Es war aber unsere erste Niederlage seit Kriegsbeginn.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x155C
+text = [
+  "Das schlecht ausgerüstete jugoslawische Heer war uns nicht gewachsen. Jugoslawien unterzeichnete den Waffenstillstand; Simovic und der König flohen nach Athen.",
+  "Deutschland, Italien und Ungarn teilten das Land; Kroatien wurde unabhängig. Wir zogen wieder nach Norden.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x161D
+text = [
+  "Das schlecht ausgerüstete jugoslawische Heer war unseren Verbänden nicht gewachsen. Sie hielten nur zum Auffrischen und stießen bis in die Hauptstadt Belgrad vor.",
+  "Unsere Verbände zogen weiter nach Süden, nach Griechenland, um General Kleist zu unterstützen.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x16D7
+text = [
+  "Unsere Verbände durchbrachen die jugoslawischen Kräfte im Süden und rückten in Griechenland ein. Der Feind wich immer weiter zurück, ging nach Kreta und von dort nach Ägypten.",
+  "<keep>",
+  "Griechenland wurde zwischen Deutschland, Italien und Bulgarien aufgeteilt.",
+  "Unsere Verbände begannen, nach Lublin in Polen zu verlegen.",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x17D3
+text = [
+  "Unsere Verbände durchbrachen die jugoslawischen Kräfte im Süden und rückten in Griechenland ein. Der Feind wich immer weiter zurück, ging nach Kreta und von dort nach Ägypten.",
+  "<keep>",
+  "Griechenland wurde zwischen Deutschland, Italien und Bulgarien aufgeteilt.",
+  "Unsere Verbände bleiben vorerst hier. Geht es nach Nordafrika, um Rommel zu unterstützen, oder nach Mossul, um dem Irak zu helfen ...?",
+]
+
+[[briefing]]
+block = "results"
+offset = 0x190C
+text = [
+  "Nach dem Sieg über die sowjetischen Kräfte an der Grenze rückten unsere Verbände ins Baltikum ein, wo die Bevölkerung sie als Befreier begrüßte.",
+  "Doch das russische Land ist weit, und die Nachschubwege in die Heimat waren gefährdet.",
+  "<keep>",
+  "Gleich nach dem Einmarsch hielt Churchill eine Rede:",
+  "\"Jeder Staat, der gegen den Nazismus kämpft, wird unsere Hilfe haben. Daraus folgt, dass wir Russland jede Hilfe geben, die wir geben können.\"",
+  "Unsere Verbände wurden der Heeresgruppe Mitte unterstellt. Das nächste Ziel: Moskau.",
+]

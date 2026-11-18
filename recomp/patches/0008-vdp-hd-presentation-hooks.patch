@@ -1,0 +1,79 @@
+diff --git a/runner/video/genesis_vdp.c b/runner/video/genesis_vdp.c
+index 8396399..3606ed5 100644
+--- a/runner/video/genesis_vdp.c
++++ b/runner/video/genesis_vdp.c
+@@ -1701,6 +1701,15 @@ static void hd_plane(const GVDP *v, uint8_t rows[][GVDP_HD_MAXW], unsigned S,
+     }
+ }
+ 
++static GvdpHdLayerHook  s_hd_layer_hook;
++static GvdpHdSpriteHook s_hd_sprite_hook;
++static void            *s_hd_hook_user;
++
++void gvdp_hd_set_hooks(GvdpHdLayerHook layers, GvdpHdSpriteHook sprite, void *user)
++{
++    s_hd_layer_hook = layers; s_hd_sprite_hook = sprite; s_hd_hook_user = user;
++}
++
+ static uint8_t s_hd_a[GVDP_HD_MAX_SCALE][GVDP_HD_MAXW];
+ static uint8_t s_hd_b[GVDP_HD_MAX_SCALE][GVDP_HD_MAXW];
+ static uint8_t s_hd_si[GVDP_HD_MAX_SCALE][GVDP_HD_MAXW];
+@@ -1741,13 +1750,21 @@ static void hd_sprites(const GVDP *v, int line, unsigned S, int w)
+             int screen_x = xword - 128;
+             int tile = attr & 0x07FF, pal = (attr >> 13) & 3, pri = (attr & 0x8000) != 0;
+             int hf = (attr & 0x0800) != 0, vf = (attr & 0x1000) != 0;
++            int draw_x = screen_x;    /* the hook may move the sprite sideways in the HD frame */
++            if (s_hd_sprite_hook && s_hd_sprite_hook(s_hd_hook_user, &draw_x, y, sz, attr)) {
++                budget -= width;
++                if (budget <= 0 && !s_unlimited_sprites) break;
++                if (next == 0) break;
++                link = next;
++                continue;
++            }
+             unsigned cell = 8u * S;
+             for (unsigned sy = 0; sy < S; sy++) {
+                 unsigned vs = (unsigned)(line - y) * S + sy;
+                 if (vf) vs = (unsigned)height * S - 1u - vs;
+                 unsigned celly = vs / cell, wv = vs % cell;
+                 for (int lx = 0; lx < width; lx++) {
+-                    int sx0 = screen_x + lx;
++                    int sx0 = draw_x + lx;
+                     if (sx0 < 0 || sx0 >= w) continue;
+                     for (unsigned sx = 0; sx < S; sx++) {
+                         unsigned us = (unsigned)lx * S + sx;
+@@ -1840,6 +1857,8 @@ int gvdp_render_scanline_hd(GVDP *v, int line, uint8_t *out, int stride)
+         hd_plane(v, s_hd_b, S, base_b, wt, ht, x, boundary, hs_b, line + vb);
+         x = boundary;
+     }
++    if (s_hd_layer_hook)
++        s_hd_layer_hook(s_hd_hook_user, v, line, S, w, &s_hd_a[0][0], &s_hd_b[0][0], GVDP_HD_MAXW);
+     hd_sprites(v, line, S, w);
+     int sh_mode = MODE4_SHI(v) != 0;
+     for (unsigned r = 0; r < S; r++)
+diff --git a/runner/video/genesis_vdp.h b/runner/video/genesis_vdp.h
+index c969957..91f79a0 100644
+--- a/runner/video/genesis_vdp.h
++++ b/runner/video/genesis_vdp.h
+@@ -317,6 +317,22 @@ unsigned gvdp_hd_tile_count(void);
+  * mode is not supported (caller pixel-doubles the 1x row). */
+ int      gvdp_render_scanline_hd(GVDP *v, int line, uint8_t *out, int stride);
+ 
++/* Optional presentation hooks, set by the game (HD frame only; the 1x frame,
++ * collision and status flags never see them). Per HD line:
++ *  - sprite(user, &x, y, size, attr) for every sprite on the line (screen x/y
++ *    of its top-left, SAT size byte, attribute word); non-zero = leave it out of
++ *    the HD frame; it may change x to draw the sprite elsewhere on the line. Either
++ *    way the sprite still counts for the per-line limits at its real position.
++ *  - layers(user, v, line, scale, width, a, b, row_stride) after planes A and B
++ *    (window included in a) are sampled: scale rows of width*scale bytes each,
++ *    row r at a + r*row_stride, byte = priority<<7 | opaque<<6 | palette<<4 |
++ *    colour. The hook may rewrite them; sprites and shadow/highlight are composed
++ *    on top as usual. */
++typedef int  (*GvdpHdSpriteHook)(void *user, int *x, int y, unsigned size, unsigned attr);
++typedef void (*GvdpHdLayerHook)(void *user, const GVDP *v, int line, unsigned scale, int width,
++                                uint8_t *a, uint8_t *b, int row_stride);
++void     gvdp_hd_set_hooks(GvdpHdLayerHook layers, GvdpHdSpriteHook sprite, void *user);
++
+ /* ---- Per-frame raster timing ---------------------------------------------- */
+ /* Called by the scheduler at the start of each scanline; advances the H-int
+  * counter and sets/clears V-int pending at the vblank boundary. Returns a mask

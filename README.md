@@ -11,6 +11,29 @@ Unofficial fan project. **No game data is included – you need your own ROM.**
 |---|---|
 | ![Battle](docs/images/battle.png) | ![Campaign briefing](docs/images/briefing.png) |
 
+## About the game
+
+*Advanced Daisenryaku* is a turn-based strategy game of the Second World War in Europe and North
+Africa, played on a hex map. It is a Mega Drive entry of *Daisenryaku* ("Great Strategy"), a
+Japanese wargame series that began on home computers in 1985 – one of the oldest of its kind,
+and hardly known outside Japan.
+
+You lead the German army from the invasion of Poland in 1939 onwards. The campaign has 43 maps,
+and how well you win decides where it goes next: a quick, decisive victory opens other
+battles than a narrow one, up to alternative history such as an invasion of Britain or a push
+to the Urals. Your units carry over from map to map and gain experience. Between battles you
+spend your money on new units and on developing new types; on the map, fuel, ammunition,
+supply, weather and the fog of war matter. Battles are shown as short animated scenes. Besides
+the campaign there is a standard mode with single scenarios.
+
+**If you know these, you will feel at home:** *Nectaris* (*Military Madness*), *Battle Isle* 1
+and 2 and *History Line 1914–1918* share the hex map, the turn-based moves and the animated
+combat scenes; *Panzer General* is the closest Western relative – the Second World War from the
+German side, a campaign that branches on how well you win, and a core army that grows with
+you. Nintendo's *Advance Wars* comes from the same Japanese tradition of console wargames –
+lighter, on a square grid, but with the same loop of moving, capturing cities and building
+units. *Advanced Daisenryaku* plays slower than all of these and goes further into the details.
+
 ## Features
 
 - Runs natively on Apple silicon Macs and Windows x64, no emulator.

@@ -32,7 +32,8 @@ combat scenes; *Panzer General* is the closest Western relative – the Second W
 German side, a campaign that branches on how well you win, and a core army that grows with
 you. Nintendo's *Advance Wars* comes from the same Japanese tradition of console wargames –
 lighter, on a square grid, but with the same loop of moving, capturing cities and building
-units. *Advanced Daisenryaku* plays slower than all of these and goes further into the details.
+units. *Advanced Daisenryaku* is bigger and more tactical than all of these and goes further 
+into the details.
 
 ## Features
 

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.19)
-project(AdvancedDaisenryakuRecomp VERSION 0.1.0 LANGUAGES C CXX)
+project(AdvancedDaisenryakuRecomp VERSION 0.1.1 LANGUAGES C CXX)
 
 # Native port of Advanced Daisenryaku via segagenesisrecomp.
 # Template: RocketKnightAdventuresRecomp/CMakeLists.txt (without launcher UI, widescreen, release packaging).

@@ -54,7 +54,7 @@ into the details.
 2. Have your dump of the **Japanese cartridge** ready (Japan, Rev A): 1,048,576 bytes,
    CRC32 `E0D5E18A`, an unzipped `.md` or `.bin` file. The game asks for it on the first start
    and applies the translation to a copy; your file is not changed.
-3. **Mac** (Apple silicon, macOS 27.2 or newer): move `Advanced Daisenryaku.app` to
+3. **Mac** (Apple silicon, macOS 11 Big Sur or newer): move `Advanced Daisenryaku.app` to
    Applications. The app is not notarized by Apple: the first time, right-click it → Open →
    Open.
    **Windows** (x64): unzip the folder and start `Advanced Daisenryaku.exe`. SmartScreen may

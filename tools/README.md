@@ -39,6 +39,7 @@ development build (`build/recomp-tr/`) is not touched.
 | Call | Effect |
 |---|---|
 | `tools/release.sh [--no-hd] [--no-test] [--version X.Y.Z]` | release build of `tr` in `build/release-tr/`, BPS patch, launcher, `build/release/Advanced Daisenryaku.app` + zip; audit (no ROM inside), ad-hoc signature, smoke test (600 frames in a scratch data folder; needs that no game is running) |
+| `tools/sdl2_macos.sh [--force]` | build SDL2 2.32.10 for arm64, macOS 11 (`MACOS_MIN`) into `build/sdl2-macos/` (downloads the pinned source once, checks its SHA-256); called by `build.sh --release`, so the app runs on macOS 11 and newer |
 | `tools/build.sh --rom tr --release` | only the release build of the game (no debug server, no reverse-debug ring) |
 | `tools/bps.py create SOURCE TARGET PATCH` | BPS patch that turns SOURCE into TARGET |
 | `tools/bps.py apply SOURCE PATCH TARGET` | apply a BPS patch (CRC32 of source, target and patch checked) |

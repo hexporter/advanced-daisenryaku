@@ -69,6 +69,13 @@ flags=""
 # Always passed, so that a build folder never keeps a stale value in its CMake cache.
 if [ "$release" = 1 ]; then flags="$flags -DGEN_ENABLE_TRACE=OFF -DSONIC_REVERSE_DEBUG=OFF"
 else flags="$flags -DGEN_ENABLE_TRACE=ON -DSONIC_REVERSE_DEBUG=ON"; fi
+# Mac release: runs on macOS 11 and newer – SDL2 built for that (tools/sdl2_macos.sh) instead of
+# Homebrew's, and the same deployment target for the game (docs/notes/release.md).
+if [ "$release" = 1 ] && [ "$(uname -s)" = Darwin ]; then
+    "$ROOT/tools/sdl2_macos.sh"
+    flags="$flags -DCMAKE_OSX_DEPLOYMENT_TARGET=${MACOS_MIN:-11.0} -DCMAKE_OSX_ARCHITECTURES=arm64"
+    flags="$flags -DSDL2_DIR=$ROOT/build/sdl2-macos/lib/cmake/SDL2"
+fi
 
 cmake -S "$ROOT/recomp" -B "$ROM_BUILD" -G Ninja -DCMAKE_BUILD_TYPE=Release \
       -DGENESIS_RECOMP_ROOT="$RECOMPILER_DIR" \

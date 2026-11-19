@@ -36,7 +36,7 @@ without `pack.bin` the picture stays 4:3.
 Advanced Daisenryaku.app/Contents/
   MacOS/Advanced Daisenryaku   launcher (release/macos/launcher.c)
   MacOS/ADRecomp               the game (release build)
-  Frameworks/libSDL2-2.0.0.dylib, libSDL3.dylib
+  Frameworks/libSDL2-2.0.0.dylib   SDL2 built for macOS 11 (tools/sdl2_macos.sh)
   Resources/translation.bps    patch JP ROM → translated ROM
   Resources/pack.bin           HD text/tile pack (left out with --no-hd)
   Resources/settings.ini       controller layout, copied to the data folder once
@@ -77,10 +77,13 @@ the launcher's result with `build/rom/ad-tr.md` byte by byte.
 
 ### Libraries
 
-Homebrew's `sdl2` is sdl2-compat: `libSDL2-2.0.0.dylib` loads SDL3 at runtime from its own
-folder (`@loader_path/libSDL3.dylib` is its first try). Both go to `Contents/Frameworks`; the
-game's load command is rewritten to `@executable_path/../Frameworks/…`. Evidence
-(`DYLD_PRINT_LIBRARIES=1`): both are loaded from the app, none from `/opt/homebrew`.
+The release build does not use Homebrew's SDL: Homebrew builds it for the newest macOS only, and
+its `sdl2` is sdl2-compat, which loads SDL3 at runtime. `tools/sdl2_macos.sh` builds plain SDL2
+(version and SHA-256 pinned in the script, source from the SDL GitHub release) for arm64 with
+deployment target 11.0 into `build/sdl2-macos/`; `tools/build.sh --release` calls it and points
+CMake there (`SDL2_DIR`). The development build keeps Homebrew's SDL. `libSDL2-2.0.0.dylib` goes
+to `Contents/Frameworks`, its licence to `Resources/SDL-LICENSE.txt`; the game's load command is
+rewritten to `@executable_path/../Frameworks/…`.
 
 ## Checks done
 
@@ -94,9 +97,10 @@ game's load command is rewritten to `@executable_path/../Frameworks/…`. Eviden
 
 ## Limits and packaging details
 
-1. **macOS version:** the app needs macOS 27.2 or newer – the game is built for the build
-   machine's version and Homebrew's SDL libraries for 27.0. For older systems: build SDL from
-   source with a deployment target and set `CMAKE_OSX_DEPLOYMENT_TARGET`. Apple silicon only.
+1. **macOS version:** macOS 11 (Big Sur) or newer, Apple silicon only. The release build sets
+   `CMAKE_OSX_DEPLOYMENT_TARGET=11.0` for the game, `-mmacosx-version-min=11.0` for the launcher
+   and uses SDL2 built for 11.0; `LSMinimumSystemVersion` is the newest `minos` of the game and
+   the bundled libraries. `MACOS_MIN=X.Y` changes the target (SDL2 is then rebuilt).
 2. **Signature:** ad hoc (`CODESIGN_IDENTITY` unset). Gatekeeper rejects it on other Macs
    (`spctl`: rejected) until the player right-clicks → Open; a Developer ID and notarization
    need a paid Apple developer account.
@@ -117,5 +121,5 @@ game's load command is rewritten to `@executable_path/../Frameworks/…`. Eviden
      iconset).
 5. **Bundle identifier:** `io.github.hexporter.advanced-daisenryaku` (`BUNDLE_ID=…` overrides);
    keep it stable, macOS keys permissions and preferences on it.
-6. Version comes from `project(… VERSION …)` in `recomp/CMakeLists.txt` (0.1.0), the build
+6. Version comes from `project(… VERSION …)` in `recomp/CMakeLists.txt` (0.1.1), the build
    field is `git describe` (`-dirty` with uncommitted changes).

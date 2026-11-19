@@ -46,8 +46,8 @@ What the port does as of 18.11.2026. Details are in `notes/` (index: `notes/READ
   the unpacked zip (SmartScreen, ROM dialog, wrong file, save/load, ROM moved). The tr ROM and the
   HD pack come from the Mac. On the Mac `tools/wincheck.sh` cross-builds it with mingw-w64
   (`windows.md`).
-- **Mac app:** `tools/release.sh` builds `build/release/Advanced Daisenryaku.app`; the player
-  supplies the JP ROM, the app patches it (`release.md`).
+- **Mac app:** `tools/release.sh` builds `build/release/Advanced Daisenryaku.app` (Apple silicon,
+  macOS 11 or newer); the player supplies the JP ROM, the app patches it (`release.md`).
 
 ## Next steps and open questions
 

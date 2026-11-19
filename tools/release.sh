@@ -61,7 +61,7 @@ if [ -e "$APP" ]; then
 fi
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources" "$APP/Contents/Frameworks"
 cp "$GAME" "$APP/Contents/MacOS/ADRecomp"
-clang -O2 -Wall -Wextra -o "$APP/Contents/MacOS/$APP_NAME" "$SRC/launcher.c"
+clang -O2 -Wall -Wextra -arch arm64 -mmacosx-version-min="${MACOS_MIN:-11.0}" -o "$APP/Contents/MacOS/$APP_NAME" "$SRC/launcher.c"
 
 # Libraries outside the system (SDL from Homebrew) go into Contents/Frameworks.
 # sdl2-compat loads SDL3 at runtime from its own folder (@loader_path/libSDL3.dylib).
@@ -88,8 +88,12 @@ while read -r lib; do
             bundle_lib "$sdl3" libSDL3.dylib
             cp "$(brew --prefix sdl3)/LICENSE.txt" "$APP/Contents/Resources/SDL-LICENSE.txt"
         else
-            cp "$(dirname "$(dirname "$(realpath "$lib")")")/LICENSE.txt" \
-               "$APP/Contents/Resources/SDL-LICENSE.txt" 2>/dev/null || true
+            # plain SDL2 (tools/sdl2_macos.sh): share/licenses/SDL2/LICENSE.txt in its prefix
+            prefix=$(dirname "$(dirname "$(realpath "$lib")")")
+            for f in "$prefix/share/licenses/SDL2/LICENSE.txt" "$prefix/LICENSE.txt" ""; do
+                [ -z "$f" ] && { echo "SDL licence not found next to $lib"; exit 1; }
+                [ -f "$f" ] && { cp "$f" "$APP/Contents/Resources/SDL-LICENSE.txt"; break; }
+            done
         fi ;;
     esac
 done < "$STAGE/bundle-libs.txt"
